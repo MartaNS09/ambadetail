@@ -5,19 +5,26 @@ import Footer from "@/components/layout/footer/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "AMBADETAIL | Диагностика и ремонт дизельных двигателей",
+  title: "Ambadetail | Детейлинг студия в Витебске",
   description:
-    "Профессиональное диагностическое оборудование. Полная компьютерная диагностика перед ремонтом дизельных двигателей.",
+    "Профессиональный детейлинг автомобилей в Витебске: химчистка салона, полировка кузова, оклейка плёнкой, тонировка, защитные покрытия. Опытные мастера, гарантия качества.",
   keywords:
-    "диагностика дизеля, СТО, компьютерная диагностика, ремонт дизельных двигателей, AMBADETAIL",
-  authors: [{ name: "AMBADETAIL" }],
+    "детейлинг, детейлинг студия, химчистка салона, полировка авто, оклейка плёнкой, тонировка, Витебск, Ambadetail",
+  authors: [{ name: "Ambadetail" }],
+  robots: "index, follow",
   openGraph: {
-    title: "AMBADETAIL - Диагностика дизельных двигателей",
+    title: "Ambadetail - Детейлинг студия в Витебске",
     description:
-      "Профессиональное диагностическое оборудование. Полная компьютерная диагностика перед ремонтом.",
-    type: "website",
+      "Профессиональный уход за автомобилем: от химчистки до оклейки защитной плёнкой",
+    url: "https://ambadetail.vercel.app",
+    siteName: "Ambadetail",
     locale: "ru_RU",
-    siteName: "AMBADETAIL",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Ambadetail - Детейлинг студия",
+    description: "Профессиональный уход за автомобилем",
   },
 };
 
