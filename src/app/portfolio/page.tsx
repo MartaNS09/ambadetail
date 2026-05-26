@@ -84,6 +84,17 @@ export default function PortfolioPage() {
   useEffect(() => {
     if (selectedVideo !== null) {
       document.body.style.overflow = "hidden";
+      // Автоматический запуск видео при открытии модалки
+      setTimeout(() => {
+        if (modalVideoRef.current) {
+          modalVideoRef.current
+            .play()
+            .then(() => {
+              setIsVideoPlaying(true);
+            })
+            .catch(() => {});
+        }
+      }, 100);
     } else {
       document.body.style.overflow = "";
     }
@@ -108,19 +119,6 @@ export default function PortfolioPage() {
   }, []);
 
   const titleParts = ["AMBADETAIL"];
-
-  const handleModalPlay = () => {
-    if (modalVideoRef.current && !isVideoPlaying) {
-      modalVideoRef.current
-        .play()
-        .then(() => {
-          setIsVideoPlaying(true);
-        })
-        .catch((err) => {
-          console.log("Play error:", err);
-        });
-    }
-  };
 
   return (
     <>
@@ -260,7 +258,7 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          {/* МОДАЛЬНОЕ ОКНО - С КНОПКОЙ PLAY КОТОРАЯ ИСЧЕЗАЕТ */}
+          {/* МОДАЛЬНОЕ ОКНО - КНОПКА PLAY ИСЧЕЗАЕТ ПОСЛЕ НАЧАЛА ВИДЕО */}
           {selectedVideo !== null && (
             <div
               className="portfolio-modal"
@@ -296,13 +294,9 @@ export default function PortfolioPage() {
                     aria-label={`Видео: ${portfolioItems[selectedVideo].title}`}
                   />
                   {!isVideoPlaying && (
-                    <button
-                      className="portfolio-modal__play-overlay"
-                      onClick={handleModalPlay}
-                      aria-label="Воспроизвести видео"
-                    >
+                    <div className="portfolio-modal__play-overlay">
                       <Play size={64} color="white" />
-                    </button>
+                    </div>
                   )}
                 </div>
               </div>
@@ -327,7 +321,6 @@ export default function PortfolioPage() {
           cursor: pointer;
           z-index: 10;
           transition: all 0.3s ease;
-          border: none;
         }
         .portfolio-modal__play-overlay:hover {
           transform: translate(-50%, -50%) scale(1.1);
