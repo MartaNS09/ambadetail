@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/footer/Footer";
+import CookieBanner from "@/components/ui/CookieBanner";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -49,6 +50,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <CookieBanner />
         </ThemeProvider>
       </body>
     </html>
