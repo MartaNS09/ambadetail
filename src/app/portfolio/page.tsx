@@ -361,14 +361,6 @@ export default function PortfolioPage() {
   useEffect(() => {
     if (selectedVideo !== null) {
       document.body.style.overflow = "hidden";
-      // Запускаем видео при открытии модалки
-      setTimeout(() => {
-        if (modalVideoRef.current) {
-          modalVideoRef.current.play().catch((err) => {
-            console.log("Автовоспроизведение заблокировано:", err);
-          });
-        }
-      }, 100);
     } else {
       document.body.style.overflow = "";
     }
@@ -393,6 +385,17 @@ export default function PortfolioPage() {
   }, []);
 
   const titleParts = ["AMBADETAIL"];
+
+  // Функция для запуска видео в модалке
+  const handleModalPlay = () => {
+    setTimeout(() => {
+      if (modalVideoRef.current) {
+        modalVideoRef.current.play().catch((err) => {
+          console.log("Play error:", err);
+        });
+      }
+    }, 100);
+  };
 
   return (
     <>
@@ -553,7 +556,10 @@ export default function PortfolioPage() {
                 >
                   <X size={24} aria-hidden="true" />
                 </button>
-                <div className="portfolio-modal__video-wrapper">
+                <div
+                  className="portfolio-modal__video-wrapper"
+                  onClick={handleModalPlay}
+                >
                   <video
                     ref={modalVideoRef}
                     key={selectedVideo}
@@ -563,14 +569,44 @@ export default function PortfolioPage() {
                     playsInline
                     webkit-playsinline="true"
                     preload="auto"
+                    poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100%25 100%25'%3E%3Crect width='100%25' height='100%25' fill='%231a1a1a'/%3E%3C/svg%3E"
                     aria-label={`Видео: ${portfolioItems[selectedVideo].title}`}
                   />
+                  <div className="portfolio-modal__play-overlay">
+                    <Play size={64} color="white" />
+                  </div>
                 </div>
               </div>
             </div>
           )}
         </div>
       </div>
+
+      <style jsx>{`
+        .portfolio-modal__play-overlay {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 80px;
+          height: 80px;
+          background: rgba(220, 38, 38, 0.9);
+          border-radius: 50%;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          cursor: pointer;
+          z-index: 10;
+          transition: transform 0.2s ease;
+        }
+        .portfolio-modal__play-overlay:hover {
+          transform: translate(-50%, -50%) scale(1.1);
+        }
+        .portfolio-modal__video-wrapper {
+          position: relative;
+          cursor: pointer;
+        }
+      `}</style>
     </>
   );
 }
