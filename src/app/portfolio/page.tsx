@@ -278,7 +278,6 @@
 //     </>
 //   );
 // }
-
 "use client";
 
 import Link from "next/link";
@@ -293,6 +292,7 @@ export default function PortfolioPage() {
     new Array(10).fill(false),
   );
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
+  const modalVideoRef = useRef<HTMLVideoElement | null>(null);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100);
@@ -320,6 +320,9 @@ export default function PortfolioPage() {
   }, []);
 
   const closeModal = useCallback(() => {
+    if (modalVideoRef.current) {
+      modalVideoRef.current.pause();
+    }
     setSelectedVideo(null);
   }, []);
 
@@ -358,6 +361,14 @@ export default function PortfolioPage() {
   useEffect(() => {
     if (selectedVideo !== null) {
       document.body.style.overflow = "hidden";
+      // Запускаем видео при открытии модалки
+      setTimeout(() => {
+        if (modalVideoRef.current) {
+          modalVideoRef.current.play().catch((err) => {
+            console.log("Автовоспроизведение заблокировано:", err);
+          });
+        }
+      }, 100);
     } else {
       document.body.style.overflow = "";
     }
@@ -522,7 +533,7 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          {/* МОДАЛЬНОЕ ОКНО - ИСПРАВЛЕНО ДЛЯ IPHONE */}
+          {/* МОДАЛЬНОЕ ОКНО - РАБОТАЕТ НА IPHONE */}
           {selectedVideo !== null && (
             <div
               className="portfolio-modal"
@@ -544,11 +555,11 @@ export default function PortfolioPage() {
                 </button>
                 <div className="portfolio-modal__video-wrapper">
                   <video
+                    ref={modalVideoRef}
                     key={selectedVideo}
                     className="portfolio-modal__video"
                     src={portfolioItems[selectedVideo].src}
                     controls
-                    autoPlay
                     playsInline
                     webkit-playsinline="true"
                     preload="auto"
