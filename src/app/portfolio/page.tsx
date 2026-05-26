@@ -8,7 +8,6 @@ import "./page.scss";
 export default function PortfolioPage() {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState<number | null>(null);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [loadedVideos, setLoadedVideos] = useState<boolean[]>(
     new Array(10).fill(false),
   );
@@ -37,7 +36,6 @@ export default function PortfolioPage() {
   );
 
   const handleVideoClick = useCallback((index: number) => {
-    setIsVideoPlaying(false);
     setSelectedVideo(index);
   }, []);
 
@@ -45,7 +43,6 @@ export default function PortfolioPage() {
     if (modalVideoRef.current) {
       modalVideoRef.current.pause();
     }
-    setIsVideoPlaying(false);
     setSelectedVideo(null);
   }, []);
 
@@ -84,17 +81,6 @@ export default function PortfolioPage() {
   useEffect(() => {
     if (selectedVideo !== null) {
       document.body.style.overflow = "hidden";
-      // Автоматический запуск видео при открытии модалки
-      setTimeout(() => {
-        if (modalVideoRef.current) {
-          modalVideoRef.current
-            .play()
-            .then(() => {
-              setIsVideoPlaying(true);
-            })
-            .catch(() => {});
-        }
-      }, 100);
     } else {
       document.body.style.overflow = "";
     }
@@ -119,6 +105,17 @@ export default function PortfolioPage() {
   }, []);
 
   const titleParts = ["AMBADETAIL"];
+
+  // Функция для запуска видео в модалке
+  const handleModalPlay = () => {
+    setTimeout(() => {
+      if (modalVideoRef.current) {
+        modalVideoRef.current.play().catch((err) => {
+          console.log("Play error:", err);
+        });
+      }
+    }, 100);
+  };
 
   return (
     <>
@@ -192,6 +189,7 @@ export default function PortfolioPage() {
             </div>
           </div>
 
+          {/* Подсказка для мобилки - листайте */}
           <div className="portfolio-swipe-hint">
             <span className="portfolio-swipe-hint__text">листайте вправо</span>
             <span className="portfolio-swipe-hint__arrow">👉</span>
@@ -258,7 +256,7 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          {/* МОДАЛЬНОЕ ОКНО - КНОПКА PLAY ИСЧЕЗАЕТ ПОСЛЕ НАЧАЛА ВИДЕО */}
+          {/* МОДАЛЬНОЕ ОКНО - РАБОТАЕТ НА IPHONE */}
           {selectedVideo !== null && (
             <div
               className="portfolio-modal"
@@ -278,7 +276,10 @@ export default function PortfolioPage() {
                 >
                   <X size={24} aria-hidden="true" />
                 </button>
-                <div className="portfolio-modal__video-wrapper">
+                <div
+                  className="portfolio-modal__video-wrapper"
+                  onClick={handleModalPlay}
+                >
                   <video
                     ref={modalVideoRef}
                     key={selectedVideo}
@@ -288,16 +289,12 @@ export default function PortfolioPage() {
                     playsInline
                     webkit-playsinline="true"
                     preload="auto"
-                    onPlay={() => setIsVideoPlaying(true)}
-                    onPause={() => setIsVideoPlaying(false)}
-                    onEnded={() => setIsVideoPlaying(false)}
+                    poster="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 100%25 100%25'%3E%3Crect width='100%25' height='100%25' fill='%231a1a1a'/%3E%3C/svg%3E"
                     aria-label={`Видео: ${portfolioItems[selectedVideo].title}`}
                   />
-                  {!isVideoPlaying && (
-                    <div className="portfolio-modal__play-overlay">
-                      <Play size={64} color="white" />
-                    </div>
-                  )}
+                  <div className="portfolio-modal__play-overlay">
+                    <Play size={64} color="white" />
+                  </div>
                 </div>
               </div>
             </div>
@@ -320,17 +317,14 @@ export default function PortfolioPage() {
           justify-content: center;
           cursor: pointer;
           z-index: 10;
-          transition: all 0.3s ease;
+          transition: transform 0.2s ease;
         }
         .portfolio-modal__play-overlay:hover {
           transform: translate(-50%, -50%) scale(1.1);
-          background: #dc2626;
-        }
-        .portfolio-modal__play-overlay svg {
-          margin-left: 4px;
         }
         .portfolio-modal__video-wrapper {
           position: relative;
+          cursor: pointer;
         }
       `}</style>
     </>
