@@ -1,0 +1,625 @@
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0a0f1a 0%, #0f1420 100%);
+}
+
+.hero__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-image: url("/images/home1.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+
+/* Минимальное затемнение - только для читаемости текста */
+.hero__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  z-index: 1;
+}
+
+.hero__container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.hero__content {
+  max-width: 700px;
+  margin-left: 0;
+}
+
+/* Анимированный заголовок - каждая буква */
+.hero__title {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.05em;
+}
+
+.hero__title-letter {
+  display: inline-block;
+  color: white;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.12s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.hero__title-letter--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero__title-letter:hover {
+  transform: translateY(-2px) scale(1.08) !important;
+  background: linear-gradient(135deg, #ffffff, #3b82f6);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all 0.1s ease !important;
+}
+
+.hero__title-space {
+  display: inline-block;
+  width: 0.3em;
+}
+
+.hero__title-word {
+  display: inline-block;
+  white-space: nowrap;
+  color: white;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.12s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+}
+
+.hero__title-word--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hero__title-word:hover {
+  transform: translateY(-2px) scale(1.03) !important;
+  background: linear-gradient(135deg, #ffffff, #3b82f6, #dc2626);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  transition: all 0.1s ease !important;
+}
+
+/* Подзаголовок */
+.hero__subtitle {
+  font-size: clamp(1rem, 3vw, 1.2rem);
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  max-width: 550px;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero__subtitle--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Кнопки */
+.hero__buttons {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateX(-30px);
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hero__buttons--visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem 1.8rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: translate(-50%, -50%);
+  transition:
+    width 0.6s,
+    height 0.6s;
+}
+
+.btn:hover::before {
+  width: 300px;
+  height: 300px;
+}
+
+.btn--primary {
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+.btn--primary:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+}
+
+.btn--outline {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.btn--outline:hover {
+  background: white;
+  color: #1e3a8a;
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* Заголовки секций */
+.section-title {
+  font-size: clamp(2rem, 5vw, 2.5rem);
+  text-align: center;
+  margin-bottom: 3rem;
+  background: linear-gradient(
+    135deg,
+    rgb(var(--text-primary)) 0%,
+    rgb(var(--accent)) 100%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+/* Услуги - баннеры */
+.services {
+  padding: 4rem 0;
+}
+
+.services__row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.services__row--three {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.service-card {
+  display: block;
+  text-decoration: none;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  animation: cardAppear 0.6s ease-out both;
+  position: relative;
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-card__image-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.service-card--large .service-card__image-wrapper {
+  height: 320px;
+}
+
+.service-card--medium .service-card__image-wrapper {
+  height: 280px;
+}
+
+.service-card--small .service-card__image-wrapper {
+  height: 250px;
+}
+
+.service-card__image {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.service-card:hover .service-card__image {
+  transform: scale(1.05);
+}
+
+/* Минимальное затемнение на карточках - почти прозрачное */
+.service-card__overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.15) 0%,
+    rgba(0, 0, 0, 0.05) 100%
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.service-card:hover .service-card__overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.15) 100%
+  );
+}
+
+.service-card__content {
+  text-align: center;
+  padding: 1rem;
+  transform: translateY(20px);
+  transition: all 0.15s ease;
+}
+
+.service-card:hover .service-card__content {
+  transform: translateY(0);
+}
+
+.service-card__title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 1rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.service-card__btn {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  color: white;
+  border-radius: 9999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.15s ease;
+}
+
+.service-card:hover .service-card__btn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== АДАПТАЦИЯ HERO ДЛЯ МОБИЛКИ ========== */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 70vh;
+  }
+
+  .hero__bg {
+    background-position: 30% center !important;
+  }
+
+  .hero__content {
+    max-width: 100%;
+    padding: 2rem 0;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero__title {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    justify-content: center;
+  }
+
+  .hero__title-word {
+    white-space: normal;
+  }
+
+  .hero__subtitle {
+    font-size: clamp(0.9rem, 4vw, 1rem);
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero__buttons {
+    justify-content: center;
+  }
+
+  .services__row {
+    grid-template-columns: 1fr;
+  }
+
+  .services__row--three {
+    grid-template-columns: 1fr;
+  }
+
+  .service-card__title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    min-height: 60vh;
+  }
+
+  .hero__bg {
+    background-position: 25% center !important;
+  }
+
+  .hero__title-word {
+    white-space: normal;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Информационная секция */
+.info-section {
+  padding: 4rem 0;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
+.info-card {
+  background: rgba(var(--bg-card), 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  border: 1px solid rgba(var(--accent), 0.1);
+  transition: all 0.15s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(var(--accent), 0.2);
+  background: rgba(var(--bg-card), 0.6);
+}
+
+.info-card--full {
+  grid-column: span 2;
+}
+
+.info-card--booking {
+  grid-column: span 2;
+  text-align: center;
+  background: linear-gradient(
+    135deg,
+    rgba(var(--accent), 0.08),
+    rgba(var(--accent), 0.02)
+  );
+}
+
+.info-card__title {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.info-card__subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+  background: linear-gradient(
+    135deg,
+    rgb(var(--text-primary)),
+    rgb(var(--accent-light))
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.info-card__text {
+  font-size: 1rem;
+  color: rgb(var(--text-secondary));
+  line-height: 1.7;
+}
+
+.info-card__text-small {
+  font-size: 0.9rem;
+  color: rgb(var(--text-secondary));
+  line-height: 1.6;
+  margin-top: 1rem;
+}
+
+.info-card__tagline {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 1.5rem 0;
+  color: rgb(var(--accent-light));
+}
+
+.advantages-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.advantages-list__item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 1rem;
+  color: rgb(var(--text-secondary));
+  transition: all 0.15s ease;
+}
+
+.advantages-list__item:hover {
+  transform: translateX(5px);
+  color: rgb(var(--accent-light));
+}
+
+.advantages-list__icon {
+  font-size: 1.2rem;
+  color: #dc2626;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .info-card--full,
+  .info-card--booking {
+    grid-column: span 1;
+  }
+
+  .info-card {
+    padding: 1.5rem;
+  }
+
+  .info-card__title {
+    font-size: 1.4rem;
+  }
+}
+
+/* Темная тема */
+html.dark .service-card__overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+}
+
+html.dark .service-card:hover .service-card__overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.3) 0%,
+    rgba(0, 0, 0, 0.2) 100%
+  );
+}
+
+html.dark .info-card {
+  background: rgba(15, 25, 35, 0.6);
+}
+
+html.dark .info-card:hover {
+  background: rgba(15, 25, 35, 0.8);
+}
+
+/* Стили для ссылок в секции записи */
+.info-card--booking .info-card__text {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.info-card__phone-link,
+.info-card__contacts-link {
+  display: inline-block;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.15s ease;
+  position: relative;
+}
+
+.info-card__phone-link {
+  color: #dc2626;
+  border-bottom: 1px solid #dc2626;
+}
+
+.info-card__phone-link:hover {
+  color: #ef4444;
+  border-bottom-color: #ef4444;
+  transform: scale(1.02);
+}
+
+.info-card__contacts-link {
+  color: rgb(var(--accent-light));
+  border-bottom: 1px solid rgb(var(--accent-light));
+}
+
+.info-card__contacts-link:hover {
+  color: rgb(var(--accent));
+  border-bottom-color: rgb(var(--accent));
+  transform: scale(1.02);
+}
+
+/* Темная тема для ссылок */
+html.dark .info-card__phone-link {
+  color: #ef4444;
+  border-bottom-color: #ef4444;
+}
+
+html.dark .info-card__phone-link:hover {
+  color: #f87171;
+  border-bottom-color: #f87171;
+}
+
+html.dark .info-card__contacts-link {
+  color: #60a5fa;
+  border-bottom-color: #60a5fa;
+}
+
+html.dark .info-card__contacts-link:hover {
+  color: #93c5fd;
+  border-bottom-color: #93c5fd;
+}
+
+/* Фокус для доступности */
+.info-card__phone-link:focus-visible,
+.info-card__contacts-link:focus-visible {
+  outline: 2px solid rgb(var(--accent));
+  outline-offset: 4px;
+  border-radius: 4px;
+}

@@ -1,0 +1,154 @@
+/* === ИМПОРТ ШРИФТОВ === */
+@import url("https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
+
+/* === CSS ПЕРЕМЕННЫЕ === */
+:root {
+  --bg-primary: 8, 12, 20;
+  --bg-secondary: 15, 20, 30;
+  --bg-card: 22, 28, 40;
+  --text-primary: 255, 255, 255;
+  --text-secondary: 170, 180, 200;
+  --accent: 30, 80, 180;
+  --accent-light: 59, 130, 246;
+
+  /* Шрифты */
+  --font-primary:
+    "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-heading: "Space Grotesk", "Inter", sans-serif;
+  --font-accent: "Plus Jakarta Sans", "Inter", sans-serif;
+}
+
+.light {
+  --bg-primary: 248, 250, 252;
+  --bg-secondary: 255, 255, 255;
+  --bg-card: 240, 243, 248;
+  --text-primary: 20, 25, 35;
+  --text-secondary: 100, 115, 140;
+  --accent: 30, 58, 138;
+  --accent-light: 59, 130, 246;
+}
+
+/* === БАЗОВЫЕ СТИЛИ === */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--bg-primary));
+  color: rgb(var(--text-primary));
+  font-family: var(--font-primary);
+  transition:
+    background-color 0.3s ease,
+    color 0.2s ease;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* === ТИПОГРАФИКА === */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.section-title,
+.hero__title,
+.info-card__title,
+.info-card__subtitle,
+.service-card__title {
+  font-family: var(--font-heading);
+}
+
+.btn,
+.service-card__link,
+.hero__buttons a {
+  font-family: var(--font-accent);
+}
+
+/* === КОНТЕЙНЕР === */
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* === ГРАДИЕНТЫ ДЛЯ ШАПКИ === */
+html.light .header__top,
+html.light .header__main {
+  background: linear-gradient(
+    135deg,
+    rgba(240, 248, 255, 0.95) 0%,
+    rgba(255, 255, 255, 0.9) 100%
+  ) !important;
+}
+
+/* === ГРАДИЕНТ ДЛЯ ФУТЕРА === */
+html.light .footer {
+  background: linear-gradient(
+    135deg,
+    rgb(248, 250, 252) 0%,
+    rgb(255, 255, 255) 100%
+  ) !important;
+}
+
+/* === АНИМАЦИИ === */
+@keyframes floatSlow {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+/* === СКРОЛЛБАР === */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(var(--bg-secondary));
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(var(--accent));
+  border-radius: 3px;
+}
+
+/* === ФОКУС ДЛЯ ДОСТУПНОСТИ === */
+*:focus-visible {
+  outline: 2px solid rgb(var(--accent));
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* Для скринридеров */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

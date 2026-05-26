@@ -1,0 +1,13 @@
+/node_modules
+/.next
+/out
+/build
+.DS_Store
+*.log
+.env*.local
+.vercel
+*.tsbuildinfo
+next-env.d.ts
+.env*
+public/video/
+public/video/*.mp4

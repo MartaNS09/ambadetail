@@ -1,0 +1,302 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { MapPin, Phone, Mail, ChevronDown } from "lucide-react";
+import { FaInstagram, FaTiktok } from "react-icons/fa";
+import ThemeToggle from "@/components/ui/ThemeToggle";
+import TimeDisplay from "@/components/ui/TimeDisplay";
+import "./Header.scss";
+
+export default function Header() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  
+
+  // Выпадающее меню для услуг
+  const servicesItems = [
+    {
+      name: "Оклейка антигравийной плёнкой",
+      href: "/uslugi/okleyka-auto-plenkoy",
+    },
+    {
+      name: "Восстановление ЛКП по технологии Refiller F5",
+      href: "/uslugi/vosstanovlenie-lkp",
+    },
+    { name: "Детейлинг химчистка салона", href: "/uslugi/khimchistka-salona" },
+    { name: "Детейлинг полировка авто", href: "/uslugi/polirovka" },
+    {
+      name: "Нанесение защитных покрытий",
+      href: "/uslugi/zashhitnye-pokrytiya",
+    },
+    { name: "Тонировка", href: "/uslugi/tonirovka" },
+    { name: "Химчистка двигателя", href: "/uslugi/detailing-dvigatelya" },
+  ];
+
+  // Открытие при наведении
+  const handleMouseEnter = () => {
+    setIsServicesOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsServicesOpen(false);
+  };
+
+  // Закрываем меню при скролле
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsServicesOpen(false);
+      setIsScrolled(window.scrollY > 20);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Блокировка скролла при открытом бургер-меню
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMenuOpen]);
+
+  const navItems = [
+    { name: "Главная", href: "/" },
+    { name: "Услуги", href: "#", hasDropdown: true },
+    { name: "Портфолио", href: "/portfolio" },
+    { name: "О нас", href: "/about" },
+    { name: "Контакты", href: "/contacts" },
+  ];
+
+  return (
+    <header className={`header ${isScrolled ? "header--scrolled" : ""}`}>
+      <div className="header__top">
+        <div className="container">
+          <div className="header__contacts">
+            <div className="header__contacts-left">
+              <div className="header__address">
+                <MapPin size={14} />
+                <span>210020, г.Витебск, ул.П.Бровки 6 A</span>
+              </div>
+              <a href="tel:+375292230322" className="header__phone-link">
+                <Phone size={14} />
+                <span>+375 29 223 03 22</span>
+              </a>
+            </div>
+            <div className="header__contacts-right">
+              <a
+                href="https://instagram.com/ambadetail"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="header__social-link"
+                aria-label="Instagram"
+              >
+                <FaInstagram size={16} />
+              </a>
+              <a
+                href="https://tiktok.com/@ambadetail"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="header__social-link"
+                aria-label="TikTok"
+              >
+                <FaTiktok size={16} />
+              </a>
+              <TimeDisplay />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="header__main">
+        <div className="container">
+          <div className="header__content">
+            <button
+              className={`header__menu-toggle ${isMenuOpen ? "header__menu-toggle--active" : ""}`}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="Меню"
+            >
+              <span className="header__menu-icon"></span>
+            </button>
+
+            <Link href="/" className="header__logo" aria-label="AMBADETAIL">
+              <div className="header__logo-wrapper">
+                <span className="header__logo-letter">A</span>
+                <span className="header__logo-letter">M</span>
+                <span className="header__logo-letter">B</span>
+                <span className="header__logo-letter">A</span>
+                <span className="header__logo-service">DETAIL</span>
+              </div>
+            </Link>
+
+            <nav className="header__nav" aria-label="Основная навигация">
+              <ul className="header__nav-list">
+                {navItems.map((item) => (
+                  <li
+                    key={item.name}
+                    className="header__nav-item"
+                    onMouseEnter={
+                      item.hasDropdown ? handleMouseEnter : undefined
+                    }
+                    onMouseLeave={
+                      item.hasDropdown ? handleMouseLeave : undefined
+                    }
+                  >
+                    {item.hasDropdown ? (
+                      <>
+                        <button
+                          className={`header__nav-link header__nav-link--dropdown ${isServicesOpen ? "header__nav-link--active" : ""}`}
+                          aria-expanded={isServicesOpen}
+                          aria-haspopup="true"
+                          aria-label="Открыть меню услуг"
+                        >
+                          <span>{item.name}</span>
+                          <ChevronDown
+                            size={14}
+                            className={`header__nav-chevron ${isServicesOpen ? "header__nav-chevron--open" : ""}`}
+                          />
+                        </button>
+                        {isServicesOpen && (
+                          <div
+                            className="header__dropdown"
+                            role="menu"
+                            aria-label="Подменю услуг"
+                          >
+                            <div className="header__dropdown-inner">
+                              {servicesItems.map((subItem) => (
+                                <Link
+                                  key={subItem.href}
+                                  href={subItem.href}
+                                  className="header__dropdown-link"
+                                  role="menuitem"
+                                >
+                                  {subItem.name}
+                                </Link>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </>
+                    ) : (
+                      <Link href={item.href} className="header__nav-link">
+                        <span>{item.name}</span>
+                      </Link>
+                    )}
+                  </li>
+                ))}
+              </ul>
+              <ThemeToggle />
+            </nav>
+
+            <div className="header__mobile-icons">
+              <a
+                href="https://instagram.com/ambadetail"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="header__mobile-icon"
+                aria-label="Instagram"
+              >
+                <FaInstagram size={20} />
+              </a>
+              <a
+                href="https://tiktok.com/@ambadetail"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="header__mobile-icon"
+                aria-label="TikTok"
+              >
+                <FaTiktok size={20} />
+              </a>
+              <ThemeToggle />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <nav
+        className={`header__nav-mobile ${isMenuOpen ? "header__nav-mobile--open" : ""}`}
+      >
+        <div className="container">
+          <div className="header__nav-mobile-inner">
+            {navItems.map((item) => (
+              <div key={item.name}>
+                {item.hasDropdown ? (
+                  <>
+                    <div className="header__mobile-dropdown-title">Услуги</div>
+                    <div className="header__mobile-dropdown">
+                      {servicesItems.map((subItem) => (
+                        <Link
+                          key={subItem.href}
+                          href={subItem.href}
+                          className="header__mobile-dropdown-link"
+                          onClick={() => setIsMenuOpen(false)}
+                        >
+                          {subItem.name}
+                        </Link>
+                      ))}
+                    </div>
+                  </>
+                ) : (
+                  <Link
+                    href={item.href}
+                    className="header__mobile-link"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    <span>{item.name}</span>
+                  </Link>
+                )}
+              </div>
+            ))}
+            <div className="header__mobile-social">
+              <a
+                href="https://instagram.com/ambadetail"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="header__mobile-social-link"
+                aria-label="Instagram"
+              >
+                <FaInstagram size={22} />
+                <span>Instagram</span>
+              </a>
+              <a
+                href="https://tiktok.com/@ambadetail"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="header__mobile-social-link"
+                aria-label="TikTok"
+              >
+                <FaTiktok size={22} />
+                <span>TikTok</span>
+              </a>
+            </div>
+            <a
+              href="tel:+375292230322"
+              className="header__mobile-phone"
+              aria-label="Позвонить"
+            >
+              <Phone size={20} />
+              <span>+375 29 223 03 22</span>
+            </a>
+            <div className="header__mobile-address">
+              <MapPin size={20} />
+              <span>210020, г.Витебск, ул.П.Бровки 6 A</span>
+            </div>
+            <a
+              href="mailto:info@ambadetail.by"
+              className="header__mobile-email"
+              aria-label="Написать письмо"
+            >
+              <Mail size={20} />
+              <span>info@ambadetail.by</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+  );
+}
