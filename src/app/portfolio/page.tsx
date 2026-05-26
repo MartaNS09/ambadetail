@@ -330,7 +330,6 @@
 //     </>
 //   );
 // }
-
 "use client";
 
 import Link from "next/link";
@@ -417,15 +416,6 @@ export default function PortfolioPage() {
   useEffect(() => {
     if (selectedVideo !== null) {
       document.body.style.overflow = "hidden";
-      // Автозапуск видео при открытии модалки (работает на iPhone)
-      setTimeout(() => {
-        if (modalVideoRef.current) {
-          modalVideoRef.current
-            .play()
-            .then(() => setIsVideoPlaying(true))
-            .catch(() => {});
-        }
-      }, 100);
     } else {
       document.body.style.overflow = "";
     }
@@ -450,6 +440,20 @@ export default function PortfolioPage() {
   }, []);
 
   const titleParts = ["AMBADETAIL"];
+
+  // Функция для запуска видео в модалке
+  const handleModalPlay = () => {
+    setTimeout(() => {
+      if (modalVideoRef.current) {
+        modalVideoRef.current
+          .play()
+          .then(() => setIsVideoPlaying(true))
+          .catch((err) => {
+            console.log("Play error:", err);
+          });
+      }
+    }, 100);
+  };
 
   return (
     <>
@@ -589,7 +593,7 @@ export default function PortfolioPage() {
             </div>
           </div>
 
-          {/* МОДАЛЬНОЕ ОКНО - РАБОТАЕТ НА IPHONE, КНОПКА PLAY ИСЧЕЗАЕТ */}
+          {/* МОДАЛЬНОЕ ОКНО - РАБОТАЕТ НА IPHONE */}
           {selectedVideo !== null && (
             <div
               className="portfolio-modal"
@@ -609,7 +613,10 @@ export default function PortfolioPage() {
                 >
                   <X size={24} aria-hidden="true" />
                 </button>
-                <div className="portfolio-modal__video-wrapper">
+                <div
+                  className="portfolio-modal__video-wrapper"
+                  onClick={handleModalPlay}
+                >
                   <video
                     ref={modalVideoRef}
                     key={selectedVideo}
@@ -652,13 +659,13 @@ export default function PortfolioPage() {
           cursor: pointer;
           z-index: 10;
           transition: transform 0.2s ease;
-          pointer-events: auto;
         }
         .portfolio-modal__play-overlay:hover {
           transform: translate(-50%, -50%) scale(1.1);
         }
         .portfolio-modal__video-wrapper {
           position: relative;
+          cursor: pointer;
         }
       `}</style>
     </>
