@@ -20,19 +20,22 @@ export default function Footer() {
   };
 
   const popularServices = [
-    "Детейлинг авто",
-    "Детейлинг двигателя",
-    "Полировка авто",
-    "Защитные покрытия",
-    "Восстановление ЛКП",
-    "Оклейка антигравийной плёнкой",
-    "Тонировка авто",
-    "Химчистка салона",
+    { name: "Детейлинг авто", href: "/uslugi" },
+    { name: "Детейлинг двигателя", href: "/uslugi/detailing-dvigatelya" },
+    { name: "Полировка авто", href: "/uslugi/polirovka" },
+    { name: "Защитные покрытия", href: "/uslugi/zashhitnye-pokrytiya" },
+    { name: "Восстановление ЛКП", href: "/uslugi/vosstanovlenie-lkp" },
+    {
+      name: "Оклейка антигравийной плёнкой",
+      href: "/uslugi/okleyka-auto-plenkoy",
+    },
+    { name: "Тонировка авто", href: "/uslugi/tonirovka" },
+    { name: "Химчистка салона", href: "/uslugi/khimchistka-salona" },
   ];
 
   const quickLinks = [
     { name: "Главная", href: "/", icon: "🏠" },
-    { name: "Все услуги", href: "/services", icon: "🔧" },
+    { name: "Все услуги", href: "/uslugi", icon: "🔧" },
     { name: "Наши работы", href: "/portfolio", icon: "📷" },
     { name: "О компании", href: "/about", icon: "ℹ️" },
     { name: "Контакты", href: "/contacts", icon: "📞" },
@@ -102,9 +105,9 @@ export default function Footer() {
             <ul className="footer__list">
               {popularServices.map((service, idx) => (
                 <li key={idx}>
-                  <Link href="/services" className="footer__link">
+                  <Link href={service.href} className="footer__link">
                     <ChevronRight size={12} />
-                    {service}
+                    {service.name}
                   </Link>
                 </li>
               ))}
@@ -132,7 +135,8 @@ export default function Footer() {
                 href="https://instagram.com/ambadetail"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="footer__social-link" aria-label=""
+                className="footer__social-link"
+                aria-label="Instagram"
               >
                 <FaInstagram size={20} />
               </a>
@@ -140,7 +144,8 @@ export default function Footer() {
                 href="https://tiktok.com/@ambadetail"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="footer__social-link" aria-label=""
+                className="footer__social-link"
+                aria-label="TikTok"
               >
                 <FaTiktok size={20} />
               </a>
@@ -148,7 +153,8 @@ export default function Footer() {
                 href="https://youtube.com/@ambadetail"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="footer__social-link" aria-label=""
+                className="footer__social-link"
+                aria-label="YouTube"
               >
                 <FaYoutube size={20} />
               </a>
@@ -156,7 +162,8 @@ export default function Footer() {
                 href="https://t.me/ambadetail"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="footer__social-link" aria-label=""
+                className="footer__social-link"
+                aria-label="Telegram"
               >
                 <FaTelegramPlane size={20} />
               </a>
@@ -164,7 +171,8 @@ export default function Footer() {
                 href="https://vk.com/ambadetail"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="footer__social-link" aria-label=""
+                className="footer__social-link"
+                aria-label="VK"
               >
                 <FaVk size={20} />
               </a>
@@ -197,7 +205,6 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Платежные системы - исправлено с Image */}
         <div className="footer__payment">
           <h4 className="footer__title">Принимаем к оплате</h4>
           <div className="footer__payment-icons">

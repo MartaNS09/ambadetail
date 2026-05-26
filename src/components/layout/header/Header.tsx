@@ -12,10 +12,13 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
-  
 
   // Выпадающее меню для услуг
   const servicesItems = [
+    {
+      name: "Все услуги",
+      href: "/uslugi",
+    },
     {
       name: "Оклейка антигравийной плёнкой",
       href: "/uslugi/okleyka-auto-plenkoy",
@@ -67,7 +70,7 @@ export default function Header() {
 
   const navItems = [
     { name: "Главная", href: "/" },
-    { name: "Услуги", href: "#", hasDropdown: true },
+    { name: "Услуги", href: "/uslugi", hasDropdown: true },
     { name: "Портфолио", href: "/portfolio" },
     { name: "О нас", href: "/about" },
     { name: "Контакты", href: "/contacts" },
@@ -149,7 +152,8 @@ export default function Header() {
                   >
                     {item.hasDropdown ? (
                       <>
-                        <button
+                        <Link
+                          href={item.href}
                           className={`header__nav-link header__nav-link--dropdown ${isServicesOpen ? "header__nav-link--active" : ""}`}
                           aria-expanded={isServicesOpen}
                           aria-haspopup="true"
@@ -160,12 +164,14 @@ export default function Header() {
                             size={14}
                             className={`header__nav-chevron ${isServicesOpen ? "header__nav-chevron--open" : ""}`}
                           />
-                        </button>
+                        </Link>
                         {isServicesOpen && (
                           <div
                             className="header__dropdown"
                             role="menu"
                             aria-label="Подменю услуг"
+                            onMouseEnter={handleMouseEnter}
+                            onMouseLeave={handleMouseLeave}
                           >
                             <div className="header__dropdown-inner">
                               {servicesItems.map((subItem) => (
@@ -174,6 +180,7 @@ export default function Header() {
                                   href={subItem.href}
                                   className="header__dropdown-link"
                                   role="menuitem"
+                                  onClick={() => setIsServicesOpen(false)}
                                 >
                                   {subItem.name}
                                 </Link>
@@ -227,7 +234,13 @@ export default function Header() {
               <div key={item.name}>
                 {item.hasDropdown ? (
                   <>
-                    <div className="header__mobile-dropdown-title">Услуги</div>
+                    <Link
+                      href={item.href}
+                      className="header__mobile-link"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      <span>{item.name}</span>
+                    </Link>
                     <div className="header__mobile-dropdown">
                       {servicesItems.map((subItem) => (
                         <Link
