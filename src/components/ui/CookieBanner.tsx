@@ -57,8 +57,10 @@ export default function CookieBanner() {
         </div>
         <div className="cookie-banner__text">
           <p>
-            🍪 Мы используем cookie для улучшения работы сайта.
-            <Link href="/privacy"> Подробнее о политике</Link>
+            🍪 Мы используем файлы cookie для улучшения работы сайта, анализа
+            трафика и персонализации контента. Продолжая использовать наш сайт,
+            вы соглашаетесь с использованием cookies в соответствии с нашей
+            <Link href="/privacy"> Политикой использования cookie</Link>.
           </p>
           <div className="cookie-banner__buttons">
             <button onClick={acceptCookies} className="cookie-banner__accept">
