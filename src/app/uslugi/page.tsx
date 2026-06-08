@@ -67,10 +67,116 @@ export default function UslugiPage() {
     years: 0,
   });
 
+  // SEO: устанавливаем все метатеги как на старом сайте
+  useEffect(() => {
+    document.title = "Услуги детейлинг студии в Витебске - Ambadetail";
+
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement("meta");
+      metaDescription.setAttribute("name", "description");
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute(
+      "content",
+      "Услуги профессионального детейлинга в Витебске: оклейка плёнкой, химчистка салона, тонировка, восстановление ЛКП, полировка, детейлинг двигателя. Цены и запись.",
+    );
+
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement("meta");
+      metaKeywords.setAttribute("name", "keywords");
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute(
+      "content",
+      "услуги детейлинг Витебск, детейлинг студия Витебск, оклейка пленкой Витебск, химчистка салона Витебск",
+    );
+
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute("href", "https://ambadetail.vercel.app/uslugi");
+
+    let ogTitle = document.querySelector('meta[property="og:title"]');
+    if (!ogTitle) {
+      ogTitle = document.createElement("meta");
+      ogTitle.setAttribute("property", "og:title");
+      document.head.appendChild(ogTitle);
+    }
+    ogTitle.setAttribute("content", "Услуги детейлинг студии в Витебске");
+
+    let ogDescription = document.querySelector(
+      'meta[property="og:description"]',
+    );
+    if (!ogDescription) {
+      ogDescription = document.createElement("meta");
+      ogDescription.setAttribute("property", "og:description");
+      document.head.appendChild(ogDescription);
+    }
+    ogDescription.setAttribute(
+      "content",
+      "Услуги профессионального детейлинга в Витебске: оклейка плёнкой, химчистка салона, тонировка, восстановление ЛКП, полировка, детейлинг двигателя. Цены и запись.",
+    );
+
+    let ogImage = document.querySelector('meta[property="og:image"]');
+    if (!ogImage) {
+      ogImage = document.createElement("meta");
+      ogImage.setAttribute("property", "og:image");
+      document.head.appendChild(ogImage);
+    }
+    ogImage.setAttribute(
+      "content",
+      "https://ambadetail.vercel.app/images/home1.jpg",
+    );
+
+    let ogUrl = document.querySelector('meta[property="og:url"]');
+    if (!ogUrl) {
+      ogUrl = document.createElement("meta");
+      ogUrl.setAttribute("property", "og:url");
+      document.head.appendChild(ogUrl);
+    }
+    ogUrl.setAttribute("content", "https://ambadetail.vercel.app/uslugi");
+
+    let twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if (!twitterTitle) {
+      twitterTitle = document.createElement("meta");
+      twitterTitle.setAttribute("name", "twitter:title");
+      document.head.appendChild(twitterTitle);
+    }
+    twitterTitle.setAttribute("content", "Услуги детейлинг студии в Витебске");
+
+    let twitterDescription = document.querySelector(
+      'meta[name="twitter:description"]',
+    );
+    if (!twitterDescription) {
+      twitterDescription = document.createElement("meta");
+      twitterDescription.setAttribute("name", "twitter:description");
+      document.head.appendChild(twitterDescription);
+    }
+    twitterDescription.setAttribute(
+      "content",
+      "Услуги профессионального детейлинга в Витебске: оклейка плёнкой, химчистка салона, тонировка, восстановление ЛКП, полировка, детейлинг двигателя. Цены и запись.",
+    );
+
+    let twitterImage = document.querySelector('meta[name="twitter:image"]');
+    if (!twitterImage) {
+      twitterImage = document.createElement("meta");
+      twitterImage.setAttribute("name", "twitter:image");
+      document.head.appendChild(twitterImage);
+    }
+    twitterImage.setAttribute(
+      "content",
+      "https://ambadetail.vercel.app/images/home1.jpg",
+    );
+  }, []);
+
   useEffect(() => {
     const timer1 = setTimeout(() => setIsVisible(true), 100);
 
-    // Анимация счетчиков
     const animateCounts = () => {
       const targets = { cars: 500, guarantee: 100, years: 7 };
       const duration = 2000;
@@ -107,7 +213,6 @@ export default function UslugiPage() {
   return (
     <>
       <section className="uslugi-hero">
-        {/* Фоновое изображение */}
         <div className="uslugi-hero__bg">
           <Image
             src="/images/services/bugatti.webp"
@@ -121,7 +226,6 @@ export default function UslugiPage() {
 
         <div className="container">
           <div className="uslugi-hero__content">
-            {/* Заголовок с анимацией */}
             <h1 className="uslugi-hero__title">
               <div className="uslugi-hero__title-line">
                 <span
@@ -159,7 +263,6 @@ export default function UslugiPage() {
               Профессиональный уход за автомобилем в Витебске
             </p>
 
-            {/* Статистика в красивых карточках */}
             <div
               className={`uslugi-hero__stats ${isVisible ? "uslugi-hero__stats--visible" : ""}`}
             >
@@ -197,7 +300,6 @@ export default function UslugiPage() {
               </div>
             </div>
 
-            {/* Кнопки */}
             <div
               className={`uslugi-hero__buttons ${isVisible ? "uslugi-hero__buttons--visible" : ""}`}
             >

@@ -91,6 +91,119 @@ export default function AboutPage() {
   const mainRef = useRef<HTMLDivElement>(null);
   const imagesRef = useRef<HTMLDivElement>(null);
 
+  // SEO: устанавливаем все метатеги как на старом сайте
+  useEffect(() => {
+    document.title = "О компании — студия детейлинга в Витебске - Ambadetail";
+
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement("meta");
+      metaDescription.setAttribute("name", "description");
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute(
+      "content",
+      "О студии детейлинга Ambadetail в Витебске: химчистка салона, оклейка плёнкой, тонировка, восстановление ЛКП. Опыт и качество работ.",
+    );
+
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement("meta");
+      metaKeywords.setAttribute("name", "keywords");
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute(
+      "content",
+      "детейлинг студия Витебск, о компании детейлинг, Ambadetail Витебск",
+    );
+
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute("href", "https://ambadetail.vercel.app/about");
+
+    let ogTitle = document.querySelector('meta[property="og:title"]');
+    if (!ogTitle) {
+      ogTitle = document.createElement("meta");
+      ogTitle.setAttribute("property", "og:title");
+      document.head.appendChild(ogTitle);
+    }
+    ogTitle.setAttribute(
+      "content",
+      "О компании — студия детейлинга в Витебске",
+    );
+
+    let ogDescription = document.querySelector(
+      'meta[property="og:description"]',
+    );
+    if (!ogDescription) {
+      ogDescription = document.createElement("meta");
+      ogDescription.setAttribute("property", "og:description");
+      document.head.appendChild(ogDescription);
+    }
+    ogDescription.setAttribute(
+      "content",
+      "О студии детейлинга Ambadetail в Витебске: химчистка салона, оклейка плёнкой, тонировка, восстановление ЛКП. Опыт и качество работ.",
+    );
+
+    let ogImage = document.querySelector('meta[property="og:image"]');
+    if (!ogImage) {
+      ogImage = document.createElement("meta");
+      ogImage.setAttribute("property", "og:image");
+      document.head.appendChild(ogImage);
+    }
+    ogImage.setAttribute(
+      "content",
+      "https://ambadetail.vercel.app/images/home1.jpg",
+    );
+
+    let ogUrl = document.querySelector('meta[property="og:url"]');
+    if (!ogUrl) {
+      ogUrl = document.createElement("meta");
+      ogUrl.setAttribute("property", "og:url");
+      document.head.appendChild(ogUrl);
+    }
+    ogUrl.setAttribute("content", "https://ambadetail.vercel.app/about");
+
+    let twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if (!twitterTitle) {
+      twitterTitle = document.createElement("meta");
+      twitterTitle.setAttribute("name", "twitter:title");
+      document.head.appendChild(twitterTitle);
+    }
+    twitterTitle.setAttribute(
+      "content",
+      "О компании — студия детейлинга в Витебске",
+    );
+
+    let twitterDescription = document.querySelector(
+      'meta[name="twitter:description"]',
+    );
+    if (!twitterDescription) {
+      twitterDescription = document.createElement("meta");
+      twitterDescription.setAttribute("name", "twitter:description");
+      document.head.appendChild(twitterDescription);
+    }
+    twitterDescription.setAttribute(
+      "content",
+      "О студии детейлинга Ambadetail в Витебске: химчистка салона, оклейка плёнкой, тонировка, восстановление ЛКП. Опыт и качество работ.",
+    );
+
+    let twitterImage = document.querySelector('meta[name="twitter:image"]');
+    if (!twitterImage) {
+      twitterImage = document.createElement("meta");
+      twitterImage.setAttribute("name", "twitter:image");
+      document.head.appendChild(twitterImage);
+    }
+    twitterImage.setAttribute(
+      "content",
+      "https://ambadetail.vercel.app/images/home1.jpg",
+    );
+  }, []);
+
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100);
     return () => clearTimeout(timer);
@@ -186,7 +299,6 @@ export default function AboutPage() {
 
   return (
     <>
-      {/* Hero секция */}
       <section
         className="about-hero"
         aria-label="О компании Ambadetail — детейлинг студия в Витебске"
@@ -236,7 +348,6 @@ export default function AboutPage() {
 
       <div className="about-content">
         <div className="container">
-          {/* Основной блок о компании - выезжает слева */}
           <div className="about-main">
             <div
               ref={mainRef}
@@ -312,7 +423,6 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Статистика с анимированным счётчиком */}
           <div className="about-stats" ref={statsRef}>
             {stats.map((stat, index) => (
               <div
@@ -335,7 +445,6 @@ export default function AboutPage() {
             ))}
           </div>
 
-          {/* Наши преимущества */}
           <div className="about-advantages">
             <div className="about-advantages__header">
               <span className="about-advantages__badge">Почему мы?</span>
@@ -371,7 +480,6 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Наши ценности */}
           <div className="about-values">
             <div className="about-values__content">
               <span className="about-values__badge">Наши принципы</span>
@@ -422,7 +530,6 @@ export default function AboutPage() {
             </div>
           </div>
 
-          {/* Контакты */}
           <div className="about-contacts">
             <h2 className="about-contacts__title">Свяжитесь с нами</h2>
             <div className="about-contacts__grid">
@@ -466,7 +573,7 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-          {/* CTA Блок */}
+
           <div className="about-cta">
             <h2 className="about-cta__title">
               Готовы доверить нам свой автомобиль?
