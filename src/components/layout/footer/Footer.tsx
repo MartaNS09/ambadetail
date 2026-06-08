@@ -132,7 +132,7 @@ export default function Footer() {
             <h4 className="footer__title">Мы в соцсетях</h4>
             <div className="footer__social">
               <a
-                href="https://instagram.com/ambadetail"
+                href="https://www.instagram.com/ambassador__detailing?igsh=MXRwaXRtaGV4c2hlYg%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer__social-link"
@@ -141,7 +141,7 @@ export default function Footer() {
                 <FaInstagram size={20} />
               </a>
               <a
-                href="https://tiktok.com/@ambadetail"
+                href="https://www.tiktok.com/@ambassador___detailing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer__social-link"
