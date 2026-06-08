@@ -8,12 +8,129 @@ import "./page.scss";
 export default function PortfolioPage() {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState<number | null>(null);
-  const [isVideoPlaying, setIsVideoPlaying] = useState(false); // 👈 НОВОЕ
+  const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   const [loadedVideos, setLoadedVideos] = useState<boolean[]>(
     new Array(10).fill(false),
   );
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const modalVideoRef = useRef<HTMLVideoElement | null>(null);
+
+  // SEO: устанавливаем все метатеги как на старом сайте
+  useEffect(() => {
+    document.title =
+      "Портфолио детейлинг студии в Витебске | Ambadetail - Ambadetail";
+
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement("meta");
+      metaDescription.setAttribute("name", "description");
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute(
+      "content",
+      "Портфолио работ Ambadetail в Витебске: оклейка плёнкой, химчистка салона, тонировка и восстановление ЛКП. Фото и видео выполненных проектов.",
+    );
+
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement("meta");
+      metaKeywords.setAttribute("name", "keywords");
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute(
+      "content",
+      "портфолио детейлинг Витебск, работы детейлинг студии, оклейка авто Витебск, химчистка салона Витебск, тонировка Витебск",
+    );
+
+    let canonicalLink = document.querySelector('link[rel="canonical"]');
+    if (!canonicalLink) {
+      canonicalLink = document.createElement("link");
+      canonicalLink.setAttribute("rel", "canonical");
+      document.head.appendChild(canonicalLink);
+    }
+    canonicalLink.setAttribute(
+      "href",
+      "https://ambadetail.vercel.app/portfolio",
+    );
+
+    let ogTitle = document.querySelector('meta[property="og:title"]');
+    if (!ogTitle) {
+      ogTitle = document.createElement("meta");
+      ogTitle.setAttribute("property", "og:title");
+      document.head.appendChild(ogTitle);
+    }
+    ogTitle.setAttribute(
+      "content",
+      "Портфолио детейлинг студии в Витебске | Ambadetail",
+    );
+
+    let ogDescription = document.querySelector(
+      'meta[property="og:description"]',
+    );
+    if (!ogDescription) {
+      ogDescription = document.createElement("meta");
+      ogDescription.setAttribute("property", "og:description");
+      document.head.appendChild(ogDescription);
+    }
+    ogDescription.setAttribute(
+      "content",
+      "Портфолио работ Ambadetail в Витебске: оклейка плёнкой, химчистка салона, тонировка и восстановление ЛКП. Фото и видео выполненных проектов.",
+    );
+
+    let ogImage = document.querySelector('meta[property="og:image"]');
+    if (!ogImage) {
+      ogImage = document.createElement("meta");
+      ogImage.setAttribute("property", "og:image");
+      document.head.appendChild(ogImage);
+    }
+    ogImage.setAttribute(
+      "content",
+      "https://ambadetail.vercel.app/images/home1.jpg",
+    );
+
+    let ogUrl = document.querySelector('meta[property="og:url"]');
+    if (!ogUrl) {
+      ogUrl = document.createElement("meta");
+      ogUrl.setAttribute("property", "og:url");
+      document.head.appendChild(ogUrl);
+    }
+    ogUrl.setAttribute("content", "https://ambadetail.vercel.app/portfolio");
+
+    let twitterTitle = document.querySelector('meta[name="twitter:title"]');
+    if (!twitterTitle) {
+      twitterTitle = document.createElement("meta");
+      twitterTitle.setAttribute("name", "twitter:title");
+      document.head.appendChild(twitterTitle);
+    }
+    twitterTitle.setAttribute(
+      "content",
+      "Портфолио детейлинг студии в Витебске | Ambadetail",
+    );
+
+    let twitterDescription = document.querySelector(
+      'meta[name="twitter:description"]',
+    );
+    if (!twitterDescription) {
+      twitterDescription = document.createElement("meta");
+      twitterDescription.setAttribute("name", "twitter:description");
+      document.head.appendChild(twitterDescription);
+    }
+    twitterDescription.setAttribute(
+      "content",
+      "Портфолио работ Ambadetail в Витебске: оклейка плёнкой, химчистка салона, тонировка и восстановление ЛКП. Фото и видео выполненных проектов.",
+    );
+
+    let twitterImage = document.querySelector('meta[name="twitter:image"]');
+    if (!twitterImage) {
+      twitterImage = document.createElement("meta");
+      twitterImage.setAttribute("name", "twitter:image");
+      document.head.appendChild(twitterImage);
+    }
+    twitterImage.setAttribute(
+      "content",
+      "https://ambadetail.vercel.app/images/home1.jpg",
+    );
+  }, []);
 
   useEffect(() => {
     const timer = setTimeout(() => setIsVisible(true), 100);
@@ -37,7 +154,7 @@ export default function PortfolioPage() {
   );
 
   const handleVideoClick = useCallback((index: number) => {
-    setIsVideoPlaying(false); // 👈 НОВОЕ
+    setIsVideoPlaying(false);
     setSelectedVideo(index);
   }, []);
 
@@ -45,7 +162,7 @@ export default function PortfolioPage() {
     if (modalVideoRef.current) {
       modalVideoRef.current.pause();
     }
-    setIsVideoPlaying(false); // 👈 НОВОЕ
+    setIsVideoPlaying(false);
     setSelectedVideo(null);
   }, []);
 
