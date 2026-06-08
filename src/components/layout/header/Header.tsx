@@ -109,7 +109,7 @@ export default function Header() {
             </div>
             <div className="header__contacts-right">
               <a
-                href="https://instagram.com/ambadetail"
+                href="https://www.instagram.com/ambassador__detailing?igsh=MXRwaXRtaGV4c2hlYg%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="header__social-link"
@@ -118,7 +118,7 @@ export default function Header() {
                 <FaInstagram size={16} />
               </a>
               <a
-                href="https://tiktok.com/@ambadetail"
+                href="https://www.tiktok.com/@ambassador___detailing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="header__social-link"
@@ -218,7 +218,7 @@ export default function Header() {
 
             <div className="header__mobile-icons">
               <a
-                href="https://instagram.com/ambadetail"
+                href="https://www.instagram.com/ambassador__detailing?igsh=MXRwaXRtaGV4c2hlYg%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="header__mobile-icon"
@@ -227,7 +227,7 @@ export default function Header() {
                 <FaInstagram size={20} />
               </a>
               <a
-                href="https://tiktok.com/@ambadetail"
+                href="https://www.tiktok.com/@ambassador___detailing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="header__mobile-icon"
@@ -283,7 +283,7 @@ export default function Header() {
             ))}
             <div className="header__mobile-social">
               <a
-                href="https://instagram.com/ambadetail"
+                href="https://www.instagram.com/ambassador__detailing?igsh=MXRwaXRtaGV4c2hlYg%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="header__mobile-social-link"
@@ -293,7 +293,7 @@ export default function Header() {
                 <span>Instagram</span>
               </a>
               <a
-                href="https://tiktok.com/@ambadetail"
+                href="https://www.tiktok.com/@ambassador___detailing"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="header__mobile-social-link"
