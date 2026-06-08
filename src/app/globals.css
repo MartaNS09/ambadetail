@@ -152,3 +152,8 @@ html.light .footer {
   white-space: nowrap;
   border: 0;
 }
+
+/* Обеспечиваем, чтобы выпадающее меню было поверх всего */
+.header__dropdown {
+  z-index: 9999 !important;
+}
