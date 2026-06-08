@@ -13,6 +13,7 @@ export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
 
   // Выпадающее меню для услуг
   const servicesItems = [
@@ -50,7 +51,7 @@ export default function Header() {
   const handleMouseLeave = () => {
     closeTimeoutRef.current = setTimeout(() => {
       setIsServicesOpen(false);
-    }, 200);
+    }, 150);
   };
 
   // Закрываем меню при скролле
@@ -61,6 +62,21 @@ export default function Header() {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // Закрываем меню при клике вне его области
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(event.target as Node)
+      ) {
+        setIsServicesOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   // Блокировка скролла при открытом бургер-меню
@@ -167,7 +183,13 @@ export default function Header() {
                     }
                   >
                     {item.hasDropdown ? (
-                      <>
+                      <div
+                        ref={dropdownRef}
+                        style={{
+                          position: "relative",
+                          display: "inline-block",
+                        }}
+                      >
                         <Link
                           href={item.href}
                           className={`header__nav-link header__nav-link--dropdown ${isServicesOpen ? "header__nav-link--active" : ""}`}
@@ -204,7 +226,7 @@ export default function Header() {
                             </div>
                           </div>
                         )}
-                      </>
+                      </div>
                     ) : (
                       <Link href={item.href} className="header__nav-link">
                         <span>{item.name}</span>
