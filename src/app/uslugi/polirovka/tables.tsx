@@ -36,7 +36,7 @@ export const PriceTable = () => (
             </td>
           </tr>
           <tr>
-            <td className="text-left"> </td>
+            <td className="text-left">1</td>
             <td className="text-left">
               КОМПЛЕКСНАЯ ПОЛИРОВКА АВТОМОБИЛЯ (Мойка кузова с предварительной
               глубокой очисткой ЛКП и с разбором/сбором под полировку)
@@ -48,7 +48,7 @@ export const PriceTable = () => (
             <td className="price">от 800</td>
           </tr>
           <tr>
-            <td className="text-left"> </td>
+            <td className="text-left">2</td>
             <td className="text-left">
               Восстановление глянца кузова (мягкая полировка)
             </td>
@@ -59,7 +59,7 @@ export const PriceTable = () => (
             <td className="price">600</td>
           </tr>
           <tr>
-            <td className="text-left"> </td>
+            <td className="text-left">3</td>
             <td className="text-left">Полировка кузова в пленке</td>
             <td className="price">868</td>
             <td className="price">1 042</td>
@@ -68,7 +68,7 @@ export const PriceTable = () => (
             <td className="price">1 172</td>
           </tr>
           <tr>
-            <td className="text-left"> </td>
+            <td className="text-left">4</td>
             <td className="text-left">
               Абразивная полировка 1 детали (капот, крыша, крышка багажника,
               дверь, бампер, крыло, порог и др.)
@@ -80,7 +80,7 @@ export const PriceTable = () => (
             <td className="price">282</td>
           </tr>
           <tr>
-            <td className="text-left"> </td>
+            <td className="text-left">5</td>
             <td className="text-left">Полировка фар (за пару)</td>
             <td className="price" colSpan={2}>
               65
@@ -90,7 +90,7 @@ export const PriceTable = () => (
             </td>
           </tr>
           <tr>
-            <td className="text-left"> </td>
+            <td className="text-left">6</td>
             <td className="text-left">Полировка боковых зеркал (2 шт.)</td>
             <td className="price" colSpan={3}>
               65
@@ -100,7 +100,7 @@ export const PriceTable = () => (
             </td>
           </tr>
           <tr>
-            <td className="text-left"> </td>
+            <td className="text-left">7</td>
             <td className="text-left">Полировка лобового или заднего стекла</td>
             <td className="price" colSpan={5}>
               от 217
