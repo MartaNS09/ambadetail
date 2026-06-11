@@ -469,7 +469,7 @@ export const metadata: Metadata = {
     description:
       "Реальные работы детейлинг студии Ambadetail в Витебске. Фото и видео до/после.",
     url: "https://ambadetail.vercel.app/portfolio",
-    images: ["/images/home1.jpg"],
+    images: ["/images/og-image.jpg"], // ✅ ЭТА КАРТИНКА ЕСТЬ!
   },
   alternates: {
     canonical: "https://ambadetail.vercel.app/portfolio",
