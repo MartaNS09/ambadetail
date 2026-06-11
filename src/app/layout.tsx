@@ -5,6 +5,7 @@ import Footer from "@/components/layout/footer/Footer";
 import CookieBanner from "@/components/ui/CookieBanner";
 import Script from "next/script";
 import "./globals.css";
+import MobileBottomNav from "@/components/layout/mobile/MobileBottomNav";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ambadetail.vercel.app"),
@@ -124,6 +125,7 @@ export default function RootLayout({
             {children}
           </main>
           <Footer />
+          <MobileBottomNav />
           <CookieBanner />
         </ThemeProvider>
       </body>

@@ -1,0 +1,134 @@
+.mobile-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  display: none;
+  z-index: 1000;
+  background: rgba(var(--bg-primary), 0.95);
+  backdrop-filter: blur(20px);
+  border-top: 1px solid rgba(var(--accent), 0.15);
+  padding: 0.5rem 0.75rem;
+  padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px));
+
+  @media (max-width: 768px) {
+    display: block;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem 0.75rem;
+    text-decoration: none;
+    border-radius: 40px;
+    transition: all 0.2s ease;
+    position: relative;
+    flex: 1;
+    max-width: 80px;
+
+    &:active {
+      transform: scale(0.95);
+      background: rgba(var(--accent), 0.1);
+    }
+  }
+
+  &__icon {
+    color: rgb(var(--text-secondary));
+    transition: all 0.2s ease;
+
+    &--active {
+      color: rgb(var(--accent-light));
+      filter: drop-shadow(0 0 4px rgba(var(--accent-light), 0.4));
+    }
+  }
+
+  &__label {
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: rgb(var(--text-secondary));
+    transition: all 0.2s ease;
+  }
+
+  &__item--active &__label {
+    color: rgb(var(--accent-light));
+    font-weight: 600;
+  }
+
+  &__active-dot {
+    position: absolute;
+    bottom: -2px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 4px;
+    background: rgb(var(--accent-light));
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+
+  &__item--active &__active-dot {
+    opacity: 1;
+  }
+}
+
+/* Светлая тема */
+html.light .mobile-bottom-nav {
+  background: rgba(255, 255, 255, 0.95);
+  border-top-color: rgba(0, 0, 0, 0.1);
+}
+
+html.light .mobile-bottom-nav__icon {
+  color: #64748b;
+}
+
+html.light .mobile-bottom-nav__icon--active {
+  color: #dc2626;
+}
+
+html.light .mobile-bottom-nav__label {
+  color: #64748b;
+}
+
+html.light .mobile-bottom-nav__item--active .mobile-bottom-nav__label {
+  color: #dc2626;
+}
+
+html.light .mobile-bottom-nav__active-dot {
+  background: #dc2626;
+}
+
+/* Темная тема */
+html.dark .mobile-bottom-nav {
+  background: rgba(10, 15, 25, 0.95);
+  border-top-color: rgba(255, 255, 255, 0.08);
+}
+
+html.dark .mobile-bottom-nav__icon {
+  color: #94a3b8;
+}
+
+html.dark .mobile-bottom-nav__icon--active {
+  color: #3b82f6;
+}
+
+html.dark .mobile-bottom-nav__label {
+  color: #94a3b8;
+}
+
+html.dark .mobile-bottom-nav__item--active .mobile-bottom-nav__label {
+  color: #3b82f6;
+}
+
+html.dark .mobile-bottom-nav__active-dot {
+  background: #3b82f6;
+}
