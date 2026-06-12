@@ -9,8 +9,9 @@ export default function PortfolioClient() {
   const [isVisible, setIsVisible] = useState(false);
   const [selectedVideo, setSelectedVideo] = useState<number | null>(null);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
+  // Массив на 17 видео
   const [loadedVideos, setLoadedVideos] = useState<boolean[]>(
-    new Array(10).fill(false),
+    new Array(17).fill(false),
   );
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const modalVideoRef = useRef<HTMLVideoElement | null>(null);
@@ -20,6 +21,7 @@ export default function PortfolioClient() {
     return () => clearTimeout(timer);
   }, []);
 
+  // 17 видео
   const portfolioItems = useMemo(
     () => [
       { id: 0, src: "/video/test1.mp4", title: "Детейлинг автомобиля 1" },
@@ -32,6 +34,13 @@ export default function PortfolioClient() {
       { id: 7, src: "/video/test8.mp4", title: "Детейлинг автомобиля 8" },
       { id: 8, src: "/video/test9.mp4", title: "Детейлинг автомобиля 9" },
       { id: 9, src: "/video/test10.mp4", title: "Детейлинг автомобиля 10" },
+      { id: 10, src: "/video/test11.mp4", title: "Детейлинг автомобиля 11" },
+      { id: 11, src: "/video/test12.mp4", title: "Детейлинг автомобиля 12" },
+      { id: 12, src: "/video/test13.mp4", title: "Детейлинг автомобиля 13" },
+      { id: 13, src: "/video/test14.mp4", title: "Детейлинг автомобиля 14" },
+      { id: 14, src: "/video/test15.mp4", title: "Детейлинг автомобиля 15" },
+      { id: 15, src: "/video/test16.mp4", title: "Детейлинг автомобиля 16" },
+      { id: 16, src: "/video/test17.mp4", title: "Детейлинг автомобиля 17" },
     ],
     [],
   );
