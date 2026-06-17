@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     title: "Ambadetail - Детейлинг студия в Витебске",
     description:
       "Профессиональный уход за автомобилем: от химчистки до оклейки защитной плёнкой",
-    url: "https://ambadetail.vercel.app",
+    url: "https://ambadetail.by",
     siteName: "Ambadetail",
     locale: "ru_RU",
     type: "website",
