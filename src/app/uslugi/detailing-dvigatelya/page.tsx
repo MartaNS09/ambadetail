@@ -622,11 +622,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Детейлинг двигателя в Витебске | Ambadetail",
     description: "Профессиональная чистка двигателя автомобиля в Витебске.",
-    url: "https://ambadetail.vercel.app/uslugi/detailing-dvigatelya",
+    url: "https://ambadetail.by/uslugi/detailing-dvigatelya",
     images: ["/images/services/detailing_dvigatelya.webp"],
   },
   alternates: {
-    canonical: "https://ambadetail.vercel.app/uslugi/detailing-dvigatelya",
+    canonical: "https://ambadetail.by/uslugi/detailing-dvigatelya",
   },
 };
 

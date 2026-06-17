@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Контакты детейлинг студии в Витебске | Ambadetail",
     description: "Свяжитесь с нами: адрес, телефон, время работы.",
-    url: "https://ambadetail.vercel.app/contacts",
+    url: "https://ambadetail.by/contacts",
     images: ["/images/home1.jpg"],
   },
   alternates: {
-    canonical: "https://ambadetail.vercel.app/contacts",
+    canonical: "https://ambadetail.by/contacts",
   },
 };
 

@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Оклейка авто плёнкой в Витебске | Ambadetail",
     description: "Защита кузова антигравийной плёнкой в Витебске.",
-    url: "https://ambadetail.vercel.app/uslugi/okleyka-auto-plenkoy",
+    url: "https://ambadetail.by/uslugi/okleyka-auto-plenkoy",
     images: ["/images/services/vinil.webp"],
   },
   alternates: {
-    canonical: "https://ambadetail.vercel.app/uslugi/okleyka-auto-plenkoy",
+    canonical: "https://ambadetail.by/uslugi/okleyka-auto-plenkoy",
   },
 };
 

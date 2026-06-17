@@ -11,11 +11,11 @@ export const metadata: Metadata = {
     title: "Портфолио детейлинг студии в Витебске | Ambadetail",
     description:
       "Реальные работы детейлинг студии Ambadetail в Витебске. Фото и видео до/после.",
-    url: "https://ambadetail.vercel.app/portfolio",
+    url: "https://ambadetail.by/portfolio",
     images: ["/images/og-image.jpg"], // ✅ ЭТА КАРТИНКА ЕСТЬ!
   },
   alternates: {
-    canonical: "https://ambadetail.vercel.app/portfolio",
+    canonical: "https://ambadetail.by/portfolio",
   },
 };
 

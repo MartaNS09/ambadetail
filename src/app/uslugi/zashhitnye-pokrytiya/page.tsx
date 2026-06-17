@@ -11,11 +11,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Защитные покрытия для автомобиля в Витебске | Ambadetail",
     description: "Профессиональное нанесение защитных покрытий в Витебске.",
-    url: "https://ambadetail.vercel.app/uslugi/zashhitnye-pokrytiya",
+    url: "https://ambadetail.by/uslugi/zashhitnye-pokrytiya",
     images: ["/images/services/lamba.webp"],
   },
   alternates: {
-    canonical: "https://ambadetail.vercel.app/uslugi/zashhitnye-pokrytiya",
+    canonical: "https://ambadetail.by/uslugi/zashhitnye-pokrytiya",
   },
 };
 

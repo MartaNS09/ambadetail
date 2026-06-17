@@ -11,11 +11,11 @@ export const metadata: Metadata = {
     title: "Восстановление ЛКП в Витебске | Ambadetail",
     description:
       "Восстановление лакокрасочного покрытия по технологии Refiller F5.",
-    url: "https://ambadetail.vercel.app/uslugi/vosstanovlenie-lkp",
+    url: "https://ambadetail.by/uslugi/vosstanovlenie-lkp",
     images: ["/images/services/bugatti.webp"],
   },
   alternates: {
-    canonical: "https://ambadetail.vercel.app/uslugi/vosstanovlenie-lkp",
+    canonical: "https://ambadetail.by/uslugi/vosstanovlenie-lkp",
   },
 };
 

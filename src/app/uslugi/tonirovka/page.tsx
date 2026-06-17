@@ -11,11 +11,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Тонировка авто в Витебске | Ambadetail",
     description: "Качественная тонировка автомобиля в Витебске.",
-    url: "https://ambadetail.vercel.app/uslugi/tonirovka",
+    url: "https://ambadetail.by/uslugi/tonirovka",
     images: ["/images/services/tonirovka.webp"],
   },
   alternates: {
-    canonical: "https://ambadetail.vercel.app/uslugi/tonirovka",
+    canonical: "https://ambadetail.by/uslugi/tonirovka",
   },
 };
 

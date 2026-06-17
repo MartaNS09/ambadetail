@@ -8,7 +8,7 @@ import "./globals.css";
 import MobileBottomNav from "@/components/layout/mobile/MobileBottomNav";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://ambadetail.vercel.app"),
+  metadataBase: new URL("https://ambadetail.by"),
   title: {
     default: "Ambadetail | Детейлинг студия в Витебске",
     template: "%s | Ambadetail",

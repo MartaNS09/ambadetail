@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Химчистка салона в Витебске | Ambadetail",
     description: "Глубокая чистка салона автомобиля в Витебске.",
-    url: "https://ambadetail.vercel.app/uslugi/khimchistka-salona",
+    url: "https://ambadetail.by/uslugi/khimchistka-salona",
     images: ["/images/services/salon.webp"],
   },
   alternates: {
-    canonical: "https://ambadetail.vercel.app/uslugi/khimchistka-salona",
+    canonical: "https://ambadetail.by/uslugi/khimchistka-salona",
   },
 };
 

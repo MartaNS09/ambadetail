@@ -11,11 +11,11 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Полировка авто в Витебске | Ambadetail",
     description: "Профессиональная полировка кузова автомобиля в Витебске.",
-    url: "https://ambadetail.vercel.app/uslugi/polirovka",
+    url: "https://ambadetail.by/uslugi/polirovka",
     images: ["/images/services/polirovka_kuzova.webp"],
   },
   alternates: {
-    canonical: "https://ambadetail.vercel.app/uslugi/polirovka",
+    canonical: "https://ambadetail.by/uslugi/polirovka",
   },
 };
 
