@@ -11,7 +11,6 @@ export default function Home() {
   const [isSubtitleVisible, setIsSubtitleVisible] = useState(false);
   const [isButtonsVisible, setIsButtonsVisible] = useState(false);
 
-  // ТОЛЬКО АНИМАЦИИ - метатеги УДАЛЕНЫ
   useEffect(() => {
     const timer1 = setTimeout(() => setIsVisible(true), 50);
     const timer2 = setTimeout(() => setIsSubtitleVisible(true), 300);
@@ -23,7 +22,6 @@ export default function Home() {
     };
   }, []);
 
-  // Первые 2 карточки
   const firstRowServices = [
     {
       title: "Химчистка салона",
@@ -39,7 +37,6 @@ export default function Home() {
     },
   ];
 
-  // Вторые 2 карточки
   const secondRowServices = [
     {
       title: "Детейлинг двигателя",
@@ -55,7 +52,6 @@ export default function Home() {
     },
   ];
 
-  // Последние 3 карточки
   const thirdRowServices = [
     {
       title: "Восстановление ЛКП",
@@ -89,52 +85,99 @@ export default function Home() {
       >
         <div className="hero__bg"></div>
         <div className="hero__overlay"></div>
+
         <div className="container hero__container">
           <div className="hero__content">
             <h1 className="hero__title">
-              {titleLettersBefore.map((letter, index) => (
+              {/* Скрытый текст для поисковиков */}
+              <span className="sr-only">
+                Детейлинг студия Ambadetail в Витебске — полировка, химчистка,
+                оклейка пленкой и защитные покрытия
+              </span>
+
+              {/* Анимированные буквы для пользователей */}
+              <span aria-hidden="true">
+                {titleLettersBefore.map((letter, index) => (
+                  <span
+                    key={`before-${index}`}
+                    className={`hero__title-letter ${isVisible ? "hero__title-letter--visible" : ""}`}
+                    style={{ transitionDelay: `${index * 0.02}s` }}
+                  >
+                    {letter === " " ? "\u00A0" : letter}
+                  </span>
+                ))}
+                <span className="hero__title-space"> </span>
                 <span
-                  key={`before-${index}`}
-                  className={`hero__title-letter ${isVisible ? "hero__title-letter--visible" : ""}`}
-                  style={{ transitionDelay: `${index * 0.02}s` }}
+                  className={`hero__title-word ${isVisible ? "hero__title-word--visible" : ""}`}
+                  style={{
+                    transitionDelay: `${titleLettersBefore.length * 0.02}s`,
+                  }}
                 >
-                  {letter === " " ? "\u00A0" : letter}
+                  {vitebsk}
                 </span>
-              ))}
-              <span className="hero__title-space"> </span>
-              <span
-                className={`hero__title-word ${isVisible ? "hero__title-word--visible" : ""}`}
-                style={{
-                  transitionDelay: `${titleLettersBefore.length * 0.02}s`,
-                }}
-              >
-                {vitebsk}
               </span>
             </h1>
+
+            {/* ПОДЗАГОЛОВОК */}
             <p
               className={`hero__subtitle ${isSubtitleVisible ? "hero__subtitle--visible" : ""}`}
             >
-              Полный комплекс услуг по уходу за автомобилем: от химчистки салона
-              до оклейки защитной плёнкой
+              <strong>Профессиональный детейлинг в Витебске</strong> —&nbsp;
+              <span className="hero__subtitle-highlight">химчистка салона</span>
+              ,&nbsp;
+              <span className="hero__subtitle-highlight">полировка кузова</span>
+              ,&nbsp;
+              <span className="hero__subtitle-highlight">
+                оклейка антигравийной пленкой
+              </span>
+              &nbsp; и&nbsp;
+              <span className="hero__subtitle-highlight">
+                защитные покрытия
+              </span>
+              &nbsp; для вашего автомобиля. Работаем в Витебске ежедневно.
             </p>
-            <div
-              className={`hero__buttons ${isButtonsVisible ? "hero__buttons--visible" : ""}`}
-            >
-              <Link
-                href="#services"
-                className="btn btn--primary"
-                aria-label="Перейти к списку услуг"
-              >
-                Наши услуги
-                <ArrowRight size={18} />
-              </Link>
-              <Link
-                href="/contacts"
-                className="btn btn--outline"
-                aria-label="Перейти на страницу контактов"
-              >
-                Связаться
-              </Link>
+
+            {/* КНОПКИ + БЛОК С АДРЕСОМ */}
+            <div className="hero__bottom-row">
+              <div className="hero__buttons-wrapper">
+                <div
+                  className={`hero__buttons ${isButtonsVisible ? "hero__buttons--visible" : ""}`}
+                >
+                  <Link
+                    href="#services"
+                    className="btn btn--primary"
+                    aria-label="Перейти к списку услуг"
+                  >
+                    Наши услуги
+                    <ArrowRight size={18} />
+                  </Link>
+                  <Link
+                    href="/contacts"
+                    className="btn btn--outline"
+                    aria-label="Перейти на страницу контактов"
+                  >
+                    Связаться
+                  </Link>
+                </div>
+
+                {/* Блок с адресом */}
+                <div className="hero__info-block">
+                  <div className="hero__info-item">
+                    <span className="hero__info-icon">📍</span>
+                    <span>ул. П. Бровки, 6А</span>
+                  </div>
+                  <div className="hero__info-item">
+                    <span className="hero__info-icon">⏰</span>
+                    <span>10:00–19:00</span>
+                  </div>
+                  <div className="hero__info-item">
+                    <span className="hero__info-icon">📞</span>
+                    <a href="tel:+375292230322" className="hero__info-phone">
+                      +375 29 223 03 22
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>

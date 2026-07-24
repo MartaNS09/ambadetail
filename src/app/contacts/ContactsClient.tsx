@@ -2,8 +2,22 @@
 
 import Image from "next/image";
 import { useState, useEffect } from "react";
-import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from "lucide-react";
-import { FaInstagram, FaTiktok } from "react-icons/fa";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Clock,
+  Send,
+  CheckCircle,
+  ArrowRight,
+} from "lucide-react";
+import {
+  FaInstagram,
+  FaTiktok,
+  FaYoutube,
+  FaTelegram,
+  FaVk,
+} from "react-icons/fa";
 import "./page.scss";
 
 export default function ContactsClient() {
@@ -333,24 +347,105 @@ export default function ContactsClient() {
                     <FaTiktok size={20} />
                     <span>TikTok</span>
                   </a>
+                  <a
+                    href="https://youtube.com/@ambadetail"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contacts-social__link"
+                    aria-label="YouTube"
+                  >
+                    <FaYoutube size={20} />
+                    <span>YouTube</span>
+                  </a>
+                  <a
+                    href="https://t.me/ambadetail"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contacts-social__link"
+                    aria-label="Telegram"
+                  >
+                    <FaTelegram size={20} />
+                    <span>Telegram</span>
+                  </a>
+                  <a
+                    href="https://vk.com/ambadetail"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="contacts-social__link"
+                    aria-label="VK"
+                  >
+                    <FaVk size={20} />
+                    <span>VK</span>
+                  </a>
                 </div>
               </div>
             </div>
           </div>
 
+          {/* НОВЫЙ БЛОК С КАРТОЙ — УЛУЧШЕННЫЙ */}
           <div className="contacts-map">
-            <h2 className="contacts-map__title">Как нас найти</h2>
+            <div className="contacts-map__header">
+              <h2 className="contacts-map__title">Как нас найти</h2>
+              <p className="contacts-map__subtitle">
+                <span className="contacts-map__highlight">📍 Ориентир:</span>{" "}
+                ул. П. Бровки, 6А, Витебск
+              </p>
+              <p className="contacts-map__subtitle">
+                <span className="contacts-map__highlight">
+                  ⏰ Режим работы:
+                </span>{" "}
+                Пн–Пт 10:00–19:00, Сб–Вс 10:00–17:00
+              </p>
+            </div>
+
             <div className="contacts-map__wrapper">
               <iframe
-                src="https://yandex.by/map-widget/v1/?um=constructor%3A5a3b5a3b5a3b5a3b5a3b5a3b5a3b5a3b&source=constructor"
+                src="https://yandex.by/map-widget/v1/?um=constructor%3ACTbx5Viq&source=constructor"
                 width="100%"
-                height="450"
+                height="420"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 title="Карта проезда в детейлинг студию Ambadetail в Витебске"
                 aria-label="Карта с адресом: Витебск, улица П. Бровки, 6А"
-              ></iframe>
+              />
+            </div>
+
+            {/* КНОПКИ ПОД КАРТОЙ */}
+            <div className="contacts-map__actions">
+              <a
+                href="https://yandex.by/map-widget/v1/?um=constructor%3ACTbx5Viq&source=constructor"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contacts-map__btn contacts-map__btn--outline"
+                aria-label="Открыть карту в Яндексе"
+              >
+                <span className="contacts-map__btn-icon">🗺️</span>
+                Открыть карту в Яндекс
+              </a>
+              <a
+                href="https://yandex.by/maps/?rtext=~Витебск, улица Петруся Бровки, 6А&rtt=auto"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="contacts-map__btn contacts-map__btn--primary"
+                aria-label="Проложить маршрут в Яндекс Картах"
+              >
+                <span className="contacts-map__btn-icon">🧭</span>
+                Проложить маршрут
+                <ArrowRight size={16} />
+              </a>
+            </div>
+
+            {/* ДОПОЛНИТЕЛЬНАЯ ИНФОРМАЦИЯ */}
+            <div className="contacts-map__info">
+              <div className="contacts-map__info-item">
+                <span className="contacts-map__info-icon">🚗</span>
+                <span>Бесплатная парковка на территории</span>
+              </div>
+              <div className="contacts-map__info-item">
+                <span className="contacts-map__info-icon">♿</span>
+                <span>Доступ для маломобильных клиентов</span>
+              </div>
             </div>
           </div>
         </div>

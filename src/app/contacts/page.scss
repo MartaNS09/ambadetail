@@ -537,3 +537,248 @@ body {
     padding: 1.5rem;
   }
 }
+
+// ========== УЛУЧШЕННЫЙ БЛОК С КАРТОЙ ==========
+.contacts-map {
+  margin-top: 4rem;
+  padding: 2rem;
+  background: rgba(var(--bg-card), 0.3);
+  backdrop-filter: blur(10px);
+  border-radius: 1.5rem;
+  border: 1px solid rgba(var(--accent), 0.1);
+
+  &__header {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  &__title {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+    background: linear-gradient(
+      135deg,
+      rgb(var(--text-primary)),
+      rgb(var(--accent-light))
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+
+  &__subtitle {
+    font-size: 1rem;
+    color: rgb(var(--text-secondary));
+    margin-bottom: 0.3rem;
+    line-height: 1.6;
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
+
+  &__highlight {
+    font-weight: 600;
+    color: rgb(var(--text-primary));
+  }
+
+  &__wrapper {
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 1px solid rgba(var(--accent), 0.15);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: 420px;
+
+      @media (max-width: 768px) {
+        height: 300px;
+      }
+
+      @media (max-width: 480px) {
+        height: 250px;
+      }
+    }
+  }
+
+  &__actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.75rem 1.8rem;
+    border-radius: 9999px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    &--primary {
+      background: linear-gradient(135deg, #dc2626, #ef4444);
+      color: white;
+      border: none;
+      box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+
+      &:hover {
+        box-shadow: 0 8px 25px rgba(220, 38, 38, 0.4);
+        transform: translateY(-2px);
+      }
+    }
+
+    &--outline {
+      background: transparent;
+      color: rgb(var(--text-primary));
+      border: 2px solid rgba(var(--accent), 0.25);
+
+      &:hover {
+        border-color: #dc2626;
+        color: #dc2626;
+        background: rgba(220, 38, 38, 0.05);
+      }
+    }
+  }
+
+  &__btn-icon {
+    font-size: 1.1rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem 2.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(var(--accent), 0.1);
+  }
+
+  &__info-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: rgb(var(--text-secondary));
+  }
+
+  &__info-icon {
+    font-size: 1.2rem;
+  }
+
+  @media (max-width: 768px) {
+    padding: 1.5rem;
+
+    &__title {
+      font-size: 1.5rem;
+    }
+
+    &__actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    &__btn {
+      justify-content: center;
+      padding: 0.7rem 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    &__info {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.75rem;
+    }
+  }
+}
+
+// ========== ОБНОВЛЕННЫЙ БЛОК В HERO (компактный) ==========
+// Эти стили уже есть в page.scss, но если нужно — вот они:
+.hero {
+  &__info-block {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem 1.5rem;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(8px);
+    padding: 8px 16px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    margin-top: 0.5rem;
+
+    @media (min-width: 768px) {
+      padding: 6px 18px;
+      margin-top: 0;
+    }
+  }
+
+  &__info-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 12px;
+    white-space: nowrap;
+
+    @media (min-width: 768px) {
+      font-size: 13px;
+    }
+  }
+
+  &__info-icon {
+    font-size: 13px;
+    opacity: 0.7;
+  }
+
+  &__info-phone {
+    color: #ef4444;
+    font-weight: 600;
+    text-decoration: none;
+
+    &:hover {
+      color: #dc2626;
+      text-decoration: underline;
+    }
+  }
+}
+
+// ========== КНОПКИ СОЦИАЛЬНЫХ СЕТЕЙ ==========
+.contacts-social {
+  &__links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  &__link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.2rem;
+    background: rgba(var(--bg-secondary), 0.5);
+    border: 1px solid rgba(var(--accent), 0.2);
+    border-radius: 9999px;
+    color: rgb(var(--text-primary));
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+
+    &:hover {
+      background: rgba(220, 38, 38, 0.1);
+      border-color: #dc2626;
+      color: #dc2626;
+      transform: translateY(-2px);
+    }
+  }
+}
