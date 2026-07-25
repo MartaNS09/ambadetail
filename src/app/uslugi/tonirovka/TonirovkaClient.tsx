@@ -111,6 +111,105 @@ export default function TonirovkaClient() {
             </p>
           </div>
 
+          {/* НОВЫЕ СЕКЦИИ */}
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Тонировка автомобиля в Витебске – комфорт, стиль и защита от
+              солнца
+            </h2>
+            <p>
+              <strong>Тонировка авто в Витебске</strong> – это не только
+              эстетика, но и практичность. Мы предлагаем профессиональную{" "}
+              <strong>атермальную тонировку</strong>, которая снижает нагрев
+              салона в жару, защищает от УФ-лучей и бликов, а также обеспечивает
+              приватность. Используем плёнки с высокими светопропускными
+              характеристиками, соответствующие ГОСТ.
+            </p>
+            <p>
+              Тонировка стёкол автомобиля позволяет сохранить комфортную
+              температуру в салоне, предотвращает выгорание салона и снижает
+              нагрузку на кондиционер. Для тех, кто ценит стиль, предлагаем
+              зеркальные, графитовые и хамелеон-эффекты.
+            </p>
+          </div>
+
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Преимущества тонировки автомобиля в Ambadetail
+            </h2>
+            <ul className="service-content__list">
+              <li>
+                <strong>Атермальная защита</strong> – отсекает до 99% УФ-лучей и
+                инфракрасного излучения.
+              </li>
+              <li>
+                <strong>Снижение нагрева</strong> – салон остаётся прохладным
+                даже в летний зной.
+              </li>
+              <li>
+                <strong>Приватность</strong> – защита от посторонних взглядов.
+              </li>
+              <li>
+                <strong>Долговечность</strong> – плёнка не выгорает, не
+                пузырится, сохраняет цвет.
+              </li>
+              <li>
+                <strong>Безопасность</strong> – при ударе стекло не разлетается,
+                удерживается плёнкой.
+              </li>
+            </ul>
+          </div>
+
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Этапы тонировки автомобиля в Витебске
+            </h2>
+            <ol className="service-content__list">
+              <li>
+                <strong>Консультация</strong> – подбор плёнки и степени
+                затемнения.
+              </li>
+              <li>
+                <strong>Подготовка стёкол</strong> – тщательная очистка от
+                загрязнений.
+              </li>
+              <li>
+                <strong>Раскрой</strong> – точный раскрой плёнки по лекалам.
+              </li>
+              <li>
+                <strong>Монтаж</strong> – наклейка плёнки на стёкла с удалением
+                воздуха.
+              </li>
+              <li>
+                <strong>Контроль качества</strong> – проверка на пузыри, складки
+                и соответствие ГОСТ.
+              </li>
+            </ol>
+          </div>
+
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Почему выбирают тонировку в Ambadetail
+            </h2>
+            <ul className="service-content__list">
+              <li>
+                <strong>Сертифицированные материалы</strong> – KAVACA, Llumar,
+                SunTek.
+              </li>
+              <li>
+                <strong>Гарантия до 5 лет</strong> на плёнку и работы.
+              </li>
+              <li>
+                <strong>Бесплатная консультация</strong> и замер перед
+                тонировкой.
+              </li>
+              <li>
+                <strong>Удобное расположение</strong> – Витебск, ул. П. Бровки,
+                6А.
+              </li>
+            </ul>
+          </div>
+
           <div className="service-content__section">
             <h2 className="service-content__section-title">Вопросы и ответы</h2>
             <div className="faq-accordion">
