@@ -67,22 +67,38 @@ export const viewport: Viewport = {
   themeColor: "#000000",
 };
 
+// ===== УЛУЧШЕННАЯ СХЕМА (LocalBusiness вместо AutoRepair) =====
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "AutoRepair",
+  "@type": "LocalBusiness", // ← ИЗМЕНЕНО! Теперь LocalBusiness
+  "@id": "https://ambadetail.by/#localbusiness",
   name: "Ambadetail",
   alternateName: "Детейлинг студия Ambadetail",
-  url: "https://ambadetail.vercel.app",
+  description:
+    "Профессиональная детейлинг студия в Витебске. Химчистка салона, полировка кузова, оклейка пленкой, тонировка, защитные покрытия.",
+  url: "https://ambadetail.by", // ← ИСПРАВЛЕНО! Теперь ваш домен, а не vercel.app
   telephone: "+375292230322",
   email: "info@ambadetail.by",
   priceRange: "$$",
+  image: "https://ambadetail.by/images/og-image.jpg",
+  logo: "https://ambadetail.by/favicon.ico",
   address: {
     "@type": "PostalAddress",
     streetAddress: "ул. П. Бровки, 6А",
     addressLocality: "Витебск",
     addressCountry: "BY",
+    postalCode: "210020", // ← ДОБАВЛЕНО!
   },
-  areaServed: { "@type": "City", name: "Витебск" },
+  geo: {
+    // ← НОВЫЙ БЛОК! Координаты для карты
+    "@type": "GeoCoordinates",
+    latitude: 55.173057,
+    longitude: 30.24579,
+  },
+  areaServed: {
+    "@type": "City",
+    name: "Витебск",
+  },
   openingHoursSpecification: [
     {
       "@type": "OpeningHoursSpecification",
@@ -100,6 +116,9 @@ const jsonLd = {
   sameAs: [
     "https://www.instagram.com/ambassador__detailing",
     "https://www.tiktok.com/@ambassador___detailing",
+    "https://youtube.com/@ambadetail", // ← ДОБАВЛЕНО!
+    "https://t.me/ambadetail", // ← ДОБАВЛЕНО!
+    "https://vk.com/ambadetail", // ← ДОБАВЛЕНО!
   ],
 };
 
