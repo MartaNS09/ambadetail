@@ -10,8 +10,11 @@ export default function PortfolioClient() {
   const [selectedVideo, setSelectedVideo] = useState<number | null>(null);
   const [isVideoPlaying, setIsVideoPlaying] = useState(false);
   // Массив на 17 видео
+  // const [loadedVideos, setLoadedVideos] = useState<boolean[]>(
+  //   new Array(17).fill(false),
+  // );
   const [loadedVideos, setLoadedVideos] = useState<boolean[]>(
-    new Array(17).fill(false),
+    new Array(15).fill(false), // <-- было 17
   );
   const videoRefs = useRef<(HTMLVideoElement | null)[]>([]);
   const modalVideoRef = useRef<HTMLVideoElement | null>(null);
@@ -40,7 +43,7 @@ export default function PortfolioClient() {
       { id: 13, src: "/video/test14.mp4", title: "Детейлинг автомобиля 14" },
       { id: 14, src: "/video/test15.mp4", title: "Детейлинг автомобиля 15" },
       { id: 15, src: "/video/test16.mp4", title: "Детейлинг автомобиля 16" },
-      { id: 16, src: "/video/test17.mp4", title: "Детейлинг автомобиля 17" },
+      // { id: 16, src: "/video/test17.mp4", title: "Детейлинг автомобиля 17" },
     ],
     [],
   );
