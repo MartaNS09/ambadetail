@@ -1,9 +1,0 @@
-{
-  "redirects": [
-    {
-      "source": "/(.*)",
-      "destination": "https://ambadetail.by/$1",
-      "statusCode": 301
-    }
-  ]
-}
