@@ -42,7 +42,7 @@ export default function PortfolioClient() {
       { id: 12, src: "/video/test13.mp4", title: "Детейлинг автомобиля 13" },
       { id: 13, src: "/video/test14.mp4", title: "Детейлинг автомобиля 14" },
       { id: 14, src: "/video/test15.mp4", title: "Детейлинг автомобиля 15" },
-      { id: 15, src: "/video/test16.mp4", title: "Детейлинг автомобиля 16" },
+      // { id: 15, src: "/video/test16.mp4", title: "Детейлинг автомобиля 16" },
       // { id: 16, src: "/video/test17.mp4", title: "Детейлинг автомобиля 17" },
     ],
     [],
