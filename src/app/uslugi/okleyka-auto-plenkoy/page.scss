@@ -955,4 +955,37 @@ html.dark .faq-accordion__item--open {
     white-space: nowrap;
     padding: 0.75rem 1rem;
   }
+
+  /* ========== СТИЛИ ДЛЯ СПИСКОВ ========== */
+  .service-content__list {
+    padding-left: 1.5rem !important;
+    margin: 1rem 0 !important;
+    list-style-position: outside !important;
+  }
+
+  .service-content__list li {
+    margin-bottom: 0.6rem !important;
+    color: rgb(var(--text-secondary));
+    line-height: 1.6 !important;
+    padding-left: 0.3rem !important;
+  }
+
+  /* Для нумерованных списков (ol) */
+  .service-content__list ol,
+  .service-content__list ul {
+    padding-left: 1.5rem !important;
+    margin-top: 0.5rem !important;
+  }
+
+  /* Адаптив для мобилок */
+  @media (max-width: 768px) {
+    .service-content__list {
+      padding-left: 1.2rem !important;
+    }
+
+    .service-content__list li {
+      padding-left: 0.2rem !important;
+      font-size: 0.95rem !important;
+    }
+  }
 }
