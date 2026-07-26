@@ -109,7 +109,93 @@ export default function LkpClient() {
               цвета.
             </p>
           </div>
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Восстановление ЛКП автомобиля в Витебске по технологии Refiller F5
+            </h2>
+            <p>
+              <strong>Восстановление ЛКП в Витебске</strong> – это
+              профессиональное обновление лакокрасочного покрытия по технологии{" "}
+              <strong>Refiller F5</strong>. Метод позволяет устранить сколы,
+              царапины, потёртости и вернуть кузову насыщенный цвет и блеск без
+              полной перекраски.
+            </p>
+            <p>
+              Технология Refiller F5 применяется для восстановления заводского
+              покрытия с сохранением его структуры. Подходит для автомобилей
+              любых марок и возрастов.
+            </p>
+          </div>
 
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Преимущества восстановления ЛКП по Refiller F5
+            </h2>
+            <ul className="service-content__list">
+              <li>
+                <strong>Удаление до 90% царапин и сколов</strong> – без
+                перекраски.
+              </li>
+              <li>
+                <strong>Сохранение заводского ЛКП</strong> – не нарушается
+                структура покрытия.
+              </li>
+              <li>
+                <strong>Быстрый результат</strong> – работы занимают от 1 дня.
+              </li>
+              <li>
+                <strong>Долговечность</strong> – результат сохраняется до 3 лет.
+              </li>
+              <li>
+                <strong>Экономия бюджета</strong> – дешевле полной перекраски.
+              </li>
+            </ul>
+          </div>
+
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Этапы восстановления ЛКП в Витебске
+            </h2>
+            <ol className="service-content__list">
+              <li>
+                <strong>Диагностика</strong> – оценка состояния ЛКП.
+              </li>
+              <li>
+                <strong>Подготовка</strong> – мойка и обезжиривание.
+              </li>
+              <li>
+                <strong>Применение Refiller F5</strong> – восстановление
+                покрытия.
+              </li>
+              <li>
+                <strong>Финишная обработка</strong> – шлифовка и полировка.
+              </li>
+              <li>
+                <strong>Защита</strong> – нанесение керамического покрытия.
+              </li>
+            </ol>
+          </div>
+
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Почему выбирают восстановление ЛКП в Ambadetail
+            </h2>
+            <ul className="service-content__list">
+              <li>
+                <strong>Сертифицированная технология Refiller F5</strong>.
+              </li>
+              <li>
+                <strong>Опыт работы с премиальными автомобилями</strong>.
+              </li>
+              <li>
+                <strong>Гарантия до 3 лет</strong> на восстановленное покрытие.
+              </li>
+              <li>
+                <strong>Удобное расположение</strong> – Витебск, ул. П. Бровки,
+                6А.
+              </li>
+            </ul>
+          </div>
           <div className="service-content__section">
             <h2 className="service-content__section-title">Вопросы и ответы</h2>
             <div className="faq-accordion">

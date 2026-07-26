@@ -99,7 +99,98 @@ export default function ZashchitaClient() {
               воздействий.
             </p>
           </div>
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Нанесение защитных покрытий на автомобиль в Витебске
+            </h2>
+            <p>
+              <strong>Защитные покрытия для автомобиля в Витебске</strong> – это
+              надёжная защита кузова и стёкол от внешних воздействий. Мы
+              предлагаем <strong>керамическое покрытие</strong>,{" "}
+              <strong>жидкое стекло</strong> и{" "}
+              <strong>гидрофобные составы</strong> для долговременной защиты
+              ЛКП, стёкол и дисков.
+            </p>
+            <p>
+              <strong>Керамическое покрытие автомобиля</strong> создаёт твёрдый
+              защитный слой, устойчивый к царапинам, реагентам и УФ-лучам.{" "}
+              <strong>Жидкое стекло</strong> придаёт кузову глубокий блеск и
+              гидрофобные свойства.
+            </p>
+          </div>
 
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Преимущества защитных покрытий в Ambadetail
+            </h2>
+            <ul className="service-content__list">
+              <li>
+                <strong>Твёрдая защита от царапин</strong> – керамика до 9H по
+                шкале твёрдости.
+              </li>
+              <li>
+                <strong>Гидрофобный эффект</strong> – вода и грязь не
+                задерживаются.
+              </li>
+              <li>
+                <strong>Защита от УФ-лучей</strong> – предотвращает выгорание
+                краски.
+              </li>
+              <li>
+                <strong>Долговечность</strong> – защита сохраняется до 3 лет.
+              </li>
+              <li>
+                <strong>Лёгкий уход</strong> – стойкость к загрязнениям.
+              </li>
+            </ul>
+          </div>
+
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Этапы нанесения защитных покрытий в Витебске
+            </h2>
+            <ol className="service-content__list">
+              <li>
+                <strong>Диагностика кузова</strong> – оценка состояния ЛКП.
+              </li>
+              <li>
+                <strong>Подготовка поверхности</strong> – мойка, обезжиривание.
+              </li>
+              <li>
+                <strong>Нанесение базового слоя</strong> – подготовка под
+                покрытие.
+              </li>
+              <li>
+                <strong>Нанесение защитного слоя</strong> – керамика/жидкое
+                стекло.
+              </li>
+              <li>
+                <strong>Полимеризация</strong> – сушка и проверка качества.
+              </li>
+            </ol>
+          </div>
+
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Почему выбирают защитные покрытия в Ambadetail
+            </h2>
+            <ul className="service-content__list">
+              <li>
+                <strong>Сертифицированные покрытия</strong> – KAVACA, Ceramic
+                Pro, Gyeon.
+              </li>
+              <li>
+                <strong>Опыт работы с премиальными авто</strong>.
+              </li>
+              <li>
+                <strong>Гарантия до 3 лет</strong> на покрытия.
+              </li>
+              <li>
+                <strong>Удобное расположение</strong> – Витебск, ул. П. Бровки,
+                6А.
+              </li>
+            </ul>
+          </div>
           <div className="service-content__section">
             <h2 className="service-content__section-title">
               Цена защитного покрытия автомобиля

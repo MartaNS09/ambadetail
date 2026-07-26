@@ -118,7 +118,97 @@ export default function DetailingClient() {
               дорожной грязи и реагентов.
             </p>
           </div>
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Профессиональный детейлинг двигателя в Витебске
+            </h2>
+            <p>
+              <strong>Детейлинг двигателя в Витебске</strong> – это комплексная
+              очистка моторного отсека от масляных пятен, грязи, пыли и дорожных
+              реагентов. Чистый двигатель – это не только эстетика, но и раннее
+              выявление утечек, коррозии и других проблем.
+            </p>
+            <p>
+              <strong>Чистка двигателя автомобиля</strong> проводится с
+              использованием безопасных составов и контролируемой подачи воды.
+              Все электрические компоненты защищаются от влаги.
+            </p>
+          </div>
 
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Преимущества детейлинга двигателя в Ambadetail
+            </h2>
+            <ul className="service-content__list">
+              <li>
+                <strong>Безопасная мойка</strong> – защита электроники и
+                проводки.
+              </li>
+              <li>
+                <strong>Удаление масляных пятен</strong> – возвращение чистоты.
+              </li>
+              <li>
+                <strong>Защита от коррозии</strong> – обработка антикоррозийными
+                составами.
+              </li>
+              <li>
+                <strong>Улучшение внешнего вида</strong> – подкапотное
+                пространство как новое.
+              </li>
+              <li>
+                <strong>Ранняя диагностика</strong> – обнаружение утечек и
+                дефектов.
+              </li>
+            </ul>
+          </div>
+
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Этапы детейлинга двигателя в Витебске
+            </h2>
+            <ol className="service-content__list">
+              <li>
+                <strong>Диагностика</strong> – оценка состояния моторного
+                отсека.
+              </li>
+              <li>
+                <strong>Защита электроники</strong> – герметизация уязвимых зон.
+              </li>
+              <li>
+                <strong>Нанесение составов</strong> – специальные средства для
+                очистки.
+              </li>
+              <li>
+                <strong>Мойка и ополаскивание</strong> – удаление грязи и химии.
+              </li>
+              <li>
+                <strong>Сушка и защита</strong> – обработка пластика и резины.
+              </li>
+            </ol>
+          </div>
+
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Почему выбирают детейлинг двигателя в Ambadetail
+            </h2>
+            <ul className="service-content__list">
+              <li>
+                <strong>Опыт работы с любыми двигателями</strong> – бензин,
+                дизель, гибрид.
+              </li>
+              <li>
+                <strong>Сертифицированные средства</strong> – безопасные для
+                резины и пластика.
+              </li>
+              <li>
+                <strong>Гарантия до 3 месяцев</strong> на выполненные работы.
+              </li>
+              <li>
+                <strong>Удобное расположение</strong> – Витебск, ул. П. Бровки,
+                6А.
+              </li>
+            </ul>
+          </div>
           <div className="service-content__section">
             <h2 className="service-content__section-title">Вопросы и ответы</h2>
             <div className="faq-accordion">

@@ -77,6 +77,106 @@ export default function PolirovkaClient() {
             </p>
           </div>
 
+          {/* НОВЫЕ СЕКЦИИ */}
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Профессиональная полировка автомобиля в Витебске — восстановление
+              блеска кузова
+            </h2>
+            <p>
+              <strong>Полировка авто в Витебске</strong> – это эффективный
+              способ вернуть автомобилю первозданный блеск, удалить царапины,
+              потёртости и голограммы. Мы предлагаем профессиональную{" "}
+              <strong>полировку кузова</strong> с использованием современных
+              абразивных паст и полировальных машин. Восстанавливаем
+              насыщенность цвета и зеркальный блеск ЛКП.
+            </p>
+            <p>
+              Наши мастера работают с автомобилями любых марок и типов кузова.{" "}
+              <strong>Детейлинг полировка</strong> позволяет устранить дефекты,
+              возникшие в результате эксплуатации, неправильной мойки или
+              воздействия реагентов. Результат превосходит ожидания — кузов
+              выглядит как новый.
+            </p>
+          </div>
+
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Преимущества полировки автомобиля в Ambadetail
+            </h2>
+            <ul className="service-content__list">
+              <li>
+                <strong>Удаление царапин и голограмм</strong> – возвращаем
+                идеально гладкую поверхность.
+              </li>
+              <li>
+                <strong>Восстановление цвета</strong> – глубокий насыщенный
+                оттенок без помутнений.
+              </li>
+              <li>
+                <strong>Защита от выгорания</strong> – полировка создаёт
+                защитный слой от УФ-лучей.
+              </li>
+              <li>
+                <strong>Долговременный эффект</strong> – результат сохраняется
+                до 1 года.
+              </li>
+              <li>
+                <strong>Подготовка к нанесению покрытий</strong> – идеальная
+                база для керамики.
+              </li>
+            </ul>
+          </div>
+
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Этапы полировки автомобиля в Витебске
+            </h2>
+            <ol className="service-content__list">
+              <li>
+                <strong>Диагностика ЛКП</strong> – оценка состояния, выявление
+                дефектов.
+              </li>
+              <li>
+                <strong>Мойка и обезжиривание</strong> – подготовка поверхности.
+              </li>
+              <li>
+                <strong>Абразивная полировка</strong> – удаление глубоких
+                царапин.
+              </li>
+              <li>
+                <strong>Финишная полировка</strong> – создание зеркального
+                блеска.
+              </li>
+              <li>
+                <strong>Защитный слой</strong> – нанесение воска или керамики.
+              </li>
+            </ol>
+          </div>
+
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Почему выбирают полировку в Ambadetail
+            </h2>
+            <ul className="service-content__list">
+              <li>
+                <strong>Профессиональное оборудование</strong> – полировальные
+                машины Rupes, Festool.
+              </li>
+              <li>
+                <strong>Сертифицированные материалы</strong> – пасты 3M,
+                Menzerna.
+              </li>
+              <li>
+                <strong>Гарантия до 12 месяцев</strong> на выполненные работы.
+              </li>
+              <li>
+                <strong>Удобное расположение в Витебске</strong> – ул. П.
+                Бровки, 6А.
+              </li>
+            </ul>
+          </div>
+
           <div className="service-content__section">
             <h2 className="service-content__section-title">
               Цена полировки автомобиля

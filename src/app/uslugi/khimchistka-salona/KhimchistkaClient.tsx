@@ -116,7 +116,97 @@ export default function KhimchistkaClient() {
               комфорт.
             </p>
           </div>
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Профессиональная химчистка салона автомобиля в Витебске
+            </h2>
+            <p>
+              <strong>Химчистка салона в Витебске</strong> – это глубокая
+              очистка всех поверхностей автомобиля от загрязнений, пятен и
+              запахов. Мы используем профессиональное оборудование и безопасные
+              химические составы, подобранные под тип материала (кожа, ткань,
+              алькантара).
+            </p>
+            <p>
+              <strong>Детейлинг химчистка салона</strong> возвращает свежесть,
+              убирает бактерии и аллергены. Работаем со всеми типами салонов,
+              включая сложные загрязнения (табак, кофе, пятна от жира).
+            </p>
+          </div>
 
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Преимущества химчистки салона в Ambadetail
+            </h2>
+            <ul className="service-content__list">
+              <li>
+                <strong>Глубокая очистка всех зон</strong> – сиденья, ковры,
+                потолок, пластик.
+              </li>
+              <li>
+                <strong>Удаление стойких запахов</strong> – табак, сырость,
+                животные.
+              </li>
+              <li>
+                <strong>Безопасные составы</strong> – гипоаллергенные средства.
+              </li>
+              <li>
+                <strong>Озонирование</strong> – дезинфекция и устранение
+                бактерий.
+              </li>
+              <li>
+                <strong>Быстрая сушка</strong> – салон готов к использованию в
+                тот же день.
+              </li>
+            </ul>
+          </div>
+
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Этапы химчистки салона в Витебске
+            </h2>
+            <ol className="service-content__list">
+              <li>
+                <strong>Диагностика загрязнений</strong> – оценка типа ткани.
+              </li>
+              <li>
+                <strong>Вакуумная очистка</strong> – удаление пыли и мусора.
+              </li>
+              <li>
+                <strong>Нанесение средств</strong> – подбор состава под
+                материал.
+              </li>
+              <li>
+                <strong>Глубокая чистка</strong> – удаление пятен и въевшейся
+                грязи.
+              </li>
+              <li>
+                <strong>Сушка и озонирование</strong> – финальная обработка.
+              </li>
+            </ol>
+          </div>
+
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Почему выбирают химчистку в Ambadetail
+            </h2>
+            <ul className="service-content__list">
+              <li>
+                <strong>Опыт работы с любыми салонами</strong> – кожа, ткань,
+                алькантара.
+              </li>
+              <li>
+                <strong>Профессиональное оборудование</strong> – Karcher, Stihl.
+              </li>
+              <li>
+                <strong>Гарантия на работы</strong> – до 6 месяцев.
+              </li>
+              <li>
+                <strong>Удобное расположение</strong> – Витебск, ул. П. Бровки,
+                6А.
+              </li>
+            </ul>
+          </div>
           <div className="service-content__section">
             <h2 className="service-content__section-title">Вопросы и ответы</h2>
             <div className="faq-accordion">
