@@ -291,7 +291,7 @@ export default function Home() {
       <section className="info-section" aria-labelledby="info-title">
         <div className="container">
           <div className="info-grid">
-            <div className="info-card info-card--about">
+            {/* <div className="info-card info-card--about">
               <h2 id="info-title" className="info-card__title">
                 Детейлинг студия в Витебске — комплексный уход за автомобилем
               </h2>
@@ -303,8 +303,37 @@ export default function Home() {
                 индивидуальный подход, современное оборудование и
                 гарантированный результат.
               </p>
+            </div> */}
+            <div className="info-card info-card--about">
+              <h2 id="info-title" className="info-card__title">
+                Детейлинг студия в Витебске — комплексный уход за автомобилем
+              </h2>
+              <p className="info-card__text">
+                Наша <strong>детейлинг студия в Витебске</strong> предлагает
+                полный комплекс услуг для вашего автомобиля.
+                <strong>Химчистка салона в Витебске</strong> от Ambadetail — это
+                удаление пятен, запахов и бактерий с сохранением качества
+                материалов. Мы используем профессиональное оборудование и
+                безопасные составы для всех типов обивки: ткань, кожа,
+                алькантара.
+              </p>
+              <p className="info-card__text">
+                <strong>Полировка кузова в Витебске</strong> восстанавливает
+                блеск, убирает царапины и голограммы.
+                <strong>Оклейка авто плёнкой в Витебске</strong> защищает ЛКП от
+                сколов, реагентов и УФ-лучей.
+                <strong>Тонировка в Витебске</strong> — это комфорт, защита от
+                солнца и приватность.
+              </p>
+              <p className="info-card__text">
+                <strong>Детейлинг двигателя в Витебске</strong> продлевает срок
+                службы мотора, а{" "}
+                <strong>керамическое покрытие в Витебске</strong> сохраняет
+                кузов на долгие годы.
+                <strong>Восстановление ЛКП в Витебске</strong> по технологии
+                Refiller F5 возвращает автомобилю заводской вид без перекраски.
+              </p>
             </div>
-
             <div className="info-card info-card--advantages">
               <h3 className="info-card__subtitle">Почему выбирают нас</h3>
               <ul className="advantages-list">
@@ -340,7 +369,7 @@ export default function Home() {
               </p>
             </div>
 
-            <div className="info-card info-card--full">
+            {/* <div className="info-card info-card--full">
               <h3 className="info-card__subtitle">
                 Услуги детейлинг студии в Витебске
               </h3>
@@ -352,8 +381,84 @@ export default function Home() {
                 Детейлинг студия в Витебске Ambadetail расположена по адресу ул.
                 П. Бровки, 6А.
               </p>
+            </div> */}
+            <div className="info-card info-card--full">
+              <h3 className="info-card__subtitle">
+                Услуги детейлинг студии в Витебске
+              </h3>
+              <p className="info-card__text">В перечень наших услуг входят:</p>
+              <ul className="info-card__services-list">
+                <li>
+                  <Link
+                    href="/uslugi/khimchistka-salona"
+                    className="info-card__service-link"
+                  >
+                    <strong>Химчистка салона</strong>
+                  </Link>
+                  — глубокая чистка всех поверхностей, удаление пятен и запахов.
+                </li>
+                <li>
+                  <Link
+                    href="/uslugi/polirovka"
+                    className="info-card__service-link"
+                  >
+                    <strong>Полировка кузова</strong>
+                  </Link>
+                  — восстановление блеска, удаление царапин и голограмм.
+                </li>
+                <li>
+                  <Link
+                    href="/uslugi/okleyka-auto-plenkoy"
+                    className="info-card__service-link"
+                  >
+                    <strong>Оклейка антигравийной плёнкой</strong>
+                  </Link>
+                  — защита ЛКП от сколов и реагентов, смена цвета.
+                </li>
+                <li>
+                  <Link
+                    href="/uslugi/tonirovka"
+                    className="info-card__service-link"
+                  >
+                    <strong>Тонировка</strong>
+                  </Link>
+                  — атермальная защита, комфорт, приватность.
+                </li>
+                <li>
+                  <Link
+                    href="/uslugi/detailing-dvigatelya"
+                    className="info-card__service-link"
+                  >
+                    <strong>Детейлинг двигателя</strong>
+                  </Link>
+                  — очистка и защита подкапотного пространства.
+                </li>
+                <li>
+                  <Link
+                    href="/uslugi/vosstanovlenie-lkp"
+                    className="info-card__service-link"
+                  >
+                    <strong>Восстановление ЛКП</strong>
+                  </Link>
+                  — технология Refiller F5, заводской вид без перекраски.
+                </li>
+                <li>
+                  <Link
+                    href="/uslugi/zashhitnye-pokrytiya"
+                    className="info-card__service-link"
+                  >
+                    <strong>Защитные покрытия</strong>
+                  </Link>
+                  — керамика, жидкое стекло, гидрофобная защита.
+                </li>
+              </ul>
+              <p className="info-card__text">
+                <strong>Детейлинг студия в Витебске</strong> Ambadetail
+                расположена по адресу
+                <strong>ул. П. Бровки, 6А</strong>. Мы работаем ежедневно и ждём
+                вас на профессиональный уход за автомобилем.
+              </p>
             </div>
-
             <div className="info-card info-card--booking">
               <h3 className="info-card__subtitle">
                 Запись в детейлинг студию Витебска

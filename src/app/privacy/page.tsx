@@ -42,6 +42,10 @@ export default function PrivacyPage() {
               <Shield size={48} />
             </div>
             <div className="privacy-title-content">
+              <h1 className="sr-only">
+                Политика обработки персональных данных и файлов cookie —
+                Ambadetail
+              </h1>
               <h1 className="privacy-title">
                 Политика обработки персональных данных и файлов cookie
               </h1>

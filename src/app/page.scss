@@ -660,6 +660,64 @@ html.dark {
   }
 }
 
+/* Стили для списка услуг в info-card */
+.info-card__services-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.5rem 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.info-card__services-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  color: rgb(var(--text-secondary));
+  line-height: 1.5;
+  padding: 0.5rem 0.75rem;
+  background: rgba(var(--bg-card), 0.3);
+  border-radius: 0.5rem;
+  transition: all 0.15s ease;
+}
+
+.info-card__services-list li:hover {
+  background: rgba(var(--bg-card), 0.5);
+  transform: translateX(4px);
+}
+
+.info-card__service-link {
+  color: #dc2626;
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.info-card__service-link:hover {
+  color: #ef4444;
+  text-decoration: underline;
+}
+
+/* Для тёмной темы */
+html.dark .info-card__service-link {
+  color: #ef4444;
+}
+
+html.dark .info-card__service-link:hover {
+  color: #f87171;
+}
+
+html.dark .info-card__services-list li {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+html.dark .info-card__services-list li:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
 @media (max-width: 768px) {
   .info-grid {
     grid-template-columns: 1fr;
