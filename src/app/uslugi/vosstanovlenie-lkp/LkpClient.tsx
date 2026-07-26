@@ -55,6 +55,9 @@ export default function LkpClient() {
 
   return (
     <>
+      <h1 className="sr-only">
+        Восстановление ЛКП автомобиля в Витебске по технологии Refiller F5
+      </h1>
       <section
         className="service-hero"
         aria-label="Восстановление ЛКП в Витебске"

@@ -79,6 +79,9 @@ export default function OkleykaClient() {
 
   return (
     <>
+      <h1 className="sr-only">
+        Оклейка автомобиля антигравийной плёнкой в Витебске | Защита кузова PPF
+      </h1>
       <section
         className="service-hero"
         aria-label="Оклейка антигравийной плёнкой в Витебске"

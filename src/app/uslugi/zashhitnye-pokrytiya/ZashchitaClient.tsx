@@ -38,6 +38,10 @@ export default function ZashchitaClient() {
 
   return (
     <>
+      <h1 className="sr-only">
+        Нанесение защитных покрытий на автомобиль в Витебске — керамика, жидкое
+        стекло, антидождь
+      </h1>
       <section
         className="service-hero"
         aria-label="Защитные покрытия для автомобиля в Витебске"

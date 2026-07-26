@@ -17,6 +17,10 @@ export default function PolirovkaClient() {
 
   return (
     <>
+      <h1 className="sr-only">
+        Детейлинг полировка автомобиля в Витебске — восстановление кузова,
+        удаление царапин
+      </h1>
       <section
         className="service-hero"
         aria-label="Полировка автомобиля в Витебске"

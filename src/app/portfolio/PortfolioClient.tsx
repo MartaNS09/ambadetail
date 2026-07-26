@@ -133,6 +133,10 @@ export default function PortfolioClient() {
 
   return (
     <>
+      <h1 className="sr-only">
+        Портфолио работ детейлинг студии Ambadetail в Витебске — видео и фото
+        проектов
+      </h1>
       <section
         className="portfolio-hero"
         aria-label="Портфолио работ детейлинг студии Ambadetail в Витебске"

@@ -55,6 +55,10 @@ export default function TonirovkaClient() {
 
   return (
     <>
+      <h1 className="sr-only">
+        Тонировка автомобиля в Витебске — атермальная тонировка стёкол, защита
+        от УФ
+      </h1>
       <section
         className="service-hero"
         aria-label="Тонировка автомобиля в Витебске"

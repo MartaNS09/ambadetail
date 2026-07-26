@@ -57,6 +57,10 @@ export default function KhimchistkaClient() {
 
   return (
     <>
+      <h1 className="sr-only">
+        Химчистка салона автомобиля в Витебске — глубокая чистка, удаление пятен
+        и запахов
+      </h1>
       <section
         className="service-hero"
         aria-label="Химчистка салона автомобиля в Витебске"

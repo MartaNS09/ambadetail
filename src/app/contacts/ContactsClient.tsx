@@ -139,6 +139,10 @@ export default function ContactsClient() {
 
   return (
     <>
+      <h1 className="sr-only">
+        Контакты детейлинг студии Ambadetail в Витебске — адрес, телефон, email,
+        режим работы
+      </h1>
       <section
         className="contacts-hero"
         aria-label="Контакты детейлинг студии Ambadetail в Витебске"

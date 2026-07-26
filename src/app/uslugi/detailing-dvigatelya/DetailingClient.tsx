@@ -56,6 +56,10 @@ export default function DetailingClient() {
 
   return (
     <>
+      <h1 className="sr-only">
+        Детейлинг двигателя в Витебске — профессиональная чистка и защита
+        подкапотного пространства
+      </h1>
       <section
         className="service-hero"
         aria-label="Детейлинг двигателя автомобиля в Витебске"
