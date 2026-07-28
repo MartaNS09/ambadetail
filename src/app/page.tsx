@@ -291,19 +291,6 @@ export default function Home() {
       <section className="info-section" aria-labelledby="info-title">
         <div className="container">
           <div className="info-grid">
-            {/* <div className="info-card info-card--about">
-              <h2 id="info-title" className="info-card__title">
-                Детейлинг студия в Витебске — комплексный уход за автомобилем
-              </h2>
-              <p className="info-card__text">
-                Ambadetail — это профессиональная детейлинг студия в Витебске,
-                где ваш автомобиль получает полный спектр услуг: от химчистки
-                салона и полировки кузова до оклейки защитной плёнкой и
-                нанесения керамики. Детейлинг в Витебске с нами означает
-                индивидуальный подход, современное оборудование и
-                гарантированный результат.
-              </p>
-            </div> */}
             <div className="info-card info-card--about">
               <h2 id="info-title" className="info-card__title">
                 Детейлинг студия в Витебске — комплексный уход за автомобилем
@@ -334,6 +321,7 @@ export default function Home() {
                 Refiller F5 возвращает автомобилю заводской вид без перекраски.
               </p>
             </div>
+
             <div className="info-card info-card--advantages">
               <h3 className="info-card__subtitle">Почему выбирают нас</h3>
               <ul className="advantages-list">

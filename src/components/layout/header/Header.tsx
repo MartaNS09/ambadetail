@@ -118,6 +118,7 @@ export default function Header() {
     { name: "Главная", href: "/" },
     { name: "Услуги", href: "/uslugi", hasDropdown: true },
     { name: "Портфолио", href: "/portfolio" },
+    { name: "Блог", href: "/blog" },
     { name: "О нас", href: "/about" },
     { name: "Контакты", href: "/contacts" },
   ];
