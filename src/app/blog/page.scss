@@ -1,18 +1,18 @@
 /* ===== HERO ===== */
 .blog-hero {
   position: relative;
-  min-height: 80vh; /* было 60vh — увеличили */
+  min-height: 80vh;
   display: flex;
   align-items: center;
   overflow: hidden;
   background: linear-gradient(135deg, #0a0f1a 0%, #0f1420 100%);
 
   @media (max-width: 768px) {
-    min-height: 60vh; /* на мобилке чуть меньше */
+    min-height: 60vh;
   }
 
   @media (max-width: 480px) {
-    min-height: 50vh; /* на маленьких телефонах */
+    min-height: 50vh;
   }
 
   &__bg {
@@ -27,6 +27,30 @@
       rgba(59, 130, 246, 0.15) 0%,
       transparent 70%
     );
+  }
+
+  &__video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 0;
+    background: #0a0f1a;
+  }
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
   }
 
   &__overlay {
@@ -218,6 +242,11 @@
       color: #60a5fa;
       box-shadow: 0 0 20px rgba(59, 130, 246, 0.15);
     }
+
+    &:focus-visible {
+      outline: 2px solid #3b82f6;
+      outline-offset: 2px;
+    }
   }
 }
 
@@ -245,10 +274,19 @@
     background: rgba(var(--bg-card), 0.6);
   }
 
+  &:focus-within {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+
   &__link {
     display: block;
     text-decoration: none;
     color: inherit;
+
+    &:focus-visible {
+      outline: none;
+    }
   }
 
   &__image-wrapper {
@@ -261,7 +299,7 @@
 
   &__image {
     object-fit: cover;
-    transition: transform 0.6s ease;
+    transition: transform 0.5s ease;
   }
 
   &:hover &__image {
@@ -342,7 +380,7 @@
   }
 
   &__tag {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     gap: 0.2rem;
     padding: 0.2rem 0.6rem;
@@ -350,12 +388,36 @@
     border-radius: 9999px;
     font-size: 0.7rem;
     color: rgba(var(--text-secondary), 0.8);
+
+    &--clickable {
+      cursor: pointer;
+      transition: all 0.3s ease;
+      border: 1px solid transparent;
+      font-family: inherit;
+
+      &:hover {
+        background: rgba(59, 130, 246, 0.15);
+        border-color: rgba(59, 130, 246, 0.3);
+        color: #60a5fa;
+        transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+      }
+
+      &:focus-visible {
+        outline: 2px solid #3b82f6;
+        outline-offset: 2px;
+      }
+
+      &:active {
+        transform: scale(0.95);
+      }
+    }
   }
 
   &__read-more {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 0.3rem;
+    gap: 0.5rem;
     font-size: 0.85rem;
     font-weight: 600;
     color: #dc2626;
@@ -363,7 +425,15 @@
   }
 
   &:hover &__read-more {
+    gap: 1rem;
     color: #ef4444;
+  }
+
+  &__read-more svg {
+    transition: transform 0.3s ease;
+  }
+
+  &:hover &__read-more svg {
     transform: translateX(4px);
   }
 }
@@ -384,7 +454,7 @@
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateY(20px);
+    transform: translateY(40px);
   }
   to {
     opacity: 1;
@@ -401,6 +471,88 @@
     opacity: 1;
     transform: translateY(0) scale(1);
   }
+}
+
+@keyframes gentlePulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.blog-card--animated {
+  opacity: 0;
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Плавное появление заголовка */
+.blog-hero__title-letter {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: letterAppear 0.5s ease-out forwards;
+}
+
+@keyframes letterAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Пульсирующая кнопка "Читать" */
+.blog-card__read-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+.blog-card__read-more:hover {
+  gap: 1rem;
+  color: #ef4444;
+}
+
+.blog-card__read-more svg {
+  transition: transform 0.3s ease;
+}
+
+.blog-card__read-more:hover svg {
+  transform: translateX(4px);
+}
+
+/* Плавный hover для карточек */
+.blog-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.blog-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  border-color: rgba(59, 130, 246, 0.3);
+}
+
+/* Анимация появления категорий */
+.blog-categories__btn {
+  transition: all 0.3s ease;
+}
+
+.blog-categories__btn--active {
+  transform: scale(1.05);
+  box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3);
+}
+
+/* Бесконечная анимация для иконок в карточках */
+.blog-card__date svg,
+.blog-card__read-time svg {
+  animation: gentlePulse 3s ease-in-out infinite;
 }
 
 /* ===== RESPONSIVE ===== */
@@ -460,20 +612,27 @@
   }
 }
 
-.blog-hero__video {
+/* ===== СКРИНРИДЕРЫ ===== */
+.sr-only {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  z-index: 0;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-.blog-hero__image {
+/* ===== VIDEO IN CARDS ===== */
+.blog-card__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   z-index: 0;
+  background: #0a0f1a;
 }

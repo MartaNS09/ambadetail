@@ -1,9 +1,9 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import Link from "next/link";
 import { Calendar, Clock, Tag, ArrowLeft, ArrowRight } from "lucide-react";
 import { blogPosts } from "../data/posts";
+import VideoHeader from "./VideoHeader";
 import "./page.scss";
 
 // Генерируем все slug для статического рендеринга
@@ -52,6 +52,36 @@ export default async function BlogPostPage({ params }: PageProps) {
     notFound();
   }
 
+  // Список статей с видео (последние 4 новости)
+  // const postsWithVideo = [
+  //   // Первая партия (4 видео)
+  //   "gologrammy-na-kuzove",
+  //   "kak-pravilno-myt-avto",
+  //   "kak-vybrat-avtoservis",
+  //   "podgotovka-avto-k-zime",
+  //   // Вторая партия (6 видео)
+  //   "detailing-dvigatelya",
+  //   "okleyka-auto-plenkoy",
+  //   "tonirovka",
+  //   "polirovka",
+  //   "khimchistka-salona",
+  //   "zashhitnye-pokrytiya",
+  // ];
+  const postsWithVideo = [
+    "gologrammy-na-kuzove",
+    "kak-pravilno-myt-avto",
+    "kak-vybrat-avtoservis",
+    "podgotovka-avto-k-zime",
+    "detailing-dvigatelya-vitebsk",
+    "okleyka-avto-plenkoy-vitebsk",
+    "tonirovka-avto-vitebsk",
+    "polirovka-kuzova-vitebsk",
+    "khimchistka-salona-vitebsk",
+    "zashhitnye-pokrytiya-vitebsk",
+  ];
+
+  const hasVideo = postsWithVideo.includes(post.slug);
+
   // Находим связанные услуги
   const relatedServices = post.relatedServices.map((slug) => {
     const serviceNames: Record<string, string> = {
@@ -96,12 +126,11 @@ export default async function BlogPostPage({ params }: PageProps) {
         {/* Шапка статьи */}
         <header className="blog-post__header">
           <div className="blog-post__header-bg">
-            <Image
-              src={post.image}
-              alt={post.title}
-              fill
-              className="blog-post__header-image"
-              priority
+            <VideoHeader
+              hasVideo={hasVideo}
+              videoSrc={`/video/blog/${post.slug}.mp4`}
+              posterImage={post.image}
+              title={post.title}
             />
             <div className="blog-post__header-overlay" aria-hidden="true"></div>
           </div>
