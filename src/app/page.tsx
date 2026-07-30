@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+import BlogPreview from "@/components/BlogPreview";
 import "./page.scss";
 
 export default function Home() {
@@ -487,6 +488,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <BlogPreview />
     </>
   );
 }
