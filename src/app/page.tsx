@@ -5,6 +5,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import BlogPreview from "@/components/BlogPreview";
+import Reviews from "@/components/Reviews";
 import "./page.scss";
 
 export default function Home() {
@@ -489,6 +490,7 @@ export default function Home() {
         </div>
       </section>
       <BlogPreview />
+      <Reviews />
     </>
   );
 }
