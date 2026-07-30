@@ -289,7 +289,50 @@ export default function Home() {
           </div>
         </div>
       </section>
-
+      {/* Блок "О нас" на главной */}
+      <section className="about-home" aria-labelledby="about-home-title">
+        <div className="container">
+          <div className="about-home__content">
+            <div className="about-home__text">
+              <span className="about-home__badge">О нас</span>
+              <h2 id="about-home-title" className="about-home__title">
+                Профессиональная детейлинг студия в{" "}
+                <span className="about-home__title-accent">Витебске</span>
+              </h2>
+              <p className="about-home__description">
+                Ambadetail — это команда профессионалов, которая уже более 7 лет
+                занимается детейлингом автомобилей в Витебске. Мы используем
+                современное оборудование и сертифицированные материалы для
+                достижения идеального результата.
+              </p>
+              <p className="about-home__description">
+                Наши мастера регулярно проходят обучение и знают всё о
+                восстановлении ЛКП, химчистке салона, оклейке плёнкой и защитных
+                покрытиях. Мы гарантируем качество каждой работы и
+                индивидуальный подход к каждому клиенту.
+              </p>
+              <Link href="/about" className="about-home__btn">
+                Узнать больше
+                <ArrowRight size={18} />
+              </Link>
+            </div>
+            <div className="about-home__image">
+              <div className="about-home__image-wrapper">
+                <Image
+                  src="/images/about/about-1.webp"
+                  alt="Детейлинг студия Ambadetail в Витебске"
+                  width={500}
+                  height={400}
+                  className="about-home__img"
+                />
+                <div className="about-home__image-overlay">
+                  <span>7+ лет опыта</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="info-section" aria-labelledby="info-title">
         <div className="container">
           <div className="info-grid">

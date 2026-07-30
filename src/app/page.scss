@@ -762,6 +762,127 @@ html.dark .info-card__services-list li:hover {
     }
   }
 }
+
+/* ===== О НАС НА ГЛАВНОЙ ===== */
+.about-home {
+  padding: 4rem 0;
+  background: rgba(var(--bg-card), 0.2);
+}
+
+.about-home__content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.about-home__badge {
+  display: inline-block;
+  padding: 0.25rem 1rem;
+  background: linear-gradient(
+    135deg,
+    rgba(220, 38, 38, 0.15),
+    rgba(239, 68, 68, 0.08)
+  );
+  border: 1px solid rgba(220, 38, 38, 0.25);
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #dc2626;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+}
+
+.about-home__title {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  color: rgb(var(--text-primary));
+  margin-bottom: 1rem;
+}
+
+.about-home__title-accent {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.about-home__description {
+  font-size: 1rem;
+  color: rgb(var(--text-secondary));
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.about-home__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.7rem 1.8rem;
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  color: white;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  margin-top: 0.5rem;
+}
+
+.about-home__btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(220, 38, 38, 0.3);
+}
+
+.about-home__image-wrapper {
+  position: relative;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  aspect-ratio: 5/4;
+}
+
+.about-home__img {
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.about-home__image-wrapper:hover .about-home__img {
+  transform: scale(1.05);
+}
+
+.about-home__image-overlay {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 1.5rem;
+  padding: 0.5rem 1.5rem;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  border-radius: 9999px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .about-home__content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .about-home__text {
+    text-align: center;
+  }
+
+  .about-home__btn {
+    margin: 0.5rem auto 0;
+  }
+
+  .about-home__image-overlay {
+    bottom: 1rem;
+    left: 1rem;
+    font-size: 0.75rem;
+    padding: 0.3rem 1rem;
+  }
+}
 /* ===== БЛОГ НА ГЛАВНОЙ ===== */
 .blog-preview {
   padding: 4rem 0;
