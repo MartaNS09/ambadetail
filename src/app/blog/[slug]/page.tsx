@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Calendar, Clock, Tag, ArrowLeft, ArrowRight } from "lucide-react";
 import { blogPosts } from "../data/posts";
 import VideoHeader from "./VideoHeader";
+import VideoSchema from "./VideoSchema";
 import "./page.scss";
 
 // Генерируем все slug для статического рендеринга
@@ -52,21 +53,7 @@ export default async function BlogPostPage({ params }: PageProps) {
     notFound();
   }
 
-  // Список статей с видео (последние 4 новости)
-  // const postsWithVideo = [
-  //   // Первая партия (4 видео)
-  //   "gologrammy-na-kuzove",
-  //   "kak-pravilno-myt-avto",
-  //   "kak-vybrat-avtoservis",
-  //   "podgotovka-avto-k-zime",
-  //   // Вторая партия (6 видео)
-  //   "detailing-dvigatelya",
-  //   "okleyka-auto-plenkoy",
-  //   "tonirovka",
-  //   "polirovka",
-  //   "khimchistka-salona",
-  //   "zashhitnye-pokrytiya",
-  // ];
+  // Список статей с видео
   const postsWithVideo = [
     "gologrammy-na-kuzove",
     "kak-pravilno-myt-avto",
@@ -106,6 +93,18 @@ export default async function BlogPostPage({ params }: PageProps) {
         itemScope
         itemType="https://schema.org/Article"
       >
+        {/* Микроразметка для видео */}
+        {hasVideo && (
+          <VideoSchema
+            title={post.title}
+            description={post.excerpt}
+            thumbnailUrl={post.image}
+            uploadDate={post.date}
+            duration={`PT${post.readTime}M`}
+            slug={post.slug}
+          />
+        )}
+
         {/* Хлебные крошки */}
         <nav className="blog-post__breadcrumbs" aria-label="Навигация">
           <div className="container">
