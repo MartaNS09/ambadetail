@@ -173,6 +173,8 @@
   gap: 2rem;
   align-items: center;
   overflow: visible !important;
+  // добавили
+  z-index: 10000; /* ← выше чем у контента */
 }
 
 .header__nav-list {
@@ -392,6 +394,102 @@
   50% {
     transform: translateY(-2px);
   }
+}
+
+/* ===== ВЫПАДАЮЩЕЕ МЕНЮ (ДЕСКТОП) ===== */
+.header__dropdown {
+  position: absolute !important;
+  top: calc(100% + 8px) !important;
+  left: 0 !important;
+  min-width: 260px !important;
+  background: rgb(var(--bg-primary)) !important;
+  backdrop-filter: blur(20px) !important;
+  border-radius: 16px !important;
+  padding: 0.75rem !important;
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.4) !important;
+  border: 1px solid rgba(var(--accent), 0.15) !important;
+  z-index: 9999999 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: translateY(-10px) !important;
+  transition: all 0.2s ease !important;
+  pointer-events: none !important;
+  // добавили
+  z-index: 999999 !important; /* ← максимальный */
+}
+
+.header__nav-item:hover .header__dropdown,
+.header__dropdown--open {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: translateY(0) !important;
+  pointer-events: auto !important;
+}
+
+/* Стрелочка */
+.header__dropdown::before {
+  content: "" !important;
+  position: absolute !important;
+  top: -8px !important;
+  left: 24px !important;
+  width: 0 !important;
+  height: 0 !important;
+  border-left: 8px solid transparent !important;
+  border-right: 8px solid transparent !important;
+  border-bottom: 8px solid rgb(var(--bg-primary)) !important;
+}
+
+/* Ссылки в выпадающем меню */
+.header__dropdown-link {
+  display: block !important;
+  padding: 0.65rem 1rem !important;
+  color: rgb(var(--text-secondary)) !important;
+  text-decoration: none !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  border-radius: 10px !important;
+  transition: all 0.2s ease !important;
+}
+
+.header__dropdown-link:hover {
+  background: rgba(var(--accent), 0.1) !important;
+  color: rgb(var(--accent-light)) !important;
+  transform: translateX(4px) !important;
+}
+
+/* Светлая тема */
+html.light .header__dropdown {
+  background: rgba(255, 255, 255, 0.98) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.15) !important;
+}
+
+html.light .header__dropdown::before {
+  border-bottom-color: rgba(255, 255, 255, 0.98) !important;
+}
+
+html.light .header__dropdown-link {
+  color: #1a202c !important;
+}
+
+html.light .header__dropdown-link:hover {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: #dc2626 !important;
+}
+
+/* Темная тема */
+html.dark .header__dropdown {
+  background: rgba(10, 15, 25, 0.98) !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+html.dark .header__dropdown::before {
+  border-bottom-color: rgba(10, 15, 25, 0.98) !important;
+}
+
+html.dark .header__dropdown-link:hover {
+  background: rgba(59, 130, 246, 0.15) !important;
+  color: #60a5fa !important;
 }
 
 /* ========== МОБИЛЬНЫЕ СТИЛИ ========== */

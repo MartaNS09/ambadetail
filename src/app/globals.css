@@ -155,7 +155,8 @@ html.light .footer {
 
 /* Обеспечиваем, чтобы выпадающее меню было поверх всего */
 .header__dropdown {
-  z-index: 9999 !important;
+  /* z-index: 9999 !important; */
+  z-index: 999999 !important; /* ← было 9999, стало 999999 */
 }
 
 /* новое 11 июня  */

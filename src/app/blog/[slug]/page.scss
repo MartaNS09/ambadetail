@@ -306,7 +306,8 @@
   }
 
   .blog-post__header-content {
-    padding: 2rem 0;
+    // padding: 2rem 0;
+    padding: 4rem 2rem;
   }
 
   .blog-post__title {
@@ -360,19 +361,19 @@
 }
 
 /* ===== VIDEO IN HEADER ===== */
-.blog-post__header-video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  z-index: 0;
-  background: #0a0f1a;
-}
+// .blog-post__header-video {
+//   position: absolute;
+//   top: 50%;
+//   left: 50%;
+//   min-width: 100%;
+//   min-height: 100%;
+//   width: auto;
+//   height: auto;
+//   transform: translate(-50%, -50%);
+//   object-fit: cover;
+//   z-index: 0;
+//   background: #0a0f1a;
+// }
 
 .blog-post__header-image {
   object-fit: cover;

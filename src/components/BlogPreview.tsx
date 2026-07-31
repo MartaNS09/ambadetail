@@ -54,6 +54,7 @@ export default function BlogPreview() {
                   muted
                   playsInline
                   poster={post.image}
+                  preload="metadata" // <-- ДОБАВЬТЕ ЭТУ СТРОКУ
                 />
                 <span className="blog-preview__card-category">
                   {post.category}

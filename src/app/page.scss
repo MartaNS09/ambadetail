@@ -495,6 +495,8 @@ body {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 2rem;
+  // добавили
+  padding: 5px;
 }
 
 .info-card {
@@ -504,6 +506,11 @@ body {
   padding: 2rem;
   border: 1px solid rgba(var(--accent), 0.1);
   transition: all 0.15s ease;
+  // добавить
+  width: 100%;
+  max-width: 100%;
+  overflow: hidden;
+  word-wrap: break-word;
 
   &:hover {
     transform: translateY(-5px);
@@ -752,6 +759,28 @@ html.dark .info-card__services-list li:hover {
       font-size: 1.4rem;
     }
   }
+
+  /* ===== ВСТАВЬТЕ СЮДА ===== */
+  /* УЛУЧШЕННЫЙ СПИСОК УСЛУГ НА МОБИЛКЕ */
+  .info-card__services-list li {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+  }
+
+  .info-card__service-link {
+    white-space: normal;
+    word-wrap: break-word;
+    display: inline-block;
+  }
+
+  .info-card__services-list li br {
+    display: none;
+  }
+  /* ===== КОНЕЦ ВСТАВКИ ===== */
 
   .services__row {
     grid-template-columns: 1fr;
