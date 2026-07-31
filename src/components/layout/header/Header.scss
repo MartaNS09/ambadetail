@@ -13,6 +13,8 @@
   backdrop-filter: blur(20px);
   border-bottom: 1px solid rgba(var(--accent), 0.08);
   overflow: visible !important;
+  // 31 июля
+  overflow-x: hidden !important; /* ← ДОБАВЬ ЭТО */
 }
 
 .header--scrolled {
@@ -406,6 +408,8 @@
 /* ===== ВЫПАДАЮЩЕЕ МЕНЮ ===== */
 .header__dropdown {
   position: fixed !important;
+  /* остальное уже есть */
+  max-width: 90vw !important; /* ← ДОБАВЬ, чтобы не выходила за экран */
   background: rgb(var(--bg-primary)) !important;
   backdrop-filter: blur(20px) !important;
   border-radius: 16px !important;
