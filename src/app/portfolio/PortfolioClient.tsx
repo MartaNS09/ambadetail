@@ -149,6 +149,7 @@ export default function PortfolioClient() {
             loop
             muted
             playsInline
+            preload="metadata" // ← ДОБАВЬ ЭТО
             aria-label="Фоновое видео детейлинг обработки автомобиля"
           />
           <div className="portfolio-hero__overlay" aria-hidden="true"></div>

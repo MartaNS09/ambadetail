@@ -27,6 +27,10 @@ const nextConfig = {
     optimizePackageImports: ["lucide-react", "react-icons"],
     scrollRestoration: true,
   },
+  // ⬇️ ДОБАВЬ ЭТО ⬇️
+  generateBuildId: async () => {
+    return `build-${Date.now()}`;
+  },
 };
 
 module.exports = nextConfig;
