@@ -215,7 +215,7 @@ export default function Home() {
                   />
                   <div className="service-card__overlay">
                     <div className="service-card__content">
-                      <h3 className="service-card__title">{service.title}</h3>
+                      <h2 className="service-card__title">{service.title}</h2>
                       <span className="service-card__btn" aria-hidden="true">
                         ПОДРОБНО
                       </span>
@@ -246,7 +246,7 @@ export default function Home() {
                   />
                   <div className="service-card__overlay">
                     <div className="service-card__content">
-                      <h3 className="service-card__title">{service.title}</h3>
+                      <h2 className="service-card__title">{service.title}</h2>
                       <span className="service-card__btn" aria-hidden="true">
                         ПОДРОБНО
                       </span>
@@ -277,7 +277,7 @@ export default function Home() {
                   />
                   <div className="service-card__overlay">
                     <div className="service-card__content">
-                      <h3 className="service-card__title">{service.title}</h3>
+                      <h2 className="service-card__title">{service.title}</h2>
                       <span className="service-card__btn" aria-hidden="true">
                         ПОДРОБНО
                       </span>
