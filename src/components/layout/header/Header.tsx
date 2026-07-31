@@ -12,11 +12,12 @@ export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [menuPosition, setMenuPosition] = useState({ top: 0, left: 0 });
+  const servicesButtonRef = useRef<HTMLDivElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
   const closeTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const dropdownRef = useRef<HTMLDivElement | null>(null);
   const menuButtonRef = useRef<HTMLButtonElement | null>(null);
 
-  // Выпадающее меню для услуг
   const servicesItems = [
     { name: "Все услуги", href: "/uslugi" },
     {
@@ -37,22 +38,34 @@ export default function Header() {
     { name: "Химчистка двигателя", href: "/uslugi/detailing-dvigatelya" },
   ];
 
-  // Открытие при наведении
-  const handleMouseEnter = () => {
-    if (closeTimeoutRef.current) {
-      clearTimeout(closeTimeoutRef.current);
-      closeTimeoutRef.current = null;
+  // Рассчитываем позицию при открытии
+  useEffect(() => {
+    if (isServicesOpen && servicesButtonRef.current) {
+      const rect = servicesButtonRef.current.getBoundingClientRect();
+      setMenuPosition({
+        top: rect.bottom + 10,
+        left: rect.left,
+      });
     }
-    setIsServicesOpen(true);
-  };
+  }, [isServicesOpen]);
 
-  const handleMouseLeave = () => {
-    closeTimeoutRef.current = setTimeout(() => {
-      setIsServicesOpen(false);
-    }, 200);
-  };
+  // Закрываем меню при клике вне
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        menuRef.current &&
+        !menuRef.current.contains(event.target as Node) &&
+        servicesButtonRef.current &&
+        !servicesButtonRef.current.contains(event.target as Node)
+      ) {
+        setIsServicesOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
 
-  // Закрываем меню при скролле
+  // Закрываем при скролле
   useEffect(() => {
     const handleScroll = () => {
       if (isServicesOpen) setIsServicesOpen(false);
@@ -62,21 +75,7 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isServicesOpen]);
 
-  // Закрываем меню при клике вне его области
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        dropdownRef.current &&
-        !dropdownRef.current.contains(event.target as Node)
-      ) {
-        setIsServicesOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
-  // Блокировка скролла при открытом бургер-меню (исправленная версия)
+  // Блокировка скролла для бургер-меню
   useEffect(() => {
     if (isMenuOpen) {
       const scrollY = window.scrollY;
@@ -105,7 +104,6 @@ export default function Header() {
     };
   }, [isMenuOpen]);
 
-  // Очистка таймера при размонтировании
   useEffect(() => {
     return () => {
       if (closeTimeoutRef.current) {
@@ -192,54 +190,78 @@ export default function Header() {
                     key={item.name}
                     className="header__nav-item"
                     onMouseEnter={
-                      item.hasDropdown ? handleMouseEnter : undefined
+                      item.hasDropdown
+                        ? () => {
+                            if (closeTimeoutRef.current) {
+                              clearTimeout(closeTimeoutRef.current);
+                              closeTimeoutRef.current = null;
+                            }
+                            setIsServicesOpen(true);
+                          }
+                        : undefined
                     }
                     onMouseLeave={
-                      item.hasDropdown ? handleMouseLeave : undefined
+                      item.hasDropdown
+                        ? () => {
+                            closeTimeoutRef.current = setTimeout(() => {
+                              setIsServicesOpen(false);
+                            }, 300);
+                          }
+                        : undefined
                     }
                   >
                     {item.hasDropdown ? (
                       <div
-                        ref={dropdownRef}
+                        ref={servicesButtonRef}
                         style={{
                           position: "relative",
                           display: "inline-block",
                         }}
                       >
-                        <Link
-                          href={item.href}
-                          className={`header__nav-link header__nav-link--dropdown ${isServicesOpen ? "header__nav-link--active" : ""}`}
-                          aria-expanded={isServicesOpen}
-                          aria-haspopup="true"
-                          aria-label="Открыть меню услуг"
+                        <div
+                          className="header__nav-link header__nav-link--dropdown"
+                          style={{
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "0.3rem",
+                            cursor: "pointer",
+                          }}
+                          onClick={() => setIsServicesOpen(!isServicesOpen)}
                         >
-                          <span>{item.name}</span>
+                          <span>Услуги</span>
                           <ChevronDown
                             size={14}
                             className={`header__nav-chevron ${isServicesOpen ? "header__nav-chevron--open" : ""}`}
                           />
-                        </Link>
-                        {isServicesOpen && (
-                          <div
-                            className="header__dropdown"
-                            role="menu"
-                            aria-label="Подменю услуг"
-                          >
-                            <div className="header__dropdown-inner">
-                              {servicesItems.map((subItem) => (
-                                <Link
-                                  key={subItem.href}
-                                  href={subItem.href}
-                                  className="header__dropdown-link"
-                                  role="menuitem"
-                                  onClick={() => setIsServicesOpen(false)}
-                                >
-                                  {subItem.name}
-                                </Link>
-                              ))}
-                            </div>
+                        </div>
+                        <div
+                          ref={menuRef}
+                          className={`header__dropdown ${isServicesOpen ? "header__dropdown--open" : ""}`}
+                          style={{
+                            position: "fixed",
+                            top: `${menuPosition.top}px`,
+                            left: `${menuPosition.left}px`,
+                            zIndex: 999999,
+                          }}
+                          role="menu"
+                          aria-label="Подменю услуг"
+                        >
+                          <div className="header__dropdown-inner">
+                            {servicesItems.map((subItem) => (
+                              <Link
+                                key={subItem.href}
+                                href={subItem.href}
+                                className="header__dropdown-link"
+                                role="menuitem"
+                                onClick={() => {
+                                  setIsServicesOpen(false);
+                                }}
+                              >
+                                {subItem.name}
+                              </Link>
+                            ))}
                           </div>
-                        )}
+                        </div>
                       </div>
                     ) : (
                       <Link href={item.href} className="header__nav-link">

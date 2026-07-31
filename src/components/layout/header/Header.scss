@@ -173,8 +173,7 @@
   gap: 2rem;
   align-items: center;
   overflow: visible !important;
-  // добавили
-  z-index: 10000; /* ← выше чем у контента */
+  z-index: 10000;
 }
 
 .header__nav-list {
@@ -188,7 +187,7 @@
 }
 
 .header__nav-item {
-  position: relative;
+  position: relative !important;
   overflow: visible !important;
 }
 
@@ -246,6 +245,14 @@
   &:hover::after {
     transform: translateX(-50%) scaleX(1);
   }
+}
+
+.header__nav-link--dropdown {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.3rem !important;
+  cursor: pointer !important;
 }
 
 .header__nav-chevron {
@@ -396,16 +403,14 @@
   }
 }
 
-/* ===== ВЫПАДАЮЩЕЕ МЕНЮ (ДЕСКТОП) ===== */
+/* ===== ВЫПАДАЮЩЕЕ МЕНЮ ===== */
 .header__dropdown {
-  position: absolute !important;
-  top: calc(100% + 8px) !important;
-  left: 0 !important;
-  min-width: 260px !important;
+  position: fixed !important;
   background: rgb(var(--bg-primary)) !important;
   backdrop-filter: blur(20px) !important;
   border-radius: 16px !important;
   padding: 0.75rem !important;
+  min-width: 260px !important;
   box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.4) !important;
   border: 1px solid rgba(var(--accent), 0.15) !important;
   z-index: 9999999 !important;
@@ -414,11 +419,8 @@
   transform: translateY(-10px) !important;
   transition: all 0.2s ease !important;
   pointer-events: none !important;
-  // добавили
-  z-index: 999999 !important; /* ← максимальный */
 }
 
-.header__nav-item:hover .header__dropdown,
 .header__dropdown--open {
   opacity: 1 !important;
   visibility: visible !important;
@@ -449,6 +451,7 @@
   font-weight: 500 !important;
   border-radius: 10px !important;
   transition: all 0.2s ease !important;
+  white-space: nowrap !important;
 }
 
 .header__dropdown-link:hover {
