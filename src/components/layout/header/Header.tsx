@@ -38,14 +38,19 @@ export default function Header() {
     { name: "Химчистка двигателя", href: "/uslugi/detailing-dvigatelya" },
   ];
 
-  // Рассчитываем позицию при открытии
+  // Рассчитываем позицию при открытии с задержкой
   useEffect(() => {
     if (isServicesOpen && servicesButtonRef.current) {
-      const rect = servicesButtonRef.current.getBoundingClientRect();
-      setMenuPosition({
-        top: rect.bottom + 10,
-        left: rect.left,
-      });
+      const timeoutId = setTimeout(() => {
+        const rect = servicesButtonRef.current?.getBoundingClientRect();
+        if (rect) {
+          setMenuPosition({
+            top: rect.bottom + 10,
+            left: rect.left,
+          });
+        }
+      }, 10);
+      return () => clearTimeout(timeoutId);
     }
   }, [isServicesOpen]);
 
@@ -218,7 +223,8 @@ export default function Header() {
                           display: "inline-block",
                         }}
                       >
-                        <div
+                        <Link
+                          href="/uslugi"
                           className="header__nav-link header__nav-link--dropdown"
                           style={{
                             display: "flex",
@@ -226,14 +232,13 @@ export default function Header() {
                             gap: "0.3rem",
                             cursor: "pointer",
                           }}
-                          onClick={() => setIsServicesOpen(!isServicesOpen)}
                         >
                           <span>Услуги</span>
                           <ChevronDown
                             size={14}
                             className={`header__nav-chevron ${isServicesOpen ? "header__nav-chevron--open" : ""}`}
                           />
-                        </div>
+                        </Link>
                         <div
                           ref={menuRef}
                           className={`header__dropdown ${isServicesOpen ? "header__dropdown--open" : ""}`}
@@ -241,7 +246,7 @@ export default function Header() {
                             position: "fixed",
                             top: `${menuPosition.top}px`,
                             left: `${menuPosition.left}px`,
-                            zIndex: 999999,
+                            zIndex: 9999999,
                           }}
                           role="menu"
                           aria-label="Подменю услуг"
