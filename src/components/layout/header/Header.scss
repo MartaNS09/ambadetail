@@ -176,6 +176,8 @@
   align-items: center;
   overflow: visible !important;
   z-index: 10000;
+  // 31 июля
+  flex-wrap: nowrap; /* ← важно: не переносить на новую строку */
 }
 
 .header__nav-list {
