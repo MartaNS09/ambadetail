@@ -2,17 +2,15 @@ import { Metadata } from "next";
 import LkpClient from "./LkpClient";
 
 export const metadata: Metadata = {
-  title:
-    "Восстановление ЛКП в Витебске | Refiller F5, удаление царапин | Ambadetail",
+  title: "Восстановление ЛКП в Витебске | Refiller F5, удаление царапин",
   description:
-    "Восстановление лакокрасочного покрытия автомобиля в Витебске по технологии Refiller F5. Удаление царапин, сколов, восстановление блеска. Запишитесь на консультацию.",
+    "Восстановление ЛКП в Витебске по технологии Refiller F5. Удаление царапин, сколов, восстановление блеска. Запишитесь!",
   keywords:
-    "восстановление ЛКП витебск, Refiller F5, восстановление лакокрасочного покрытия, удаление сколов, восстановление цвета авто",
+    "восстановление ЛКП витебск, Refiller F5, восстановление лакокрасочного покрытия, удаление сколов, восстановление цвета авто, восстановление кузова витебск, удаление царапин витебск",
   openGraph: {
-    title:
-      "Восстановление ЛКП в Витебске | Refiller F5, удаление царапин | Ambadetail",
+    title: "Восстановление ЛКП в Витебске | Refiller F5, удаление царапин",
     description:
-      "Восстановление лакокрасочного покрытия автомобиля в Витебске по технологии Refiller F5. Удаление царапин, сколов, восстановление блеска. Запишитесь на консультацию.",
+      "Восстановление ЛКП в Витебске по технологии Refiller F5. Удаление царапин, сколов, восстановление блеска. Запишитесь!",
     url: "https://ambadetail.by/uslugi/vosstanovlenie-lkp",
     siteName: "Ambadetail",
     images: [
@@ -28,10 +26,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Восстановление ЛКП в Витебске | Refiller F5, удаление царапин | Ambadetail",
+    title: "Восстановление ЛКП в Витебске | Refiller F5, удаление царапин",
     description:
-      "Восстановление лакокрасочного покрытия автомобиля в Витебске по технологии Refiller F5. Удаление царапин, сколов, восстановление блеска. Запишитесь на консультацию.",
+      "Восстановление ЛКП в Витебске по технологии Refiller F5. Удаление царапин, сколов, восстановление блеска. Запишитесь!",
     images: ["/images/services/bugatti.webp"],
   },
   alternates: {
@@ -39,6 +36,40 @@ export const metadata: Metadata = {
   },
 };
 
+// ✅ СХЕМА BREADCRUMB
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Главная",
+      item: "https://ambadetail.by/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Услуги",
+      item: "https://ambadetail.by/uslugi",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Восстановление ЛКП",
+      item: "https://ambadetail.by/uslugi/vosstanovlenie-lkp",
+    },
+  ],
+};
+
 export default function LkpPage() {
-  return <LkpClient />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <LkpClient />
+    </>
+  );
 }
