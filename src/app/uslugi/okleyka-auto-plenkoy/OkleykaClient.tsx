@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import {
   SunmaxTable,
@@ -25,7 +26,7 @@ export default function OkleykaClient() {
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  const titleParts = ["Оклейка", "антигравийной", "плёнкой"];
+  const titleParts = ["Оклейка", "авто", "плёнкой", "в", "Витебске"];
 
   const faqItems = [
     {
@@ -68,7 +69,7 @@ export default function OkleykaClient() {
     {
       question: "Сколько стоит оклейка капота в Витебске?",
       answer:
-        "Стоимость зависит от размера капота и выбранной плёнки. Ориентировочная цена — от ... рублей. Точную стоимость рассчитаем на консультации.",
+        "Стоимость зависит от размера капота и выбранной плёнки. Точную стоимость рассчитаем на консультации.",
     },
     {
       question: "Можно ли оклеить только фары?",
@@ -80,16 +81,33 @@ export default function OkleykaClient() {
   return (
     <>
       <h1 className="sr-only">
-        Оклейка автомобиля антигравийной плёнкой в Витебске | Защита кузова PPF
+        Оклейка авто плёнкой в Витебске — защита кузова PPF, винил, бронирование
       </h1>
+
+      {/* ✅ ВИЗУАЛЬНЫЕ ХЛЕБНЫЕ КРОШКИ (для пользователей) */}
+      <div className="breadcrumbs" aria-label="Навигационная цепочка">
+        <div className="container">
+          <Link href="/" className="breadcrumbs__link">
+            Главная
+          </Link>
+          <span className="breadcrumbs__separator">/</span>
+          <Link href="/uslugi" className="breadcrumbs__link">
+            Услуги
+          </Link>
+          <span className="breadcrumbs__separator">/</span>
+          <span className="breadcrumbs__current">Оклейка авто плёнкой</span>
+        </div>
+      </div>
+
+      {/* HERO */}
       <section
         className="service-hero"
-        aria-label="Оклейка антигравийной плёнкой в Витебске"
+        aria-label="Оклейка авто плёнкой в Витебске — защита кузова PPF"
       >
         <div className="service-hero__bg">
           <Image
             src="/images/services/vinil.webp"
-            alt="Оклейка антигравийной плёнкой автомобиля в Витебске"
+            alt="Оклейка авто плёнкой в Витебске — защита кузова автомобиля"
             fill
             priority
             className="service-hero__image"
@@ -121,6 +139,7 @@ export default function OkleykaClient() {
             </h1>
             <p className="service-hero__subtitle">
               Защита кузова автомобиля от сколов, царапин и агрессивной среды.
+              PPF, винил, смена цвета.
             </p>
           </div>
         </div>
@@ -130,38 +149,36 @@ export default function OkleykaClient() {
         <div className="container">
           <div className="service-content__intro">
             <p className="service-content__intro-text">
-              Оклейка авто плёнкой в <strong>Витебске</strong>: защита кузова
+              <strong>Оклейка авто плёнкой в Витебске</strong> — защита кузова
               антигравийной (PPF) плёнкой и полная смена цвета цветной
               полиуретановой плёнкой.
             </p>
           </div>
 
-          {/* НОВЫЕ СЕКЦИИ */}
+          {/* 🔥 ГЛАВНАЯ СЕКЦИЯ — С "ПРОФЕССИОНАЛЬНАЯ" 1 РАЗ */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
-              Оклейка автомобиля антигравийной плёнкой в Витебске — надёжная
-              защита кузова
+              Оклейка авто плёнкой в Витебске — надёжная защита и стиль
             </h2>
             <p>
-              <strong>Оклейка авто плёнкой в Витебске</strong> – это эффективный
+              <strong>Оклейка авто плёнкой в Витебске</strong> — эффективный
               способ защитить лакокрасочное покрытие от сколов, царапин,
-              химических реагентов и ультрафиолета. Мы предлагаем
-              профессиональную{" "}
-              <strong>оклейку кузова антигравийной плёнкой (PPF)</strong>, а
+              химических реагентов и ультрафиолета. Наша студия предлагает
+              <strong>профессиональную оклейку кузова PPF плёнкой</strong>, а
               также <strong>цветную полиуретановую плёнку</strong> для полной
-              смены цвета автомобиля с сохранением блеска и насыщенности
-              оттенка.
+              смены цвета автомобиля с сохранением блеска.
             </p>
             <p>
-              Наши мастера используют материалы ведущих брендов:{" "}
-              <strong>Sunmax, Stek, Llumar</strong>, которые обеспечивают
+              Используем материалы ведущих брендов:{" "}
+              <strong>Sunmax, XPEL, Llumar, Stek</strong>, которые обеспечивают
               долговечность, самовосстановление царапин и стойкость к выгоранию.{" "}
               <strong>Бронирование кузова плёнкой</strong> позволяет сохранить
               идеальное состояние авто даже при интенсивной эксплуатации в
-              городских условиях Витебска и по трассам.
+              городских условиях Витебска.
             </p>
           </div>
 
+          {/* ПРЕИМУЩЕСТВА */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
               Преимущества оклейки автомобиля защитной плёнкой
@@ -181,7 +198,7 @@ export default function OkleykaClient() {
               </li>
               <li>
                 <strong>Сохранение цвета</strong> – прозрачная PPF не желтеет,
-                цветная плёнка даёт насыщенный оттенок на долгие годы.
+                цветная плёнка даёт насыщенный оттенок.
               </li>
               <li>
                 <strong>Долговечность</strong> – срок службы качественной плёнки
@@ -190,6 +207,34 @@ export default function OkleykaClient() {
             </ul>
           </div>
 
+          {/* БРЕНДЫ */}
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Плёнки для оклейки автомобиля в Витебске
+            </h2>
+            <ul className="service-content__brand-list">
+              <li>
+                <strong>Sunmax</strong> — надёжная защита, отличное соотношение
+                цена/качество
+              </li>
+              <li>
+                <strong>XPEL</strong> — премиальная защита, самовосстановление
+                царапин
+              </li>
+              <li>
+                <strong>Llumar</strong> — проверенная защита, долговечность
+              </li>
+              <li>
+                <strong>Stek</strong> — инновационная защита, высокий блеск
+              </li>
+              <li>
+                <strong>HEXIS</strong> — цветная полиуретановая плёнка, смена
+                цвета
+              </li>
+            </ul>
+          </div>
+
+          {/* ЭТАПЫ */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
               Этапы оклейки автомобиля в Витебске
@@ -205,7 +250,7 @@ export default function OkleykaClient() {
               </li>
               <li>
                 <strong>Раскрой материала</strong> – компьютерный раскрой или
-                ручной по шаблонам для идеальной посадки.
+                ручной по шаблонам.
               </li>
               <li>
                 <strong>Оклейка</strong> – монтаж плёнки на капот, бампер,
@@ -218,6 +263,7 @@ export default function OkleykaClient() {
             </ol>
           </div>
 
+          {/* ПОЧЕМУ МЫ */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
               Почему выбирают оклейку автомобиля в Ambadetail
@@ -228,8 +274,8 @@ export default function OkleykaClient() {
                 бюджетных до премиальных.
               </li>
               <li>
-                <strong>Соблюдение технологии</strong> – используем
-                профессиональное оборудование и качественные материалы.
+                <strong>Соблюдение технологии</strong> – используем оборудование
+                и качественные материалы.
               </li>
               <li>
                 <strong>Гарантия на работы</strong> – до 3 лет на монтаж и
@@ -242,8 +288,41 @@ export default function OkleykaClient() {
             </ul>
           </div>
 
+          {/* ССЫЛКИ НА ДРУГИЕ УСЛУГИ */}
           <div className="service-content__section">
-            <h2 className="service-content__section-title">Вопросы и ответы</h2>
+            <h2 className="service-content__section-title">
+              Другие услуги детейлинг студии в Витебске
+            </h2>
+            <ul className="service-content__related-links">
+              <li>
+                <Link href="/uslugi/polirovka">Полировка авто в Витебске</Link>
+              </li>
+              <li>
+                <Link href="/uslugi/khimchistka-salona">
+                  Химчистка салона в Витебске
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/vosstanovlenie-lkp">
+                  Восстановление ЛКП в Витебске
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/zashhitnye-pokrytiya">
+                  Защитные покрытия в Витебске
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/tonirovka">Тонировка в Витебске</Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* FAQ */}
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Часто задаваемые вопросы об оклейке авто плёнкой
+            </h2>
             <div className="faq-accordion">
               {faqItems.map((item, index) => (
                 <div
@@ -283,9 +362,10 @@ export default function OkleykaClient() {
             </div>
           </div>
 
+          {/* ТАБЛИЦЫ ЦЕН */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
-              Цена оклейки автомобиля плёнкой
+              Цена оклейки автомобиля плёнкой в Витебске
             </h2>
             <SunmaxTable />
             <StekTable />
@@ -294,6 +374,7 @@ export default function OkleykaClient() {
             <BrandsTable />
           </div>
 
+          {/* SEO ТЕКСТ */}
           <div className="seo-content">
             <h2 className="seo-title">
               Оклейка автомобиля защитной пленкой в Витебске
@@ -304,8 +385,8 @@ export default function OkleykaClient() {
               </h4>
               <p className="seo-conclusion-final">
                 <strong>
-                  Для расчета стоимости и записи обращайтесь к нашим
-                  администраторам.
+                  Для расчета стоимости и записи на оклейку авто плёнкой в
+                  Витебске обращайтесь к нашим администраторам.
                 </strong>
               </p>
             </div>

@@ -26,7 +26,7 @@ export default function Footer() {
     { name: "Защитные покрытия", href: "/uslugi/zashhitnye-pokrytiya" },
     { name: "Восстановление ЛКП", href: "/uslugi/vosstanovlenie-lkp" },
     {
-      name: "Оклейка антигравийной плёнкой",
+      name: "Оклейка авто плёнкой",
       href: "/uslugi/okleyka-auto-plenkoy",
     },
     { name: "Тонировка авто", href: "/uslugi/tonirovka" },
@@ -188,10 +188,23 @@ export default function Footer() {
                 Есть вопросы? Оставьте заявку, и наш менеджер свяжется с вами в
                 ближайшее время.
               </p>
-              <a href="mailto:info@ambadetail.by" className="footer__email-btn">
-                <Mail size={16} />
-                <span>Написать нам</span>
-              </a>
+
+              {/* ✅ КНОПКА ЗАПИСАТЬСЯ */}
+              <Link href="/contacts" className="footer__booking-btn">
+                <span className="footer__booking-btn-icon">📅</span>
+                Записаться
+                <ChevronRight size={16} />
+              </Link>
+
+              <div style={{ marginTop: "0.75rem" }}>
+                <a
+                  href="mailto:info@ambadetail.by"
+                  className="footer__email-btn"
+                >
+                  <Mail size={16} />
+                  <span>Написать нам</span>
+                </a>
+              </div>
             </div>
 
             <div className="footer__advantages">

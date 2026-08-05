@@ -21,7 +21,7 @@ export default function Header() {
   const servicesItems = [
     { name: "Все услуги", href: "/uslugi" },
     {
-      name: "Оклейка антигравийной плёнкой",
+      name: "Оклейка авто плёнкой",
       href: "/uslugi/okleyka-auto-plenkoy",
     },
     {
