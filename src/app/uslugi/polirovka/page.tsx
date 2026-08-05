@@ -2,17 +2,16 @@ import { Metadata } from "next";
 import PolirovkaClient from "./PolirovkaClient";
 
 export const metadata: Metadata = {
-  title:
-    "Полировка авто в Витебске | Восстановление кузова, удаление царапин | Ambadetail",
+  title: "Полировка авто в Витебске | Восстановление кузова, удаление царапин",
   description:
-    "Профессиональная полировка кузова автомобиля в Витебске. Восстановление блеска, удаление царапин и дефектов ЛКП. Гарантия качества. Запишитесь онлайн.",
+    "Полировка авто в Витебске. Восстановление кузова, удаление царапин и дефектов ЛКП. Запишитесь!",
   keywords:
-    "полировка авто витебск, полировка кузова витебск, восстановление блеска авто, удаление царапин, детейлинг полировка",
+    "полировка авто витебск, полировка кузова витебск, восстановление блеска авто, удаление царапин, детейлинг полировка, полировка машины витебск",
   openGraph: {
     title:
-      "Полировка авто в Витебске | Восстановление кузова, удаление царапин | Ambadetail",
+      "Полировка авто в Витебске | Восстановление кузова, удаление царапин",
     description:
-      "Профессиональная полировка кузова автомобиля в Витебске. Восстановление блеска, удаление царапин и дефектов ЛКП. Гарантия качества. Запишитесь онлайн.",
+      "Полировка авто в Витебске. Восстановление кузова, удаление царапин и дефектов ЛКП. Запишитесь!",
     url: "https://ambadetail.by/uslugi/polirovka",
     siteName: "Ambadetail",
     images: [
@@ -29,9 +28,9 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title:
-      "Полировка авто в Витебске | Восстановление кузова, удаление царапин | Ambadetail",
+      "Полировка авто в Витебске | Восстановление кузова, удаление царапин",
     description:
-      "Профессиональная полировка кузова автомобиля в Витебске. Восстановление блеска, удаление царапин и дефектов ЛКП. Гарантия качества. Запишитесь онлайн.",
+      "Полировка авто в Витебске. Восстановление кузова, удаление царапин и дефектов ЛКП. Запишитесь!",
     images: ["/images/services/polirovka_kuzova.webp"],
   },
   alternates: {
@@ -39,6 +38,40 @@ export const metadata: Metadata = {
   },
 };
 
+// ✅ СХЕМА BREADCRUMB
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Главная",
+      item: "https://ambadetail.by/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Услуги",
+      item: "https://ambadetail.by/uslugi",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Полировка авто",
+      item: "https://ambadetail.by/uslugi/polirovka",
+    },
+  ],
+};
+
 export default function PolirovkaPage() {
-  return <PolirovkaClient />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <PolirovkaClient />
+    </>
+  );
 }

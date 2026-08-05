@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { PriceTable, BrandsTable } from "./tables";
 import "./page.scss";
@@ -13,14 +14,30 @@ export default function PolirovkaClient() {
     return () => clearTimeout(timer);
   }, []);
 
-  const titleParts = ["Детейлинг", "полировка", "авто"];
+  // 🔥 ИЗМЕНЁННЫЙ ЗАГОЛОВОК — С "В ВИТЕБСКЕ"
+  const titleParts = ["Полировка", "авто", "в", "Витебске"];
 
   return (
     <>
       <h1 className="sr-only">
-        Детейлинг полировка автомобиля в Витебске — восстановление кузова,
-        удаление царапин
+        Полировка авто в Витебске — восстановление кузова, удаление царапин
       </h1>
+
+      {/* ✅ ВИЗУАЛЬНЫЕ ХЛЕБНЫЕ КРОШКИ */}
+      <div className="breadcrumbs" aria-label="Навигационная цепочка">
+        <div className="container">
+          <Link href="/" className="breadcrumbs__link">
+            Главная
+          </Link>
+          <span className="breadcrumbs__separator">/</span>
+          <Link href="/uslugi" className="breadcrumbs__link">
+            Услуги
+          </Link>
+          <span className="breadcrumbs__separator">/</span>
+          <span className="breadcrumbs__current">Полировка авто</span>
+        </div>
+      </div>
+
       <section
         className="service-hero"
         aria-label="Полировка автомобиля в Витебске"
@@ -49,7 +66,9 @@ export default function PolirovkaClient() {
                   {part.split("").map((letter, letterIndex) => (
                     <span
                       key={letterIndex}
-                      className={`service-hero__title-letter ${isVisible ? "service-hero__title-letter--visible" : ""}`}
+                      className={`service-hero__title-letter ${
+                        isVisible ? "service-hero__title-letter--visible" : ""
+                      }`}
                       style={{
                         transitionDelay: `${(partIndex * 10 + letterIndex) * 0.02}s`,
                       }}
@@ -72,24 +91,23 @@ export default function PolirovkaClient() {
         <div className="container">
           <div className="service-content__intro">
             <p className="service-content__intro-text">
-              <strong>Детейлинг полировка</strong> автомобиля в Витебске — это
-              профессиональное восстановление лакокрасочного покрытия.
+              <strong>Полировка авто в Витебске</strong> — это профессиональное
+              восстановление лакокрасочного покрытия.
             </p>
           </div>
 
-          {/* НОВЫЕ СЕКЦИИ */}
+          {/* 🔥 ГЛАВНАЯ СЕКЦИЯ — С "ПРОФЕССИОНАЛЬНАЯ" 1 РАЗ */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
-              Профессиональная полировка автомобиля в Витебске — восстановление
-              блеска кузова
+              Полировка автомобиля в Витебске — восстановление блеска кузова
             </h2>
             <p>
-              <strong>Полировка авто в Витебске</strong> – это эффективный
-              способ вернуть автомобилю первозданный блеск, удалить царапины,
-              потёртости и голограммы. Мы предлагаем профессиональную{" "}
-              <strong>полировку кузова</strong> с использованием современных
-              абразивных паст и полировальных машин. Восстанавливаем
-              насыщенность цвета и зеркальный блеск ЛКП.
+              <strong>Полировка авто в Витебске</strong> – эффективный способ
+              вернуть автомобилю первозданный блеск, удалить царапины,
+              потёртости и голограммы. Наша студия предлагает{" "}
+              <strong>профессиональную полировку кузова</strong> с
+              использованием современных абразивных паст и полировальных машин.
+              Восстанавливаем насыщенность цвета и зеркальный блеск ЛКП.
             </p>
             <p>
               Наши мастера работают с автомобилями любых марок и типов кузова.{" "}
@@ -100,6 +118,7 @@ export default function PolirovkaClient() {
             </p>
           </div>
 
+          {/* ПРЕИМУЩЕСТВА */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
               Преимущества полировки автомобиля в Ambadetail
@@ -128,6 +147,7 @@ export default function PolirovkaClient() {
             </ul>
           </div>
 
+          {/* ЭТАПЫ */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
               Этапы полировки автомобиля в Витебске
@@ -154,6 +174,7 @@ export default function PolirovkaClient() {
             </ol>
           </div>
 
+          {/* ПОЧЕМУ МЫ */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
               Почему выбирают полировку в Ambadetail
@@ -177,14 +198,48 @@ export default function PolirovkaClient() {
             </ul>
           </div>
 
+          {/* 🔥 ССЫЛКИ НА ДРУГИЕ УСЛУГИ — ВНУТРЕННЯЯ ПЕРЕЛИНКОВКА */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
-              Цена полировки автомобиля
+              Другие услуги детейлинг студии в Витебске
+            </h2>
+            <ul className="service-content__related-links">
+              <li>
+                <Link href="/uslugi/okleyka-auto-plenkoy">
+                  Оклейка авто плёнкой в Витебске
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/khimchistka-salona">
+                  Химчистка салона в Витебске
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/vosstanovlenie-lkp">
+                  Восстановление ЛКП в Витебске
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/tonirovka">Тонировка в Витебске</Link>
+              </li>
+              <li>
+                <Link href="/uslugi/zashhitnye-pokrytiya">
+                  Защитные покрытия в Витебске
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* ТАБЛИЦЫ ЦЕН */}
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Цена полировки автомобиля в Витебске
             </h2>
             <PriceTable />
             <BrandsTable />
           </div>
 
+          {/* SEO ТЕКСТ */}
           <div className="seo-content">
             <h2 className="seo-title">
               Профессиональная детейлинг полировка автомобиля в Витебске
@@ -197,7 +252,7 @@ export default function PolirovkaClient() {
               <p className="seo-conclusion-final">
                 <strong>
                   Запишитесь на бесплатную диагностику состояния ЛКП вашего
-                  автомобиля.
+                  автомобиля в Витебске.
                 </strong>
               </p>
             </div>
