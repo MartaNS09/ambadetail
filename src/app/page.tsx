@@ -4,8 +4,10 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
+
 import BlogPreview from "@/components/BlogPreview";
 import Reviews from "@/components/Reviews";
+// import BookingForm from "@/components/forms/BookingForm";
 import "./page.scss";
 
 export default function Home() {
@@ -32,7 +34,7 @@ export default function Home() {
       alt: "Профессиональная химчистка салона автомобиля в Витебске. Удаление пятен, запахов, глубокая чистка.",
     },
     {
-      title: "Оклейка кузова антигравийной цветной плёнкой",
+      title: "Оклейка авто плёнкой",
       slug: "okleyka-auto-plenkoy",
       image: "/images/services/vinil.webp",
       alt: "Оклейка кузова автомобиля антигравийной цветной защитной плёнкой в Витебске. Защита ЛКП от сколов и царапин.",
@@ -333,6 +335,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       <section className="info-section" aria-labelledby="info-title">
         <div className="container">
           <div className="info-grid">
