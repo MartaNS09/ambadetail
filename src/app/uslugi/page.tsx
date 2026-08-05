@@ -36,6 +36,35 @@ export const metadata: Metadata = {
   },
 };
 
+// ✅ СХЕМА BREADCRUMB ДЛЯ ПОИСКОВИКОВ
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Главная",
+      item: "https://ambadetail.by/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Услуги",
+      item: "https://ambadetail.by/uslugi",
+    },
+  ],
+};
+
 export default function UslugiPage() {
-  return <UslugiClient />;
+  return (
+    <>
+      {/* ✅ JSON-LD СХЕМА ДЛЯ ПОИСКОВИКОВ */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <UslugiClient />
+    </>
+  );
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { PriceTable, BrandsTable } from "./tables";
 import "./page.scss";
@@ -13,35 +14,31 @@ export default function ZashchitaClient() {
     return () => clearTimeout(timer);
   }, []);
 
-  useEffect(() => {
-    const handleFaqClick = (event: Event) => {
-      const button = event.currentTarget as HTMLElement;
-      const parent = button.closest(".seo-faq-item");
-      if (parent) {
-        parent.classList.toggle("open");
-      }
-    };
-
-    const faqButtons = document.querySelectorAll(".seo-faq-question");
-    faqButtons.forEach((button) => {
-      button.addEventListener("click", handleFaqClick);
-    });
-
-    return () => {
-      faqButtons.forEach((button) => {
-        button.removeEventListener("click", handleFaqClick);
-      });
-    };
-  }, []);
-
-  const titleParts = ["Нанесение", "защитных", "покрытий"];
+  // 🔥 ИЗМЕНЁННЫЙ ЗАГОЛОВОК — С "В ВИТЕБСКЕ"
+  const titleParts = ["Защитные", "покрытия", "в", "Витебске"];
 
   return (
     <>
       <h1 className="sr-only">
-        Нанесение защитных покрытий на автомобиль в Витебске — керамика, жидкое
-        стекло, антидождь
+        Защитные покрытия для автомобиля в Витебске — керамика, жидкое стекло,
+        антидождь
       </h1>
+
+      {/* ✅ ВИЗУАЛЬНЫЕ ХЛЕБНЫЕ КРОШКИ */}
+      <div className="breadcrumbs" aria-label="Навигационная цепочка">
+        <div className="container">
+          <Link href="/" className="breadcrumbs__link">
+            Главная
+          </Link>
+          <span className="breadcrumbs__separator">/</span>
+          <Link href="/uslugi" className="breadcrumbs__link">
+            Услуги
+          </Link>
+          <span className="breadcrumbs__separator">/</span>
+          <span className="breadcrumbs__current">Защитные покрытия</span>
+        </div>
+      </div>
+
       <section
         className="service-hero"
         aria-label="Защитные покрытия для автомобиля в Витебске"
@@ -70,7 +67,9 @@ export default function ZashchitaClient() {
                   {part.split("").map((letter, letterIndex) => (
                     <span
                       key={letterIndex}
-                      className={`service-hero__title-letter ${isVisible ? "service-hero__title-letter--visible" : ""}`}
+                      className={`service-hero__title-letter ${
+                        isVisible ? "service-hero__title-letter--visible" : ""
+                      }`}
                       style={{
                         transitionDelay: `${(partIndex * 10 + letterIndex) * 0.02}s`,
                       }}
@@ -93,21 +92,25 @@ export default function ZashchitaClient() {
         <div className="container">
           <div className="service-content__intro">
             <p className="service-content__intro-text">
-              <strong>Защитные покрытия</strong> для автомобиля в Витебске — это
+              <strong>Защитные покрытия в Витебске</strong> — это
               профессиональное нанесение керамики, жидкого стекла и гидрофобных
               составов. Защищаем кузов, стёкла, диски и салон от внешних
               воздействий.
             </p>
           </div>
+
+          {/* 🔥 ГЛАВНАЯ СЕКЦИЯ — С "ПРОФЕССИОНАЛЬНАЯ" 1 РАЗ */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
-              Нанесение защитных покрытий на автомобиль в Витебске
+              Защитные покрытия для автомобиля в Витебске — надёжная защита
+              кузова
             </h2>
             <p>
               <strong>Защитные покрытия для автомобиля в Витебске</strong> – это
-              надёжная защита кузова и стёкол от внешних воздействий. Мы
-              предлагаем <strong>керамическое покрытие</strong>,{" "}
-              <strong>жидкое стекло</strong> и{" "}
+              надёжная защита кузова и стёкол от внешних воздействий. Наша
+              студия предлагает{" "}
+              <strong>профессиональное нанесение керамического покрытия</strong>
+              , <strong>жидкое стекло</strong> и{" "}
               <strong>гидрофобные составы</strong> для долговременной защиты
               ЛКП, стёкол и дисков.
             </p>
@@ -119,6 +122,7 @@ export default function ZashchitaClient() {
             </p>
           </div>
 
+          {/* ПРЕИМУЩЕСТВА */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
               Преимущества защитных покрытий в Ambadetail
@@ -145,6 +149,7 @@ export default function ZashchitaClient() {
             </ul>
           </div>
 
+          {/* ЭТАПЫ */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
               Этапы нанесения защитных покрытий в Витебске
@@ -170,6 +175,7 @@ export default function ZashchitaClient() {
             </ol>
           </div>
 
+          {/* ПОЧЕМУ МЫ */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
               Почему выбирают защитные покрытия в Ambadetail
@@ -191,14 +197,47 @@ export default function ZashchitaClient() {
               </li>
             </ul>
           </div>
+
+          {/* 🔥 ССЫЛКИ НА ДРУГИЕ УСЛУГИ — ВНУТРЕННЯЯ ПЕРЕЛИНКОВКА */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
-              Цена защитного покрытия автомобиля
+              Другие услуги детейлинг студии в Витебске
+            </h2>
+            <ul className="service-content__related-links">
+              <li>
+                <Link href="/uslugi/okleyka-auto-plenkoy">
+                  Оклейка авто плёнкой в Витебске
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/khimchistka-salona">
+                  Химчистка салона в Витебске
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/polirovka">Полировка авто в Витебске</Link>
+              </li>
+              <li>
+                <Link href="/uslugi/vosstanovlenie-lkp">
+                  Восстановление ЛКП в Витебске
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/tonirovka">Тонировка в Витебске</Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* ТАБЛИЦЫ ЦЕН */}
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Цена защитного покрытия автомобиля в Витебске
             </h2>
             <PriceTable />
             <BrandsTable />
           </div>
 
+          {/* SEO ТЕКСТ */}
           <div className="seo-content">
             <h2 className="seo-title">
               Защитные покрытия для автомобиля в Витебске
