@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { PriceTable, BrandsTable } from "./tables";
@@ -19,7 +20,8 @@ export default function DetailingClient() {
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  const titleParts = ["Детейлинг", "двигателя"];
+  // 🔥 ИЗМЕНЁННЫЙ ЗАГОЛОВОК — С "В ВИТЕБСКЕ"
+  const titleParts = ["Детейлинг", "двигателя", "в", "Витебске"];
 
   const faqItems = [
     {
@@ -60,6 +62,22 @@ export default function DetailingClient() {
         Детейлинг двигателя в Витебске — профессиональная чистка и защита
         подкапотного пространства
       </h1>
+
+      {/* ✅ ВИЗУАЛЬНЫЕ ХЛЕБНЫЕ КРОШКИ */}
+      <div className="breadcrumbs" aria-label="Навигационная цепочка">
+        <div className="container">
+          <Link href="/" className="breadcrumbs__link">
+            Главная
+          </Link>
+          <span className="breadcrumbs__separator">/</span>
+          <Link href="/uslugi" className="breadcrumbs__link">
+            Услуги
+          </Link>
+          <span className="breadcrumbs__separator">/</span>
+          <span className="breadcrumbs__current">Детейлинг двигателя</span>
+        </div>
+      </div>
+
       <section
         className="service-hero"
         aria-label="Детейлинг двигателя автомобиля в Витебске"
@@ -67,7 +85,7 @@ export default function DetailingClient() {
         <div className="service-hero__bg">
           <Image
             src="/images/services/detailing_dvigatelya.webp"
-            alt="Профессиональный детейлинг двигателя автомобиля в Витебске"
+            alt="Детейлинг двигателя автомобиля в Витебске — чистка мотора"
             fill
             priority
             className="service-hero__image"
@@ -113,28 +131,34 @@ export default function DetailingClient() {
         <div className="container">
           <div className="service-content__intro">
             <p className="service-content__intro-text">
-              <strong>Детейлинг двигателя</strong> в Витебске — это
+              <strong>Детейлинг двигателя в Витебске</strong> — это
               профессиональная очистка моторного отсека от масляных загрязнений,
               дорожной грязи и реагентов.
             </p>
           </div>
+
+          {/* 🔥 ГЛАВНАЯ СЕКЦИЯ — С "ПРОФЕССИОНАЛЬНАЯ" 1 РАЗ */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
-              Профессиональный детейлинг двигателя в Витебске
+              Детейлинг двигателя в Витебске — чистота и безопасность
             </h2>
             <p>
               <strong>Детейлинг двигателя в Витебске</strong> – это комплексная
               очистка моторного отсека от масляных пятен, грязи, пыли и дорожных
-              реагентов. Чистый двигатель – это не только эстетика, но и раннее
-              выявление утечек, коррозии и других проблем.
-            </p>
-            <p>
-              <strong>Чистка двигателя автомобиля</strong> проводится с
+              реагентов. Наша студия предлагает{" "}
+              <strong>профессиональную чистку двигателя</strong> с
               использованием безопасных составов и контролируемой подачи воды.
               Все электрические компоненты защищаются от влаги.
             </p>
+            <p>
+              <strong>Чистка двигателя автомобиля</strong> – это не только
+              эстетика, но и раннее выявление утечек, коррозии и других проблем.
+              Регулярный детейлинг продлевает срок службы мотора и сохраняет его
+              стоимость при продаже.
+            </p>
           </div>
 
+          {/* ПРЕИМУЩЕСТВА */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
               Преимущества детейлинга двигателя в Ambadetail
@@ -162,6 +186,7 @@ export default function DetailingClient() {
             </ul>
           </div>
 
+          {/* ЭТАПЫ */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
               Этапы детейлинга двигателя в Витебске
@@ -187,6 +212,7 @@ export default function DetailingClient() {
             </ol>
           </div>
 
+          {/* ПОЧЕМУ МЫ */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
               Почему выбирают детейлинг двигателя в Ambadetail
@@ -209,8 +235,42 @@ export default function DetailingClient() {
               </li>
             </ul>
           </div>
+
+          {/* 🔥 ССЫЛКИ НА ДРУГИЕ УСЛУГИ — ВНУТРЕННЯЯ ПЕРЕЛИНКОВКА */}
           <div className="service-content__section">
-            <h2 className="service-content__section-title">Вопросы и ответы</h2>
+            <h2 className="service-content__section-title">
+              Другие услуги детейлинг студии в Витебске
+            </h2>
+            <ul className="service-content__related-links">
+              <li>
+                <Link href="/uslugi/okleyka-auto-plenkoy">
+                  Оклейка авто плёнкой в Витебске
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/khimchistka-salona">
+                  Химчистка салона в Витебске
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/polirovka">Полировка авто в Витебске</Link>
+              </li>
+              <li>
+                <Link href="/uslugi/vosstanovlenie-lkp">
+                  Восстановление ЛКП в Витебске
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/tonirovka">Тонировка в Витебске</Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* FAQ */}
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Часто задаваемые вопросы о детейлинге двигателя
+            </h2>
             <div className="faq-accordion">
               {faqItems.map((item, index) => (
                 <div
@@ -250,14 +310,16 @@ export default function DetailingClient() {
             </div>
           </div>
 
+          {/* ТАБЛИЦЫ ЦЕН */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
-              Цена детейлинга двигателя
+              Цена детейлинга двигателя в Витебске
             </h2>
             <PriceTable />
             <BrandsTable />
           </div>
 
+          {/* SEO ТЕКСТ */}
           <div className="seo-content">
             <h2 className="seo-title">
               Профессиональный детейлинг двигателя в Витебске
