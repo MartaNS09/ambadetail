@@ -16,7 +16,7 @@ const allServices = [
       "Профессиональная химчистка салона автомобиля. Удаление пятен, запахов, глубокая чистка всех поверхностей.",
   },
   {
-    title: "Оклейка кузова антигравийной цветной плёнкой",
+    title: "Оклейка авто плёнкой",
     slug: "okleyka-auto-plenkoy",
     image: "/images/services/vinil.webp",
     description:
