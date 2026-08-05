@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { PriceTable, BrandsTable } from "./tables";
@@ -19,7 +20,8 @@ export default function TonirovkaClient() {
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  const titleParts = ["Тонировка"];
+  // 🔥 ИЗМЕНЁННЫЙ ЗАГОЛОВОК — С "В ВИТЕБСКЕ"
+  const titleParts = ["Тонировка", "авто", "в", "Витебске"];
 
   const faqItems = [
     {
@@ -59,6 +61,22 @@ export default function TonirovkaClient() {
         Тонировка автомобиля в Витебске — атермальная тонировка стёкол, защита
         от УФ
       </h1>
+
+      {/* ✅ ВИЗУАЛЬНЫЕ ХЛЕБНЫЕ КРОШКИ */}
+      <div className="breadcrumbs" aria-label="Навигационная цепочка">
+        <div className="container">
+          <Link href="/" className="breadcrumbs__link">
+            Главная
+          </Link>
+          <span className="breadcrumbs__separator">/</span>
+          <Link href="/uslugi" className="breadcrumbs__link">
+            Услуги
+          </Link>
+          <span className="breadcrumbs__separator">/</span>
+          <span className="breadcrumbs__current">Тонировка авто</span>
+        </div>
+      </div>
+
       <section
         className="service-hero"
         aria-label="Тонировка автомобиля в Витебске"
@@ -110,12 +128,12 @@ export default function TonirovkaClient() {
         <div className="container">
           <div className="service-content__intro">
             <p className="service-content__intro-text">
-              Тонировка авто в <strong>Витебске</strong> — это комфорт в салоне,
+              <strong>Тонировка авто в Витебске</strong> — это комфорт в салоне,
               защита от солнца и аккуратный внешний вид.
             </p>
           </div>
 
-          {/* НОВЫЕ СЕКЦИИ */}
+          {/* 🔥 ГЛАВНАЯ СЕКЦИЯ — С "ПРОФЕССИОНАЛЬНАЯ" 1 РАЗ */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
               Тонировка автомобиля в Витебске – комфорт, стиль и защита от
@@ -123,11 +141,11 @@ export default function TonirovkaClient() {
             </h2>
             <p>
               <strong>Тонировка авто в Витебске</strong> – это не только
-              эстетика, но и практичность. Мы предлагаем профессиональную{" "}
-              <strong>атермальную тонировку</strong>, которая снижает нагрев
-              салона в жару, защищает от УФ-лучей и бликов, а также обеспечивает
-              приватность. Используем плёнки с высокими светопропускными
-              характеристиками, соответствующие ГОСТ.
+              эстетика, но и практичность. Наша студия предлагает{" "}
+              <strong>профессиональную атермальную тонировку</strong>, которая
+              снижает нагрев салона в жару, защищает от УФ-лучей и бликов, а
+              также обеспечивает приватность. Используем плёнки с высокими
+              светопропускными характеристиками, соответствующие ГОСТ.
             </p>
             <p>
               Тонировка стёкол автомобиля позволяет сохранить комфортную
@@ -137,6 +155,7 @@ export default function TonirovkaClient() {
             </p>
           </div>
 
+          {/* ПРЕИМУЩЕСТВА */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
               Преимущества тонировки автомобиля в Ambadetail
@@ -164,6 +183,7 @@ export default function TonirovkaClient() {
             </ul>
           </div>
 
+          {/* ЭТАПЫ */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
               Этапы тонировки автомобиля в Витебске
@@ -191,6 +211,7 @@ export default function TonirovkaClient() {
             </ol>
           </div>
 
+          {/* ПОЧЕМУ МЫ */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
               Почему выбирают тонировку в Ambadetail
@@ -214,8 +235,43 @@ export default function TonirovkaClient() {
             </ul>
           </div>
 
+          {/* 🔥 ССЫЛКИ НА ДРУГИЕ УСЛУГИ — ВНУТРЕННЯЯ ПЕРЕЛИНКОВКА */}
           <div className="service-content__section">
-            <h2 className="service-content__section-title">Вопросы и ответы</h2>
+            <h2 className="service-content__section-title">
+              Другие услуги детейлинг студии в Витебске
+            </h2>
+            <ul className="service-content__related-links">
+              <li>
+                <Link href="/uslugi/okleyka-auto-plenkoy">
+                  Оклейка авто плёнкой в Витебске
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/khimchistka-salona">
+                  Химчистка салона в Витебске
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/polirovka">Полировка авто в Витебске</Link>
+              </li>
+              <li>
+                <Link href="/uslugi/vosstanovlenie-lkp">
+                  Восстановление ЛКП в Витебске
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/zashhitnye-pokrytiya">
+                  Защитные покрытия в Витебске
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* FAQ */}
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Часто задаваемые вопросы о тонировке
+            </h2>
             <div className="faq-accordion">
               {faqItems.map((item, index) => (
                 <div
@@ -253,14 +309,16 @@ export default function TonirovkaClient() {
             </div>
           </div>
 
+          {/* ТАБЛИЦЫ ЦЕН */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
-              Цена тонировки автомобиля
+              Цена тонировки автомобиля в Витебске
             </h2>
             <PriceTable />
             <BrandsTable />
           </div>
 
+          {/* SEO ТЕКСТ */}
           <div className="seo-content">
             <h2 className="seo-title">
               Профессиональная тонировка автомобиля в Витебске

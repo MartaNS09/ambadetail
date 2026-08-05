@@ -28,14 +28,14 @@ export default function Header() {
       name: "Восстановление ЛКП по технологии Refiller F5",
       href: "/uslugi/vosstanovlenie-lkp",
     },
-    { name: "Детейлинг химчистка салона", href: "/uslugi/khimchistka-salona" },
+    { name: "Химчистка салона", href: "/uslugi/khimchistka-salona" },
     { name: "Детейлинг полировка авто", href: "/uslugi/polirovka" },
     {
-      name: "Нанесение защитных покрытий",
+      name: "Защитные покрытия",
       href: "/uslugi/zashhitnye-pokrytiya",
     },
-    { name: "Тонировка", href: "/uslugi/tonirovka" },
-    { name: "Химчистка двигателя", href: "/uslugi/detailing-dvigatelya" },
+    { name: "Тонировка авто", href: "/uslugi/tonirovka" },
+    { name: "Детейлинг двигателя", href: "/uslugi/detailing-dvigatelya" },
   ];
 
   // Рассчитываем позицию при открытии с задержкой

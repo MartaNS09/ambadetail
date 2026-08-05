@@ -2,17 +2,15 @@ import { Metadata } from "next";
 import TonirovkaClient from "./TonirovkaClient";
 
 export const metadata: Metadata = {
-  title:
-    "Тонировка авто в Витебске | Атермальная тонировка стёкол | Ambadetail",
+  title: "Тонировка авто в Витебске | Атермальная тонировка стёкол",
   description:
-    "Профессиональная тонировка автомобиля в Витебске. Атермальная плёнка, защита от УФ, комфорт в салоне. Тонировка любой сложности. Запись онлайн.",
+    "Тонировка автомобиля в Витебске. Атермальная тонировка стёкол, защита от УФ, комфорт в салоне. KAVACA, Llumar. Запишитесь!",
   keywords:
-    "тонировка авто витебск, атермальная тонировка, тонировка стекол автомобиля, затемнение стёкол, защита от солнца, тонировка авто цена, KAVACA, Llumar",
+    "тонировка авто витебск, атермальная тонировка, тонировка стекол автомобиля, затемнение стёкол, защита от солнца, тонировка авто цена, KAVACA, Llumar, SunTek",
   openGraph: {
-    title:
-      "Тонировка авто в Витебске | Атермальная тонировка стёкол | Ambadetail",
+    title: "Тонировка авто в Витебске | Атермальная тонировка стёкол",
     description:
-      "Профессиональная тонировка автомобиля в Витебске. Атермальная плёнка, защита от УФ, комфорт в салоне. Тонировка любой сложности. Запись онлайн.",
+      "Тонировка автомобиля в Витебске. Атермальная тонировка стёкол, защита от УФ, комфорт в салоне. KAVACA, Llumar. Запишитесь!",
     url: "https://ambadetail.by/uslugi/tonirovka",
     siteName: "Ambadetail",
     images: [
@@ -28,10 +26,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Тонировка авто в Витебске | Атермальная тонировка стёкол | Ambadetail",
+    title: "Тонировка авто в Витебске | Атермальная тонировка стёкол",
     description:
-      "Профессиональная тонировка автомобиля в Витебске. Атермальная плёнка, защита от УФ, комфорт в салоне. Тонировка любой сложности. Запись онлайн.",
+      "Тонировка автомобиля в Витебске. Атермальная тонировка стёкол, защита от УФ, комфорт в салоне. KAVACA, Llumar. Запишитесь!",
     images: ["/images/services/tonirovka.webp"],
   },
   alternates: {
@@ -39,6 +36,40 @@ export const metadata: Metadata = {
   },
 };
 
+// ✅ СХЕМА BREADCRUMB
+const breadcrumbSchema = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Главная",
+      item: "https://ambadetail.by/",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Услуги",
+      item: "https://ambadetail.by/uslugi",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Тонировка авто",
+      item: "https://ambadetail.by/uslugi/tonirovka",
+    },
+  ],
+};
+
 export default function TonirovkaPage() {
-  return <TonirovkaClient />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      <TonirovkaClient />
+    </>
+  );
 }

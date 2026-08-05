@@ -22,7 +22,7 @@ export default function Footer() {
   const popularServices = [
     { name: "Детейлинг авто", href: "/uslugi" },
     { name: "Детейлинг двигателя", href: "/uslugi/detailing-dvigatelya" },
-    { name: "Полировка авто", href: "/uslugi/polirovka" },
+    { name: "Детейлинг полировка авто", href: "/uslugi/polirovka" },
     { name: "Защитные покрытия", href: "/uslugi/zashhitnye-pokrytiya" },
     { name: "Восстановление ЛКП", href: "/uslugi/vosstanovlenie-lkp" },
     {
