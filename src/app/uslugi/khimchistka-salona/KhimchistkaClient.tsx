@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { PriceTable, BrandsTable } from "./tables";
 import "./page.scss";
@@ -19,7 +20,8 @@ export default function KhimchistkaClient() {
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  const titleParts = ["Химчистка", "салона"];
+  // 🔥 ИЗМЕНЁННЫЙ ЗАГОЛОВОК — С "В ВИТЕБСКЕ"
+  const titleParts = ["Химчистка", "салона", "в", "Витебске"];
 
   const faqItems = [
     {
@@ -61,6 +63,22 @@ export default function KhimchistkaClient() {
         Химчистка салона автомобиля в Витебске — глубокая чистка, удаление пятен
         и запахов
       </h1>
+
+      {/* ✅ ВИЗУАЛЬНЫЕ ХЛЕБНЫЕ КРОШКИ */}
+      <div className="breadcrumbs" aria-label="Навигационная цепочка">
+        <div className="container">
+          <Link href="/" className="breadcrumbs__link">
+            Главная
+          </Link>
+          <span className="breadcrumbs__separator">/</span>
+          <Link href="/uslugi" className="breadcrumbs__link">
+            Услуги
+          </Link>
+          <span className="breadcrumbs__separator">/</span>
+          <span className="breadcrumbs__current">Химчистка салона</span>
+        </div>
+      </div>
+
       <section
         className="service-hero"
         aria-label="Химчистка салона автомобиля в Витебске"
@@ -110,22 +128,24 @@ export default function KhimchistkaClient() {
         <div className="container">
           <div className="service-content__intro">
             <p className="service-content__intro-text">
-              Детейлинг‑химчистка салона в <strong>Витебске</strong> — это
-              глубокая чистка сидений, ковров, потолка и пластика с аккуратной
-              сушкой. Убираем пятна и запахи, возвращаем салону опрятный вид и
-              комфорт.
+              <strong>Химчистка салона в Витебске</strong> — глубокая чистка
+              сидений, ковров, потолка и пластика с аккуратной сушкой. Убираем
+              пятна и запахи, возвращаем салону опрятный вид и комфорт.
             </p>
           </div>
+
+          {/* 🔥 ГЛАВНАЯ СЕКЦИЯ — С "ПРОФЕССИОНАЛЬНАЯ" 1 РАЗ */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
-              Профессиональная химчистка салона автомобиля в Витебске
+              Химчистка салона автомобиля в Витебске — чистота и свежесть
             </h2>
             <p>
-              <strong>Химчистка салона в Витебске</strong> – это глубокая
-              очистка всех поверхностей автомобиля от загрязнений, пятен и
-              запахов. Мы используем профессиональное оборудование и безопасные
-              химические составы, подобранные под тип материала (кожа, ткань,
-              алькантара).
+              <strong>Химчистка салона в Витебске</strong> — глубокая очистка
+              всех поверхностей автомобиля от загрязнений, пятен и запахов. Наша
+              студия предлагает{" "}
+              <strong>профессиональную химчистку салона</strong> с
+              использованием безопасных составов, подобранных под тип материала
+              (кожа, ткань, алькантара).
             </p>
             <p>
               <strong>Детейлинг химчистка салона</strong> возвращает свежесть,
@@ -134,6 +154,7 @@ export default function KhimchistkaClient() {
             </p>
           </div>
 
+          {/* ПРЕИМУЩЕСТВА */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
               Преимущества химчистки салона в Ambadetail
@@ -161,6 +182,7 @@ export default function KhimchistkaClient() {
             </ul>
           </div>
 
+          {/* ЭТАПЫ */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
               Этапы химчистки салона в Витебске
@@ -186,6 +208,7 @@ export default function KhimchistkaClient() {
             </ol>
           </div>
 
+          {/* ПОЧЕМУ МЫ */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
               Почему выбирают химчистку в Ambadetail
@@ -207,8 +230,42 @@ export default function KhimchistkaClient() {
               </li>
             </ul>
           </div>
+
+          {/* 🔥 ССЫЛКИ НА ДРУГИЕ УСЛУГИ — ВНУТРЕННЯЯ ПЕРЕЛИНКОВКА */}
           <div className="service-content__section">
-            <h2 className="service-content__section-title">Вопросы и ответы</h2>
+            <h2 className="service-content__section-title">
+              Другие услуги детейлинг студии в Витебске
+            </h2>
+            <ul className="service-content__related-links">
+              <li>
+                <Link href="/uslugi/okleyka-auto-plenkoy">
+                  Оклейка авто плёнкой в Витебске
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/polirovka">Полировка авто в Витебске</Link>
+              </li>
+              <li>
+                <Link href="/uslugi/vosstanovlenie-lkp">
+                  Восстановление ЛКП в Витебске
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/zashhitnye-pokrytiya">
+                  Защитные покрытия в Витебске
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/tonirovka">Тонировка в Витебске</Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* FAQ */}
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Часто задаваемые вопросы о химчистке салона
+            </h2>
             <div className="faq-accordion">
               {faqItems.map((item, index) => (
                 <div
@@ -248,14 +305,16 @@ export default function KhimchistkaClient() {
             </div>
           </div>
 
+          {/* ТАБЛИЦЫ ЦЕН */}
           <div className="service-content__section">
             <h2 className="service-content__section-title">
-              Цена химчистки автомобиля
+              Цена химчистки автомобиля в Витебске
             </h2>
             <PriceTable />
             <BrandsTable />
           </div>
 
+          {/* SEO ТЕКСТ */}
           <div className="seo-content">
             <h2 className="seo-title">
               Детейлинг и химчистка автомобиля в Витебске
