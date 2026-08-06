@@ -2,13 +2,18 @@ import { Metadata } from "next";
 import TonirovkaClient from "./TonirovkaClient";
 
 export const metadata: Metadata = {
-  title: "Тонировка авто в Витебске | Атермальная тонировка стёкол",
+  // 🔥 КОРОТКИЙ И ТОЛЬКО ГЛАВНЫЙ ЗАПРОС!
+  title: "Тонировка авто в Витебске",
+
+  // ✅ description остаётся с подробностями
   description:
     "Тонировка автомобиля в Витебске. Атермальная тонировка стёкол, защита от УФ, комфорт в салоне. KAVACA, Llumar. Запишитесь!",
+
   keywords:
     "тонировка авто витебск, атермальная тонировка, тонировка стекол автомобиля, затемнение стёкол, защита от солнца, тонировка авто цена, KAVACA, Llumar, SunTek",
+
   openGraph: {
-    title: "Тонировка авто в Витебске | Атермальная тонировка стёкол",
+    title: "Тонировка авто в Витебске",
     description:
       "Тонировка автомобиля в Витебске. Атермальная тонировка стёкол, защита от УФ, комфорт в салоне. KAVACA, Llumar. Запишитесь!",
     url: "https://ambadetail.by/uslugi/tonirovka",
@@ -18,7 +23,7 @@ export const metadata: Metadata = {
         url: "/images/services/tonirovka.webp",
         width: 1200,
         height: 630,
-        alt: "Тонировка авто в Витебске | Атермальная тонировка стёкол",
+        alt: "Тонировка авто в Витебске",
       },
     ],
     locale: "ru_RU",
@@ -26,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Тонировка авто в Витебске | Атермальная тонировка стёкол",
+    title: "Тонировка авто в Витебске",
     description:
       "Тонировка автомобиля в Витебске. Атермальная тонировка стёкол, защита от УФ, комфорт в салоне. KAVACA, Llumar. Запишитесь!",
     images: ["/images/services/tonirovka.webp"],
