@@ -38,22 +38,22 @@ export const PriceTable = () => (
           <tr>
             <td className="text-left">1</td>
             <td className="text-left">Комплексная химчистка салона</td>
-            <td className="price">429</td>
-            <td className="price">453</td>
-            <td className="price">510</td>
-            <td className="price">545</td>
-            <td className="price">592</td>
+            <td className="price">708</td>
+            <td className="price">747</td>
+            <td className="price">842</td>
+            <td className="price">899</td>
+            <td className="price">977</td>
           </tr>
           <tr>
             <td className="text-left">2</td>
             <td className="text-left">
               Комплексная химчистка салона (с разбором)
             </td>
-            <td className="price">477</td>
-            <td className="price">502</td>
-            <td className="price">549</td>
-            <td className="price">587</td>
-            <td className="price">626</td>
+            <td className="price">787</td>
+            <td className="price">828</td>
+            <td className="price">906</td>
+            <td className="price">969</td>
+            <td className="price">1033</td>
           </tr>
           <tr>
             <td className="text-left">3</td>
@@ -213,12 +213,12 @@ export const PriceTable = () => (
             <td className="text-left">
               Чистка кожи составами LE TECH всех элементов салона
             </td>
-            <td className="price">191</td>
+            <td className="price">315</td>
             <td className="price" colSpan={2}>
-              239
+              394
             </td>
-            <td className="price">334</td>
-            <td className="price">358</td>
+            <td className="price">551</td>
+            <td className="price">591</td>
           </tr>
           <tr>
             <td className="text-left">23</td>
@@ -249,21 +249,21 @@ export const PriceTable = () => (
             <td className="text-left">
               Комплексное покрытие всех кожаных элементов
             </td>
-            <td className="price">651</td>
-            <td className="price">738</td>
-            <td className="price">825</td>
-            <td className="price">955</td>
-            <td className="price">1 128</td>
+            <td className="price">1074</td>
+            <td className="price">1218</td>
+            <td className="price">1361</td>
+            <td className="price">1576</td>
+            <td className="price">1861</td>
           </tr>
           <tr>
             <td className="text-left">3</td>
             <td className="text-left">2 передних сидения + подлокотник</td>
-            <td className="price">304</td>
+            <td className="price">502</td>
             <td className="price" colSpan={2}>
-              421
+              695
             </td>
-            <td className="price">443</td>
-            <td className="price">521</td>
+            <td className="price">731</td>
+            <td className="price">860</td>
           </tr>
           <tr>
             <td className="text-left">4</td>
@@ -282,11 +282,11 @@ export const PriceTable = () => (
               Обработка кожи/текстиля всех элементов салона составом KOCH/LE
               TECH после комплексной химчистки
             </td>
-            <td className="price">130</td>
-            <td className="price">174</td>
-            <td className="price">217</td>
-            <td className="price">282</td>
-            <td className="price">304</td>
+            <td className="price">215</td>
+            <td className="price">287</td>
+            <td className="price">358</td>
+            <td className="price">465</td>
+            <td className="price">502</td>
           </tr>
           <tr>
             <td className="text-left">6</td>
@@ -294,12 +294,12 @@ export const PriceTable = () => (
               Обработка кожи всех элементов салона составом KOCH/LE TECH с
               предварительной очисткой
             </td>
-            <td className="price">217</td>
+            <td className="price">358</td>
             <td className="price" colSpan={2}>
-              304
+              502
             </td>
-            <td className="price">391</td>
-            <td className="price">521</td>
+            <td className="price">645</td>
+            <td className="price">860</td>
           </tr>
           <tr>
             <td className="text-left">7</td>
@@ -307,12 +307,12 @@ export const PriceTable = () => (
               Обработка кожи салона передней полусферы кондиционером KOCH/LE
               TECH с предварительной очисткой
             </td>
-            <td className="price">130</td>
+            <td className="price">215</td>
             <td className="price" colSpan={2}>
-              204
+              337
             </td>
-            <td className="price">260</td>
-            <td className="price">312</td>
+            <td className="price">429</td>
+            <td className="price">515</td>
           </tr>
           <tr>
             <td className="text-left">8</td>
@@ -320,12 +320,12 @@ export const PriceTable = () => (
               Обработка кожи с предварительной очисткой 1 сидения составами
               KOCH/LE TECH
             </td>
-            <td className="price">108</td>
+            <td className="price">178</td>
             <td className="price" colSpan={2}>
-              147
+              243
             </td>
             <td className="price" colSpan={2}>
-              217
+              358
             </td>
           </tr>
           <tr>
@@ -342,31 +342,31 @@ export const PriceTable = () => (
             <td className="text-left">
               Комплексное покрытие всего салона в текстиле
             </td>
-            <td className="price">260</td>
-            <td className="price">325</td>
-            <td className="price">391</td>
-            <td className="price">477</td>
-            <td className="price">542</td>
+            <td className="price">429</td>
+            <td className="price">536</td>
+            <td className="price">645</td>
+            <td className="price">787</td>
+            <td className="price">894</td>
           </tr>
           <tr>
             <td className="text-left">11</td>
             <td className="text-left">2 передних сидения + подлокотник</td>
-            <td className="price">130</td>
-            <td className="price">174</td>
-            <td className="price">217</td>
-            <td className="price">304</td>
-            <td className="price">434</td>
+            <td className="price">215</td>
+            <td className="price">287</td>
+            <td className="price">358</td>
+            <td className="price">502</td>
+            <td className="price">716</td>
           </tr>
           <tr>
             <td className="text-left">12</td>
             <td className="text-left">Напольное покрытие всего салона</td>
             <td className="price" colSpan={2}>
-              174
+              287
             </td>
             <td className="price" colSpan={2}>
-              217
+              358
             </td>
-            <td className="price">347</td>
+            <td className="price">573</td>
           </tr>
           <tr>
             <td className="text-left">13</td>
