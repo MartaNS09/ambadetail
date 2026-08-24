@@ -990,35 +990,35 @@ html.dark .faq-accordion__item--open {
 }
 
 /* ========== ХЛЕБНЫЕ КРОШКИ ========== */
-.breadcrumbs {
-  padding: 1rem 0;
-  background: rgba(var(--bg-secondary), 0.3);
-  border-bottom: 1px solid rgba(var(--accent), 0.05);
-}
+// .breadcrumbs {
+//   padding: 1rem 0;
+//   background: rgba(var(--bg-secondary), 0.3);
+//   border-bottom: 1px solid rgba(var(--accent), 0.05);
+// }
 
-.breadcrumbs__link {
-  color: rgb(var(--text-secondary));
-  text-decoration: none;
-  font-size: 0.85rem;
-  transition: color 0.3s ease;
-}
+// .breadcrumbs__link {
+//   color: rgb(var(--text-secondary));
+//   text-decoration: none;
+//   font-size: 0.85rem;
+//   transition: color 0.3s ease;
+// }
 
-.breadcrumbs__link:hover {
-  color: #dc2626;
-}
+// .breadcrumbs__link:hover {
+//   color: #dc2626;
+// }
 
-.breadcrumbs__separator {
-  color: rgb(var(--text-secondary));
-  margin: 0 0.5rem;
-  font-size: 0.8rem;
-  opacity: 0.5;
-}
+// .breadcrumbs__separator {
+//   color: rgb(var(--text-secondary));
+//   margin: 0 0.5rem;
+//   font-size: 0.8rem;
+//   opacity: 0.5;
+// }
 
-.breadcrumbs__current {
-  color: rgb(var(--text-primary));
-  font-size: 0.85rem;
-  font-weight: 600;
-}
+// .breadcrumbs__current {
+//   color: rgb(var(--text-primary));
+//   font-size: 0.85rem;
+//   font-weight: 600;
+// }
 
 /* ========== СПИСОК СВЯЗАННЫХ УСЛУГ ========== */
 .service-content__related-links {

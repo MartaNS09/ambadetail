@@ -194,3 +194,92 @@ body.menu-open {
   white-space: nowrap;
   border-width: 0;
 }
+/* ============================================
+   ХЛЕБНЫЕ КРОШКИ (ГЛОБАЛЬНО)
+   ============================================ */
+
+.breadcrumbs {
+  padding-top: 70px !important; /* ← МИНИМАЛЬНО ОТ ХЕДЕРА */
+  padding-bottom: 1.5rem !important; /* ← БОЛЬШЕ ВОЗДУХА ДО HERO */
+  background: transparent;
+  position: relative;
+  z-index: 1;
+
+  .container {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    flex-wrap: wrap;
+    font-size: 0.85rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  &__link {
+    color: rgba(var(--text-secondary), 0.6);
+    text-decoration: none;
+    font-size: 0.8rem;
+    transition: color 0.3s ease;
+
+    &:hover {
+      color: rgb(var(--accent-light));
+    }
+  }
+
+  &__separator {
+    color: rgba(var(--text-secondary), 0.25);
+    user-select: none;
+    font-size: 0.7rem;
+  }
+
+  &__current {
+    color: rgb(var(--text-primary));
+    font-weight: 600;
+    font-size: 0.8rem;
+  }
+}
+
+/* Планшеты */
+@media (max-width: 1024px) {
+  .breadcrumbs {
+    padding-top: 60px !important;
+    padding-bottom: 1.25rem !important;
+  }
+}
+
+/* Мобилки */
+@media (max-width: 768px) {
+  .breadcrumbs {
+    padding-top: 55px !important;
+    padding-bottom: 1rem !important;
+
+    .container {
+      font-size: 0.75rem;
+      gap: 0.25rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    &__link {
+      font-size: 0.7rem;
+    }
+
+    &__current {
+      font-size: 0.7rem;
+    }
+
+    &__separator {
+      font-size: 0.65rem;
+    }
+  }
+}
+
+/* Маленькие мобилки */
+@media (max-width: 480px) {
+  .breadcrumbs {
+    padding-top: 50px !important;
+    padding-bottom: 0.75rem !important;
+  }
+}
