@@ -287,6 +287,39 @@ export default function OkleykaClient() {
               </li>
             </ul>
           </div>
+          {/* ПОПУЛЯРНЫЕ ЗАПРОСЫ */}
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Популярные услуги по оклейке авто в Витебске
+            </h2>
+            <ul className="service-content__related-links">
+              <li>
+                <Link href="/uslugi/okleyka-auto-plenkoy#sunmax">
+                  Оклейка Sunmax
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/okleyka-auto-plenkoy#xpel">
+                  Оклейка XPEL
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/okleyka-auto-plenkoy#llumar">
+                  Оклейка Llumar
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/okleyka-auto-plenkoy#stek">
+                  Оклейка Stek
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/okleyka-auto-plenkoy#color">
+                  Цветная полиуретановая плёнка
+                </Link>
+              </li>
+            </ul>
+          </div>
 
           {/* ССЫЛКИ НА ДРУГИЕ УСЛУГИ */}
           <div className="service-content__section">
@@ -372,6 +405,33 @@ export default function OkleykaClient() {
             <LlumarTable />
             <ColorFilmTable />
             <BrandsTable />
+          </div>
+
+          {/* ОТЗЫВЫ КЛИЕНТОВ */}
+          <div className="service-content__section">
+            <h2 className="service-content__section-title">
+              Отзывы об оклейке авто плёнкой в Витебске
+            </h2>
+            <div className="reviews-grid">
+              <div className="review-card">
+                <div className="review-card__stars">★★★★★</div>
+                <p className="review-card__text">
+                  &ldquo;Отличная работа! Оклеили капот пленкой XPEL. Всё
+                  идеально, рекомендую!&rdquo;
+                </p>
+                <span className="review-card__author">
+                  — Александр, Витебск
+                </span>
+              </div>
+              <div className="review-card">
+                <div className="review-card__stars">★★★★★</div>
+                <p className="review-card__text">
+                  &ldquo;Сделали полную оклейку Sunmax. Машина как новая.
+                  Спасибо ребятам!&rdquo;
+                </p>
+                <span className="review-card__author">— Дмитрий, Витебск</span>
+              </div>
+            </div>
           </div>
 
           {/* SEO ТЕКСТ */}

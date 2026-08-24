@@ -1090,3 +1090,73 @@ html.dark .faq-accordion__item--open {
     padding: 0.6rem 0.8rem;
   }
 }
+/* ========== СТИЛИ ДЛЯ ОТЗЫВОВ НА СТРАНИЦЕ УСЛУГИ ========== */
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+.review-card {
+  background: rgba(var(--bg-card), 0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 1.5rem;
+  padding: 1.75rem;
+  border: 1px solid rgba(var(--accent), 0.08);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  &:hover {
+    transform: translateY(-5px);
+    border-color: rgba(220, 38, 38, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    background: rgba(var(--bg-card), 0.6);
+  }
+
+  &__stars {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    color: #f59e0b;
+    margin-bottom: 0.75rem;
+  }
+
+  &__text {
+    font-size: 0.95rem;
+    color: rgb(var(--text-secondary));
+    line-height: 1.7;
+    margin-bottom: 1rem;
+    font-style: italic;
+  }
+
+  &__author {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgb(var(--text-primary));
+    display: block;
+  }
+}
+
+/* Тёмная тема */
+html.dark .review-card {
+  background: rgba(15, 25, 35, 0.5);
+
+  &:hover {
+    background: rgba(15, 25, 35, 0.7);
+  }
+}
+
+/* Адаптив */
+@media (max-width: 480px) {
+  .review-card {
+    padding: 1.25rem;
+  }
+
+  .review-card__text {
+    font-size: 0.9rem;
+  }
+}
