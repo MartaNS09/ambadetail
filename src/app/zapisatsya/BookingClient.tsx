@@ -33,6 +33,13 @@ function resolveService(raw: string | null): string {
   return match ?? DEFAULT_BOOKING_SERVICE;
 }
 
+function todayIso(): string {
+  const now = new Date();
+  return new Date(now.getTime() - now.getTimezoneOffset() * 60000)
+    .toISOString()
+    .slice(0, 10);
+}
+
 export default function BookingClient() {
   const searchParams = useSearchParams();
   const initialService = useMemo(
@@ -43,7 +50,11 @@ export default function BookingClient() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [fieldErrors, setFieldErrors] = useState({ name: "", phone: "" });
+  const [fieldErrors, setFieldErrors] = useState({
+    name: "",
+    phone: "",
+    date: "",
+  });
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -64,7 +75,7 @@ export default function BookingClient() {
       ...prev,
       [name]: name === "phone" ? formatByRfPhone(value) : value,
     }));
-    if (name === "name" || name === "phone") {
+    if (name === "name" || name === "phone" || name === "date") {
       setFieldErrors((prev) => ({ ...prev, [name]: "" }));
     }
   };
@@ -73,7 +84,9 @@ export default function BookingClient() {
     event.preventDefault();
     setError("");
 
-    const nextFieldErrors = { name: "", phone: "" };
+    const today = todayIso();
+
+    const nextFieldErrors = { name: "", phone: "", date: "" };
     if (!form.name.trim()) {
       nextFieldErrors.name = "Укажите имя.";
     }
@@ -83,10 +96,15 @@ export default function BookingClient() {
       nextFieldErrors.phone =
         "Укажите полный номер РБ (+375, 12 цифр) или РФ (+7, 11 цифр).";
     }
+    if (!form.date) {
+      nextFieldErrors.date = "Укажите дату.";
+    } else if (form.date < today) {
+      nextFieldErrors.date = "Нельзя выбрать прошедшую дату.";
+    }
     setFieldErrors(nextFieldErrors);
 
-    if (nextFieldErrors.name || nextFieldErrors.phone) {
-      setError("Имя и телефон обязательны.");
+    if (nextFieldErrors.name || nextFieldErrors.phone || nextFieldErrors.date) {
+      setError("Имя, телефон и дата обязательны.");
       return;
     }
 
@@ -94,7 +112,7 @@ export default function BookingClient() {
       "Заявка на запись",
       `Телефон: ${form.phone.trim()}`,
       `Услуга: ${form.service}`,
-      form.date ? `Желаемая дата: ${form.date}` : "",
+      `Желаемая дата: ${form.date}`,
       form.car.trim() ? `Автомобиль: ${form.car.trim()}` : "",
       form.comment.trim() ? `Комментарий: ${form.comment.trim()}` : "",
     ]
@@ -281,12 +299,29 @@ export default function BookingClient() {
                 </label>
                 <label>
                   Желаемая дата
+                  <span className="certificate-form__required" aria-hidden="true">
+                    *
+                  </span>
                   <input
                     type="date"
                     name="date"
                     value={form.date}
                     onChange={onChange}
+                    required
+                    aria-required="true"
+                    aria-invalid={Boolean(fieldErrors.date)}
+                    min={todayIso()}
+                    className={
+                      fieldErrors.date
+                        ? "certificate-form__input--invalid"
+                        : undefined
+                    }
                   />
+                  {fieldErrors.date && (
+                    <span className="certificate-form__error">
+                      {fieldErrors.date}
+                    </span>
+                  )}
                 </label>
                 <label>
                   Автомобиль
