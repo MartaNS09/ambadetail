@@ -10,11 +10,12 @@ import MobileBottomNav from "@/components/layout/mobile/MobileBottomNav";
 export const metadata: Metadata = {
   metadataBase: new URL("https://ambadetail.by"),
   title: {
-    default: "Ambadetail | Детейлинг студия в Витебске",
+    default: "Детейлинг студия в Витебске | Ambadetail",
     template: "%s | Ambadetail",
   },
   description:
-    "Детейлинг студия в Витебске: химчистка салона, полировка кузова, оклейка плёнкой PPF, тонировка по ГОСТ, керамика, восстановление ЛКП. Ambadetail — ул. П. Бровки, 6А.",
+    "Профессиональный детейлинг в Витебске. Оклейка авто плёнкой, химчистка салона, полировка, тонировка по ГОСТ, керамика. Ambadetail — ул. П. Бровки, 6А.",
+  applicationName: "Ambadetail — Детейлинг в Витебске",
   keywords:
     "детейлинг витебск, детейлинг студия витебск, химчистка салона витебск, полировка авто витебск, оклейка пленкой витебск, тонировка витебск, тонировка по гост витебск, керамика авто витебск, ppf витебск",
   authors: [{ name: "Ambadetail" }],
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
     description:
       "Химчистка, полировка, PPF, тонировка по ГОСТ, керамика и восстановление ЛКП в Витебске.",
     url: "https://ambadetail.by",
-    siteName: "Ambadetail",
+    siteName: "Ambadetail — Детейлинг в Витебске",
     locale: "ru_BY",
     type: "website",
     images: [
@@ -188,6 +189,49 @@ const jsonLd = {
   ],
 };
 
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://ambadetail.by/#website",
+  name: "Ambadetail",
+  alternateName: "Детейлинг студия в Витебске",
+  url: "https://ambadetail.by",
+  inLanguage: "ru-BY",
+  publisher: { "@id": "https://ambadetail.by/#localbusiness" },
+};
+
+const sitelinksJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Навигация сайта Ambadetail",
+  itemListElement: [
+    {
+      "@type": "SiteNavigationElement",
+      position: 1,
+      name: "Главная",
+      url: "https://ambadetail.by/",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 2,
+      name: "О нас",
+      url: "https://ambadetail.by/about",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 3,
+      name: "Работы",
+      url: "https://ambadetail.by/portfolio",
+    },
+    {
+      "@type": "SiteNavigationElement",
+      position: 4,
+      name: "Услуги",
+      url: "https://ambadetail.by/uslugi",
+    },
+  ],
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -200,6 +244,18 @@ export default function RootLayout({
           id="schema-org"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+          strategy="afterInteractive"
+        />
+        <Script
+          id="schema-website"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+          strategy="afterInteractive"
+        />
+        <Script
+          id="schema-sitelinks"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(sitelinksJsonLd) }}
           strategy="afterInteractive"
         />
       </head>

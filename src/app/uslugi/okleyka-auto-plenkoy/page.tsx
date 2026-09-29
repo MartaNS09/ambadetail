@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import OkleykaClient from "./OkleykaClient";
+import { okleykaFaqItems } from "./seo-data";
 import {
   breadcrumbSchema,
   serviceSchema,
@@ -9,24 +10,28 @@ import {
 const pageUrl = "https://ambadetail.by/uslugi/okleyka-auto-plenkoy";
 const pageImage = "https://ambadetail.by/images/services/vinil.webp";
 
+const title = "Оклейка авто плёнкой в Витебске | Профессиональная защита кузова";
+const description =
+  "Профессиональная оклейка авто в Витебске. Антигравийные и цветные плёнки XPEL, Sunmax, Llumar, Stek, HEXIS. Защита от сколов, бронирование, смена цвета. Гарантия 3 года.";
+
 export const metadata: Metadata = {
-  title: "Оклейка авто плёнкой в Витебске | PPF, винил, защита кузова",
-  description:
-    "Оклейка автомобиля плёнкой в Витебске: PPF, винил, бронирование кузова, смена цвета. XPEL, Sunmax, Llumar, Stek. Гарантия 3 года. Ambadetail — +375 29 223 03 22",
+  title: {
+    absolute: title,
+  },
+  description,
   keywords:
-    "оклейка авто пленкой витебск, ppf витебск, винил витебск, защита кузова витебск, бронирование кузова витебск, антигравийная пленка, оклейка капота витебск, xpel витебск, sunmax, llumar, stek",
+    "оклейка авто пленкой витебск, профессиональная оклейка авто витебск, ppf витебск, антигравийная пленка витебск, бронирование кузова витебск, оклейка капота витебск, оклейка фар витебск, оклейка бампера, цветная полиуретановая пленка, xpel витебск, sunmax витебск, llumar, stek, hexis",
   openGraph: {
-    title: "Оклейка авто плёнкой в Витебске | PPF, винил — Ambadetail",
-    description:
-      "PPF и винил в Витебске: защита ЛКП, бронирование, смена цвета. Гарантия 3 года.",
+    title,
+    description,
     url: pageUrl,
-    siteName: "Ambadetail",
+    siteName: "Ambadetail — Детейлинг в Витебске",
     images: [
       {
         url: "/images/services/vinil.webp",
         width: 1200,
         height: 630,
-        alt: "Оклейка авто плёнкой в Витебске — защита кузова PPF",
+        alt: "Профессиональная оклейка авто плёнкой в Витебске — PPF защита кузова",
       },
     ],
     locale: "ru_BY",
@@ -34,9 +39,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Оклейка авто плёнкой в Витебске | Ambadetail",
-    description:
-      "PPF и винил в Витебске: защита кузова, бронирование, смена цвета.",
+    title,
+    description,
     images: ["/images/services/vinil.webp"],
   },
   alternates: {
@@ -53,35 +57,73 @@ const breadcrumbs = breadcrumbSchema([
 const service = serviceSchema({
   name: "Оклейка авто плёнкой в Витебске",
   serviceType: "Оклейка автомобиля защитной плёнкой",
-  description:
-    "Профессиональная оклейка автомобиля антигравийной PPF и цветной полиуретановой плёнкой в Витебске: бронирование кузова, защита ЛКП, смена цвета.",
+  description,
   url: pageUrl,
   image: pageImage,
+  priceFrom: "660",
 });
 
-const faq = faqPageSchema([
-  {
-    question:
-      "Чем отличается прозрачная PPF от цветной полиуретановой пленки?",
-    answer:
-      "Обе пленки полиуретановые и защищают ЛКП. Прозрачная PPF сохраняет заводской цвет, а цветная полиуретановая пленка одновременно защищает кузов и меняет цвет автомобиля.",
+const faq = faqPageSchema(okleykaFaqItems);
+
+const howTo = {
+  "@context": "https://schema.org",
+  "@type": "HowTo",
+  name: "Как проходит оклейка авто плёнкой в Витебске",
+  description:
+    "Этапы профессиональной оклейки автомобиля антигравийной и цветной плёнкой в студии Ambadetail.",
+  totalTime: "P2D",
+  estimatedCost: {
+    "@type": "MonetaryAmount",
+    currency: "BYN",
+    value: "660",
   },
-  {
-    question: "Какие зоны лучше оклеить в первую очередь?",
-    answer:
-      "Чаще всего оклеивают зоны риска: капот, бампер, фары, зеркала, стойки и кромки дверей.",
-  },
-  {
-    question: "Сколько времени занимает оклейка автомобиля плёнкой?",
-    answer:
-      "Срок зависит от объёма работ: частичная оклейка обычно занимает от 1 дня, полная — несколько дней.",
-  },
+  step: [
     {
-      question: "Сколько стоит оклейка капота в Витебске?",
-      answer:
-        "Стоимость зависит от размера капота и выбранной плёнки. Точную стоимость рассчитаем на консультации.",
+      "@type": "HowToStep",
+      name: "Консультация",
+      text: "Подбор плёнки PPF или цветного полиуретана под задачи и бюджет.",
     },
-]);
+    {
+      "@type": "HowToStep",
+      name: "Подготовка кузова",
+      text: "Мойка, обезжиривание, при необходимости лёгкая полировка.",
+    },
+    {
+      "@type": "HowToStep",
+      name: "Раскрой",
+      text: "Компьютерный или ручной раскрой плёнки по шаблонам кузова.",
+    },
+    {
+      "@type": "HowToStep",
+      name: "Оклейка",
+      text: "Монтаж на капот, бампер, крылья, фары, стойки и другие зоны.",
+    },
+    {
+      "@type": "HowToStep",
+      name: "Контроль качества",
+      text: "Проверка прилегания, устранение пузырей и складок, рекомендации по уходу.",
+    },
+  ],
+};
+
+const zonesList = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Зоны оклейки автомобиля плёнкой в Витебске",
+  itemListElement: [
+    "Оклейка капота",
+    "Оклейка переднего бампера",
+    "Оклейка фар",
+    "Оклейка крыльев и зеркал",
+    "Оклейка крыши и стоек",
+    "Оклейка порогов и дверей",
+    "Полная оклейка кузова",
+  ].map((name, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name,
+  })),
+};
 
 export default function OkleykaPage() {
   return (
@@ -97,6 +139,14 @@ export default function OkleykaPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faq) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howTo) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(zonesList) }}
       />
       <OkleykaClient />
     </>

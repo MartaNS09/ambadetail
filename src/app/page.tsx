@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     title: pageMetadata.home.title,
     description: pageMetadata.home.description,
     url: "https://ambadetail.by",
-    siteName: "Ambadetail",
+    siteName: "Ambadetail — Детейлинг в Витебске",
     locale: "ru_BY",
     type: "website",
     images: [
