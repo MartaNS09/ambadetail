@@ -127,6 +127,12 @@
   margin: 0;
 }
 
+.certificate-form__hint {
+  font-size: 0.8rem;
+  color: rgb(var(--text-secondary));
+  opacity: 0.85;
+}
+
 .certificate-form__privacy {
   margin: 0;
   font-size: 0.85rem;

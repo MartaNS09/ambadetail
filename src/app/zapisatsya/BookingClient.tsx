@@ -4,6 +4,11 @@ import { FormEvent, useMemo, useState, type ChangeEvent } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { CalendarCheck, CheckCircle } from "lucide-react";
+import {
+  formatByRfPhone,
+  isValidByRfPhone,
+  PHONE_HINT,
+} from "@/lib/phone";
 import "../podarochnyy-sertifikat/page.scss";
 
 export const BOOKING_SERVICES = [
@@ -52,15 +57,25 @@ export default function BookingClient() {
     >,
   ) => {
     const { name, value } = event.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
+    setForm((prev) => ({
+      ...prev,
+      [name]: name === "phone" ? formatByRfPhone(value) : value,
+    }));
   };
 
   const onSubmit = async (event: FormEvent) => {
     event.preventDefault();
     setError("");
 
-    if (!form.name.trim() || !form.phone.trim()) {
-      setError("Укажите имя и телефон.");
+    if (!form.name.trim()) {
+      setError("Укажите имя.");
+      return;
+    }
+
+    if (!isValidByRfPhone(form.phone)) {
+      setError(
+        "Укажите полный номер РБ (+375, 12 цифр) или РФ (+7, 11 цифр).",
+      );
       return;
     }
 
@@ -178,15 +193,22 @@ export default function BookingClient() {
                   />
                 </label>
                 <label>
-                  Телефон
+                  Телефон (РБ / РФ)
                   <input
                     name="phone"
+                    type="tel"
+                    inputMode="tel"
                     value={form.phone}
                     onChange={onChange}
                     required
                     autoComplete="tel"
-                    placeholder="+375"
+                    placeholder="+375 (__) ___-__-__"
+                    maxLength={19}
+                    aria-describedby="phone-hint"
                   />
+                  <span id="phone-hint" className="certificate-form__hint">
+                    {PHONE_HINT}
+                  </span>
                 </label>
                 <label>
                   Email

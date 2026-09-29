@@ -3,6 +3,11 @@
 import { FormEvent, useState, type ChangeEvent } from "react";
 import Link from "next/link";
 import { CheckCircle, Gift } from "lucide-react";
+import {
+  formatByRfPhone,
+  isValidByRfPhone,
+  PHONE_HINT,
+} from "@/lib/phone";
 import "./page.scss";
 
 const NOMINALS = ["100", "200", "300", "500", "1000"];
@@ -39,15 +44,25 @@ export default function CertificateClient() {
     >,
   ) => {
     const { name, value } = event.target;
-    setForm((prev) => ({ ...prev, [name]: value }));
+    setForm((prev) => ({
+      ...prev,
+      [name]: name === "phone" ? formatByRfPhone(value) : value,
+    }));
   };
 
   const onSubmit = async (event: FormEvent) => {
     event.preventDefault();
     setError("");
 
-    if (!form.name.trim() || !form.phone.trim() || !form.email.trim()) {
-      setError("Укажите имя, телефон и email.");
+    if (!form.name.trim() || !form.email.trim()) {
+      setError("Укажите имя и email.");
+      return;
+    }
+
+    if (!isValidByRfPhone(form.phone)) {
+      setError(
+        "Укажите полный номер РБ (+375, 12 цифр) или РФ (+7, 11 цифр).",
+      );
       return;
     }
 
@@ -187,15 +202,25 @@ export default function CertificateClient() {
                   />
                 </label>
                 <label>
-                  Телефон
+                  Телефон (РБ / РФ)
                   <input
                     name="phone"
+                    type="tel"
+                    inputMode="tel"
                     value={form.phone}
                     onChange={onChange}
                     required
                     autoComplete="tel"
-                    placeholder="+375"
+                    placeholder="+375 (__) ___-__-__"
+                    maxLength={19}
+                    aria-describedby="certificate-phone-hint"
                   />
+                  <span
+                    id="certificate-phone-hint"
+                    className="certificate-form__hint"
+                  >
+                    {PHONE_HINT}
+                  </span>
                 </label>
                 <label>
                   Email
