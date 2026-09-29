@@ -261,8 +261,8 @@ body.menu-open {
   }
 
   .breadcrumbs {
-    padding-top: 55px !important;
-    padding-bottom: 1rem !important;
+    padding-top: 0.35rem !important;
+    padding-bottom: 0.5rem !important;
 
     .container {
       font-size: 0.75rem;
@@ -288,7 +288,7 @@ body.menu-open {
 /* Маленькие мобилки */
 @media (max-width: 480px) {
   .breadcrumbs {
-    padding-top: 50px !important;
-    padding-bottom: 0.75rem !important;
+    padding-top: 0.25rem !important;
+    padding-bottom: 0.4rem !important;
   }
 }
