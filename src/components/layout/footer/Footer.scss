@@ -353,22 +353,42 @@ html.dark .footer__social-link:hover {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.45rem 0.9rem;
+  padding: 0.65rem 1.25rem;
   background: linear-gradient(135deg, #b82828 0%, #dc2626 100%);
   color: white;
   text-decoration: none;
   border-radius: 50px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  transition: all 0.35s ease-out;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: transform 0.25s ease-out, box-shadow 0.25s ease-out,
+    background 0.25s ease-out;
   margin-top: 0.5rem;
   width: fit-content;
 
   &:hover {
-    transform: translateX(5px);
-    gap: 0.7rem;
+    transform: translateY(-2px);
     background: linear-gradient(135deg, #dc2626 0%, #b82828 100%);
-    box-shadow: 0 4px 12px rgba(184, 40, 40, 0.4);
+    box-shadow: 0 6px 16px rgba(184, 40, 40, 0.45);
+  }
+}
+
+.footer__secondary-actions {
+  margin-top: 0.75rem;
+}
+
+.footer__booking-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: rgb(var(--accent-light));
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color 0.25s ease;
+
+  &:hover {
+    color: #dc2626;
   }
 }
 
@@ -420,6 +440,10 @@ html.dark .footer__payment-item:hover {
 
 html.dark .footer__email-btn {
   background: linear-gradient(135deg, #9b2c2c 0%, #c94040 100%);
+}
+
+html.dark .footer__booking-btn:hover {
+  color: #c94040;
 }
 
 html.dark .footer__scroll-top-btn {

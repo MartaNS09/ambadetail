@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { Phone, MapPin, Clock, Mail, ChevronRight } from "lucide-react";
+import { Phone, MapPin, Clock, Mail, Calendar, ChevronRight } from "lucide-react";
 import {
   FaInstagram,
   FaTiktok,
@@ -39,6 +39,7 @@ export default function Footer() {
     { name: "Наши работы", href: "/portfolio", icon: "📷" },
     { name: "О компании", href: "/about", icon: "ℹ️" },
     { name: "Блог", href: "/blog", icon: "✍️" },
+    { name: "Записаться", href: "/zapisatsya", icon: "📅" },
     { name: "Подарочный сертификат", href: "/podarochnyy-sertifikat", icon: "🎁" },
     { name: "Контакты", href: "/contacts", icon: "📞" },
     { name: "Политика конфиденциальности", href: "/privacy", icon: "📜" },
@@ -190,19 +191,21 @@ export default function Footer() {
                 ближайшее время.
               </p>
 
-              {/* ✅ КНОПКА ЗАПИСАТЬСЯ */}
-              <Link href="/contacts" className="footer__booking-btn">
-                <span className="footer__booking-btn-icon">📅</span>
-                Записаться
-                <ChevronRight size={16} />
+              <Link
+                href="/zapisatsya"
+                className="footer__email-btn"
+                aria-label="Перейти к форме онлайн-записи"
+              >
+                <Calendar size={16} aria-hidden="true" />
+                <span>Записаться</span>
               </Link>
 
-              <div style={{ marginTop: "0.75rem" }}>
+              <div className="footer__secondary-actions">
                 <a
                   href="mailto:info@ambadetail.by"
-                  className="footer__email-btn"
+                  className="footer__booking-btn"
                 >
-                  <Mail size={16} />
+                  <Mail size={16} aria-hidden="true" />
                   <span>Написать нам</span>
                 </a>
               </div>

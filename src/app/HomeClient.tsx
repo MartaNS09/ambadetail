@@ -509,13 +509,13 @@ export default function HomeClient() {
                 >
                   +375 29 223 03 22
                 </a>{" "}
-                или перейдите в{" "}
+                или заполните{" "}
                 <Link
-                  href="/contacts"
+                  href="/zapisatsya"
                   className="info-card__contacts-link"
-                  aria-label="Перейти на страницу контактов детейлинг студии"
+                  aria-label="Перейти к форме онлайн-записи"
                 >
-                  раздел Контакты
+                  форму записи
                 </Link>
                 . Мы работаем{" "}
                 <strong>Пн–Пт 10:00–19:00, Сб–Вс 10:00–17:00</strong>.
@@ -525,7 +525,7 @@ export default function HomeClient() {
                 автомобилем на любом этапе.
               </p>
               <Link
-                href="/contacts"
+                href="/zapisatsya"
                 className="btn btn--primary"
                 aria-label="Перейти к форме записи на детейлинг"
               >

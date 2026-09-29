@@ -252,9 +252,9 @@ export default function PortfolioClient() {
             </p>
             <div className="portfolio-cta__buttons">
               <Link
-                href="/contacts"
+                href="/zapisatsya"
                 className="portfolio-cta__btn portfolio-cta__btn--primary"
-                aria-label="Перейти на страницу контактов для записи на детейлинг"
+                aria-label="Перейти к форме записи на детейлинг"
               >
                 Записаться
                 <ArrowRight size={18} aria-hidden="true" />

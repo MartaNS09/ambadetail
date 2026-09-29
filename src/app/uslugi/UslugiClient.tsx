@@ -224,7 +224,7 @@ export default function UslugiClient() {
                 Смотреть услуги
                 <ArrowRight size={18} />
               </Link>
-              <Link href="/contacts" className="btn btn--outline">
+              <Link href="/zapisatsya" className="btn btn--outline">
                 Записаться сейчас
               </Link>
             </div>

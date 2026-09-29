@@ -479,7 +479,7 @@ export default function AboutClient() {
             </p>
             <div className="about-cta__buttons">
               <Link
-                href="/contacts"
+                href="/zapisatsya"
                 className="about-cta__btn about-cta__btn--primary"
               >
                 Записаться
