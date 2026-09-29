@@ -199,8 +199,8 @@ body.menu-open {
    ============================================ */
 
 .breadcrumbs {
-  padding-top: 70px !important; /* ← МИНИМАЛЬНО ОТ ХЕДЕРА */
-  padding-bottom: 1.5rem !important; /* ← БОЛЬШЕ ВОЗДУХА ДО HERO */
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
   background: transparent;
   position: relative;
   z-index: 1;
@@ -249,8 +249,8 @@ body.menu-open {
 /* Планшеты */
 @media (max-width: 1024px) {
   .breadcrumbs {
-    padding-top: 60px !important;
-    padding-bottom: 1.25rem !important;
+    padding-top: 0.6rem !important;
+    padding-bottom: 0.6rem !important;
   }
 }
 
