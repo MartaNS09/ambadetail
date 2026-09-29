@@ -262,9 +262,7 @@ export default function RootLayout({
       <body>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
-          <main style={{ minHeight: "100vh", paddingTop: "130px" }}>
-            {children}
-          </main>
+          <main className="site-main">{children}</main>
           <Footer />
           <MobileBottomNav />
           <CookieBanner />

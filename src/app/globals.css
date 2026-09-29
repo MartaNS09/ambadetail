@@ -241,6 +241,11 @@ body.menu-open {
   }
 }
 
+.site-main {
+  min-height: 100vh;
+  padding-top: 130px;
+}
+
 /* Планшеты */
 @media (max-width: 1024px) {
   .breadcrumbs {
@@ -251,6 +256,10 @@ body.menu-open {
 
 /* Мобилки */
 @media (max-width: 768px) {
+  .site-main {
+    padding-top: 76px;
+  }
+
   .breadcrumbs {
     padding-top: 55px !important;
     padding-bottom: 1rem !important;
