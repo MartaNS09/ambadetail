@@ -95,6 +95,7 @@ export default function BlogClient() {
             loop
             muted
             playsInline
+            preload="none"
             aria-label="Фоновое видео детейлинг студии Ambadetail"
           />
           <div className="blog-hero__overlay" aria-hidden="true"></div>
@@ -215,6 +216,7 @@ export default function BlogClient() {
                             muted
                             playsInline
                             poster={post.image}
+                            preload="none"
                             onError={() => handleVideoError(post.slug)}
                           />
                         ) : (

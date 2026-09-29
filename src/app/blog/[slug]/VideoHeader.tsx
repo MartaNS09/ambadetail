@@ -39,6 +39,7 @@ export default function VideoHeader({
       muted
       playsInline
       poster={posterImage}
+      preload="none"
       onError={() => setVideoError(true)}
     />
   );

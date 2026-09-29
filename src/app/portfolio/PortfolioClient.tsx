@@ -145,7 +145,7 @@ export default function PortfolioClient() {
             loop
             muted
             playsInline
-            preload="metadata" // ← ДОБАВЬ ЭТО
+            preload="none"
             aria-label="Фоновое видео детейлинг обработки автомобиля"
           />
           <div className="portfolio-hero__overlay" aria-hidden="true"></div>
@@ -231,7 +231,7 @@ export default function PortfolioClient() {
                     muted
                     loop
                     playsInline
-                    preload="metadata"
+                    preload="none"
                     aria-label={`Видео-портфолио: ${item.title}`}
                   />
                   <div className="portfolio-card__overlay">
@@ -301,7 +301,7 @@ export default function PortfolioClient() {
                     controls
                     playsInline
                     webkit-playsinline="true"
-                    preload="auto"
+                    preload="metadata"
                     onPlay={() => setIsVideoPlaying(true)}
                     onPause={() => setIsVideoPlaying(false)}
                     onEnded={() => setIsVideoPlaying(false)}
