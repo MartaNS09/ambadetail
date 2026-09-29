@@ -212,9 +212,14 @@ export default function BookingClient() {
             ) : (
               <form onSubmit={onSubmit}>
                 <label>
-                  Ваше имя
-                  <span className="certificate-form__required" aria-hidden="true">
-                    *
+                  <span>
+                    Ваше имя
+                    <span
+                      className="certificate-form__required"
+                      aria-hidden="true"
+                    >
+                      *
+                    </span>
                   </span>
                   <input
                     name="name"
@@ -237,9 +242,14 @@ export default function BookingClient() {
                   )}
                 </label>
                 <label>
-                  Телефон (РБ / РФ)
-                  <span className="certificate-form__required" aria-hidden="true">
-                    *
+                  <span>
+                    Телефон (РБ / РФ)
+                    <span
+                      className="certificate-form__required"
+                      aria-hidden="true"
+                    >
+                      *
+                    </span>
                   </span>
                   <input
                     name="phone"
@@ -298,9 +308,14 @@ export default function BookingClient() {
                   </select>
                 </label>
                 <label>
-                  Желаемая дата
-                  <span className="certificate-form__required" aria-hidden="true">
-                    *
+                  <span>
+                    Желаемая дата
+                    <span
+                      className="certificate-form__required"
+                      aria-hidden="true"
+                    >
+                      *
+                    </span>
                   </span>
                   <input
                     type="date"

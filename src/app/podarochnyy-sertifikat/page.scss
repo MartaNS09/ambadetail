@@ -85,18 +85,23 @@
   gap: 0.35rem;
   font-size: 0.9rem;
   color: rgb(var(--text-secondary));
+  min-width: 0;
 }
 
 .certificate-form input,
 .certificate-form select,
 .certificate-form textarea {
   width: 100%;
+  max-width: 100%;
+  min-width: 0;
   padding: 0.85rem 1rem;
   border-radius: 0.75rem;
   border: 1px solid rgba(var(--accent), 0.2);
   background: rgba(var(--bg-secondary), 0.55);
   color: rgb(var(--text-primary));
-  font: inherit;
+  font-family: inherit;
+  font-size: 16px;
+  line-height: 1.4;
 }
 
 .certificate-form input:focus,
@@ -170,5 +175,11 @@
 
   .certificate-hero__title {
     max-width: none;
+  }
+
+  .certificate-info,
+  .certificate-form {
+    padding: 1.25rem;
+    min-width: 0;
   }
 }
