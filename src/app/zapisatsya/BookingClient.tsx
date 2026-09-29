@@ -12,9 +12,9 @@ import {
 import "../podarochnyy-sertifikat/page.scss";
 
 export const BOOKING_SERVICES = [
+  "Оклейка авто плёнкой",
   "Химчистка салона",
   "Полировка авто",
-  "Оклейка авто плёнкой",
   "Тонировка авто",
   "Защитные покрытия",
   "Восстановление ЛКП",
@@ -22,13 +22,15 @@ export const BOOKING_SERVICES = [
   "Консультация / не знаю, что выбрать",
 ] as const;
 
+const DEFAULT_BOOKING_SERVICE = "Оклейка авто плёнкой";
+
 function resolveService(raw: string | null): string {
-  if (!raw) return BOOKING_SERVICES[0];
+  if (!raw) return DEFAULT_BOOKING_SERVICE;
   const decoded = decodeURIComponent(raw).trim();
   const match = BOOKING_SERVICES.find(
     (item) => item.toLowerCase() === decoded.toLowerCase(),
   );
-  return match ?? BOOKING_SERVICES[0];
+  return match ?? DEFAULT_BOOKING_SERVICE;
 }
 
 export default function BookingClient() {
