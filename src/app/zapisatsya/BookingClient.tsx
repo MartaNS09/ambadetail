@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useMemo, useState, type ChangeEvent } from "react";
+import { FormEvent, useEffect, useMemo, useState, type ChangeEvent } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { CalendarCheck, CheckCircle } from "lucide-react";
@@ -55,6 +55,7 @@ export default function BookingClient() {
     phone: "",
     date: "",
   });
+  const [minDate, setMinDate] = useState("");
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -65,17 +66,37 @@ export default function BookingClient() {
     comment: "",
   });
 
+  useEffect(() => {
+    setMinDate(todayIso());
+  }, []);
+
   const onChange = (
     event: ChangeEvent<
       HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
     >,
   ) => {
     const { name, value } = event.target;
+
+    if (name === "date") {
+      const today = todayIso();
+      if (value && value < today) {
+        setForm((prev) => ({ ...prev, date: "" }));
+        setFieldErrors((prev) => ({
+          ...prev,
+          date: "Нельзя выбрать прошедшую дату.",
+        }));
+        return;
+      }
+      setForm((prev) => ({ ...prev, date: value }));
+      setFieldErrors((prev) => ({ ...prev, date: "" }));
+      return;
+    }
+
     setForm((prev) => ({
       ...prev,
       [name]: name === "phone" ? formatByRfPhone(value) : value,
     }));
-    if (name === "name" || name === "phone" || name === "date") {
+    if (name === "name" || name === "phone") {
       setFieldErrors((prev) => ({ ...prev, [name]: "" }));
     }
   };
@@ -317,21 +338,23 @@ export default function BookingClient() {
                       *
                     </span>
                   </span>
-                  <input
-                    type="date"
-                    name="date"
-                    value={form.date}
-                    onChange={onChange}
-                    required
-                    aria-required="true"
-                    aria-invalid={Boolean(fieldErrors.date)}
-                    min={todayIso()}
-                    className={
-                      fieldErrors.date
-                        ? "certificate-form__input--invalid"
-                        : undefined
-                    }
-                  />
+                  <div className="certificate-form__date-wrap">
+                    <input
+                      type="date"
+                      name="date"
+                      value={form.date}
+                      onChange={onChange}
+                      required
+                      aria-required="true"
+                      aria-invalid={Boolean(fieldErrors.date)}
+                      min={minDate || undefined}
+                      className={
+                        fieldErrors.date
+                          ? "certificate-form__date certificate-form__input--invalid"
+                          : "certificate-form__date"
+                      }
+                    />
+                  </div>
                   {fieldErrors.date && (
                     <span className="certificate-form__error">
                       {fieldErrors.date}

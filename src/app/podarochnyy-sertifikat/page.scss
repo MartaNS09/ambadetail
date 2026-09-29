@@ -75,9 +75,15 @@
   color: rgb(var(--accent-light));
 }
 
+.certificate-form,
+.certificate-info {
+  overflow-x: hidden;
+}
+
 .certificate-form form {
   display: grid;
   gap: 0.9rem;
+  min-width: 0;
 }
 
 .certificate-form label {
@@ -94,6 +100,7 @@
   width: 100%;
   max-width: 100%;
   min-width: 0;
+  box-sizing: border-box;
   padding: 0.85rem 1rem;
   border-radius: 0.75rem;
   border: 1px solid rgba(var(--accent), 0.2);
@@ -102,6 +109,35 @@
   font-family: inherit;
   font-size: 16px;
   line-height: 1.4;
+}
+
+.certificate-form__date-wrap {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+
+.certificate-form__date {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.certificate-form__date::-webkit-date-and-time-value {
+  text-align: left;
+  min-width: 0;
+}
+
+.certificate-form__date::-webkit-datetime-edit {
+  min-width: 0;
+  max-width: 100%;
+  padding: 0;
 }
 
 .certificate-form input:focus,
