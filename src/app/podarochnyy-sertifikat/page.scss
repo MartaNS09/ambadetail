@@ -1,0 +1,159 @@
+.certificate-hero {
+  padding: 1rem 0 3rem;
+  background: linear-gradient(135deg, #0a0f1a 0%, #0f1420 100%);
+}
+
+.certificate-hero__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-bottom: 1rem;
+  color: #dc2626;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.certificate-hero__title {
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  line-height: 1.15;
+  max-width: 16ch;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.certificate-hero__subtitle {
+  max-width: 42rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.certificate-page {
+  padding: 0 0 5rem;
+}
+
+.certificate-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.certificate-info,
+.certificate-form {
+  background: rgba(var(--bg-card), 0.45);
+  border: 1px solid rgba(var(--accent), 0.12);
+  border-radius: 1.25rem;
+  padding: 2rem;
+}
+
+.certificate-info h2,
+.certificate-form h2 {
+  font-size: 1.4rem;
+  margin: 0 0 1rem;
+}
+
+.certificate-info h2:not(:first-child) {
+  margin-top: 1.75rem;
+}
+
+.certificate-info ol,
+.certificate-info ul {
+  margin: 0;
+  padding-left: 1.2rem;
+  color: rgb(var(--text-secondary));
+  display: grid;
+  gap: 0.45rem;
+}
+
+.certificate-info__note {
+  margin-top: 1.5rem;
+  color: rgb(var(--text-primary));
+}
+
+.certificate-info__note a {
+  color: rgb(var(--accent-light));
+}
+
+.certificate-form form {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.certificate-form label {
+  display: grid;
+  gap: 0.35rem;
+  font-size: 0.9rem;
+  color: rgb(var(--text-secondary));
+}
+
+.certificate-form input,
+.certificate-form select,
+.certificate-form textarea {
+  width: 100%;
+  padding: 0.85rem 1rem;
+  border-radius: 0.75rem;
+  border: 1px solid rgba(var(--accent), 0.2);
+  background: rgba(var(--bg-secondary), 0.55);
+  color: rgb(var(--text-primary));
+  font: inherit;
+}
+
+.certificate-form input:focus,
+.certificate-form select:focus,
+.certificate-form textarea:focus {
+  outline: none;
+  border-color: #dc2626;
+}
+
+.certificate-form button {
+  margin-top: 0.25rem;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.95rem 1.5rem;
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.certificate-form button:disabled {
+  opacity: 0.7;
+  cursor: wait;
+}
+
+.certificate-form__error {
+  color: #dc2626;
+  margin: 0;
+}
+
+.certificate-form__privacy {
+  margin: 0;
+  font-size: 0.85rem;
+  color: rgb(var(--text-secondary));
+}
+
+.certificate-form__privacy a {
+  color: rgb(var(--accent-light));
+}
+
+.certificate-form__success {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: rgb(var(--text-primary));
+}
+
+.certificate-form__success svg {
+  color: #22c55e;
+  margin-bottom: 0.75rem;
+}
+
+@media (max-width: 900px) {
+  .certificate-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certificate-hero__title {
+    max-width: none;
+  }
+}

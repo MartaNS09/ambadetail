@@ -1,18 +1,22 @@
 import { Metadata } from "next";
 import PolirovkaClient from "./PolirovkaClient";
+import { breadcrumbSchema, serviceSchema } from "@/lib/seo-schemas";
+
+const pageUrl = "https://ambadetail.by/uslugi/polirovka";
+const pageImage =
+  "https://ambadetail.by/images/services/polirovka_kuzova.webp";
 
 export const metadata: Metadata = {
-  title: "Полировка авто в Витебске | Восстановление кузова, удаление царапин",
+  title: "Полировка авто в Витебске | Удаление царапин, восстановление блеска",
   description:
-    "Полировка авто в Витебске. Восстановление кузова, удаление царапин и дефектов ЛКП. Запишитесь!",
+    "Полировка кузова автомобиля в Витебске: удаление царапин, голограмм и потёртостей, восстановление блеска ЛКП. Пасты 3M, Menzerna. Ambadetail — запись +375 29 223 03 22",
   keywords:
-    "полировка авто витебск, полировка кузова витебск, восстановление блеска авто, удаление царапин, детейлинг полировка, полировка машины витебск",
+    "полировка авто витебск, полировка кузова витебск, удаление царапин витебск, восстановление блеска авто, детейлинг полировка витебск, полировка машины витебск, цена полировки авто витебск",
   openGraph: {
-    title:
-      "Полировка авто в Витебске | Восстановление кузова, удаление царапин",
+    title: "Полировка авто в Витебске | Ambadetail",
     description:
-      "Полировка авто в Витебске. Восстановление кузова, удаление царапин и дефектов ЛКП. Запишитесь!",
-    url: "https://ambadetail.by/uslugi/polirovka",
+      "Профессиональная полировка кузова в Витебске: царапины, голограммы, зеркальный блеск. Гарантия до 12 месяцев.",
+    url: pageUrl,
     siteName: "Ambadetail",
     images: [
       {
@@ -22,54 +26,46 @@ export const metadata: Metadata = {
         alt: "Полировка авто в Витебске — восстановление кузова",
       },
     ],
-    locale: "ru_RU",
+    locale: "ru_BY",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Полировка авто в Витебске | Восстановление кузова, удаление царапин",
+    title: "Полировка авто в Витебске | Ambadetail",
     description:
-      "Полировка авто в Витебске. Восстановление кузова, удаление царапин и дефектов ЛКП. Запишитесь!",
+      "Полировка кузова в Витебске: удаление царапин и восстановление блеска ЛКП.",
     images: ["/images/services/polirovka_kuzova.webp"],
   },
   alternates: {
-    canonical: "https://ambadetail.by/uslugi/polirovka",
+    canonical: pageUrl,
   },
 };
 
-// ✅ СХЕМА BREADCRUMB
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Главная",
-      item: "https://ambadetail.by/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Услуги",
-      item: "https://ambadetail.by/uslugi",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Полировка авто",
-      item: "https://ambadetail.by/uslugi/polirovka",
-    },
-  ],
-};
+const breadcrumbs = breadcrumbSchema([
+  { name: "Главная", url: "https://ambadetail.by/" },
+  { name: "Услуги", url: "https://ambadetail.by/uslugi" },
+  { name: "Полировка авто", url: pageUrl },
+]);
+
+const service = serviceSchema({
+  name: "Полировка автомобиля в Витебске",
+  serviceType: "Полировка кузова автомобиля",
+  description:
+    "Профессиональная полировка кузова автомобиля в Витебске: удаление царапин, голограмм и дефектов ЛКП, восстановление зеркального блеска.",
+  url: pageUrl,
+  image: pageImage,
+});
 
 export default function PolirovkaPage() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(service) }}
       />
       <PolirovkaClient />
     </>

@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import PortfolioClient from "./PortfolioClient";
 
 export const metadata: Metadata = {
-  title: "Портфолио работ | Детейлинг студия Ambadetail в Витебске",
+  title: "Портфолио работ | Детейлинг студия в Витебске",
   description:
     "Портфолио работ детейлинг студии Ambadetail в Витебске. Реальные примеры: оклейка плёнкой, химчистка салона, полировка, тонировка. Фото и видео выполненных проектов.",
   keywords:

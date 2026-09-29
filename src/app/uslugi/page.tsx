@@ -1,17 +1,20 @@
 import { Metadata } from "next";
 import UslugiClient from "./UslugiClient";
+import { breadcrumbSchema } from "@/lib/seo-schemas";
+
+const pageUrl = "https://ambadetail.by/uslugi";
 
 export const metadata: Metadata = {
-  title: "Услуги детейлинга в Витебске | Полный спектр услуг Ambadetail",
+  title: "Услуги детейлинга в Витебске | Полный спектр",
   description:
-    "Профессиональные услуги детейлинга в Витебске: полировка авто, химчистка салона, оклейка плёнкой, тонировка, защитные покрытия, детейлинг двигателя. Запишитесь онлайн.",
+    "Услуги детейлинг студии в Витебске: химчистка салона, полировка, оклейка плёнкой, тонировка по ГОСТ, керамика, восстановление ЛКП, детейлинг двигателя. Запись онлайн.",
   keywords:
-    "услуги детейлинг витебск, детейлинг студия витебск цены, запись на детейлинг витебск, детейлинг авто витебск",
+    "услуги детейлинг витебск, детейлинг студия витебск, запись на детейлинг витебск, детейлинг авто витебск цены, тонировка витебск, химчистка салона витебск, полировка авто витебск",
   openGraph: {
-    title: "Услуги детейлинга в Витебске | Полный спектр услуг Ambadetail",
+    title: "Услуги детейлинга в Витебске | Ambadetail",
     description:
-      "Профессиональные услуги детейлинга в Витебске: полировка авто, химчистка салона, оклейка плёнкой, тонировка, защитные покрытия, детейлинг двигателя. Запишитесь онлайн.",
-    url: "https://ambadetail.by/uslugi",
+      "Полный спектр услуг детейлинга в Витебске: от химчистки и полировки до PPF и тонировки по ГОСТ.",
+    url: pageUrl,
     siteName: "Ambadetail",
     images: [
       {
@@ -21,37 +24,72 @@ export const metadata: Metadata = {
         alt: "Услуги детейлинг студии в Витебске",
       },
     ],
-    locale: "ru_RU",
+    locale: "ru_BY",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Услуги детейлинга в Витебске | Полный спектр услуг Ambadetail",
+    title: "Услуги детейлинга в Витебске | Ambadetail",
     description:
-      "Профессиональные услуги детейлинга в Витебске: полировка авто, химчистка салона, оклейка плёнкой, тонировка, защитные покрытия, детейлинг двигателя. Запишитесь онлайн.",
+      "Химчистка, полировка, PPF, тонировка по ГОСТ, керамика — Ambadetail Витебск.",
     images: ["/images/services/bugatti.webp"],
   },
   alternates: {
-    canonical: "https://ambadetail.by/uslugi",
+    canonical: pageUrl,
   },
 };
 
-// ✅ СХЕМА BREADCRUMB ДЛЯ ПОИСКОВИКОВ
-const breadcrumbSchema = {
+const breadcrumbs = breadcrumbSchema([
+  { name: "Главная", url: "https://ambadetail.by/" },
+  { name: "Услуги", url: pageUrl },
+]);
+
+const itemListSchema = {
   "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
+  "@type": "ItemList",
+  name: "Услуги детейлинга Ambadetail в Витебске",
   itemListElement: [
     {
       "@type": "ListItem",
       position: 1,
-      name: "Главная",
-      item: "https://ambadetail.by/",
+      name: "Химчистка салона",
+      url: "https://ambadetail.by/uslugi/khimchistka-salona",
     },
     {
       "@type": "ListItem",
       position: 2,
-      name: "Услуги",
-      item: "https://ambadetail.by/uslugi",
+      name: "Оклейка авто плёнкой",
+      url: "https://ambadetail.by/uslugi/okleyka-auto-plenkoy",
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Полировка авто",
+      url: "https://ambadetail.by/uslugi/polirovka",
+    },
+    {
+      "@type": "ListItem",
+      position: 4,
+      name: "Тонировка авто",
+      url: "https://ambadetail.by/uslugi/tonirovka",
+    },
+    {
+      "@type": "ListItem",
+      position: 5,
+      name: "Защитные покрытия",
+      url: "https://ambadetail.by/uslugi/zashhitnye-pokrytiya",
+    },
+    {
+      "@type": "ListItem",
+      position: 6,
+      name: "Восстановление ЛКП",
+      url: "https://ambadetail.by/uslugi/vosstanovlenie-lkp",
+    },
+    {
+      "@type": "ListItem",
+      position: 7,
+      name: "Детейлинг двигателя",
+      url: "https://ambadetail.by/uslugi/detailing-dvigatelya",
     },
   ],
 };
@@ -59,10 +97,13 @@ const breadcrumbSchema = {
 export default function UslugiPage() {
   return (
     <>
-      {/* ✅ JSON-LD СХЕМА ДЛЯ ПОИСКОВИКОВ */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
       />
       <UslugiClient />
     </>

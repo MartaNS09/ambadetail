@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import BlogClient from "./BlogClient";
 
 export const metadata: Metadata = {
-  title: "Блог о детейлинге в Витебске | Полезные статьи | Ambadetail",
+  title: "Блог о детейлинге в Витебске | Полезные статьи",
   description:
     "Полезные статьи о детейлинге автомобилей в Витебске: оклейка плёнкой, тонировка, полировка, химчистка салона. Советы и рекомендации от профессионалов.",
   keywords:

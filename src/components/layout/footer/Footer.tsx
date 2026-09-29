@@ -38,7 +38,8 @@ export default function Footer() {
     { name: "Все услуги", href: "/uslugi", icon: "🔧" },
     { name: "Наши работы", href: "/portfolio", icon: "📷" },
     { name: "О компании", href: "/about", icon: "ℹ️" },
-    { name: "Блог", href: "/blog", icon: "✍️" }, // 👈 ДОБАВЛЯЕМ БЛОГ
+    { name: "Блог", href: "/blog", icon: "✍️" },
+    { name: "Подарочный сертификат", href: "/podarochnyy-sertifikat", icon: "🎁" },
     { name: "Контакты", href: "/contacts", icon: "📞" },
     { name: "Политика конфиденциальности", href: "/privacy", icon: "📜" },
   ];

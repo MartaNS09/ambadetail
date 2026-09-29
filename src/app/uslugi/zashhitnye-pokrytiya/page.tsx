@@ -1,19 +1,21 @@
 import { Metadata } from "next";
 import ZashchitaClient from "./ZashchitaClient";
+import { breadcrumbSchema, serviceSchema } from "@/lib/seo-schemas";
+
+const pageUrl = "https://ambadetail.by/uslugi/zashhitnye-pokrytiya";
+const pageImage = "https://ambadetail.by/images/services/lamba.webp";
 
 export const metadata: Metadata = {
-  title:
-    "Защитные покрытия для автомобиля в Витебске | Керамика, жидкое стекло",
+  title: "Защитные покрытия авто в Витебске | Керамика, жидкое стекло",
   description:
-    "Защитные покрытия для автомобиля в Витебске. Керамика, жидкое стекло, антидождь. Защита кузова от царапин, грязи и реагентов. Запишитесь!",
+    "Керамическое покрытие и жидкое стекло для автомобиля в Витебске: защита ЛКП от царапин, реагентов и УФ. Ceramic Pro, Gyeon, KAVACA. Ambadetail — +375 29 223 03 22",
   keywords:
-    "защитные покрытия авто витебск, керамическое покрытие автомобиля, жидкое стекло на авто, гидрофобное покрытие, защита ЛКП, керамика для авто витебск",
+    "защитные покрытия авто витебск, керамическое покрытие автомобиля витебск, жидкое стекло на авто витебск, керамика для авто витебск, гидрофобное покрытие, антидождь витебск",
   openGraph: {
-    title:
-      "Защитные покрытия для автомобиля в Витебске | Керамика, жидкое стекло",
+    title: "Защитные покрытия авто в Витебске | Ambadetail",
     description:
-      "Защитные покрытия для автомобиля в Витебске. Керамика, жидкое стекло, антидождь. Защита кузова от царапин, грязи и реагентов. Запишитесь!",
-    url: "https://ambadetail.by/uslugi/zashhitnye-pokrytiya",
+      "Керамика и жидкое стекло в Витебске: защита кузова до 3 лет, гидрофобный эффект, блеск.",
+    url: pageUrl,
     siteName: "Ambadetail",
     images: [
       {
@@ -23,54 +25,46 @@ export const metadata: Metadata = {
         alt: "Защитные покрытия для автомобиля в Витебске — керамика",
       },
     ],
-    locale: "ru_RU",
+    locale: "ru_BY",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title:
-      "Защитные покрытия для автомобиля в Витебске | Керамика, жидкое стекло",
+    title: "Защитные покрытия авто в Витебске | Ambadetail",
     description:
-      "Защитные покрытия для автомобиля в Витебске. Керамика, жидкое стекло, антидождь. Защита кузова от царапин, грязи и реагентов. Запишитесь!",
+      "Керамика и жидкое стекло в Витебске — долговременная защита кузова.",
     images: ["/images/services/lamba.webp"],
   },
   alternates: {
-    canonical: "https://ambadetail.by/uslugi/zashhitnye-pokrytiya",
+    canonical: pageUrl,
   },
 };
 
-// ✅ ДОБАВЛЯЕМ СХЕМУ BREADCRUMB
-const breadcrumbSchema = {
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  itemListElement: [
-    {
-      "@type": "ListItem",
-      position: 1,
-      name: "Главная",
-      item: "https://ambadetail.by/",
-    },
-    {
-      "@type": "ListItem",
-      position: 2,
-      name: "Услуги",
-      item: "https://ambadetail.by/uslugi",
-    },
-    {
-      "@type": "ListItem",
-      position: 3,
-      name: "Защитные покрытия",
-      item: "https://ambadetail.by/uslugi/zashhitnye-pokrytiya",
-    },
-  ],
-};
+const breadcrumbs = breadcrumbSchema([
+  { name: "Главная", url: "https://ambadetail.by/" },
+  { name: "Услуги", url: "https://ambadetail.by/uslugi" },
+  { name: "Защитные покрытия", url: pageUrl },
+]);
+
+const service = serviceSchema({
+  name: "Защитные покрытия для автомобиля в Витебске",
+  serviceType: "Нанесение защитных покрытий",
+  description:
+    "Профессиональное нанесение керамического покрытия, жидкого стекла и гидрофобных составов на автомобиль в Витебске.",
+  url: pageUrl,
+  image: pageImage,
+});
 
 export default function ZashchitaPage() {
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbs) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(service) }}
       />
       <ZashchitaClient />
     </>

@@ -82,9 +82,6 @@ export default function BlogClient() {
 
   return (
     <>
-      <h1 className="sr-only">
-        Блог о детейлинге автомобилей в Витебске — полезные статьи и советы
-      </h1>
 
       <section
         className="blog-hero"

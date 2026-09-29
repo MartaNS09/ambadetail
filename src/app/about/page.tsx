@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import AboutClient from "./AboutClient";
 
 export const metadata: Metadata = {
-  title: "О компании | Детейлинг студия Ambadetail в Витебске",
+  title: "О компании | Детейлинг студия в Витебске",
   description:
     "Профессиональная детейлинг студия в Витебске. Опытные мастера, современное оборудование, гарантия качества. Более 7 лет на рынке.",
   keywords:

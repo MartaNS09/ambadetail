@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import ContactsClient from "./ContactsClient";
 
 export const metadata: Metadata = {
-  title: "Контакты | Детейлинг студия Ambadetail в Витебске",
+  title: "Контакты | Детейлинг студия в Витебске",
   description:
     "Контакты детейлинг студии Ambadetail в Витебске: адрес, телефон, время работы. Запись на оклейку плёнкой, восстановление ЛКП и химчистку салона.",
   keywords:

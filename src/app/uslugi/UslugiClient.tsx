@@ -105,10 +105,6 @@ export default function UslugiClient() {
 
   return (
     <>
-      <h1 className="sr-only">
-        Все услуги детейлинг студии в Витебске — профессиональный уход за
-        автомобилем
-      </h1>
       {/* ✅ ВИЗУАЛЬНЫЕ ХЛЕБНЫЕ КРОШКИ */}
       <div className="breadcrumbs" aria-label="Навигационная цепочка">
         <div className="container">
