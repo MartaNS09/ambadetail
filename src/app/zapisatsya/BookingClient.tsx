@@ -43,6 +43,7 @@ export default function BookingClient() {
   const [submitted, setSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
+  const [fieldErrors, setFieldErrors] = useState({ name: "", phone: "" });
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -63,21 +64,29 @@ export default function BookingClient() {
       ...prev,
       [name]: name === "phone" ? formatByRfPhone(value) : value,
     }));
+    if (name === "name" || name === "phone") {
+      setFieldErrors((prev) => ({ ...prev, [name]: "" }));
+    }
   };
 
   const onSubmit = async (event: FormEvent) => {
     event.preventDefault();
     setError("");
 
+    const nextFieldErrors = { name: "", phone: "" };
     if (!form.name.trim()) {
-      setError("Укажите имя.");
-      return;
+      nextFieldErrors.name = "Укажите имя.";
     }
+    if (!form.phone.trim()) {
+      nextFieldErrors.phone = "Укажите телефон.";
+    } else if (!isValidByRfPhone(form.phone)) {
+      nextFieldErrors.phone =
+        "Укажите полный номер РБ (+375, 12 цифр) или РФ (+7, 11 цифр).";
+    }
+    setFieldErrors(nextFieldErrors);
 
-    if (!isValidByRfPhone(form.phone)) {
-      setError(
-        "Укажите полный номер РБ (+375, 12 цифр) или РФ (+7, 11 цифр).",
-      );
+    if (nextFieldErrors.name || nextFieldErrors.phone) {
+      setError("Имя и телефон обязательны.");
       return;
     }
 
@@ -186,16 +195,34 @@ export default function BookingClient() {
               <form onSubmit={onSubmit}>
                 <label>
                   Ваше имя
+                  <span className="certificate-form__required" aria-hidden="true">
+                    *
+                  </span>
                   <input
                     name="name"
                     value={form.name}
                     onChange={onChange}
                     required
+                    aria-required="true"
+                    aria-invalid={Boolean(fieldErrors.name)}
                     autoComplete="name"
+                    className={
+                      fieldErrors.name
+                        ? "certificate-form__input--invalid"
+                        : undefined
+                    }
                   />
+                  {fieldErrors.name && (
+                    <span className="certificate-form__error">
+                      {fieldErrors.name}
+                    </span>
+                  )}
                 </label>
                 <label>
                   Телефон (РБ / РФ)
+                  <span className="certificate-form__required" aria-hidden="true">
+                    *
+                  </span>
                   <input
                     name="phone"
                     type="tel"
@@ -203,13 +230,27 @@ export default function BookingClient() {
                     value={form.phone}
                     onChange={onChange}
                     required
+                    aria-required="true"
+                    aria-invalid={Boolean(fieldErrors.phone)}
                     autoComplete="tel"
                     placeholder="+375 (__) ___-__-__"
                     maxLength={19}
                     aria-describedby="phone-hint"
+                    className={
+                      fieldErrors.phone
+                        ? "certificate-form__input--invalid"
+                        : undefined
+                    }
                   />
-                  <span id="phone-hint" className="certificate-form__hint">
-                    {PHONE_HINT}
+                  <span
+                    id="phone-hint"
+                    className={
+                      fieldErrors.phone
+                        ? "certificate-form__error"
+                        : "certificate-form__hint"
+                    }
+                  >
+                    {fieldErrors.phone || PHONE_HINT}
                   </span>
                 </label>
                 <label>

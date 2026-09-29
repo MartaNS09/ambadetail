@@ -122,6 +122,15 @@
   cursor: wait;
 }
 
+.certificate-form__required {
+  color: #dc2626;
+  margin-left: 0.2rem;
+}
+
+.certificate-form__input--invalid {
+  border-color: #dc2626;
+}
+
 .certificate-form__error {
   color: #dc2626;
   margin: 0;
