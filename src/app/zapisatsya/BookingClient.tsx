@@ -10,6 +10,7 @@ import {
   PHONE_HINT,
 } from "@/lib/phone";
 import { brandsForService, modelsForBrand } from "@/lib/car-brands";
+import { WRAPPING_SERVICE, WRAPPING_WORKS } from "@/lib/okleyka-works";
 import "../podarochnyy-sertifikat/page.scss";
 
 export const BOOKING_SERVICES = [
@@ -57,6 +58,7 @@ export default function BookingClient() {
     date: "",
     brand: "",
     model: "",
+    work: "",
   });
   const [minDate, setMinDate] = useState("");
   const [form, setForm] = useState({
@@ -67,6 +69,7 @@ export default function BookingClient() {
     date: "",
     brand: "",
     model: "",
+    work: "",
     comment: "",
   });
 
@@ -88,8 +91,9 @@ export default function BookingClient() {
         ...prev,
         service: value,
         model: modelStillValid ? prev.model : "",
+        work: value === WRAPPING_SERVICE ? prev.work : "",
       }));
-      setFieldErrors((prev) => ({ ...prev, model: "" }));
+      setFieldErrors((prev) => ({ ...prev, model: "", work: "" }));
       return;
     }
 
@@ -118,7 +122,7 @@ export default function BookingClient() {
       ...prev,
       [name]: name === "phone" ? formatByRfPhone(value) : value,
     }));
-    if (name === "name" || name === "phone" || name === "model") {
+    if (name === "name" || name === "phone" || name === "model" || name === "work") {
       setFieldErrors((prev) => ({ ...prev, [name]: "" }));
     }
   };
@@ -136,6 +140,7 @@ export default function BookingClient() {
       date: "",
       brand: "",
       model: "",
+      work: "",
     };
     if (!form.name.trim()) {
       nextFieldErrors.name = "Укажите имя.";
@@ -151,6 +156,9 @@ export default function BookingClient() {
     } else if (form.date < today) {
       nextFieldErrors.date = "Нельзя выбрать прошедшую дату.";
     }
+    if (form.service === WRAPPING_SERVICE && !form.work) {
+      nextFieldErrors.work = "Выберите вид оклейки.";
+    }
     if (!form.brand) {
       nextFieldErrors.brand = "Выберите марку.";
     } else if (brandModels.length > 0 && !form.model) {
@@ -163,7 +171,8 @@ export default function BookingClient() {
       nextFieldErrors.phone ||
       nextFieldErrors.date ||
       nextFieldErrors.brand ||
-      nextFieldErrors.model
+      nextFieldErrors.model ||
+      nextFieldErrors.work
     ) {
       setError("Заполните обязательные поля.");
       return;
@@ -182,6 +191,7 @@ export default function BookingClient() {
       "Заявка на запись",
       `Телефон: ${form.phone.trim()}`,
       `Услуга: ${form.service}`,
+      form.service === WRAPPING_SERVICE ? `Вид оклейки: ${form.work}` : "",
       `Желаемая дата: ${form.date}`,
       `Автомобиль: ${carLine}`,
       form.comment.trim() ? `Комментарий: ${form.comment.trim()}` : "",
@@ -377,6 +387,48 @@ export default function BookingClient() {
                     ))}
                   </select>
                 </label>
+                {form.service === WRAPPING_SERVICE && (
+                  <label>
+                    <span>
+                      Вид оклейки
+                      <span
+                        className="certificate-form__required"
+                        aria-hidden="true"
+                      >
+                        *
+                      </span>
+                    </span>
+                    <select
+                      name="work"
+                      value={form.work}
+                      onChange={onChange}
+                      required
+                      aria-required="true"
+                      aria-invalid={Boolean(fieldErrors.work)}
+                      className={
+                        fieldErrors.work
+                          ? "certificate-form__input--invalid"
+                          : undefined
+                      }
+                    >
+                      <option value="">Выберите из перечня</option>
+                      {WRAPPING_WORKS.map((group) => (
+                        <optgroup key={group.group} label={group.group}>
+                          {group.items.map((item) => (
+                            <option key={item} value={item}>
+                              {item}
+                            </option>
+                          ))}
+                        </optgroup>
+                      ))}
+                    </select>
+                    {fieldErrors.work && (
+                      <span className="certificate-form__error">
+                        {fieldErrors.work}
+                      </span>
+                    )}
+                  </label>
+                )}
                 <label>
                   <span>
                     Марка
