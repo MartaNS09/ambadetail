@@ -25,7 +25,7 @@ const PHOTO_ZONES: { zone: WrapZoneId; d: string }[] = [
   },
   {
     zone: "hood",
-    d: "M250 400 L340 348 L470 310 L595 328 L555 378 L470 412 L310 418 L245 395 Z",
+    d: "M205 378 L245 338 L330 314 L490 304 L600 320 L625 358 L575 392 L480 410 L350 422 L240 410 L198 392 Z",
   },
   {
     zone: "bumper",
