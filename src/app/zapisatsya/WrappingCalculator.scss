@@ -176,74 +176,27 @@
   line-height: 0.95;
 }
 
-.wrap-car {
+.wrap-photo {
+  position: relative;
+  border-radius: 0.85rem;
+  overflow: hidden;
+}
+
+.wrap-photo img {
+  display: block;
   width: 100%;
   height: auto;
 }
 
-.wrap-car__static {
-  pointer-events: none;
+.wrap-photo svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.wrap-car__shadow {
-  fill: rgba(0, 0, 0, 0.35);
-}
-
-.wrap-car__paint {
-  fill: url("#wrap-paint");
-}
-
-.wrap-car__glass {
-  fill: url("#wrap-glass");
-  stroke: #1e293b;
-  stroke-width: 1.5;
-}
-
-.wrap-car__tire {
-  fill: #0b0f18;
-  stroke: #334155;
-  stroke-width: 3;
-}
-
-.wrap-car__rim {
-  fill: #cbd5e1;
-  stroke: #64748b;
-  stroke-width: 2;
-}
-
-.wrap-car__spoke {
-  stroke: #475569;
-  stroke-width: 3;
-}
-
-.wrap-car__hub {
-  fill: #1e293b;
-  stroke: #e2e8f0;
-  stroke-width: 2;
-}
-
-.wrap-car__line {
-  fill: none;
-  stroke: rgba(15, 23, 42, 0.45);
-  stroke-width: 1.6;
-}
-
-.wrap-car__handle {
-  fill: #334155;
-}
-
-.wrap-car__lamp {
-  fill: #fecaca;
-}
-
-.wrap-car__exhaust {
-  fill: #1e293b;
-  stroke: #94a3b8;
-  stroke-width: 1;
-}
-
-.wrap-car--body .wrap-car__zone {
-  fill: rgba(220, 38, 38, 0.4);
+.wrap-photo--body .wrap-car__zone {
+  fill: rgba(220, 38, 38, 0.38);
   stroke: #fca5a5;
 }
 
