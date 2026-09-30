@@ -9,6 +9,7 @@ import {
   isValidByRfPhone,
   PHONE_HINT,
 } from "@/lib/phone";
+import { brandsForService, modelsForBrand } from "@/lib/car-brands";
 import "../podarochnyy-sertifikat/page.scss";
 
 export const BOOKING_SERVICES = [
@@ -54,6 +55,8 @@ export default function BookingClient() {
     name: "",
     phone: "",
     date: "",
+    brand: "",
+    model: "",
   });
   const [minDate, setMinDate] = useState("");
   const [form, setForm] = useState({
@@ -62,7 +65,8 @@ export default function BookingClient() {
     email: "",
     service: initialService,
     date: "",
-    car: "",
+    brand: "",
+    model: "",
     comment: "",
   });
 
@@ -76,6 +80,24 @@ export default function BookingClient() {
     >,
   ) => {
     const { name, value } = event.target;
+
+    if (name === "service") {
+      const nextModels = modelsForBrand(value, form.brand);
+      const modelStillValid = nextModels.some((item) => item.name === form.model);
+      setForm((prev) => ({
+        ...prev,
+        service: value,
+        model: modelStillValid ? prev.model : "",
+      }));
+      setFieldErrors((prev) => ({ ...prev, model: "" }));
+      return;
+    }
+
+    if (name === "brand") {
+      setForm((prev) => ({ ...prev, brand: value, model: "" }));
+      setFieldErrors((prev) => ({ ...prev, brand: "", model: "" }));
+      return;
+    }
 
     if (name === "date") {
       const today = todayIso();
@@ -96,7 +118,7 @@ export default function BookingClient() {
       ...prev,
       [name]: name === "phone" ? formatByRfPhone(value) : value,
     }));
-    if (name === "name" || name === "phone") {
+    if (name === "name" || name === "phone" || name === "model") {
       setFieldErrors((prev) => ({ ...prev, [name]: "" }));
     }
   };
@@ -106,8 +128,15 @@ export default function BookingClient() {
     setError("");
 
     const today = todayIso();
+    const brandModels = modelsForBrand(form.service, form.brand);
 
-    const nextFieldErrors = { name: "", phone: "", date: "" };
+    const nextFieldErrors = {
+      name: "",
+      phone: "",
+      date: "",
+      brand: "",
+      model: "",
+    };
     if (!form.name.trim()) {
       nextFieldErrors.name = "Укажите имя.";
     }
@@ -122,19 +151,39 @@ export default function BookingClient() {
     } else if (form.date < today) {
       nextFieldErrors.date = "Нельзя выбрать прошедшую дату.";
     }
+    if (!form.brand) {
+      nextFieldErrors.brand = "Выберите марку.";
+    } else if (brandModels.length > 0 && !form.model) {
+      nextFieldErrors.model = "Выберите модель.";
+    }
     setFieldErrors(nextFieldErrors);
 
-    if (nextFieldErrors.name || nextFieldErrors.phone || nextFieldErrors.date) {
-      setError("Имя, телефон и дата обязательны.");
+    if (
+      nextFieldErrors.name ||
+      nextFieldErrors.phone ||
+      nextFieldErrors.date ||
+      nextFieldErrors.brand ||
+      nextFieldErrors.model
+    ) {
+      setError("Заполните обязательные поля.");
       return;
     }
+
+    const selectedModel = brandModels.find((item) => item.name === form.model);
+    const carLine = [
+      form.brand,
+      form.model,
+      selectedModel ? `класс ${selectedModel.classNumber}` : "",
+    ]
+      .filter(Boolean)
+      .join(", ");
 
     const message = [
       "Заявка на запись",
       `Телефон: ${form.phone.trim()}`,
       `Услуга: ${form.service}`,
       `Желаемая дата: ${form.date}`,
-      form.car.trim() ? `Автомобиль: ${form.car.trim()}` : "",
+      `Автомобиль: ${carLine}`,
       form.comment.trim() ? `Комментарий: ${form.comment.trim()}` : "",
     ]
       .filter(Boolean)
@@ -330,6 +379,81 @@ export default function BookingClient() {
                 </label>
                 <label>
                   <span>
+                    Марка
+                    <span
+                      className="certificate-form__required"
+                      aria-hidden="true"
+                    >
+                      *
+                    </span>
+                  </span>
+                  <select
+                    name="brand"
+                    value={form.brand}
+                    onChange={onChange}
+                    required
+                    aria-required="true"
+                    aria-invalid={Boolean(fieldErrors.brand)}
+                    className={
+                      fieldErrors.brand
+                        ? "certificate-form__input--invalid"
+                        : undefined
+                    }
+                  >
+                    <option value="">Выберите марку</option>
+                    {brandsForService(form.service).map((item) => (
+                      <option key={item.brand} value={item.brand}>
+                        {item.brand}
+                      </option>
+                    ))}
+                  </select>
+                  {fieldErrors.brand && (
+                    <span className="certificate-form__error">
+                      {fieldErrors.brand}
+                    </span>
+                  )}
+                </label>
+                <label>
+                  <span>
+                    Модель
+                    <span
+                      className="certificate-form__required"
+                      aria-hidden="true"
+                    >
+                      *
+                    </span>
+                  </span>
+                  <select
+                    name="model"
+                    value={form.model}
+                    onChange={onChange}
+                    required={modelsForBrand(form.service, form.brand).length > 0}
+                    disabled={!form.brand}
+                    aria-required="true"
+                    aria-invalid={Boolean(fieldErrors.model)}
+                    className={
+                      fieldErrors.model
+                        ? "certificate-form__input--invalid"
+                        : undefined
+                    }
+                  >
+                    <option value="">
+                      {form.brand ? "Выберите модель" : "Сначала выберите марку"}
+                    </option>
+                    {modelsForBrand(form.service, form.brand).map((item) => (
+                      <option key={`${item.classNumber}-${item.name}`} value={item.name}>
+                        {item.name}
+                      </option>
+                    ))}
+                  </select>
+                  {fieldErrors.model && (
+                    <span className="certificate-form__error">
+                      {fieldErrors.model}
+                    </span>
+                  )}
+                </label>
+                <label>
+                  <span>
                     Желаемая дата
                     <span
                       className="certificate-form__required"
@@ -360,15 +484,6 @@ export default function BookingClient() {
                       {fieldErrors.date}
                     </span>
                   )}
-                </label>
-                <label>
-                  Автомобиль
-                  <input
-                    name="car"
-                    value={form.car}
-                    onChange={onChange}
-                    placeholder="Марка и модель, необязательно"
-                  />
                 </label>
                 <label>
                   Комментарий

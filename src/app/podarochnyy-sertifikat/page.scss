@@ -140,6 +140,10 @@
   padding: 0;
 }
 
+.certificate-form select:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
 .certificate-form input:focus,
 .certificate-form select:focus,
 .certificate-form textarea:focus {
