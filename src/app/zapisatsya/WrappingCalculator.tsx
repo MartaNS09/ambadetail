@@ -18,6 +18,34 @@ function zoneClass(zone: WrapZoneId, active: WrapZoneId | null, selected: Set<Wr
   return "wrap-car__zone";
 }
 
+function Wheel({ cx, cy }: { cx: number; cy: number }) {
+  const spokes = Array.from({ length: 12 }, (_, index) => {
+    const angle = (index / 12) * Math.PI * 2 - Math.PI / 2;
+    return {
+      x2: cx + Math.cos(angle) * 30,
+      y2: cy + Math.sin(angle) * 30,
+    };
+  });
+
+  return (
+    <g className="wrap-car__static">
+      <circle cx={cx} cy={cy} r="62" className="wrap-car__tire" />
+      <circle cx={cx} cy={cy} r="48" className="wrap-car__rim" />
+      {spokes.map((spoke, index) => (
+        <line
+          key={index}
+          x1={cx}
+          y1={cy}
+          x2={spoke.x2}
+          y2={spoke.y2}
+          className="wrap-car__spoke"
+        />
+      ))}
+      <circle cx={cx} cy={cy} r="13" className="wrap-car__hub" />
+    </g>
+  );
+}
+
 export default function WrappingCalculator({
   classNumber,
   hasModel,
@@ -147,90 +175,135 @@ export default function WrappingCalculator({
               ? "wrap-car wrap-car--body"
               : "wrap-car"
           }
-          viewBox="0 0 760 320"
+          viewBox="0 0 1000 420"
           role="img"
-          aria-label="Схема кузова"
+          aria-label="Седан, вид сбоку"
         >
-          <ellipse cx="210" cy="248" rx="46" ry="46" className="wrap-car__wheel" />
-          <ellipse cx="548" cy="248" rx="46" ry="46" className="wrap-car__wheel" />
-          <ellipse cx="210" cy="248" rx="22" ry="22" className="wrap-car__hub" />
-          <ellipse cx="548" cy="248" rx="22" ry="22" className="wrap-car__hub" />
+          <defs>
+            <linearGradient id="wrap-paint" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#f8fafc" />
+              <stop offset="46%" stopColor="#d7dee7" />
+              <stop offset="100%" stopColor="#8b97a8" />
+            </linearGradient>
+            <linearGradient id="wrap-glass" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stopColor="#64748b" />
+              <stop offset="100%" stopColor="#0b1220" />
+            </linearGradient>
+          </defs>
+
+          <ellipse cx="500" cy="392" rx="380" ry="10" className="wrap-car__shadow" />
+
+          <path
+            className="wrap-car__paint"
+            d="M100 318 L74 262 C68 228 78 190 116 170 L176 156 L424 136 C456 124 478 94 514 64 L546 48 L702 42 C744 44 770 68 794 108 L776 128 L904 136 L952 152 L966 204 L956 292 L928 318 L834 320 A74 74 0 0 0 686 320 L354 320 A74 74 0 0 0 206 320 L100 318 Z"
+          />
+
+          <path
+            className="wrap-car__glass"
+            d="M448 130 L520 62 L552 48 L534 112 L462 124 Z"
+          />
+          <path
+            className="wrap-car__glass"
+            d="M560 52 L694 44 L762 100 L706 116 L568 112 Z"
+          />
+
+          <Wheel cx={280} cy={320} />
+          <Wheel cx={760} cy={320} />
 
           <path
             className={zoneClass("body", activeZone, selectedZones)}
-            d="M150 118 L392 78 L700 132 L690 210 L118 214 L150 150 Z"
+            d="M100 318 L74 262 C68 228 78 190 116 170 L176 156 L424 136 C456 124 478 94 514 64 L546 48 L702 42 C744 44 770 68 794 108 L776 128 L904 136 L952 152 L966 204 L956 292 L928 318 L834 320 A74 74 0 0 0 686 320 L354 320 A74 74 0 0 0 206 320 L100 318 Z"
             onClick={() => toggleZone("body")}
           />
           <path
             className={zoneClass("bumper", activeZone, selectedZones)}
-            d="M78 168 L118 150 L132 188 L118 230 L78 214 Z"
+            d="M70 214 C52 246 58 292 86 312 L188 318 L176 236 C140 222 100 210 74 200 Z"
+            onClick={() => toggleZone("bumper")}
+          />
+          <path
+            className={zoneClass("bumper", activeZone, selectedZones)}
+            d="M922 210 L980 232 L966 292 L910 308 L888 246 Z"
             onClick={() => toggleZone("bumper")}
           />
           <path
             className={zoneClass("light", activeZone, selectedZones)}
-            d="M118 154 L156 146 L150 176 L120 178 Z"
+            d="M112 172 L188 160 L178 196 L118 204 Z"
             onClick={() => toggleZone("light")}
           />
           <path
             className={zoneClass("hood", activeZone, selectedZones)}
-            d="M150 146 L292 118 L300 168 L156 176 Z"
+            d="M156 188 L168 158 L400 136 L414 186 L210 208 Z"
             onClick={() => toggleZone("hood")}
           />
           <path
             className={zoneClass("fenderFront", activeZone, selectedZones)}
-            d="M132 188 L168 176 L196 176 L210 210 L168 230 L132 214 Z"
+            d="M176 210 L400 184 L368 248 L354 320 A74 74 0 0 0 206 320 L148 292 L140 236 Z"
             onClick={() => toggleZone("fenderFront")}
           />
           <path
             className={zoneClass("glass", activeZone, selectedZones)}
-            d="M300 120 L392 78 L388 150 L304 168 Z"
+            d="M448 130 L520 62 L552 48 L534 112 L462 124 Z"
             onClick={() => toggleZone("glass")}
           />
           <path
             className={zoneClass("roof", activeZone, selectedZones)}
-            d="M392 78 L590 78 L612 118 L388 118 Z"
+            d="M530 52 L720 44 L752 78 L548 84 Z"
             onClick={() => toggleZone("roof")}
           />
           <path
             className={zoneClass("pillar", activeZone, selectedZones)}
-            d="M388 118 L404 150 L392 168 L300 168 L304 150 Z"
+            d="M506 68 L540 52 L528 116 L494 110 Z"
             onClick={() => toggleZone("pillar")}
           />
           <path
             className={zoneClass("door", activeZone, selectedZones)}
-            d="M300 176 L470 168 L470 228 L292 228 Z"
+            d="M400 176 L575 160 L588 300 L360 308 L354 250 L392 190 Z"
             onClick={() => toggleZone("door")}
           />
           <path
             className={zoneClass("door", activeZone, selectedZones)}
-            d="M478 168 L612 160 L628 228 L478 228 Z"
+            d="M582 158 L730 140 L748 236 L718 300 L592 304 Z"
             onClick={() => toggleZone("door")}
           />
           <path
             className={zoneClass("mirror", activeZone, selectedZones)}
-            d="M392 132 L438 124 L438 146 L396 150 Z"
+            d="M498 108 L564 92 L570 118 L508 128 Z"
             onClick={() => toggleZone("mirror")}
           />
           <path
             className={zoneClass("fenderRear", activeZone, selectedZones)}
-            d="M612 160 L668 168 L690 210 L640 232 L600 210 L612 176 Z"
+            d="M730 156 L860 140 L910 198 L834 248 L834 320 A74 74 0 0 0 686 320 L710 300 L742 220 Z"
             onClick={() => toggleZone("fenderRear")}
           />
           <path
             className={zoneClass("trunk", activeZone, selectedZones)}
-            d="M612 118 L700 132 L690 168 L612 160 Z"
+            d="M760 86 L922 148 L892 170 L748 116 Z"
             onClick={() => toggleZone("trunk")}
           />
           <path
             className={zoneClass("spoiler", activeZone, selectedZones)}
-            d="M668 108 L724 102 L720 118 L690 124 Z"
+            d="M888 124 L968 142 L954 156 L878 140 Z"
             onClick={() => toggleZone("spoiler")}
           />
           <path
             className={zoneClass("sill", activeZone, selectedZones)}
-            d="M196 228 L640 228 L640 242 L196 242 Z"
+            d="M360 298 L680 298 L680 316 L360 316 Z"
             onClick={() => toggleZone("sill")}
           />
+
+          <g className="wrap-car__static">
+            <path
+              className="wrap-car__line"
+              d="M150 196 C320 176 560 164 780 150 L910 162"
+            />
+            <path className="wrap-car__line" d="M575 160 L588 304" />
+            <path className="wrap-car__line" d="M730 142 L718 296" />
+            <path className="wrap-car__handle" d="M500 214 h24 v8 h-24 Z" />
+            <path className="wrap-car__handle" d="M650 204 h24 v8 h-24 Z" />
+            <path className="wrap-car__lamp" d="M948 196 h26 v18 h-32 Z" />
+            <path className="wrap-car__exhaust" d="M900 336 h16 v10 h-16 Z" />
+            <path className="wrap-car__exhaust" d="M922 336 h16 v10 h-16 Z" />
+          </g>
         </svg>
         <p className="wrap-calc__stage-hint">
           {preview
