@@ -21,67 +21,67 @@ function zoneClass(zone: WrapZoneId, active: WrapZoneId | null, selected: Set<Wr
 const PHOTO_ZONES: { zone: WrapZoneId; d: string }[] = [
   {
     zone: "body",
-    d: "M155 430 L210 355 L340 315 L490 275 L575 235 L650 210 L785 218 L865 258 L925 345 L910 455 L835 515 L660 532 L450 518 L260 495 L165 460 Z",
+    d: "M158 468 L188 390 L260 340 L400 305 L510 240 L600 198 L735 205 L805 252 L848 325 L846 425 L790 462 L680 495 L520 535 L250 528 L155 492 Z",
   },
   {
     zone: "hood",
-    d: "M285 375 L365 315 L525 288 L585 348 L520 405 L305 415 Z",
+    d: "M250 400 L340 348 L470 310 L595 328 L555 378 L470 412 L310 418 L245 395 Z",
   },
   {
     zone: "bumper",
-    d: "M162 428 L255 398 L420 412 L452 468 L385 515 L205 505 L155 468 Z",
+    d: "M148 458 L210 438 L420 448 L495 485 L475 535 L185 528 L142 495 Z",
   },
   {
     zone: "bumper",
-    d: "M858 418 L922 398 L938 462 L888 502 L842 468 Z",
+    d: "M818 428 L848 418 L846 462 L812 455 Z",
   },
   {
     zone: "light",
-    d: "M355 368 L528 400 L508 436 L348 408 Z",
+    d: "M158 405 L230 388 L242 448 L155 458 Z",
   },
   {
     zone: "light",
-    d: "M172 408 L268 382 L282 424 L182 444 Z",
+    d: "M530 388 L642 410 L618 442 L505 420 Z",
   },
   {
     zone: "fenderFront",
-    d: "M498 338 L655 322 L682 425 L618 472 L515 448 L488 388 Z",
+    d: "M590 335 L700 325 L725 385 L655 430 L575 395 L555 355 Z",
   },
   {
     zone: "glass",
-    d: "M448 272 L625 232 L695 318 L518 348 Z",
+    d: "M425 305 L535 235 L655 242 L685 308 L490 315 Z",
   },
   {
     zone: "roof",
-    d: "M525 212 L765 218 L732 258 L515 252 Z",
+    d: "M555 198 L725 206 L755 242 L525 232 Z",
   },
   {
     zone: "pillar",
-    d: "M588 228 L652 218 L705 312 L638 322 Z",
+    d: "M635 238 L678 226 L712 302 L662 310 Z",
   },
   {
     zone: "door",
-    d: "M668 292 L822 318 L800 452 L652 422 Z",
+    d: "M660 308 L815 334 L785 445 L670 415 Z",
   },
   {
     zone: "mirror",
-    d: "M688 258 L762 248 L772 292 L698 302 Z",
+    d: "M705 282 L758 274 L766 312 L708 316 Z",
   },
   {
     zone: "fenderRear",
-    d: "M798 322 L912 362 L888 472 L788 438 Z",
+    d: "M785 335 L845 365 L832 435 L772 410 Z",
   },
   {
     zone: "trunk",
-    d: "M755 258 L882 292 L848 352 L738 322 Z",
+    d: "M790 268 L842 298 L822 342 L768 318 Z",
   },
   {
     zone: "spoiler",
-    d: "M838 268 L912 302 L894 322 L828 294 Z",
+    d: "M808 255 L845 275 L832 295 L798 275 Z",
   },
   {
     zone: "sill",
-    d: "M648 448 L832 482 L810 512 L638 478 Z",
+    d: "M675 445 L785 462 L770 485 L665 468 Z",
   },
 ];
 
@@ -208,13 +208,7 @@ export default function WrappingCalculator({
         <p className="wrap-calc__zone-title">
           {preview ? preview.name : "Выберите деталь"}
         </p>
-        <div
-          className={
-            activeZone === "body" || selectedZones.has("body")
-              ? "wrap-photo wrap-photo--body"
-              : "wrap-photo"
-          }
-        >
+        <div className="wrap-photo">
           <img src="/wrap-sedan.jpg" alt="Белый седан" />
           <svg viewBox="0 0 1024 768" preserveAspectRatio="none" aria-hidden="true">
             {PHOTO_ZONES.map((item, index) => (
