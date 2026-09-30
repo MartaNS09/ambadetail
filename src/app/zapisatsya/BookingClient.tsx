@@ -10,7 +10,14 @@ import {
   PHONE_HINT,
 } from "@/lib/phone";
 import { brandsForService, modelsForBrand } from "@/lib/car-brands";
-import { WRAPPING_SERVICE, WRAPPING_WORKS } from "@/lib/okleyka-works";
+import {
+  formatByn,
+  priceForClass,
+  WRAPPING_CALC_ITEMS,
+  WRAPPING_SERVICE,
+  WRAPPING_WORKS,
+} from "@/lib/okleyka-works";
+import WrappingCalculator from "./WrappingCalculator";
 import "../podarochnyy-sertifikat/page.scss";
 
 export const BOOKING_SERVICES = [
@@ -70,6 +77,7 @@ export default function BookingClient() {
     brand: "",
     model: "",
     work: "",
+    zones: [] as string[],
     comment: "",
   });
 
@@ -92,6 +100,7 @@ export default function BookingClient() {
         service: value,
         model: modelStillValid ? prev.model : "",
         work: value === WRAPPING_SERVICE ? prev.work : "",
+        zones: value === WRAPPING_SERVICE ? prev.zones : [],
       }));
       setFieldErrors((prev) => ({ ...prev, model: "", work: "" }));
       return;
@@ -156,8 +165,8 @@ export default function BookingClient() {
     } else if (form.date < today) {
       nextFieldErrors.date = "Нельзя выбрать прошедшую дату.";
     }
-    if (form.service === WRAPPING_SERVICE && !form.work) {
-      nextFieldErrors.work = "Выберите вид оклейки.";
+    if (form.service === WRAPPING_SERVICE && !form.work && form.zones.length === 0) {
+      nextFieldErrors.work = "Выберите зоны оклейки.";
     }
     if (!form.brand) {
       nextFieldErrors.brand = "Выберите марку.";
@@ -187,11 +196,32 @@ export default function BookingClient() {
       .filter(Boolean)
       .join(", ");
 
+    const selectedZones = WRAPPING_CALC_ITEMS.filter((item) =>
+      form.zones.includes(item.id),
+    );
+    const zoneLines = selectedZones.map((item) => {
+      const price = priceForClass(item, selectedModel?.classNumber ?? 1);
+      if (price == null) return `${item.name}: уточняется`;
+      return `${item.name}: ${item.from ? "от " : ""}${formatByn(price)}`;
+    });
+    const zoneSum = selectedZones.reduce(
+      (sum, item) =>
+        sum + (priceForClass(item, selectedModel?.classNumber ?? 1) ?? 0),
+      0,
+    );
+    const zoneFrom = selectedZones.some(
+      (item) => item.from && priceForClass(item, selectedModel?.classNumber ?? 1) != null,
+    );
+
     const message = [
       "Заявка на запись",
       `Телефон: ${form.phone.trim()}`,
       `Услуга: ${form.service}`,
-      form.service === WRAPPING_SERVICE ? `Вид оклейки: ${form.work}` : "",
+      form.work ? `Вид оклейки: ${form.work}` : "",
+      zoneLines.length ? `Зоны оклейки:\n${zoneLines.join("\n")}` : "",
+      zoneLines.length
+        ? `Ориентир по зонам: ${zoneFrom ? "от " : ""}${zoneSum.toLocaleString("ru-RU")} BYN`
+        : "",
       `Желаемая дата: ${form.date}`,
       `Автомобиль: ${carLine}`,
       form.comment.trim() ? `Комментарий: ${form.comment.trim()}` : "",
@@ -250,7 +280,32 @@ export default function BookingClient() {
       </section>
 
       <div className="certificate-page">
-        <div className="container certificate-grid">
+        <div className="container">
+          {form.service === WRAPPING_SERVICE && !submitted && (
+            <WrappingCalculator
+              classNumber={
+                modelsForBrand(form.service, form.brand).find(
+                  (item) => item.name === form.model,
+                )?.classNumber ?? 1
+              }
+              hasModel={Boolean(form.brand && form.model)}
+              selectedIds={form.zones}
+              error={fieldErrors.work}
+              onToggle={(id) => {
+                setForm((prev) => ({
+                  ...prev,
+                  zones: prev.zones.includes(id)
+                    ? prev.zones.filter((item) => item !== id)
+                    : [...prev.zones, id],
+                }));
+                setFieldErrors((prev) => ({ ...prev, work: "" }));
+              }}
+              onClear={() => {
+                setForm((prev) => ({ ...prev, zones: [] }));
+              }}
+            />
+          )}
+          <div className="certificate-grid">
           <div className="certificate-info">
             <h2>Как проходит запись</h2>
             <ol>
@@ -388,7 +443,7 @@ export default function BookingClient() {
                   </select>
                 </label>
                 {form.service === WRAPPING_SERVICE && (
-                  <label>
+                  <label className="wrapping-work-select">
                     <span>
                       Вид оклейки
                       <span
@@ -402,7 +457,6 @@ export default function BookingClient() {
                       name="work"
                       value={form.work}
                       onChange={onChange}
-                      required
                       aria-required="true"
                       aria-invalid={Boolean(fieldErrors.work)}
                       className={
@@ -557,6 +611,7 @@ export default function BookingClient() {
                 </p>
               </form>
             )}
+          </div>
           </div>
         </div>
       </div>
