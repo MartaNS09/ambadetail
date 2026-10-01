@@ -400,7 +400,7 @@ export default function ContactsClient() {
 
             <div className="contacts-map__wrapper">
               <iframe
-                src="https://yandex.by/map-widget/v1/?um=constructor%3ACTbx5Viq&source=constructor"
+                src="https://yandex.by/map-widget/v1/?ol=biz&oid=104758157236"
                 width="100%"
                 height="420"
                 style={{ border: 0 }}
@@ -414,7 +414,7 @@ export default function ContactsClient() {
             {/* КНОПКИ ПОД КАРТОЙ */}
             <div className="contacts-map__actions">
               <a
-                href="https://yandex.by/map-widget/v1/?um=constructor%3ACTbx5Viq&source=constructor"
+                href="https://yandex.by/maps/org/ambassador_detailing/104758157236/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contacts-map__btn contacts-map__btn--outline"
@@ -424,7 +424,7 @@ export default function ContactsClient() {
                 Открыть карту в Яндекс
               </a>
               <a
-                href="https://yandex.by/maps/?rtext=~Витебск, улица Петруся Бровки, 6А&rtt=auto"
+                href="https://yandex.by/maps/?rtext=~55.173057%2C30.24579&rtt=auto"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contacts-map__btn contacts-map__btn--primary"
