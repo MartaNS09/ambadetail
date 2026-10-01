@@ -51,7 +51,7 @@ const BrandsTableFooter = () => (
 
 // ==================== ТАБЛИЦА 1: SUNMAX ====================
 export const SunmaxTable = () => (
-  <div className="price-table-wrapper">
+  <div className="price-table-wrapper" id="sunmax">
     <div className="table-responsive">
       <table className="price-table price-table--dark">
         <thead>
@@ -420,7 +420,7 @@ export const SunmaxTable = () => (
 
 // ==================== ТАБЛИЦА 2: STEK ====================
 export const StekTable = () => (
-  <div className="price-table-wrapper">
+  <div className="price-table-wrapper" id="stek">
     <div className="table-responsive">
       <table className="price-table price-table--dark">
         <thead>
@@ -702,7 +702,7 @@ export const StekTable = () => (
 
 // ==================== ТАБЛИЦА 3: Llumar ====================
 export const LlumarTable = () => (
-  <div className="price-table-wrapper">
+  <div className="price-table-wrapper" id="llumar">
     <div className="table-responsive">
       <table className="price-table price-table--dark">
         <thead>
@@ -984,7 +984,7 @@ export const LlumarTable = () => (
 
 // ==================== ТАБЛИЦА 4: ЦВЕТНАЯ ПЛЕНКА ====================
 export const ColorFilmTable = () => (
-  <div className="price-table-wrapper">
+  <div className="price-table-wrapper" id="color">
     <div className="table-responsive">
       <table className="price-table price-table--dark">
         <thead>

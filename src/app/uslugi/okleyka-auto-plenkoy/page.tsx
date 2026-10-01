@@ -10,9 +10,9 @@ import {
 const pageUrl = "https://ambadetail.by/uslugi/okleyka-auto-plenkoy";
 const pageImage = "https://ambadetail.by/images/services/vinil.webp";
 
-const title = "Оклейка авто плёнкой в Витебске | Профессиональная защита кузова";
+const title = "Оклейка авто плёнкой в Витебске | от 660 BYN";
 const description =
-  "Профессиональная оклейка авто в Витебске. Антигравийные и цветные плёнки XPEL, Sunmax, Llumar, Stek, HEXIS. Защита от сколов, бронирование, смена цвета. Гарантия 3 года.";
+  "Антигравийная оклейка авто в Витебске: зоны риска от 660 BYN, капот 650 BYN, полная оклейка от 7 370 BYN. Sunmax, XPEL, Llumar, Stek, HEXIS. ул. П. Бровки, 6А. +375 29 223 03 22";
 
 export const metadata: Metadata = {
   title: {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   description,
   keywords:
-    "оклейка авто пленкой витебск, профессиональная оклейка авто витебск, ppf витебск, антигравийная пленка витебск, бронирование кузова витебск, оклейка капота витебск, оклейка фар витебск, оклейка бампера, цветная полиуретановая пленка, xpel витебск, sunmax витебск, llumar, stek, hexis",
+    "оклейка авто пленкой витебск, оклейка авто витебск, антигравийная пленка витебск, бронирование авто витебск, ppf витебск, оклейка зон риска витебск, оклейка капота витебск, оклейка фар витебск, оклейка бампера витебск, цветная полиуретановая пленка, xpel, sunmax, llumar, stek, hexis",
   openGraph: {
     title,
     description,

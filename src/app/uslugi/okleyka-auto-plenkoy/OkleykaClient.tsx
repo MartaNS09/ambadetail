@@ -87,8 +87,9 @@ export default function OkleykaClient() {
               ))}
             </h1>
             <p className="service-hero__subtitle">
-              Профессиональная оклейка авто в Витебске: антигравийная PPF,
-              цветной полиуретан, защита от сколов и смена цвета.
+              Антигравийная плёнка и цветной полиуретан. Зоны риска от 660 BYN,
+              капот 650 BYN, полная оклейка от 7 370 BYN. Sunmax, XPEL, Llumar,
+              Stek, HEXIS.
             </p>
           </div>
         </div>
@@ -98,32 +99,77 @@ export default function OkleykaClient() {
         <div className="container">
           <div className="service-content__intro">
             <p className="service-content__intro-text">
-              <strong>Профессиональная оклейка авто в Витебске</strong> —
-              антигравийная PPF для защиты ЛКП и цветная полиуретановая плёнка
-              для смены цвета. Работаем с XPEL, Sunmax, Llumar, Stek и HEXIS.
+              <strong>Оклейка авто плёнкой в Витебске</strong> в Ambadetail —
+              антигравийная полиуретановая плёнка на зоны риска или весь кузов
+              и цветной полиуретан, если нужна смена цвета. Цены ниже — плёнка
+              SUNMAX | CRYSTALL, 1 класс. Студия на ул. П. Бровки, 6А, работаем
+              и в выходные.
+            </p>
+            <p className="service-content__intro-text">
+              <Link href="/zapisatsya">Записаться на оклейку</Link>
+              {" · "}
+              <a href="tel:+375292230322">+375 29 223 03 22</a>
             </p>
           </div>
 
-          {/* 🔥 ГЛАВНАЯ СЕКЦИЯ — С "ПРОФЕССИОНАЛЬНАЯ" 1 РАЗ */}
-          <div className="service-content__section">
+          <div className="service-content__section" id="antigraviy">
             <h2 className="service-content__section-title">
-              Оклейка авто плёнкой в Витебске — надёжная защита и стиль
+              Антигравийная плёнка и бронирование кузова
             </h2>
             <p>
-              <strong>Оклейка авто плёнкой в Витебске</strong> — эффективный
-              способ защитить лакокрасочное покрытие от сколов, царапин,
-              химических реагентов и ультрафиолета. В Ambadetail делаем{" "}
-              <strong>профессиональную оклейку кузова PPF</strong> и{" "}
-              <strong>цветную полиуретановую плёнку</strong> для полной смены
-              цвета с сохранением блеска.
+              Антигравийная PPF — это полиуретан толщиной до 200 мкм. Она
+              принимает удар камня вместо лака, держит песок и реагенты, а
+              мелкие царапины затягиваются от солнца или тёплой воды.
+              Бронирование фар той же плёнкой сохраняет стекло прозрачным.
             </p>
             <p>
-              Используем материалы ведущих брендов:{" "}
-              <strong>Sunmax, XPEL, Llumar, Stek, HEXIS</strong> — толщина до
-              200 мкм, самовосстановление мелких царапин, стойкость к выгоранию.{" "}
-              <strong>Бронирование кузова плёнкой</strong> сохраняет идеальное
-              состояние авто при ежедневной езде по Витебску и трассе.
+              Керамика этого не заменяет: она даёт блеск и гидрофоб, но скол от
+              щебня остаётся на краске. Винил меняет вид и защищает слабее
+              полиуретана. Если нужен и новый цвет, и защита, клеим цветной
+              полиуретан HEXIS — полная оклейка от 9 581 BYN для 1 класса.
             </p>
+          </div>
+
+          <div className="service-content__section" id="kompleksy">
+            <h2 className="service-content__section-title">
+              Комплексы зон риска и цена оклейки
+            </h2>
+            <p>
+              Суммы — SUNMAX | CRYSTALL. Комплексы одинаковы для всех классов и
+              указаны «от»: итог зависит от кузова. Отдельные детали — для 1
+              класса, дальше цена растёт по таблице.
+            </p>
+            <ul className="service-content__list">
+              <li>
+                <strong>MINI — от 660 BYN.</strong> Часть капота, полоса над
+                лобовым стеклом, антиманикюр, торцы дверей.
+              </li>
+              <li>
+                <strong>LITE — от 880 BYN.</strong> Плюс часть крыльев и фары с
+                ПТФ.
+              </li>
+              <li>
+                <strong>LITE+ — от 1 375 BYN.</strong> Плюс стойки лобового,
+                полка заднего бампера и внутренние пороги.
+              </li>
+              <li>
+                <strong>STANDART — от 1 595 BYN.</strong> Капот целиком, пороги
+                4 шт.
+              </li>
+              <li>
+                <strong>STANDART+ — от 2 145 BYN.</strong> Капот и крылья
+                целиком.
+              </li>
+              <li>
+                <strong>PREMIUM — от 2 970 BYN.</strong> Капот, крылья, передний
+                бампер, фары, зеркала и кромки.
+              </li>
+              <li>
+                <strong>Полная оклейка</strong> — 7 370 BYN на SUNMAX, от 8 671
+                BYN на Stek, от 9 581 BYN цветным полиуретаном (1 класс). Без
+                крыши на SUNMAX — 6 503 BYN.
+              </li>
+            </ul>
           </div>
 
           <div className="service-content__section" id="zony">
@@ -178,23 +224,27 @@ export default function OkleykaClient() {
               Плёнки для оклейки автомобиля в Витебске
             </h2>
             <ul className="service-content__brand-list">
-              <li>
-                <strong>Sunmax</strong> — надёжная защита, отличное соотношение
-                цена/качество
-              </li>
-              <li>
+              <li id="xpel">
                 <strong>XPEL</strong> — премиальная защита, самовосстановление
-                царапин
+                царапин. Стоимость считаем после осмотра: отдельной таблицы на
+                сайте нет.
               </li>
               <li>
-                <strong>Llumar</strong> — проверенная защита, долговечность
+                <strong>Sunmax</strong> — основной прайс студии, от комплексов
+                зон риска до полной оклейки.{" "}
+                <a href="#sunmax">Таблица SUNMAX</a>
               </li>
               <li>
-                <strong>Stek</strong> — инновационная защита, высокий блеск
+                <strong>Llumar</strong> — проверенная защита, долговечность.{" "}
+                <a href="#llumar">Таблица Llumar</a>
+              </li>
+              <li>
+                <strong>Stek</strong> — полный кузов от 8 671 BYN для 1 класса.{" "}
+                <a href="#stek">Таблица Stek</a>
               </li>
               <li>
                 <strong>HEXIS</strong> — цветная полиуретановая плёнка, смена
-                цвета
+                цвета и защита. <a href="#color">Таблица цветной плёнки</a>
               </li>
             </ul>
           </div>
@@ -247,8 +297,10 @@ export default function OkleykaClient() {
                 материалы.
               </li>
               <li>
-                <strong>Удобное расположение в Витебске</strong> – ул. П.
-                Бровки, 6А, бесплатная парковка.
+                <strong>Витебск, ул. П. Бровки, 6А</strong> — Пн–Пт 10:00–19:00,
+                Сб–Вс 10:00–17:00. Запись:{" "}
+                <a href="tel:+375292230322">+375 29 223 03 22</a> или{" "}
+                <Link href="/zapisatsya">форма на сайте</Link>.
               </li>
             </ul>
           </div>
@@ -259,39 +311,36 @@ export default function OkleykaClient() {
             </h2>
             <ul className="service-content__related-links">
               <li>
-                <Link href="/uslugi/okleyka-auto-plenkoy#zony">
-                  Оклейка капота в Витебске
+                <a href="#kompleksy">Комплексы зон риска</a>
+              </li>
+              <li>
+                <a href="#zony">Оклейка капота, фар и бампера</a>
+              </li>
+              <li>
+                <a href="#sunmax">Прайс Sunmax</a>
+              </li>
+              <li>
+                <a href="#xpel">Плёнка XPEL</a>
+              </li>
+              <li>
+                <a href="#llumar">Прайс Llumar</a>
+              </li>
+              <li>
+                <a href="#stek">Прайс Stek</a>
+              </li>
+              <li>
+                <a href="#color">Цветная полиуретановая плёнка</a>
+              </li>
+              <li>
+                <Link href="/blog/antigraviynaya-plenka-vitebsk">
+                  Антигравийная плёнка: что клеить первым
                 </Link>
               </li>
               <li>
-                <Link href="/uslugi/okleyka-auto-plenkoy#zony">
-                  Оклейка фар и бампера
-                </Link>
+                <Link href="/portfolio">Примеры работ</Link>
               </li>
               <li>
-                <Link href="/uslugi/okleyka-auto-plenkoy#sunmax">
-                  Оклейка Sunmax
-                </Link>
-              </li>
-              <li>
-                <Link href="/uslugi/okleyka-auto-plenkoy#xpel">
-                  Оклейка XPEL
-                </Link>
-              </li>
-              <li>
-                <Link href="/uslugi/okleyka-auto-plenkoy#llumar">
-                  Оклейка Llumar
-                </Link>
-              </li>
-              <li>
-                <Link href="/uslugi/okleyka-auto-plenkoy#stek">
-                  Оклейка Stek
-                </Link>
-              </li>
-              <li>
-                <Link href="/uslugi/okleyka-auto-plenkoy#color">
-                  Цветная полиуретановая плёнка
-                </Link>
+                <Link href="/zapisatsya">Запись на оклейку</Link>
               </li>
             </ul>
           </div>
@@ -391,20 +440,24 @@ export default function OkleykaClient() {
               <div className="review-card">
                 <div className="review-card__stars">★★★★★</div>
                 <p className="review-card__text">
-                  &ldquo;Отличная работа! Оклеили капот пленкой XPEL. Всё
-                  идеально, рекомендую!&rdquo;
+                  &ldquo;Оклеил Land Cruiser защитной плёнкой. Села без
+                  пузырей, на стыках почти не видно. По лесу езжу спокойнее —
+                  ветки и камни принимает плёнка.&rdquo;
                 </p>
                 <span className="review-card__author">
-                  — Александр, Витебск
+                  — Дмитрий, Toyota Land Cruiser 200
                 </span>
               </div>
               <div className="review-card">
                 <div className="review-card__stars">★★★★★</div>
                 <p className="review-card__text">
-                  &ldquo;Сделали полную оклейку Sunmax. Машина как новая.
-                  Спасибо ребятам!&rdquo;
+                  &ldquo;Закрыла Infiniti антигравийной плёнкой. Сколов от
+                  реагентов больше не ловлю, плёнка на кузове почти не
+                  читается.&rdquo;
                 </p>
-                <span className="review-card__author">— Дмитрий, Витебск</span>
+                <span className="review-card__author">
+                  — Наталья, Infiniti QX80
+                </span>
               </div>
             </div>
           </div>
@@ -412,42 +465,41 @@ export default function OkleykaClient() {
           {/* SEO ТЕКСТ */}
           <div className="seo-content">
             <h2 className="seo-title">
-              Профессиональная оклейка автомобиля плёнкой в Витебске
+              Оклейка автомобиля плёнкой в Витебске и области
             </h2>
             <p>
-              Ищете <strong>оклейку авто плёнкой в Витебске</strong>? В
-              Ambadetail делают{" "}
-              <strong>профессиональную оклейку</strong> антигравийной PPF и
-              цветным полиуретаном: зоны риска (капот, бампер, фары, зеркала) или
-              полный кузов. Материалы — XPEL, Sunmax, Llumar, Stek, HEXIS.
-              Гарантия на работы и плёнку — до 3 лет.
+              Чаще всего закрывают переднюю часть: капот, бампер, фары и
+              кромки — туда приходится щебень на трассе и реагент зимой. Полный
+              кузов имеет смысл на новом авто, когда важно сохранить ЛКП целиком.
+              Класс машины смотрим по таблице брендов внизу страницы.
             </p>
             <p>
-              В отличие от керамики, плёнка физически защищает ЛКП от камней и
-              песка. Перед монтажом при необходимости выполняем{" "}
-              <Link href="/uslugi/polirovka">полировку</Link>, после — можно
-              закрепить результат{" "}
+              Перед монтажом при необходимости делаем{" "}
+              <Link href="/uslugi/polirovka">полировку</Link>, сверху плёнку
+              можно закрыть{" "}
               <Link href="/uslugi/zashhitnye-pokrytiya">керамикой</Link>.
-              Принимаем авто из Витебска и области: ул. П. Бровки, 6А.
+              Принимаем авто из Витебска и Витебской области. Адрес: ул. П.
+              Бровки, 6А. Гарантия на работы и плёнку — до 3 лет.
             </p>
             <p>
-              Комплексы зон риска — от 660 BYN, полная оклейка рассчитывается по
-              классу авто и бренду плёнки. Подробные прайсы — в таблицах выше.
-              Полезные советы — в статье{" "}
+              Подробнее:{" "}
               <Link href="/blog/okleyka-avto-plenkoy-vitebsk">
-                оклейка авто плёнкой в Витебске
+                как устроена оклейка PPF
+              </Link>{" "}
+              и{" "}
+              <Link href="/blog/antigraviynaya-plenka-vitebsk">
+                какие зоны клеить антигравием в первую очередь
               </Link>
               .
             </p>
             <div className="seo-conclusion">
-              <h4 className="seo-conclusion-title">
-                Оклейка авто плёнкой в Витебске — защита кузова и смена цвета
-              </h4>
+              <h3 className="seo-conclusion-title">
+                Запись на оклейку авто в Витебске
+              </h3>
               <p className="seo-conclusion-final">
-                <strong>
-                  Запишитесь на профессиональную оклейку авто в Витебске: +375
-                  29 223 03 22.
-                </strong>
+                <Link href="/zapisatsya">Оставьте заявку</Link> или позвоните{" "}
+                <a href="tel:+375292230322">+375 29 223 03 22</a> — посчитаем
+                комплекс по классу авто до визита.
               </p>
             </div>
           </div>

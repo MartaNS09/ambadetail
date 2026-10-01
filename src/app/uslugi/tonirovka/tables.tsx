@@ -572,7 +572,7 @@ const ClassHeader = ({ num }: { num: number }) => (
 );
 
 export const PriceTable = () => (
-  <div className="price-table-wrapper">
+  <div className="price-table-wrapper" id="prajs-table">
     <div className="table-responsive">
       <table className="price-table price-table--dark">
         <thead>
