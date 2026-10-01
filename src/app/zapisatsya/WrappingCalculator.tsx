@@ -45,7 +45,7 @@ const PHOTO_ZONES: { zone: WrapZoneId; d: string }[] = [
   },
   {
     zone: "fenderFront",
-    d: "M590 335 L700 325 L725 385 L655 430 L575 395 L555 355 Z",
+    d: "M640 316 L735 304 L752 368 L700 412 L638 392 L622 348 Z",
   },
   {
     zone: "glass",
@@ -61,7 +61,7 @@ const PHOTO_ZONES: { zone: WrapZoneId; d: string }[] = [
   },
   {
     zone: "door",
-    d: "M660 308 L815 334 L785 445 L670 415 Z",
+    d: "M700 306 L808 328 L792 436 L688 418 Z",
   },
   {
     zone: "mirror",
@@ -69,7 +69,7 @@ const PHOTO_ZONES: { zone: WrapZoneId; d: string }[] = [
   },
   {
     zone: "fenderRear",
-    d: "M785 335 L845 365 L832 435 L772 410 Z",
+    d: "M800 314 L828 334 L822 382 L798 404 L782 368 L788 330 Z",
   },
   {
     zone: "trunk",
