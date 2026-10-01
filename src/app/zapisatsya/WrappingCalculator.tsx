@@ -12,77 +12,43 @@ import "./WrappingCalculator.scss";
 
 type Tab = "full" | "partial";
 
+function Wheel({ cx, cy }: { cx: number; cy: number }) {
+  return (
+    <g>
+      <circle cx={cx} cy={cy} r="52" fill="#18181b" />
+      <circle cx={cx} cy={cy} r="30" fill="#3f3f46" />
+      <circle cx={cx} cy={cy} r="12" fill="#e4e4e7" />
+    </g>
+  );
+}
+
 function zoneClass(zone: WrapZoneId, active: WrapZoneId | null, selected: Set<WrapZoneId>) {
   if (active === zone) return "wrap-car__zone wrap-car__zone--active";
   if (selected.has(zone)) return "wrap-car__zone wrap-car__zone--on";
   return "wrap-car__zone";
 }
 
-const PHOTO_ZONES: { zone: WrapZoneId; d: string }[] = [
+const SIDE_ZONES: { zone: WrapZoneId; d: string }[] = [
   {
     zone: "body",
-    d: "M158 468 L188 390 L260 340 L400 305 L510 240 L600 198 L735 205 L805 252 L848 325 L846 425 L790 462 L680 495 L520 535 L250 528 L155 492 Z",
+    d: "M78 268 L96 206 L140 178 L268 156 L318 148 L368 92 L392 74 L708 74 L748 96 L812 148 L900 164 L952 198 L968 248 L972 308 L86 308 Z",
   },
-  {
-    zone: "hood",
-    d: "M205 378 L245 338 L330 314 L490 304 L600 320 L625 358 L575 392 L480 410 L350 422 L240 410 L198 392 Z",
-  },
-  {
-    zone: "bumper",
-    d: "M148 458 L210 438 L420 448 L495 485 L475 535 L185 528 L142 495 Z",
-  },
-  {
-    zone: "bumper",
-    d: "M818 428 L848 418 L846 462 L812 455 Z",
-  },
-  {
-    zone: "light",
-    d: "M158 405 L230 388 L242 448 L155 458 Z",
-  },
-  {
-    zone: "light",
-    d: "M530 388 L642 410 L618 442 L505 420 Z",
-  },
-  {
-    zone: "fenderFront",
-    d: "M640 316 L735 304 L752 368 L700 412 L638 392 L622 348 Z",
-  },
-  {
-    zone: "glass",
-    d: "M425 305 L535 235 L655 242 L685 308 L490 315 Z",
-  },
-  {
-    zone: "roof",
-    d: "M555 198 L725 206 L755 242 L525 232 Z",
-  },
-  {
-    zone: "pillar",
-    d: "M635 238 L678 226 L712 302 L662 310 Z",
-  },
-  {
-    zone: "door",
-    d: "M700 306 L808 328 L792 436 L688 418 Z",
-  },
-  {
-    zone: "mirror",
-    d: "M705 282 L758 274 L766 312 L708 316 Z",
-  },
-  {
-    zone: "fenderRear",
-    d: "M800 314 L828 334 L822 382 L798 404 L782 368 L788 330 Z",
-  },
-  {
-    zone: "trunk",
-    d: "M790 268 L842 298 L822 342 L768 318 Z",
-  },
-  {
-    zone: "spoiler",
-    d: "M808 255 L845 275 L832 295 L798 275 Z",
-  },
-  {
-    zone: "sill",
-    d: "M675 445 L785 462 L770 485 L665 468 Z",
-  },
+  { zone: "bumper", d: "M70 214 L132 184 L140 292 L78 304 L58 250 Z" },
+  { zone: "bumper", d: "M888 214 L958 236 L950 308 L886 296 L872 248 Z" },
+  { zone: "light", d: "M86 190 L138 176 L146 210 L92 220 Z" },
+  { zone: "light", d: "M78 242 L128 238 L130 262 L78 266 Z" },
+  { zone: "hood", d: "M124 184 L312 150 L338 184 L148 212 Z" },
+  { zone: "fenderFront", d: "M148 214 L368 192 L388 292 L132 304 L114 242 Z" },
+  { zone: "glass", d: "M292 156 L358 82 L390 82 L344 172 Z" },
+  { zone: "roof", d: "M396 76 L704 76 L704 106 L396 106 Z" },
+  { zone: "pillar", d: "M344 90 L376 82 L408 174 L372 178 Z" },
+  { zone: "door", d: "M390 178 L552 178 L552 292 L386 292 Z" },
+  { zone: "door", d: "M560 178 L718 178 L718 292 L560 292 Z" },
+  { zone: "mirror", d: "M412 156 L478 146 L486 180 L418 188 Z" },
+  { zone: "sill", d: "M250 292 L760 292 L760 314 L250 314 Z" },
+  { zone: "fenderRear", d: "M718 178 L900 196 L912 292 L718 292 Z" },
+  { zone: "trunk", d: "M724 128 L888 152 L868 184 L714 170 Z" },
+  { zone: "spoiler", d: "M846 136 L918 154 L904 170 L838 154 Z" },
 ];
 
 export default function WrappingCalculator({
@@ -208,19 +174,33 @@ export default function WrappingCalculator({
         <p className="wrap-calc__zone-title">
           {preview ? preview.name : "Выберите деталь"}
         </p>
-        <div className="wrap-photo">
-          <img src="/wrap-sedan.jpg" alt="Белый седан" />
-          <svg viewBox="0 0 1024 768" preserveAspectRatio="none" aria-hidden="true">
-            {PHOTO_ZONES.map((item, index) => (
-              <path
-                key={`${item.zone}-${index}`}
-                className={zoneClass(item.zone, activeZone, selectedZones)}
-                d={item.d}
-                onClick={() => toggleZone(item.zone)}
-              />
-            ))}
-          </svg>
-        </div>
+        <svg className="wrap-side" viewBox="0 0 1000 420" role="img" aria-label="Схема седана, вид сбоку">
+          <ellipse cx="500" cy="352" rx="400" ry="16" fill="rgba(0,0,0,0.35)" />
+          <path
+            className="wrap-side__body"
+            d="M78 268 L96 206 L140 178 L268 156 L318 148 L368 92 L392 74 L708 74 L748 96 L812 148 L900 164 L952 198 L968 248 L972 308 L86 308 Z"
+          />
+          <path className="wrap-side__glass" d="M300 150 L358 84 L392 84 L348 168 Z" />
+          <path className="wrap-side__glass" d="M408 104 L690 104 L712 168 L400 170 Z" />
+          <path className="wrap-side__glass" d="M724 118 L808 152 L760 170 L708 170 Z" />
+          <g className="wrap-side__lines" aria-hidden="true">
+            <path d="M390 178 H718" />
+            <path d="M552 178 V292" />
+            <path d="M250 292 H760" />
+          </g>
+          {SIDE_ZONES.map((item, index) => (
+            <path
+              key={`${item.zone}-${index}`}
+              className={zoneClass(item.zone, activeZone, selectedZones)}
+              d={item.d}
+              onClick={() => toggleZone(item.zone)}
+            />
+          ))}
+          <g className="wrap-side__wheel">
+            <Wheel cx={230} cy={304} />
+            <Wheel cx={770} cy={304} />
+          </g>
+        </svg>
 
         <p className="wrap-calc__stage-hint">
           {preview

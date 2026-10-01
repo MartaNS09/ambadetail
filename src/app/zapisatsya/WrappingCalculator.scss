@@ -176,29 +176,36 @@
   line-height: 0.95;
 }
 
-.wrap-photo {
-  position: relative;
-  border-radius: 0.85rem;
-  overflow: hidden;
-}
-
-.wrap-photo img {
+.wrap-side {
   display: block;
   width: 100%;
   height: auto;
 }
 
-.wrap-photo svg {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
+.wrap-side__body {
+  fill: #f8fafc;
+}
+
+.wrap-side__glass {
+  fill: #1e293b;
+  pointer-events: none;
+}
+
+.wrap-side__lines {
+  fill: none;
+  stroke: rgba(15, 23, 42, 0.28);
+  stroke-width: 2;
+  pointer-events: none;
+}
+
+.wrap-side__wheel {
+  pointer-events: none;
 }
 
 .wrap-car__zone {
-  fill: rgba(255, 255, 255, 0.02);
+  fill: rgba(255, 255, 255, 0.01);
   stroke: transparent;
-  stroke-width: 1.4;
+  stroke-width: 2.5;
   cursor: pointer;
   transition: fill 0.15s ease;
 }
