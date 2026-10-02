@@ -3,7 +3,6 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Header from "@/components/layout/header/Header";
 import Footer from "@/components/layout/footer/Footer";
 import CookieBanner from "@/components/ui/CookieBanner";
-import Script from "next/script";
 import "./globals.css";
 import "./not-found.scss";
 import MobileBottomNav from "@/components/layout/mobile/MobileBottomNav";
@@ -244,36 +243,132 @@ const websiteJsonLd = {
   url: "https://ambadetail.by",
   inLanguage: "ru-BY",
   publisher: { "@id": "https://ambadetail.by/#localbusiness" },
+  about: { "@id": "https://ambadetail.by/#localbusiness" },
+  hasPart: [
+    { "@type": "WebPage", name: "Услуги", url: "https://ambadetail.by/uslugi" },
+    {
+      "@type": "WebPage",
+      name: "Оклейка авто плёнкой",
+      url: "https://ambadetail.by/uslugi/okleyka-auto-plenkoy",
+    },
+    {
+      "@type": "WebPage",
+      name: "Тонировка по ГОСТ",
+      url: "https://ambadetail.by/uslugi/tonirovka",
+    },
+    {
+      "@type": "WebPage",
+      name: "Химчистка салона",
+      url: "https://ambadetail.by/uslugi/khimchistka-salona",
+    },
+    {
+      "@type": "WebPage",
+      name: "Записаться",
+      url: "https://ambadetail.by/zapisatsya",
+    },
+    {
+      "@type": "WebPage",
+      name: "Контакты",
+      url: "https://ambadetail.by/contacts",
+    },
+  ],
 };
 
 const sitelinksJsonLd = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "Навигация сайта Ambadetail",
+  "@id": "https://ambadetail.by/#sitelinks",
+  name: "Основные разделы Ambadetail",
+  itemListOrder: "https://schema.org/ItemListOrderAscending",
+  numberOfItems: 8,
   itemListElement: [
     {
-      "@type": "SiteNavigationElement",
+      "@type": "ListItem",
       position: 1,
-      name: "Главная",
-      url: "https://ambadetail.by/",
+      name: "Оклейка авто плёнкой",
+      url: "https://ambadetail.by/uslugi/okleyka-auto-plenkoy",
+      item: {
+        "@type": "SiteNavigationElement",
+        name: "Оклейка авто плёнкой",
+        url: "https://ambadetail.by/uslugi/okleyka-auto-plenkoy",
+      },
     },
     {
-      "@type": "SiteNavigationElement",
+      "@type": "ListItem",
       position: 2,
+      name: "Тонировка по ГОСТ",
+      url: "https://ambadetail.by/uslugi/tonirovka",
+      item: {
+        "@type": "SiteNavigationElement",
+        name: "Тонировка по ГОСТ",
+        url: "https://ambadetail.by/uslugi/tonirovka",
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      name: "Химчистка салона",
+      url: "https://ambadetail.by/uslugi/khimchistka-salona",
+      item: {
+        "@type": "SiteNavigationElement",
+        name: "Химчистка салона",
+        url: "https://ambadetail.by/uslugi/khimchistka-salona",
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 4,
+      name: "Все услуги",
+      url: "https://ambadetail.by/uslugi",
+      item: {
+        "@type": "SiteNavigationElement",
+        name: "Все услуги",
+        url: "https://ambadetail.by/uslugi",
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 5,
+      name: "Портфолио",
+      url: "https://ambadetail.by/portfolio",
+      item: {
+        "@type": "SiteNavigationElement",
+        name: "Портфолио",
+        url: "https://ambadetail.by/portfolio",
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 6,
+      name: "Записаться",
+      url: "https://ambadetail.by/zapisatsya",
+      item: {
+        "@type": "SiteNavigationElement",
+        name: "Записаться",
+        url: "https://ambadetail.by/zapisatsya",
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 7,
+      name: "Контакты",
+      url: "https://ambadetail.by/contacts",
+      item: {
+        "@type": "SiteNavigationElement",
+        name: "Контакты",
+        url: "https://ambadetail.by/contacts",
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 8,
       name: "О нас",
       url: "https://ambadetail.by/about",
-    },
-    {
-      "@type": "SiteNavigationElement",
-      position: 3,
-      name: "Работы",
-      url: "https://ambadetail.by/portfolio",
-    },
-    {
-      "@type": "SiteNavigationElement",
-      position: 4,
-      name: "Услуги",
-      url: "https://ambadetail.by/uslugi",
+      item: {
+        "@type": "SiteNavigationElement",
+        name: "О нас",
+        url: "https://ambadetail.by/about",
+      },
     },
   ],
 };
@@ -286,23 +381,20 @@ export default function RootLayout({
   return (
     <html lang="ru" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
-        <Script
+        <script
           id="schema-org"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-          strategy="afterInteractive"
         />
-        <Script
+        <script
           id="schema-website"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
-          strategy="afterInteractive"
         />
-        <Script
+        <script
           id="schema-sitelinks"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(sitelinksJsonLd) }}
-          strategy="afterInteractive"
         />
       </head>
       <body>
