@@ -1,18 +1,53 @@
 {
+  "id": "/",
   "name": "Ambadetail — Детейлинг в Витебске",
   "short_name": "Ambadetail",
-  "description": "Детейлинг студия в Витебске",
-  "start_url": "/",
+  "description": "Оклейка плёнкой, тонировка по ГОСТ и детейлинг в Витебске. ул. П. Бровки, 6А.",
+  "start_url": "/?source=pwa",
   "scope": "/",
-  "display": "browser",
+  "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#0a0f1a",
   "theme_color": "#000000",
   "lang": "ru",
+  "dir": "ltr",
+  "categories": ["business", "lifestyle"],
   "icons": [
     {
-      "src": "/favicon.ico",
-      "sizes": "any",
-      "type": "image/x-icon"
+      "src": "/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Записаться",
+      "short_name": "Запись",
+      "url": "/zapisatsya",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Услуги",
+      "url": "/uslugi",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
+    },
+    {
+      "name": "Контакты",
+      "url": "/contacts",
+      "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }]
     }
   ]
 }

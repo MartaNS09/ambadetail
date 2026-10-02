@@ -1,0 +1,42 @@
+.offline {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  padding: 3rem 0;
+
+  &__inner {
+    max-width: 36rem;
+  }
+
+  &__brand {
+    margin: 0 0 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    color: #dc2626;
+  }
+
+  h1 {
+    margin: 0 0 0.75rem;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
+  }
+
+  p {
+    color: rgb(var(--text-secondary));
+    line-height: 1.6;
+  }
+
+  a {
+    color: #dc2626;
+  }
+
+  &__home {
+    display: inline-flex;
+    margin-top: 1.25rem;
+    padding: 0.7rem 1.2rem;
+    border-radius: 999px;
+    background: linear-gradient(135deg, #b82828, #dc2626);
+    color: #fff !important;
+    text-decoration: none;
+    font-weight: 650;
+  }
+}

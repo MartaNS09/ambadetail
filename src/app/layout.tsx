@@ -6,6 +6,7 @@ import CookieBanner from "@/components/ui/CookieBanner";
 import "./globals.css";
 import "./not-found.scss";
 import MobileBottomNav from "@/components/layout/mobile/MobileBottomNav";
+import RegisterServiceWorker from "@/components/pwa/RegisterServiceWorker";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://ambadetail.by"),
@@ -21,7 +22,12 @@ export const metadata: Metadata = {
     "geo.position": "55.173057;30.24579",
     ICBM: "55.173057, 30.24579",
   },
-  applicationName: "Ambadetail — Детейлинг в Витебске",
+  applicationName: "Ambadetail",
+  appleWebApp: {
+    capable: true,
+    title: "Ambadetail",
+    statusBarStyle: "black-translucent",
+  },
   keywords:
     "детейлинг витебск, детейлинг студия витебск, химчистка салона витебск, полировка авто витебск, оклейка пленкой витебск, тонировка витебск, тонировка по гост витебск, керамика авто витебск, ppf витебск",
   authors: [{ name: "Ambadetail" }],
@@ -61,7 +67,12 @@ export const metadata: Metadata = {
     images: ["/images/og-image.jpg"],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
+      { url: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
+    ],
+    apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180" }],
   },
   manifest: "/site.webmanifest",
   alternates: {
@@ -404,6 +415,7 @@ export default function RootLayout({
           <Footer />
           <MobileBottomNav />
           <CookieBanner />
+          <RegisterServiceWorker />
         </ThemeProvider>
       </body>
     </html>
