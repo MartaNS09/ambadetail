@@ -441,44 +441,40 @@ html.dark .faq-accordion__item--open {
 .num-class {
   text-align: center;
   vertical-align: middle;
-  padding: 0.5rem;
-  min-width: 75px;
+  padding: 0.35rem 0.2rem;
+  white-space: nowrap;
 }
 
 .num-class__num {
   display: inline-block;
-  font-size: 1.8rem;
+  font-size: 1.75rem;
   font-weight: 800;
   color: #dc3545;
   line-height: 1;
   vertical-align: middle;
-  margin-right: 0.3rem;
 }
 
 .num-class__text {
-  display: inline-flex;
-  flex-direction: column;
-  font-size: 0.5rem;
-  font-weight: 600;
+  display: inline-block;
+  margin-left: 0.12rem;
+  font-size: 0.62rem;
+  font-weight: 700;
   color: #fff;
   text-transform: uppercase;
+  letter-spacing: 0.12em;
   line-height: 1;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
   vertical-align: middle;
-  letter-spacing: 0.3px;
-}
-
-.num-class__text span {
-  display: block;
-  line-height: 1.05;
 }
 
 @media (max-width: 768px) {
   .num-class__num {
-    font-size: 1.4rem;
-    margin-right: 0.2rem;
+    font-size: 1.35rem;
   }
   .num-class__text {
-    font-size: 0.45rem;
+    font-size: 0.5rem;
+    letter-spacing: 0.08em;
   }
 }
 
@@ -891,44 +887,40 @@ html.dark .faq-accordion__item--open {
 .price-table--brands .num-class {
   text-align: center;
   vertical-align: middle;
-  padding: 0.5rem;
-  min-width: 75px;
+  padding: 0.35rem 0.2rem;
+  white-space: nowrap;
 }
 
 .price-table--brands .num-class__num {
   display: inline-block;
-  font-size: 1.8rem;
+  font-size: 1.75rem;
   font-weight: 800;
   color: #dc3545;
   line-height: 1;
   vertical-align: middle;
-  margin-right: 0.3rem;
 }
 
 .price-table--brands .num-class__text {
-  display: inline-flex;
-  flex-direction: column;
-  font-size: 0.5rem;
-  font-weight: 600;
+  display: inline-block;
+  margin-left: 0.12rem;
+  font-size: 0.62rem;
+  font-weight: 700;
   color: #fff;
   text-transform: uppercase;
+  letter-spacing: 0.12em;
   line-height: 1;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
   vertical-align: middle;
-  letter-spacing: 0.3px;
-}
-
-.price-table--brands .num-class__text span {
-  display: block;
-  line-height: 1.05;
 }
 
 @media (max-width: 768px) {
   .price-table--brands .num-class__num {
-    font-size: 1.4rem;
-    margin-right: 0.2rem;
+    font-size: 1.35rem;
   }
   .price-table--brands .num-class__text {
-    font-size: 0.45rem;
+    font-size: 0.5rem;
+    letter-spacing: 0.08em;
   }
 }
 

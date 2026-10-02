@@ -5,13 +5,7 @@ import Link from "next/link";
 const ClassHeader = ({ num }: { num: number }) => (
   <th className="num-class">
     <span className="num-class__num">{num}</span>
-    <span className="num-class__text">
-      <span>к</span>
-      <span>л</span>
-      <span>а</span>
-      <span>с</span>
-      <span>с</span>
-    </span>
+    <span className="num-class__text">класс</span>
   </th>
 );
 
