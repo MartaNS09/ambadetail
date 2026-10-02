@@ -95,8 +95,8 @@ export default function HomeClient() {
             <h1 className="hero__title">
               {/* Скрытый текст для поисковиков */}
               <span className="sr-only">
-                Детейлинг студия Ambadetail в Витебске — полировка, химчистка,
-                оклейка пленкой и защитные покрытия
+                Детейлинг студия Ambadetail в Витебске — оклейка плёнкой,
+                тонировка стёкол, полировка и химчистка
               </span>
 
               {/* Анимированные буквы для пользователей */}
@@ -126,19 +126,16 @@ export default function HomeClient() {
             <p
               className={`hero__subtitle ${isSubtitleVisible ? "hero__subtitle--visible" : ""}`}
             >
-              <strong>Профессиональный детейлинг в Витебске</strong> —&nbsp;
-              <span className="hero__subtitle-highlight">химчистка салона</span>
-              ,&nbsp;
-              <span className="hero__subtitle-highlight">полировка кузова</span>
-              ,&nbsp;
+              <strong>Оклейка авто плёнкой и тонировка в Витебске</strong>{" "}
+              —&nbsp;
               <span className="hero__subtitle-highlight">
-                оклейка антигравийной пленкой
+                антигравийная защита кузова
               </span>
               &nbsp; и&nbsp;
               <span className="hero__subtitle-highlight">
-                защитные покрытия
-              </span>
-              &nbsp; для вашего автомобиля. Работаем в Витебске ежедневно.
+                тонировка стёкол по ГОСТ
+              </span>. Также химчистка салона, полировка и защитные покрытия.
+              Работаем в Витебске ежедневно.
             </p>
 
             {/* КНОПКИ + БЛОК С АДРЕСОМ */}
