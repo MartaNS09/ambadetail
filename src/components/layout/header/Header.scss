@@ -268,6 +268,39 @@
   transform: rotate(180deg);
 }
 
+.header__booking {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-left: 0.15rem;
+  padding: 0.55rem 1.15rem;
+  background: linear-gradient(135deg, #b82828 0%, #dc2626 100%);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  box-shadow: 0 8px 18px rgba(220, 38, 38, 0.28);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+  &:hover {
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 12px 24px rgba(220, 38, 38, 0.4);
+  }
+}
+
+.header__booking--mobile {
+  display: flex;
+  width: fit-content;
+  margin: 0.75rem auto 0.25rem;
+  padding: 0.9rem 1.25rem;
+  font-size: 1.05rem;
+}
+
 /* БУРГЕР МЕНЮ */
 .header__menu-toggle {
   display: none;

@@ -109,7 +109,7 @@ export default function UslugiClient() {
       {/* ✅ ВИЗУАЛЬНЫЕ ХЛЕБНЫЕ КРОШКИ */}
       <div className="breadcrumbs" aria-label="Навигационная цепочка">
         <div className="container">
-          <Link href="/" className="breadcrumbs__link">
+          <Link href="/" prefetch={false} className="breadcrumbs__link">
             Главная
           </Link>
           <span className="breadcrumbs__separator">/</span>

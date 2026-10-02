@@ -50,7 +50,7 @@ export default function Footer() {
       <div className="container">
         <div className="footer__grid">
           <div className="footer__col">
-            <Link href="/" className="footer__logo">
+            <Link href="/" className="footer__logo" prefetch={false}>
               <span className="footer__logo-letter">A</span>
               <span className="footer__logo-letter">M</span>
               <span className="footer__logo-letter">B</span>
@@ -108,7 +108,7 @@ export default function Footer() {
             <ul className="footer__list">
               {popularServices.map((service, idx) => (
                 <li key={idx}>
-                  <Link href={service.href} className="footer__link">
+                  <Link href={service.href} className="footer__link" prefetch={false}>
                     <ChevronRight size={12} />
                     {service.name}
                   </Link>
@@ -122,7 +122,7 @@ export default function Footer() {
             <ul className="footer__list">
               {quickLinks.map((link, idx) => (
                 <li key={idx}>
-                  <Link href={link.href} className="footer__link">
+                  <Link href={link.href} className="footer__link" prefetch={false}>
                     <span className="footer__link-icon">{link.icon}</span>
                     {link.name}
                   </Link>
@@ -193,6 +193,7 @@ export default function Footer() {
 
               <Link
                 href="/zapisatsya"
+                prefetch={false}
                 className="footer__email-btn"
                 aria-label="Перейти к форме онлайн-записи"
               >
@@ -268,7 +269,7 @@ export default function Footer() {
               Apsod
             </a>
           </div>
-          <Link href="/privacy" className="footer__privacy">
+          <Link href="/privacy" prefetch={false} className="footer__privacy">
             Политика конфиденциальности
           </Link>
         </div>

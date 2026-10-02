@@ -3,7 +3,6 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { ArrowRight, Home, AlertTriangle } from "lucide-react";
-import "./not-found.scss";
 
 export default function NotFound() {
   const [isVisible, setIsVisible] = useState(false);

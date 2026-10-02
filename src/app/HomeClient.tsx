@@ -323,8 +323,8 @@ export default function HomeClient() {
                 <Image
                   src="/images/about/about-1.webp"
                   alt="Детейлинг студия Ambadetail в Витебске"
-                  width={500}
-                  height={400}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 500px"
                   className="about-home__img"
                 />
                 <div className="about-home__image-overlay">

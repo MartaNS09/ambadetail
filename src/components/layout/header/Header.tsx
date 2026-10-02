@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
-import { MapPin, Phone, Mail, ChevronDown } from "lucide-react";
+import { MapPin, Phone, Mail, ChevronDown, Calendar } from "lucide-react";
 import { FaInstagram, FaTiktok } from "react-icons/fa";
 import ThemeToggle from "@/components/ui/ThemeToggle";
 import TimeDisplay from "@/components/ui/TimeDisplay";
@@ -118,7 +118,6 @@ export default function Header() {
   }, []);
 
   const navItems = [
-    { name: "Главная", href: "/" },
     { name: "Услуги", href: "/uslugi", hasDropdown: true },
     { name: "Портфолио", href: "/portfolio" },
     { name: "Блог", href: "/blog" },
@@ -178,7 +177,7 @@ export default function Header() {
               <span className="header__menu-icon"></span>
             </button>
 
-            <Link href="/" className="header__logo" aria-label="AMBADETAIL">
+            <Link href="/" className="header__logo" aria-label="AMBADETAIL" prefetch={false}>
               <div className="header__logo-wrapper">
                 <span className="header__logo-letter">A</span>
                 <span className="header__logo-letter">M</span>
@@ -225,6 +224,7 @@ export default function Header() {
                       >
                         <Link
                           href="/uslugi"
+                          prefetch={false}
                           className="header__nav-link header__nav-link--dropdown"
                           style={{
                             display: "flex",
@@ -256,6 +256,7 @@ export default function Header() {
                               <Link
                                 key={subItem.href}
                                 href={subItem.href}
+                                prefetch={false}
                                 className="header__dropdown-link"
                                 role="menuitem"
                                 onClick={() => {
@@ -269,13 +270,17 @@ export default function Header() {
                         </div>
                       </div>
                     ) : (
-                      <Link href={item.href} className="header__nav-link">
+                      <Link href={item.href} prefetch={false} className="header__nav-link">
                         <span>{item.name}</span>
                       </Link>
                     )}
                   </li>
                 ))}
               </ul>
+              <Link href="/zapisatsya" prefetch={false} className="header__booking">
+                <Calendar size={16} aria-hidden="true" />
+                Записаться
+              </Link>
               <ThemeToggle />
             </nav>
 
@@ -315,6 +320,7 @@ export default function Header() {
                   <>
                     <Link
                       href={item.href}
+                      prefetch={false}
                       className="header__mobile-link"
                       onClick={() => setIsMenuOpen(false)}
                     >
@@ -325,6 +331,7 @@ export default function Header() {
                         <Link
                           key={subItem.href}
                           href={subItem.href}
+                          prefetch={false}
                           className="header__mobile-dropdown-link"
                           onClick={() => setIsMenuOpen(false)}
                         >
@@ -336,6 +343,7 @@ export default function Header() {
                 ) : (
                   <Link
                     href={item.href}
+                    prefetch={false}
                     className="header__mobile-link"
                     onClick={() => setIsMenuOpen(false)}
                   >
@@ -344,6 +352,15 @@ export default function Header() {
                 )}
               </div>
             ))}
+            <Link
+              href="/zapisatsya"
+              prefetch={false}
+              className="header__booking header__booking--mobile"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <Calendar size={18} aria-hidden="true" />
+              Записаться
+            </Link>
             <div className="header__mobile-social">
               <a
                 href="https://www.instagram.com/ambassador__detailing?igsh=MXRwaXRtaGV4c2hlYg%3D%3D"

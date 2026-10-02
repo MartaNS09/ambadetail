@@ -5,6 +5,7 @@ import Footer from "@/components/layout/footer/Footer";
 import CookieBanner from "@/components/ui/CookieBanner";
 import Script from "next/script";
 import "./globals.css";
+import "./not-found.scss";
 import MobileBottomNav from "@/components/layout/mobile/MobileBottomNav";
 
 export const metadata: Metadata = {
@@ -237,7 +238,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ru" suppressHydrationWarning>
+    <html lang="ru" data-scroll-behavior="smooth" suppressHydrationWarning>
       <head>
         <Script
           id="schema-org"

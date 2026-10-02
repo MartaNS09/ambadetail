@@ -37,11 +37,11 @@ export default function OkleykaClient() {
       {/* ✅ ВИЗУАЛЬНЫЕ ХЛЕБНЫЕ КРОШКИ (для пользователей) */}
       <div className="breadcrumbs" aria-label="Навигационная цепочка">
         <div className="container">
-          <Link href="/" className="breadcrumbs__link">
+          <Link href="/" prefetch={false} className="breadcrumbs__link">
             Главная
           </Link>
           <span className="breadcrumbs__separator">/</span>
-          <Link href="/uslugi" className="breadcrumbs__link">
+          <Link href="/uslugi" prefetch={false} className="breadcrumbs__link">
             Услуги
           </Link>
           <span className="breadcrumbs__separator">/</span>
