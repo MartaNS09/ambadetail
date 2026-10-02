@@ -398,6 +398,12 @@ export default function HomeClient() {
                   </span>
                   <span>Индивидуальный подход</span>
                 </li>
+                <li className="advantages-list__item">
+                  <span className="advantages-list__icon" aria-hidden="true">
+                    ✓
+                  </span>
+                  <span>Рассрочка до 5 месяцев без переплат</span>
+                </li>
               </ul>
               <p className="info-card__text-small">
                 Клиенты обращаются в нашу студию детейлинга в Витебске за

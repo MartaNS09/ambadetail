@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { ArrowRight, Car, Shield, Clock } from "lucide-react";
+import InstallmentNote from "@/components/ui/InstallmentNote";
 import "./page.scss";
 
 // Все услуги
@@ -234,6 +235,7 @@ export default function UslugiClient() {
 
       <section id="services-list" className="uslugi-grid-section">
         <div className="container">
+          <InstallmentNote />
           <div className="uslugi-grid">
             {allServices.map((service, index) => (
               <Link

@@ -18,6 +18,7 @@ import {
   WRAPPING_WORKS,
 } from "@/lib/okleyka-works";
 import WrappingCalculator from "./WrappingCalculator";
+import InstallmentNote from "@/components/ui/InstallmentNote";
 import "../podarochnyy-sertifikat/page.scss";
 
 export const BOOKING_SERVICES = [
@@ -314,6 +315,7 @@ export default function BookingClient() {
               <li>Согласовываем дату, объём работ и ориентир по цене.</li>
               <li>Приезжаете в студию на ул. П. Бровки, 6А.</li>
             </ol>
+            <InstallmentNote />
 
             <h2>Услуги для записи</h2>
             <ul>

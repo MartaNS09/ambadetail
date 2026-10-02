@@ -12,6 +12,7 @@ import {
   BrandsTable,
 } from "./tables";
 import { okleykaFaqItems, okleykaZones } from "./seo-data";
+import InstallmentNote from "@/components/ui/InstallmentNote";
 import "./page.scss";
 
 export default function OkleykaClient() {
@@ -97,6 +98,7 @@ export default function OkleykaClient() {
 
       <div className="service-content">
         <div className="container">
+          <InstallmentNote />
           <div className="service-content__intro">
             <p className="service-content__intro-text">
               <strong>Оклейка авто плёнкой в Витебске</strong> в Ambadetail —

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { PriceTable, BrandsTable } from "./tables";
+import InstallmentNote from "@/components/ui/InstallmentNote";
 import "./page.scss";
 
 export default function LkpClient() {
@@ -120,6 +121,7 @@ export default function LkpClient() {
 
       <div className="service-content">
         <div className="container">
+          <InstallmentNote />
           <div className="service-content__intro">
             <p className="service-content__intro-text">
               <strong>Восстановление ЛКП в Витебске</strong> по технологии{" "}

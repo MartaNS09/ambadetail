@@ -234,12 +234,19 @@ html.dark .footer__social-link:hover {
   text-align: center;
 }
 
+.footer__payment-note {
+  margin: 0.35rem 0 0;
+  color: rgb(var(--text-secondary));
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
 .footer__payment-icons {
   display: flex;
   justify-content: center;
   gap: 1.5rem;
   flex-wrap: wrap;
-  margin-top: 0.5rem;
+  margin-top: 0.75rem;
 }
 
 .footer__payment-item {

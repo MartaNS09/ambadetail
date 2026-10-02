@@ -225,6 +225,9 @@ export default function Footer() {
 
         <div className="footer__payment">
           <h4 className="footer__title">Принимаем к оплате</h4>
+          <p className="footer__payment-note">
+            Рассрочка на все виды услуг до 5 месяцев без переплат
+          </p>
           <div className="footer__payment-icons">
             <div className="footer__payment-item">
               <Image

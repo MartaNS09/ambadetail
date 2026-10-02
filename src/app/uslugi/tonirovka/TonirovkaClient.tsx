@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { PriceTable, BrandsTable } from "./tables";
 import { tonirovkaFaqItems } from "./seo-data";
+import InstallmentNote from "@/components/ui/InstallmentNote";
 import "./page.scss";
 
 export default function TonirovkaClient() {
@@ -90,6 +91,7 @@ export default function TonirovkaClient() {
 
       <div className="service-content">
         <div className="container">
+          <InstallmentNote />
           <div className="service-content__intro">
             <p className="service-content__intro-text">
               <strong>Тонировка авто в Витебске</strong> в Ambadetail — законный

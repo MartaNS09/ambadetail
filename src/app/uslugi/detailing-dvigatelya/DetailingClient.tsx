@@ -5,6 +5,7 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { PriceTable, BrandsTable } from "./tables";
+import InstallmentNote from "@/components/ui/InstallmentNote";
 import "./page.scss";
 
 export default function DetailingClient() {
@@ -125,6 +126,7 @@ export default function DetailingClient() {
 
       <div className="service-content">
         <div className="container">
+          <InstallmentNote />
           <div className="service-content__intro">
             <p className="service-content__intro-text">
               <strong>Детейлинг двигателя в Витебске</strong> — это
