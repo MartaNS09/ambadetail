@@ -7,6 +7,7 @@ import { ArrowRight } from "lucide-react";
 
 import BlogPreview from "@/components/BlogPreview";
 import Reviews from "@/components/Reviews";
+import { geoFaq, studio } from "@/lib/geo-facts";
 // import BookingForm from "@/components/forms/BookingForm";
 import "./page.scss";
 
@@ -180,6 +181,56 @@ export default function HomeClient() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="geo-facts" aria-labelledby="geo-facts-title">
+        <div className="container">
+          <h2 id="geo-facts-title" className="section-title">
+            Детейлинг в Витебске — коротко
+          </h2>
+          <p className="geo-facts__lead">
+            {studio.name} ({studio.alternateName}) — детейлинг студия в
+            Витебске на {studio.street}. Оклейка кузова антигравийной
+            плёнкой от 660 BYN и тонировка стёкол по ГОСТ от 330 BYN. Также
+            химчистка салона от 708 BYN, полировка, керамика, восстановление
+            ЛКП и детейлинг двигателя. Студия работает {studio.experience}.{" "}
+            {studio.installment}.
+          </p>
+          <dl className="geo-facts__list">
+            <div>
+              <dt>Адрес</dt>
+              <dd>
+                {studio.postalCode}, г. {studio.city}, {studio.street}
+              </dd>
+            </div>
+            <div>
+              <dt>Телефон</dt>
+              <dd>
+                <a href={`tel:${studio.phoneTel}`}>{studio.phone}</a>
+              </dd>
+            </div>
+            <div>
+              <dt>Часы</dt>
+              <dd>
+                {studio.hoursWeekday}, {studio.hoursWeekend}
+              </dd>
+            </div>
+            <div>
+              <dt>Запись</dt>
+              <dd>
+                <Link href="/zapisatsya">Форма на сайте</Link>
+              </dd>
+            </div>
+          </dl>
+          <div className="geo-facts__faq">
+            {geoFaq.map((item) => (
+              <details key={item.question}>
+                <summary>{item.question}</summary>
+                <p className="geo-facts__answer">{item.answer}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import HomeClient from "./HomeClient";
 import { pageMetadata } from "./metadata-config";
+import { geoFaq } from "@/lib/geo-facts";
+import { faqPageSchema } from "@/lib/seo-schemas";
 
 export const metadata: Metadata = {
   title: {
@@ -27,9 +29,44 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://ambadetail.by",
+    types: {
+      "text/plain": [
+        { url: "/llms.txt", title: "Факты Ambadetail для ИИ" },
+        { url: "/llms-full.txt", title: "Полные факты Ambadetail для ИИ" },
+      ],
+    },
+  },
+};
+
+const homeFaq = faqPageSchema(geoFaq);
+
+const homeWebPage = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "@id": "https://ambadetail.by/#webpage",
+  url: "https://ambadetail.by/",
+  name: pageMetadata.home.title,
+  description: pageMetadata.home.description,
+  inLanguage: "ru-BY",
+  about: { "@id": "https://ambadetail.by/#localbusiness" },
+  speakable: {
+    "@type": "SpeakableSpecification",
+    cssSelector: [".geo-facts__lead", ".geo-facts__answer"],
   },
 };
 
 export default function HomePage() {
-  return <HomeClient />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaq) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(homeWebPage) }}
+      />
+      <HomeClient />
+    </>
+  );
 }

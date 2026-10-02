@@ -363,6 +363,88 @@ body {
   color: transparent;
 }
 
+.geo-facts {
+  padding: 3.5rem 0 1rem;
+
+  &__lead {
+    max-width: 860px;
+    margin: -1.5rem auto 1.5rem;
+    text-align: center;
+    color: rgb(var(--text-secondary));
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.75rem;
+    margin: 0 0 1.25rem;
+
+    div {
+      background: rgb(var(--bg-card));
+      border-radius: 0.75rem;
+      padding: 0.9rem 1rem;
+    }
+
+    dt {
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      color: rgb(var(--text-secondary));
+      margin-bottom: 0.25rem;
+    }
+
+    dd {
+      margin: 0;
+      font-weight: 650;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        color: #dc2626;
+      }
+    }
+  }
+
+  &__faq {
+    display: grid;
+    gap: 0.5rem;
+
+    details {
+      background: rgb(var(--bg-card));
+      border-radius: 0.75rem;
+      padding: 0.85rem 1rem;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 650;
+    }
+  }
+
+  &__answer {
+    margin: 0.7rem 0 0.15rem;
+    color: rgb(var(--text-secondary));
+    line-height: 1.65;
+  }
+
+  @media (max-width: 900px) {
+    &__list {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media (max-width: 560px) {
+    &__list {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
 .services {
   padding: 4rem 0;
 

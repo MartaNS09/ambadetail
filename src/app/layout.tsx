@@ -15,7 +15,13 @@ export const metadata: Metadata = {
     template: "%s | Ambadetail",
   },
   description:
-    "Профессиональный детейлинг в Витебске. Оклейка авто плёнкой, химчистка салона, полировка, тонировка по ГОСТ, керамика. Ambadetail — ул. П. Бровки, 6А.",
+    "Оклейка авто плёнкой от 660 BYN и тонировка по ГОСТ от 330 BYN в Витебске. Ambadetail, ул. П. Бровки, 6А. Пн–Пт 10:00–19:00, Сб–Вс 10:00–17:00. +375 29 223 03 22.",
+  other: {
+    "geo.region": "BY-VI",
+    "geo.placename": "Витебск",
+    "geo.position": "55.173057;30.24579",
+    ICBM: "55.173057, 30.24579",
+  },
   applicationName: "Ambadetail — Детейлинг в Витебске",
   keywords:
     "детейлинг витебск, детейлинг студия витебск, химчистка салона витебск, полировка авто витебск, оклейка пленкой витебск, тонировка витебск, тонировка по гост витебск, керамика авто витебск, ppf витебск",
@@ -61,6 +67,12 @@ export const metadata: Metadata = {
   manifest: "/site.webmanifest",
   alternates: {
     canonical: "https://ambadetail.by",
+    types: {
+      "text/plain": [
+        { url: "/llms.txt", title: "Факты Ambadetail для ИИ" },
+        { url: "/llms-full.txt", title: "Полные факты Ambadetail для ИИ" },
+      ],
+    },
   },
 };
 
@@ -75,16 +87,23 @@ export const viewport: Viewport = {
 // ===== LocalBusiness + каталог услуг для локального SEO Витебск =====
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "LocalBusiness",
+  "@type": ["AutomotiveBusiness", "LocalBusiness"],
   "@id": "https://ambadetail.by/#localbusiness",
   name: "Ambadetail",
-  alternateName: "Детейлинг студия Ambadetail Витебск",
+  alternateName: ["Ambassador Detailing", "Детейлинг студия Ambadetail Витебск"],
+  legalName: "ООО «СервисЛинк»",
+  taxID: "392001662",
   description:
-    "Детейлинг студия в Витебске: химчистка салона, полировка кузова, оклейка плёнкой PPF, тонировка по ГОСТ РБ и РФ, керамика, восстановление ЛКП, детейлинг двигателя.",
+    "Детейлинг студия Ambadetail в Витебске на ул. П. Бровки, 6А: оклейка плёнкой от 660 BYN, тонировка по ГОСТ от 330 BYN, химчистка салона от 708 BYN, полировка, керамика, восстановление ЛКП и детейлинг двигателя. Рассрочка до 5 месяцев без переплат.",
   url: "https://ambadetail.by",
   telephone: "+375292230322",
   email: "info@ambadetail.by",
   priceRange: "$$",
+  currenciesAccepted: "BYN",
+  paymentAccepted:
+    "наличные, банковская карта, рассрочка до 5 месяцев без переплат",
+  hasMap: "https://yandex.by/maps/org/ambassador_detailing/104758157236/",
+  knowsLanguage: "ru",
   image: "https://ambadetail.by/images/og-image.jpg",
   logo: "https://ambadetail.by/favicon.ico",
   address: {
@@ -129,6 +148,12 @@ const jsonLd = {
           name: "Химчистка салона",
           url: "https://ambadetail.by/uslugi/khimchistka-salona",
         },
+        priceCurrency: "BYN",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "BYN",
+          minPrice: "708",
+        },
       },
       {
         "@type": "Offer",
@@ -136,6 +161,12 @@ const jsonLd = {
           "@type": "Service",
           name: "Оклейка авто плёнкой",
           url: "https://ambadetail.by/uslugi/okleyka-auto-plenkoy",
+        },
+        priceCurrency: "BYN",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "BYN",
+          minPrice: "660",
         },
       },
       {
@@ -152,6 +183,12 @@ const jsonLd = {
           "@type": "Service",
           name: "Тонировка авто по ГОСТ",
           url: "https://ambadetail.by/uslugi/tonirovka",
+        },
+        priceCurrency: "BYN",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "BYN",
+          minPrice: "330",
         },
       },
       {
@@ -180,7 +217,16 @@ const jsonLd = {
       },
     ],
   },
+  potentialAction: {
+    "@type": "ReserveAction",
+    name: "Записаться на детейлинг",
+    target: {
+      "@type": "EntryPoint",
+      urlTemplate: "https://ambadetail.by/zapisatsya",
+    },
+  },
   sameAs: [
+    "https://yandex.by/maps/org/ambassador_detailing/104758157236/",
     "https://www.instagram.com/ambassador__detailing",
     "https://www.tiktok.com/@ambassador___detailing",
     "https://youtube.com/@ambadetail",
