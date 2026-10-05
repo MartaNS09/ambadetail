@@ -10,6 +10,7 @@ import {
   PHONE_HINT,
 } from "@/lib/phone";
 import { brandsForService, modelsForBrand } from "@/lib/car-brands";
+import { BOOKING_SERVICES } from "@/lib/booking-services";
 import {
   formatByn,
   priceForClass,
@@ -19,20 +20,10 @@ import {
 } from "@/lib/okleyka-works";
 import WrappingCalculator from "./WrappingCalculator";
 import InstallmentNote from "@/components/ui/InstallmentNote";
+import { postLead } from "@/lib/post-lead";
 import "../podarochnyy-sertifikat/page.scss";
 
-export const BOOKING_SERVICES = [
-  "Оклейка авто плёнкой",
-  "Химчистка салона",
-  "Полировка авто",
-  "Тонировка авто",
-  "Защитные покрытия",
-  "Восстановление ЛКП",
-  "Детейлинг двигателя",
-  "Консультация / не знаю, что выбрать",
-] as const;
-
-const DEFAULT_BOOKING_SERVICE = "Оклейка авто плёнкой";
+const DEFAULT_BOOKING_SERVICE = BOOKING_SERVICES[0];
 
 function resolveService(raw: string | null): string {
   if (!raw) return DEFAULT_BOOKING_SERVICE;
@@ -221,7 +212,7 @@ export default function BookingClient() {
       form.work ? `Вид оклейки: ${form.work}` : "",
       zoneLines.length ? `Зоны оклейки:\n${zoneLines.join("\n")}` : "",
       zoneLines.length
-        ? `Ориентир по зонам: ${zoneFrom ? "от " : ""}${zoneSum.toLocaleString("ru-RU")} BYN`
+        ? `Ориентир по зонам: ${zoneFrom ? "от " : ""}${zoneSum.toLocaleString("ru-RU")} Б̶`
         : "",
       `Желаемая дата: ${form.date}`,
       `Автомобиль: ${carLine}`,
@@ -232,17 +223,38 @@ export default function BookingClient() {
 
     setLoading(true);
     try {
-      const response = await fetch("/api/send-to-telegram", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: form.name.trim(),
-          email: form.email.trim() || "не указан",
-          message,
+      const [response, saved] = await Promise.all([
+        fetch("/api/send-to-telegram", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: form.name.trim(),
+            email: form.email.trim() || "не указан",
+            message,
+          }),
         }),
-      });
+        postLead({
+          source: "booking",
+          name: form.name.trim(),
+          phone: form.phone.trim(),
+          email: form.email.trim(),
+          fields: {
+            service: form.service,
+            work: form.work.trim(),
+            brand: form.brand,
+            model: form.model,
+            className: selectedModel ? String(selectedModel.classNumber) : "",
+            zones: zoneLines.join("\n"),
+            estimate: zoneLines.length
+              ? `${zoneFrom ? "от " : ""}${zoneSum.toLocaleString("ru-RU")} Б̶`
+              : "",
+            date: form.date,
+            comment: form.comment.trim(),
+          },
+        }),
+      ]);
 
-      if (!response.ok) {
+      if (!response.ok && !saved) {
         setError("Не удалось отправить заявку. Позвоните +375 29 223 03 22.");
         return;
       }

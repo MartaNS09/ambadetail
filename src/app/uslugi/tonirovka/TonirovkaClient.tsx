@@ -81,7 +81,7 @@ export default function TonirovkaClient() {
               ))}
             </h1>
             <p className="service-hero__subtitle">
-              Тонировка по ГОСТ РБ и РФ. Полная — от 330 BYN. Атермал на передние
+              Тонировка по ГОСТ РБ и РФ. Полная — от 330 Б̶. Атермал на передние
               ≥70%, задняя полусфера без лимита с 01.09.2025. KAVACA, Llumar,
               SunTek.
             </p>
@@ -96,7 +96,7 @@ export default function TonirovkaClient() {
             <p className="service-content__intro-text">
               <strong>Тонировка авто в Витебске</strong> в Ambadetail — законный
               комплект под техосмотр и поездки в РФ: атермал спереди и затемнение
-              сзади. Полная тонировка — от 330 BYN. Студия на ул. П. Бровки, 6А,
+              сзади. Полная тонировка — от 330 Б̶. Студия на ул. П. Бровки, 6А,
               работаем и в выходные.
             </p>
             <p className="service-content__intro-text">
@@ -117,15 +117,15 @@ export default function TonirovkaClient() {
             </p>
             <ul className="service-content__list">
               <li>
-                <strong>1–2 класс — от 330 BYN.</strong> Компактные и средние
+                <strong>1–2 класс — от 330 Б̶.</strong> Компактные и средние
                 седаны, хэтчбеки.
               </li>
               <li>
-                <strong>3–4 класс — от 400 BYN.</strong> Бизнес-сегмент, кроссоверы
+                <strong>3–4 класс — от 400 Б̶.</strong> Бизнес-сегмент, кроссоверы
                 и крупные кузова.
               </li>
               <li>
-                <strong>5 класс — от 450 BYN.</strong> Премиум и крупные
+                <strong>5 класс — от 450 Б̶.</strong> Премиум и крупные
                 внедорожники.
               </li>
             </ul>
@@ -179,7 +179,7 @@ export default function TonirovkaClient() {
             <ul className="service-content__list">
               <li>
                 <strong>Полная тонировка</strong> — атермал спереди по ГОСТ +
-                затемнение сзади. От 330 BYN.
+                затемнение сзади. От 330 Б̶.
               </li>
               <li>
                 <strong>Задняя полусфера</strong> — приватность без лимита по %
@@ -234,7 +234,7 @@ export default function TonirovkaClient() {
               </li>
               <li>
                 <strong>Прозрачный прайс по классам</strong> — полная тонировка
-                от 330 / 400 / 450 BYN.
+                от 330 / 400 / 450 Б̶.
               </li>
               <li>
                 <strong>Витебск, ул. П. Бровки, 6А</strong> — Пн–Пт 10:00–19:00,

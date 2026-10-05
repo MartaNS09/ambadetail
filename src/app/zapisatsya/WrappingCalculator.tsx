@@ -107,7 +107,7 @@ export default function WrappingCalculator({
             <span>Ориентир</span>
             <strong>
               {selected.length === 0
-                ? "0 BYN"
+                ? "0 Б̶"
                 : `${hasEstimate ? "от " : ""}${formatByn(total)}`}
             </strong>
           </div>

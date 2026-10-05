@@ -27,6 +27,7 @@ export default function robots(): MetadataRoute.Robots {
       ...aiAgents.map((userAgent) => ({
         userAgent,
         allow: "/",
+        disallow: ["/api/", "/admin/"],
       })),
     ],
     sitemap: "https://ambadetail.by/sitemap.xml",

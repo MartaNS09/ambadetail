@@ -19,6 +19,7 @@ import {
   FaVk,
 } from "react-icons/fa";
 import "./page.scss";
+import { postLead } from "@/lib/post-lead";
 
 export default function ContactsClient() {
   const [isVisible, setIsVisible] = useState(false);
@@ -81,19 +82,26 @@ export default function ContactsClient() {
     if (validateForm()) {
       setIsLoading(true);
       try {
-        const telegramRes = await fetch("/api/send-to-telegram", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        });
+        const [telegramRes, emailRes, saved] = await Promise.all([
+          fetch("/api/send-to-telegram", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+          }),
+          fetch("/api/send-email", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(formData),
+          }),
+          postLead({
+            source: "contact",
+            name: formData.name.trim(),
+            email: formData.email.trim(),
+            fields: { message: formData.message.trim() },
+          }),
+        ]);
 
-        const emailRes = await fetch("/api/send-email", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(formData),
-        });
-
-        if (telegramRes.ok || emailRes.ok) {
+        if (telegramRes.ok || emailRes.ok || saved) {
           setFormSubmitted(true);
           setTimeout(() => setFormSubmitted(false), 5000);
           setFormData({ name: "", email: "", message: "" });

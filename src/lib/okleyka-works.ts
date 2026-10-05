@@ -1,5 +1,7 @@
 /** Перечень работ из таблицы оклейки плёнкой. */
 
+import { BYN_SIGN } from "@/lib/byn";
+
 export const WRAPPING_SERVICE = "Оклейка авто плёнкой";
 
 export const WRAPPING_WORKS = [
@@ -124,5 +126,5 @@ export function priceForClass(
 }
 
 export function formatByn(value: number): string {
-  return `${value.toLocaleString("ru-RU")} BYN`;
+  return `${value.toLocaleString("ru-RU")}\u00A0${BYN_SIGN}`;
 }

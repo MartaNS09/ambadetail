@@ -14,14 +14,14 @@ const allServices = [
     slug: "khimchistka-salona",
     image: "/images/services/salon.webp",
     description:
-      "Химчистка авто в Витебске: комплекс салона от 708 BYN, локально от 33 BYN. Кожа, ткань, алькантара, Koch и LeTech.",
+      "Химчистка авто в Витебске: комплекс салона от 708 Б̶, локально от 33 Б̶. Кожа, ткань, алькантара, Koch и LeTech.",
   },
   {
     title: "Оклейка авто плёнкой",
     slug: "okleyka-auto-plenkoy",
     image: "/images/services/vinil.webp",
     description:
-      "Антигравийная оклейка в Витебске: зоны риска от 660 BYN, полная оклейка от 7 370 BYN. Sunmax, XPEL, Llumar, Stek, HEXIS.",
+      "Антигравийная оклейка в Витебске: зоны риска от 660 Б̶, полная оклейка от 7 370 Б̶. Sunmax, XPEL, Llumar, Stek, HEXIS.",
   },
   {
     title: "Детейлинг двигателя",
@@ -49,7 +49,7 @@ const allServices = [
     slug: "tonirovka",
     image: "/images/services/tonirovka.webp",
     description:
-      "Тонировка по ГОСТ от 330 BYN. Атермал на передние ≥70%, задняя полусфера без лимита с 01.09.2025.",
+      "Тонировка по ГОСТ от 330 Б̶. Атермал на передние ≥70%, задняя полусфера без лимита с 01.09.2025.",
   },
   {
     title: "Защитные покрытия",

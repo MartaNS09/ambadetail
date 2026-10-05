@@ -10,9 +10,9 @@ import {
 const pageUrl = "https://ambadetail.by/uslugi/okleyka-auto-plenkoy";
 const pageImage = "https://ambadetail.by/images/services/vinil.webp";
 
-const title = "Оклейка авто плёнкой в Витебске | от 660 BYN";
+const title = "Оклейка авто плёнкой в Витебске | от 660 Б̶";
 const description =
-  "Антигравийная оклейка авто в Витебске: зоны риска от 660 BYN, капот 650 BYN, полная оклейка от 7 370 BYN. Sunmax, XPEL, Llumar, Stek, HEXIS. ул. П. Бровки, 6А. +375 29 223 03 22";
+  "Антигравийная оклейка авто в Витебске: зоны риска от 660 Б̶, капот 650 Б̶, полная оклейка от 7 370 Б̶. Sunmax, XPEL, Llumar, Stek, HEXIS. ул. П. Бровки, 6А. +375 29 223 03 22";
 
 export const metadata: Metadata = {
   title: {

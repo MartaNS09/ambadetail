@@ -9,6 +9,7 @@ import {
   PHONE_HINT,
 } from "@/lib/phone";
 import "./page.scss";
+import { postLead } from "@/lib/post-lead";
 
 const NOMINALS = ["100", "200", "300", "500", "1000"];
 
@@ -77,7 +78,7 @@ export default function CertificateClient() {
     const message = [
       "Заявка на подарочный сертификат",
       `Телефон: ${form.phone.trim()}`,
-      `Номинал: ${amount} BYN`,
+      `Номинал: ${amount} Б̶`,
       `Услуга: ${form.service}`,
       form.recipient.trim() ? `Получатель: ${form.recipient.trim()}` : "",
       form.comment.trim() ? `Комментарий: ${form.comment.trim()}` : "",
@@ -87,17 +88,31 @@ export default function CertificateClient() {
 
     setLoading(true);
     try {
-      const response = await fetch("/api/send-to-telegram", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: form.name.trim(),
-          email: form.email.trim(),
-          message,
+      const [response, saved] = await Promise.all([
+        fetch("/api/send-to-telegram", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name: form.name.trim(),
+            email: form.email.trim(),
+            message,
+          }),
         }),
-      });
+        postLead({
+          source: "certificate",
+          name: form.name.trim(),
+          phone: form.phone.trim(),
+          email: form.email.trim(),
+          fields: {
+            nominal: `${amount} Б̶`,
+            service: form.service,
+            recipient: form.recipient.trim(),
+            comment: form.comment.trim(),
+          },
+        }),
+      ]);
 
-      if (!response.ok) {
+      if (!response.ok && !saved) {
         setError("Не удалось отправить заявку. Позвоните +375 29 223 03 22.");
         return;
       }
@@ -166,7 +181,7 @@ export default function CertificateClient() {
 
             <h2>Условия</h2>
             <ul>
-              <li>Номинал от 100 BYN, можно указать свою сумму.</li>
+              <li>Номинал от 100 Б̶, можно указать свою сумму.</li>
               <li>Срок действия — 12 месяцев с даты оформления.</li>
               <li>Сертификат не обменивается на деньги.</li>
               <li>
@@ -234,7 +249,7 @@ export default function CertificateClient() {
                   />
                 </label>
                 <label>
-                  Номинал, BYN
+                  Номинал, Б̶
                   <select
                     name="nominal"
                     value={form.nominal}
@@ -250,7 +265,7 @@ export default function CertificateClient() {
                 </label>
                 {form.nominal === "custom" && (
                   <label>
-                    Своя сумма, BYN
+                    Своя сумма, Б̶
                     <input
                       name="customNominal"
                       value={form.customNominal}

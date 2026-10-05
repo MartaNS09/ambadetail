@@ -88,8 +88,8 @@ export default function OkleykaClient() {
               ))}
             </h1>
             <p className="service-hero__subtitle">
-              Антигравийная плёнка и цветной полиуретан. Зоны риска от 660 BYN,
-              капот 650 BYN, полная оклейка от 7 370 BYN. Sunmax, XPEL, Llumar,
+              Антигравийная плёнка и цветной полиуретан. Зоны риска от 660 Б̶,
+              капот 650 Б̶, полная оклейка от 7 370 Б̶. Sunmax, XPEL, Llumar,
               Stek, HEXIS.
             </p>
           </div>
@@ -128,7 +128,7 @@ export default function OkleykaClient() {
               Керамика этого не заменяет: она даёт блеск и гидрофоб, но скол от
               щебня остаётся на краске. Винил меняет вид и защищает слабее
               полиуретана. Если нужен и новый цвет, и защита, клеим цветной
-              полиуретан HEXIS — полная оклейка от 9 581 BYN для 1 класса.
+              полиуретан HEXIS — полная оклейка от 9 581 Б̶ для 1 класса.
             </p>
           </div>
 
@@ -143,33 +143,33 @@ export default function OkleykaClient() {
             </p>
             <ul className="service-content__list">
               <li>
-                <strong>MINI — от 660 BYN.</strong> Часть капота, полоса над
+                <strong>MINI — от 660 Б̶.</strong> Часть капота, полоса над
                 лобовым стеклом, антиманикюр, торцы дверей.
               </li>
               <li>
-                <strong>LITE — от 880 BYN.</strong> Плюс часть крыльев и фары с
+                <strong>LITE — от 880 Б̶.</strong> Плюс часть крыльев и фары с
                 ПТФ.
               </li>
               <li>
-                <strong>LITE+ — от 1 375 BYN.</strong> Плюс стойки лобового,
+                <strong>LITE+ — от 1 375 Б̶.</strong> Плюс стойки лобового,
                 полка заднего бампера и внутренние пороги.
               </li>
               <li>
-                <strong>STANDART — от 1 595 BYN.</strong> Капот целиком, пороги
+                <strong>STANDART — от 1 595 Б̶.</strong> Капот целиком, пороги
                 4 шт.
               </li>
               <li>
-                <strong>STANDART+ — от 2 145 BYN.</strong> Капот и крылья
+                <strong>STANDART+ — от 2 145 Б̶.</strong> Капот и крылья
                 целиком.
               </li>
               <li>
-                <strong>PREMIUM — от 2 970 BYN.</strong> Капот, крылья, передний
+                <strong>PREMIUM — от 2 970 Б̶.</strong> Капот, крылья, передний
                 бампер, фары, зеркала и кромки.
               </li>
               <li>
-                <strong>Полная оклейка</strong> — 7 370 BYN на SUNMAX, от 8 671
-                BYN на Stek, от 9 581 BYN цветным полиуретаном (1 класс). Без
-                крыши на SUNMAX — 6 503 BYN.
+                <strong>Полная оклейка</strong> — 7 370 Б̶ на SUNMAX, от 8 671
+                Б̶ на Stek, от 9 581 Б̶ цветным полиуретаном (1 класс). Без
+                крыши на SUNMAX — 6 503 Б̶.
               </li>
             </ul>
           </div>
@@ -241,7 +241,7 @@ export default function OkleykaClient() {
                 <a href="#llumar">Таблица Llumar</a>
               </li>
               <li>
-                <strong>Stek</strong> — полный кузов от 8 671 BYN для 1 класса.{" "}
+                <strong>Stek</strong> — полный кузов от 8 671 Б̶ для 1 класса.{" "}
                 <a href="#stek">Таблица Stek</a>
               </li>
               <li>
