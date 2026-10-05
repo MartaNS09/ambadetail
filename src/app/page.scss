@@ -365,6 +365,11 @@ body {
 
 .geo-facts {
   padding: 3.5rem 0 1rem;
+  overflow-x: clip;
+
+  .container {
+    min-width: 0;
+  }
 
   &__lead {
     max-width: 860px;
@@ -373,6 +378,8 @@ body {
     color: rgb(var(--text-secondary));
     font-size: 1.05rem;
     line-height: 1.7;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   &__list {
@@ -385,6 +392,7 @@ body {
       background: rgb(var(--bg-card));
       border-radius: 0.75rem;
       padding: 0.9rem 1rem;
+      min-width: 0;
     }
 
     dt {
@@ -398,6 +406,8 @@ body {
     dd {
       margin: 0;
       font-weight: 650;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     a {
@@ -413,16 +423,23 @@ body {
   &__faq {
     display: grid;
     gap: 0.5rem;
+    min-width: 0;
 
     details {
       background: rgb(var(--bg-card));
       border-radius: 0.75rem;
       padding: 0.85rem 1rem;
+      min-width: 0;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     summary {
       cursor: pointer;
       font-weight: 650;
+      white-space: normal;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
   }
 
@@ -430,6 +447,8 @@ body {
     margin: 0.7rem 0 0.15rem;
     color: rgb(var(--text-secondary));
     line-height: 1.65;
+    overflow-wrap: anywhere;
+    word-break: break-word;
   }
 
   @media (max-width: 900px) {
@@ -439,8 +458,19 @@ body {
   }
 
   @media (max-width: 560px) {
+    padding: 2.5rem 0 0.5rem;
+
+    &__lead {
+      margin-top: -0.75rem;
+      font-size: 0.98rem;
+    }
+
     &__list {
       grid-template-columns: 1fr;
+    }
+
+    &__faq details {
+      padding: 0.75rem 0.85rem;
     }
   }
 }
