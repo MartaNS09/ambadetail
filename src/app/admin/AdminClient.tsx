@@ -173,7 +173,7 @@ const EMPTY_DRAFT = {
   phone: "",
   date: "",
   time: "",
-  service: DEFAULT_BOOKING_SERVICE,
+  service: DEFAULT_BOOKING_SERVICE as string,
   brand: "",
   model: "",
   zones: [] as string[],

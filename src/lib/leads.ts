@@ -11,8 +11,6 @@ import { BookingSlotError, bookingSlotError } from "@/lib/studio-hours";
 export { LEAD_SOURCES, LEAD_STATUSES };
 export type { Lead, LeadSource, LeadStatus };
 
-type Sql = ReturnType<typeof neon>;
-
 function databaseUrl() {
   return process.env.DATABASE_URL || "";
 }
@@ -25,6 +23,8 @@ function sqlClient() {
   if (!databaseConfigured()) return null;
   return neon(databaseUrl());
 }
+
+type Sql = NonNullable<ReturnType<typeof sqlClient>>;
 
 let schemaReady: Promise<void> | null = null;
 
