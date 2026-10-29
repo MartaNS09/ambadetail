@@ -36,6 +36,10 @@ export default function Header() {
     },
     { name: "Тонировка авто", href: "/uslugi/tonirovka" },
     { name: "Детейлинг двигателя", href: "/uslugi/detailing-dvigatelya" },
+    {
+      name: "Антикоррозийная обработка",
+      href: "/uslugi/antikorrozijnaya-obrabotka",
+    },
   ];
 
   // Рассчитываем позицию при открытии с задержкой

@@ -225,6 +225,20 @@ const jsonLd = {
           url: "https://ambadetail.by/uslugi/detailing-dvigatelya",
         },
       },
+      {
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: "Антикоррозийная обработка в Витебске",
+          url: "https://ambadetail.by/uslugi/antikorrozijnaya-obrabotka",
+        },
+        priceCurrency: "BYN",
+        priceSpecification: {
+          "@type": "PriceSpecification",
+          priceCurrency: "BYN",
+          minPrice: "450",
+        },
+      },
     ],
   },
   potentialAction: {
@@ -281,6 +295,11 @@ const websiteJsonLd = {
       "@type": "WebPage",
       name: "Керамика для авто",
       url: "https://ambadetail.by/uslugi/zashhitnye-pokrytiya",
+    },
+    {
+      "@type": "WebPage",
+      name: "Антикоррозийная обработка в Витебске",
+      url: "https://ambadetail.by/uslugi/antikorrozijnaya-obrabotka",
     },
     {
       "@type": "WebPage",

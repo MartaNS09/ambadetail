@@ -368,7 +368,12 @@ export default function OkleykaClient() {
               </li>
               <li>
                 <Link href="/uslugi/zashhitnye-pokrytiya">
-                  Защитные покрытия в Витебске
+                  Керамика для авто в Витебске
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/antikorrozijnaya-obrabotka">
+                  Антикоррозийная обработка в Витебске
                 </Link>
               </li>
               <li>

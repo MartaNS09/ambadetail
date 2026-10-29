@@ -22,6 +22,7 @@ const SERVICES = [
   "Защитные покрытия",
   "Восстановление ЛКП",
   "Детейлинг двигателя",
+  "Антикоррозийная обработка",
 ];
 
 export default function CertificateClient() {

@@ -285,6 +285,11 @@ export default function PortfolioClient() {
                   Детейлинг двигателя
                 </Link>
               </li>
+              <li>
+                <Link href="/uslugi/antikorrozijnaya-obrabotka">
+                  Антикоррозийная обработка в Витебске
+                </Link>
+              </li>
             </ul>
           </nav>
 

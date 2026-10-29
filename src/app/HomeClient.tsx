@@ -76,6 +76,12 @@ export default function HomeClient() {
       image: "/images/services/lamba.webp",
       alt: "Нанесение защитных покрытий и керамики на автомобиль в Витебске. Долговременная защита кузова.",
     },
+    {
+      title: "Антикоррозийная обработка",
+      slug: "antikorrozijnaya-obrabotka",
+      image: "/images/services/antikor.webp",
+      alt: "Антикоррозийная обработка автомобиля в Витебске. Защита днища, арок и скрытых полостей.",
+    },
   ];
 
   const titleBeforeVitebsk = "Детейлинг студия в";
@@ -521,7 +527,16 @@ export default function HomeClient() {
                   >
                     <strong>Детейлинг двигателя</strong>
                   </Link>
-                  — очистка и защита подкапотного пространства.
+                  — чистка моторного отсека.
+                </li>
+                <li>
+                  <Link
+                    href="/uslugi/antikorrozijnaya-obrabotka"
+                    className="info-card__service-link"
+                  >
+                    <strong>Антикоррозийная обработка в Витебске</strong>
+                  </Link>
+                  — днище, арки, скрытые полости, Dinitrol и WURTH.
                 </li>
                 <li>
                   <Link

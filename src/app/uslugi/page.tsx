@@ -96,6 +96,12 @@ const itemListSchema = {
       name: "Детейлинг двигателя",
       url: "https://ambadetail.by/uslugi/detailing-dvigatelya",
     },
+    {
+      "@type": "ListItem",
+      position: 8,
+      name: "Антикоррозийная обработка в Витебске",
+      url: "https://ambadetail.by/uslugi/antikorrozijnaya-obrabotka",
+    },
   ],
 };
 

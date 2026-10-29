@@ -31,6 +31,10 @@ export default function Footer() {
     },
     { name: "Тонировка авто в Витебске", href: "/uslugi/tonirovka" },
     { name: "Химчистка авто в Витебске", href: "/uslugi/khimchistka-salona" },
+    {
+      name: "Антикоррозийная обработка в Витебске",
+      href: "/uslugi/antikorrozijnaya-obrabotka",
+    },
   ];
 
   const quickLinks = [

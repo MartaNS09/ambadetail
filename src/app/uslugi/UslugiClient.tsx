@@ -31,6 +31,13 @@ const allServices = [
       "Профессиональная очистка моторного отсека, защита от коррозии, восстановление внешнего вида.",
   },
   {
+    title: "Антикоррозийная обработка",
+    slug: "antikorrozijnaya-obrabotka",
+    image: "/images/services/antikor.webp",
+    description:
+      "Антикор авто в Витебске: днище, арки, скрытые полости. Dinitrol и WURTH, пакеты от 450 Б̶.",
+  },
+  {
     title: "Полировка авто",
     slug: "polirovka",
     image: "/images/services/polirovka_kuzova.webp",

@@ -60,6 +60,11 @@ export const geoFaq = [
       "Керамическое покрытие HENDLEX M3 в 1 слой для 1 класса — 350 Б̶, 2 слоя — 550 Б̶, 3 слоя — 750 Б̶, 4 слоя — 900 Б̶. Также есть жидкое стекло и антидождь. Прайс: https://ambadetail.by/uslugi/zashhitnye-pokrytiya",
   },
   {
+    question: "Сколько стоит антикоррозийная обработка в Витебске?",
+    answer:
+      "В Ambadetail ориентировочно: пакет «Эконом» (днище + арки) — от 450 Б̶, «Стандарт» — от 700 Б̶, «Премиум» на Dinitrol — от 900 Б̶ для 1 класса. Точная сумма после осмотра. Прайс: https://ambadetail.by/uslugi/antikorrozijnaya-obrabotka",
+  },
+  {
     question: "Есть ли рассрочка на детейлинг в Ambadetail?",
     answer:
       "Да. Рассрочка на все виды услуг до 5 месяцев без переплат.",
@@ -74,6 +79,7 @@ const services = [
   ["Керамика для авто", `${site}/uslugi/zashhitnye-pokrytiya`, "HENDLEX M3 от 350 Б̶, жидкое стекло, антидождь"],
   ["Восстановление ЛКП", `${site}/uslugi/vosstanovlenie-lkp`, "технология Refiller F5, сколы и царапины без полной перекраски"],
   ["Детейлинг двигателя", `${site}/uslugi/detailing-dvigatelya`, "чистка мотора и подкапотного пространства"],
+  ["Антикоррозийная обработка в Витебске", `${site}/uslugi/antikorrozijnaya-obrabotka`, "днище, арки, скрытые полости, Dinitrol и WURTH, пакеты от 450 Б̶"],
 ] as const;
 
 export function renderLlmsTxt() {
