@@ -31,6 +31,16 @@ const nextConfig = {
   generateBuildId: async () => {
     return `build-${Date.now()}`;
   },
+  async redirects() {
+    return [
+      {
+        source: "/:path*",
+        has: [{ type: "host", value: "www.ambadetail.by" }],
+        destination: "https://ambadetail.by/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

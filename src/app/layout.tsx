@@ -68,11 +68,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico" },
+      { url: "/favicon.ico", sizes: "any" },
       { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
       { url: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
     ],
-    apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180" }],
+    apple: [{ url: "/icons/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
   },
   manifest: "/site.webmanifest",
   alternates: {
@@ -115,7 +115,7 @@ const jsonLd = {
   hasMap: "https://yandex.by/maps/org/ambassador_detailing/104758157236/",
   knowsLanguage: "ru",
   image: "https://ambadetail.by/images/og-image.jpg",
-  logo: "https://ambadetail.by/favicon.ico",
+  logo: "https://ambadetail.by/icons/icon-512.png",
   address: {
     "@type": "PostalAddress",
     streetAddress: "ул. П. Бровки, 6А",
