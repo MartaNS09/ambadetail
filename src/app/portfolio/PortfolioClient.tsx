@@ -244,6 +244,50 @@ export default function PortfolioClient() {
             ))}
           </div>
 
+          <nav
+            className="portfolio-services"
+            aria-label="Услуги детейлинга в Витебске"
+          >
+            <h2 className="portfolio-services__title">
+              Услуги из наших работ
+            </h2>
+            <ul className="portfolio-services__list">
+              <li>
+                <Link href="/uslugi/okleyka-auto-plenkoy">
+                  Оклейка авто в Витебске
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/tonirovka">
+                  Тонировка авто в Витебске
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/khimchistka-salona">
+                  Химчистка авто в Витебске
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/polirovka">Полировка авто</Link>
+              </li>
+              <li>
+                <Link href="/uslugi/zashhitnye-pokrytiya">
+                  Керамика для авто
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/vosstanovlenie-lkp">
+                  Восстановление ЛКП
+                </Link>
+              </li>
+              <li>
+                <Link href="/uslugi/detailing-dvigatelya">
+                  Детейлинг двигателя
+                </Link>
+              </li>
+            </ul>
+          </nav>
+
           <div className="portfolio-cta">
             <h2 className="portfolio-cta__title">Хотите такой же результат?</h2>
             <p className="portfolio-cta__text">

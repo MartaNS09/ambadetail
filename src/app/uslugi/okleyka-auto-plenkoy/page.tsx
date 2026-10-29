@@ -10,9 +10,9 @@ import {
 const pageUrl = "https://ambadetail.by/uslugi/okleyka-auto-plenkoy";
 const pageImage = "https://ambadetail.by/images/services/vinil.webp";
 
-const title = "Оклейка авто плёнкой в Витебске | цена от 660 Б̶";
+const title = "Оклейка авто в Витебске | плёнка от 660 Б̶";
 const description =
-  "Оклейка авто плёнкой в Витебске: цена зон риска от 660 Б̶, капот 650 Б̶, полная оклейка от 7 370 Б̶. Антигравий SUNMAX, XPEL, Stek. ул. П. Бровки, 6А. +375 29 223 03 22";
+  "Оклейка авто в Витебске: антигравийная плёнка, зоны риска от 660 Б̶, капот 650 Б̶, полная оклейка от 7 370 Б̶. SUNMAX, XPEL, Stek. ул. П. Бровки, 6А. +375 29 223 03 22";
 
 export const metadata: Metadata = {
   title: {
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   description,
   keywords:
-    "оклейка авто пленкой витебск, оклейка авто витебск, антигравийная пленка витебск, бронирование авто витебск, ppf витебск, оклейка зон риска витебск, оклейка капота витебск, оклейка фар витебск, оклейка бампера витебск, цветная полиуретановая пленка, xpel, sunmax, llumar, stek, hexis",
+    "оклейка авто витебск, оклейка авто пленкой витебск, оклейка автомобиля витебск, антигравийная пленка витебск, бронирование авто витебск, ppf витебск, оклейка зон риска витебск, оклейка капота витебск, оклейка фар витебск, оклейка бампера витебск, xpel, sunmax, stek, hexis",
   openGraph: {
     title,
     description,
@@ -51,11 +51,11 @@ export const metadata: Metadata = {
 const breadcrumbs = breadcrumbSchema([
   { name: "Главная", url: "https://ambadetail.by/" },
   { name: "Услуги", url: "https://ambadetail.by/uslugi" },
-  { name: "Оклейка авто плёнкой", url: pageUrl },
+  { name: "Оклейка авто", url: pageUrl },
 ]);
 
 const service = serviceSchema({
-  name: "Оклейка авто плёнкой в Витебске",
+  name: "Оклейка авто в Витебске",
   serviceType: "Оклейка автомобиля защитной плёнкой",
   description,
   url: pageUrl,

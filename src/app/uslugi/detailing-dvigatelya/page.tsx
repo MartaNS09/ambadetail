@@ -10,14 +10,19 @@ const pageUrl = "https://ambadetail.by/uslugi/detailing-dvigatelya";
 const pageImage =
   "https://ambadetail.by/images/services/detailing_dvigatelya.webp";
 
+const title = "Детейлинг двигателя в Витебске | Чистка мотора и подкапотного";
+const description =
+  "Детейлинг двигателя в Витебске: безопасная чистка мотора, мойка подкапотного пространства, защита электроники. Ambadetail, ул. П. Бровки, 6А. +375 29 223 03 22";
+
 export const metadata: Metadata = {
-  title: "Детейлинг двигателя в Витебске | Чистка мотора и подкапотного",
-  description:
-    "Детейлинг двигателя в Витебске: безопасная чистка мотора, мойка подкапотного пространства, защита электроники. Ambadetail, ул. П. Бровки, 6А. +375 29 223 03 22",
+  title: {
+    absolute: title,
+  },
+  description,
   keywords:
     "детейлинг двигателя витебск, чистка двигателя авто витебск, мойка мотора витебск, чистка подкапотного пространства, мойка двигателя витебск",
   openGraph: {
-    title: "Детейлинг двигателя в Витебске | Ambadetail",
+    title,
     description:
       "Безопасная чистка двигателя и подкапотного пространства в Витебске с защитой электроники.",
     url: pageUrl,
@@ -35,7 +40,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Детейлинг двигателя в Витебске | Ambadetail",
+    title,
     description:
       "Чистка мотора и подкапотного пространства в Витебске — безопасно для электроники.",
     images: ["/images/services/detailing_dvigatelya.webp"],

@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   },
   description: pageMetadata.home.description,
   keywords:
-    "детейлинг витебск, детейлинг студия витебск, химчистка салона витебск, полировка авто витебск, оклейка пленкой витебск, тонировка по гост витебск, ppf витебск",
+    "оклейка авто витебск, тонировка авто витебск, химчистка авто витебск, детейлинг витебск, оклейка пленкой витебск, тонировка по гост витебск, химчистка салона витебск, ppf витебск",
   openGraph: {
     title: pageMetadata.home.title,
     description: pageMetadata.home.description,

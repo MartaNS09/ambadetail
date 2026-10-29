@@ -9,14 +9,19 @@ import {
 const pageUrl = "https://ambadetail.by/uslugi/vosstanovlenie-lkp";
 const pageImage = "https://ambadetail.by/images/services/bugatti.webp";
 
+const title = "Восстановление ЛКП в Витебске | Refiller F5, удаление сколов";
+const description =
+  "Восстановление ЛКП автомобиля в Витебске по технологии Refiller F5: сколы, царапины, потёртости без полной перекраски. Ambadetail, ул. П. Бровки, 6А. +375 29 223 03 22";
+
 export const metadata: Metadata = {
-  title: "Восстановление ЛКП в Витебске | Refiller F5, удаление сколов",
-  description:
-    "Восстановление ЛКП автомобиля в Витебске по технологии Refiller F5: сколы, царапины, потёртости без полной перекраски. Ambadetail, ул. П. Бровки, 6А. +375 29 223 03 22",
+  title: {
+    absolute: title,
+  },
+  description,
   keywords:
     "восстановление ЛКП витебск, Refiller F5 витебск, удаление сколов авто, восстановление лакокрасочного покрытия, удаление царапин витебск, восстановление кузова витебск",
   openGraph: {
-    title: "Восстановление ЛКП в Витебске | Refiller F5 — Ambadetail",
+    title,
     description:
       "Восстановление ЛКП в Витебске по Refiller F5: сколы и царапины без полной перекраски. Гарантия до 3 лет.",
     url: pageUrl,
@@ -34,7 +39,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Восстановление ЛКП в Витебске | Ambadetail",
+    title,
     description:
       "Refiller F5 в Витебске: восстановление ЛКП без полной перекраски.",
     images: ["/images/services/bugatti.webp"],

@@ -16,7 +16,7 @@ export default function ZashchitaClient() {
   }, []);
 
   // 🔥 ИЗМЕНЁННЫЙ ЗАГОЛОВОК — С "В ВИТЕБСКЕ"
-  const titleParts = ["Защитные", "покрытия", "в", "Витебске"];
+  const titleParts = ["Керамика", "для", "авто", "в", "Витебске"];
 
   return (
     <>
@@ -32,13 +32,13 @@ export default function ZashchitaClient() {
             Услуги
           </Link>
           <span className="breadcrumbs__separator">/</span>
-          <span className="breadcrumbs__current">Защитные покрытия</span>
+          <span className="breadcrumbs__current">Керамика для авто</span>
         </div>
       </div>
 
       <section
         className="service-hero"
-        aria-label="Защитные покрытия для автомобиля в Витебске"
+        aria-label="Керамика для авто в Витебске"
       >
         <div className="service-hero__bg">
           <Image
@@ -78,8 +78,9 @@ export default function ZashchitaClient() {
               ))}
             </h1>
             <p className="service-hero__subtitle">
-              Керамическое покрытие, жидкое стекло, антидождь. Долговременная
-              защита кузова и стёкол от внешних воздействий.
+              Защитные покрытия кузова: керамика HENDLEX M3 от 350 Б̶, жидкое
+              стекло, антидождь. Долговременная защита от царапин, реагентов и
+              УФ.
             </p>
           </div>
         </div>
@@ -90,10 +91,9 @@ export default function ZashchitaClient() {
           <InstallmentNote />
           <div className="service-content__intro">
             <p className="service-content__intro-text">
-              <strong>Защитные покрытия в Витебске</strong> — это
-              профессиональное нанесение керамики, жидкого стекла и гидрофобных
-              составов. Защищаем кузов, стёкла, диски и салон от внешних
-              воздействий.
+              <strong>Керамика для авто в Витебске</strong> — профессиональное
+              защитное покрытие кузова: керамика HENDLEX M3, жидкое стекло и
+              антидождь. Защищаем кузов, стёкла и диски от внешних воздействий.
             </p>
           </div>
 

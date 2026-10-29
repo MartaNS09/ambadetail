@@ -10,14 +10,14 @@ import "./page.scss";
 // Все услуги
 const allServices = [
   {
-    title: "Химчистка салона",
+    title: "Химчистка авто",
     slug: "khimchistka-salona",
     image: "/images/services/salon.webp",
     description:
       "Химчистка авто в Витебске: комплекс салона от 708 Б̶, локально от 33 Б̶. Кожа, ткань, алькантара, Koch и LeTech.",
   },
   {
-    title: "Оклейка авто плёнкой",
+    title: "Оклейка авто",
     slug: "okleyka-auto-plenkoy",
     image: "/images/services/vinil.webp",
     description:
@@ -52,7 +52,7 @@ const allServices = [
       "Тонировка по ГОСТ от 330 Б̶. Атермал на передние ≥70%, задняя полусфера без лимита с 01.09.2025.",
   },
   {
-    title: "Защитные покрытия",
+    title: "Керамика и защитные покрытия",
     slug: "zashhitnye-pokrytiya",
     image: "/images/services/lamba.webp",
     description:
@@ -156,7 +156,7 @@ export default function UslugiClient() {
                   }`}
                   style={{ transitionDelay: "0.3s" }}
                 >
-                  детейлинг
+                  детейлинга
                 </span>
                 <span
                   className={`uslugi-hero__title-word ${
@@ -164,7 +164,15 @@ export default function UslugiClient() {
                   }`}
                   style={{ transitionDelay: "0.4s" }}
                 >
-                  студии
+                  в
+                </span>
+                <span
+                  className={`uslugi-hero__title-word ${
+                    isVisible ? "uslugi-hero__title-word--visible" : ""
+                  }`}
+                  style={{ transitionDelay: "0.5s" }}
+                >
+                  Витебске
                 </span>
               </div>
             </h1>

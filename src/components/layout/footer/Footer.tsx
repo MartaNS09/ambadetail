@@ -26,11 +26,11 @@ export default function Footer() {
     { name: "Защитные покрытия", href: "/uslugi/zashhitnye-pokrytiya" },
     { name: "Восстановление ЛКП", href: "/uslugi/vosstanovlenie-lkp" },
     {
-      name: "Оклейка авто плёнкой",
+      name: "Оклейка авто в Витебске",
       href: "/uslugi/okleyka-auto-plenkoy",
     },
-    { name: "Тонировка авто", href: "/uslugi/tonirovka" },
-    { name: "Химчистка салона", href: "/uslugi/khimchistka-salona" },
+    { name: "Тонировка авто в Витебске", href: "/uslugi/tonirovka" },
+    { name: "Химчистка авто в Витебске", href: "/uslugi/khimchistka-salona" },
   ];
 
   const quickLinks = [

@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: "%s | Ambadetail",
   },
   description:
-    "Оклейка авто плёнкой от 660 Б̶ и тонировка по ГОСТ от 330 Б̶ в Витебске. Ambadetail, ул. П. Бровки, 6А. Пн–Пт 10:00–19:00, Сб–Вс 10:00–17:00. +375 29 223 03 22.",
+    "Оклейка авто в Витебске от 660 Б̶, тонировка авто от 330 Б̶, химчистка авто от 708 Б̶. Ambadetail, ул. П. Бровки, 6А. Пн–Пт 10:00–19:00, Сб–Вс 10:00–17:00. +375 29 223 03 22.",
   other: {
     "geo.region": "BY-VI",
     "geo.placename": "Витебск",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     statusBarStyle: "black-translucent",
   },
   keywords:
-    "детейлинг витебск, детейлинг студия витебск, химчистка салона витебск, полировка авто витебск, оклейка пленкой витебск, тонировка витебск, тонировка по гост витебск, керамика авто витебск, ppf витебск",
+    "оклейка авто витебск, тонировка авто витебск, химчистка авто витебск, детейлинг витебск, оклейка пленкой витебск, тонировка по гост витебск, химчистка салона витебск, ppf витебск",
   authors: [{ name: "Ambadetail" }],
   robots: {
     index: true,
@@ -104,7 +104,7 @@ const jsonLd = {
   legalName: "ООО «СервисЛинк»",
   taxID: "392001662",
   description:
-    "Детейлинг студия Ambadetail в Витебске на ул. П. Бровки, 6А: оклейка плёнкой от 660 Б̶, тонировка по ГОСТ от 330 Б̶, химчистка салона от 708 Б̶, полировка, керамика, восстановление ЛКП и детейлинг двигателя. Рассрочка до 5 месяцев без переплат.",
+    "Детейлинг студия Ambadetail в Витебске на ул. П. Бровки, 6А: оклейка авто от 660 Б̶, тонировка авто от 330 Б̶, химчистка авто от 708 Б̶, полировка, керамика, восстановление ЛКП и детейлинг двигателя. Рассрочка до 5 месяцев без переплат.",
   url: "https://ambadetail.by",
   telephone: "+375292230322",
   email: "info@ambadetail.by",
@@ -155,7 +155,7 @@ const jsonLd = {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Химчистка салона",
+          name: "Химчистка авто в Витебске",
           url: "https://ambadetail.by/uslugi/khimchistka-salona",
         },
         priceCurrency: "BYN",
@@ -169,7 +169,7 @@ const jsonLd = {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Оклейка авто плёнкой",
+          name: "Оклейка авто в Витебске",
           url: "https://ambadetail.by/uslugi/okleyka-auto-plenkoy",
         },
         priceCurrency: "BYN",
@@ -191,7 +191,7 @@ const jsonLd = {
         "@type": "Offer",
         itemOffered: {
           "@type": "Service",
-          name: "Тонировка авто по ГОСТ",
+          name: "Тонировка авто в Витебске",
           url: "https://ambadetail.by/uslugi/tonirovka",
         },
         priceCurrency: "BYN",
@@ -259,18 +259,33 @@ const websiteJsonLd = {
     { "@type": "WebPage", name: "Услуги", url: "https://ambadetail.by/uslugi" },
     {
       "@type": "WebPage",
-      name: "Оклейка авто плёнкой",
+      name: "Оклейка авто в Витебске",
       url: "https://ambadetail.by/uslugi/okleyka-auto-plenkoy",
     },
     {
       "@type": "WebPage",
-      name: "Тонировка по ГОСТ",
+      name: "Тонировка авто в Витебске",
       url: "https://ambadetail.by/uslugi/tonirovka",
     },
     {
       "@type": "WebPage",
-      name: "Химчистка салона",
+      name: "Химчистка авто в Витебске",
       url: "https://ambadetail.by/uslugi/khimchistka-salona",
+    },
+    {
+      "@type": "WebPage",
+      name: "Полировка авто",
+      url: "https://ambadetail.by/uslugi/polirovka",
+    },
+    {
+      "@type": "WebPage",
+      name: "Керамика для авто",
+      url: "https://ambadetail.by/uslugi/zashhitnye-pokrytiya",
+    },
+    {
+      "@type": "WebPage",
+      name: "Портфолио",
+      url: "https://ambadetail.by/portfolio",
     },
     {
       "@type": "WebPage",
@@ -291,44 +306,66 @@ const sitelinksJsonLd = {
   "@id": "https://ambadetail.by/#sitelinks",
   name: "Основные разделы Ambadetail",
   itemListOrder: "https://schema.org/ItemListOrderAscending",
-  numberOfItems: 8,
+  numberOfItems: 10,
   itemListElement: [
     {
       "@type": "ListItem",
       position: 1,
-      name: "Оклейка авто плёнкой",
+      name: "Оклейка авто в Витебске",
       url: "https://ambadetail.by/uslugi/okleyka-auto-plenkoy",
       item: {
         "@type": "SiteNavigationElement",
-        name: "Оклейка авто плёнкой",
+        name: "Оклейка авто в Витебске",
         url: "https://ambadetail.by/uslugi/okleyka-auto-plenkoy",
       },
     },
     {
       "@type": "ListItem",
       position: 2,
-      name: "Тонировка по ГОСТ",
+      name: "Тонировка авто в Витебске",
       url: "https://ambadetail.by/uslugi/tonirovka",
       item: {
         "@type": "SiteNavigationElement",
-        name: "Тонировка по ГОСТ",
+        name: "Тонировка авто в Витебске",
         url: "https://ambadetail.by/uslugi/tonirovka",
       },
     },
     {
       "@type": "ListItem",
       position: 3,
-      name: "Химчистка салона",
+      name: "Химчистка авто в Витебске",
       url: "https://ambadetail.by/uslugi/khimchistka-salona",
       item: {
         "@type": "SiteNavigationElement",
-        name: "Химчистка салона",
+        name: "Химчистка авто в Витебске",
         url: "https://ambadetail.by/uslugi/khimchistka-salona",
       },
     },
     {
       "@type": "ListItem",
       position: 4,
+      name: "Полировка авто",
+      url: "https://ambadetail.by/uslugi/polirovka",
+      item: {
+        "@type": "SiteNavigationElement",
+        name: "Полировка авто",
+        url: "https://ambadetail.by/uslugi/polirovka",
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 5,
+      name: "Керамика для авто",
+      url: "https://ambadetail.by/uslugi/zashhitnye-pokrytiya",
+      item: {
+        "@type": "SiteNavigationElement",
+        name: "Керамика для авто",
+        url: "https://ambadetail.by/uslugi/zashhitnye-pokrytiya",
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 6,
       name: "Все услуги",
       url: "https://ambadetail.by/uslugi",
       item: {
@@ -339,7 +376,7 @@ const sitelinksJsonLd = {
     },
     {
       "@type": "ListItem",
-      position: 5,
+      position: 7,
       name: "Портфолио",
       url: "https://ambadetail.by/portfolio",
       item: {
@@ -350,7 +387,7 @@ const sitelinksJsonLd = {
     },
     {
       "@type": "ListItem",
-      position: 6,
+      position: 8,
       name: "Записаться",
       url: "https://ambadetail.by/zapisatsya",
       item: {
@@ -361,7 +398,7 @@ const sitelinksJsonLd = {
     },
     {
       "@type": "ListItem",
-      position: 7,
+      position: 9,
       name: "Контакты",
       url: "https://ambadetail.by/contacts",
       item: {
@@ -372,7 +409,7 @@ const sitelinksJsonLd = {
     },
     {
       "@type": "ListItem",
-      position: 8,
+      position: 10,
       name: "О нас",
       url: "https://ambadetail.by/about",
       item: {

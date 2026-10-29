@@ -28,7 +28,7 @@ export default function OkleykaClient() {
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  const titleParts = ["Оклейка", "авто", "плёнкой", "в", "Витебске"];
+  const titleParts = ["Оклейка", "авто", "в", "Витебске"];
   const faqItems = okleykaFaqItems;
 
   return (
@@ -45,14 +45,14 @@ export default function OkleykaClient() {
             Услуги
           </Link>
           <span className="breadcrumbs__separator">/</span>
-          <span className="breadcrumbs__current">Оклейка авто плёнкой</span>
+          <span className="breadcrumbs__current">Оклейка авто</span>
         </div>
       </div>
 
       {/* HERO */}
       <section
         className="service-hero"
-        aria-label="Оклейка авто плёнкой в Витебске — защита кузова PPF"
+        aria-label="Оклейка авто в Витебске — защита кузова плёнкой PPF"
       >
         <div className="service-hero__bg">
           <Image
@@ -101,7 +101,7 @@ export default function OkleykaClient() {
           <InstallmentNote />
           <div className="service-content__intro">
             <p className="service-content__intro-text">
-              <strong>Оклейка авто плёнкой в Витебске</strong> в Ambadetail —
+              <strong>Оклейка авто в Витебске</strong> в Ambadetail —
               антигравийная полиуретановая плёнка на зоны риска или весь кузов
               и цветной полиуретан, если нужна смена цвета. Цены ниже — плёнка
               SUNMAX | CRYSTALL, 1 класс. Студия на ул. П. Бровки, 6А, работаем

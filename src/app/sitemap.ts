@@ -1,5 +1,8 @@
 import { MetadataRoute } from "next";
 import { blogPosts } from "./blog/data/posts";
+import { GEO_MIRROR_BLOG_SLUGS } from "./blog/geo-mirrors";
+
+const geoMirrorSet = new Set(GEO_MIRROR_BLOG_SLUGS);
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://ambadetail.by";
@@ -103,13 +106,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "weekly" as const,
       priority: 0.9,
     },
-    // Добавляем все статьи из блога
-    ...blogPosts.map((post) => ({
-      url: `${baseUrl}/blog/${post.slug}`,
-      lastModified: new Date(post.date),
-      changeFrequency: "monthly" as const,
-      priority: 0.8,
-    })),
+    // Информационные статьи (geo-зеркала услуг исключены — canonical на /uslugi/*)
+    ...blogPosts
+      .filter((post) => !geoMirrorSet.has(post.slug))
+      .map((post) => ({
+        url: `${baseUrl}/blog/${post.slug}`,
+        lastModified: new Date(post.date),
+        changeFrequency: "monthly" as const,
+        priority: 0.6,
+      })),
   ];
 
   return pages;

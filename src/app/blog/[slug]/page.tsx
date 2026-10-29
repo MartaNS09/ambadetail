@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Calendar, Clock, Tag, ArrowLeft, ArrowRight } from "lucide-react";
 import { blogPosts } from "../data/posts";
+import { SERVICE_CANONICAL_BY_BLOG_SLUG } from "../geo-mirrors";
 import VideoHeader from "./VideoHeader";
 import VideoSchema from "./VideoSchema";
 import "./page.scss";
@@ -29,6 +30,11 @@ export async function generateMetadata({
   const post = blogPosts.find((p) => p.slug === slug);
   if (!post) return {};
 
+  const servicePath = SERVICE_CANONICAL_BY_BLOG_SLUG[post.slug];
+  const canonical = servicePath
+    ? `https://ambadetail.by${servicePath}`
+    : `https://ambadetail.by/blog/${post.slug}`;
+
   return {
     title: post.seoTitle,
     description: post.seoDescription,
@@ -40,7 +46,7 @@ export async function generateMetadata({
       url: `https://ambadetail.by/blog/${post.slug}`,
     },
     alternates: {
-      canonical: `https://ambadetail.by/blog/${post.slug}`,
+      canonical,
     },
   };
 }

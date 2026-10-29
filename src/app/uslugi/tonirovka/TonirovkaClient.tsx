@@ -43,7 +43,7 @@ export default function TonirovkaClient() {
 
       <section
         className="service-hero"
-        aria-label="Тонировка автомобиля в Витебске"
+        aria-label="Тонировка авто в Витебске"
       >
         <div className="service-hero__bg">
           <Image

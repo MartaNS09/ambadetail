@@ -4,14 +4,19 @@ import { breadcrumbSchema } from "@/lib/seo-schemas";
 
 const pageUrl = "https://ambadetail.by/uslugi";
 
+const title = "Услуги детейлинга в Витебске | Полный спектр";
+const description =
+  "Услуги детейлинг студии в Витебске: химчистка салона, полировка, оклейка плёнкой, тонировка по ГОСТ, керамика, восстановление ЛКП, детейлинг двигателя. Запись онлайн.";
+
 export const metadata: Metadata = {
-  title: "Услуги детейлинга в Витебске | Полный спектр",
-  description:
-    "Услуги детейлинг студии в Витебске: химчистка салона, полировка, оклейка плёнкой, тонировка по ГОСТ, керамика, восстановление ЛКП, детейлинг двигателя. Запись онлайн.",
+  title: {
+    absolute: title,
+  },
+  description,
   keywords:
     "услуги детейлинг витебск, детейлинг студия витебск, запись на детейлинг витебск, детейлинг авто витебск цены, тонировка витебск, химчистка салона витебск, полировка авто витебск",
   openGraph: {
-    title: "Услуги детейлинга в Витебске | Ambadetail",
+    title,
     description:
       "Полный спектр услуг детейлинга в Витебске: от химчистки и полировки до PPF и тонировки по ГОСТ.",
     url: pageUrl,
@@ -29,7 +34,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Услуги детейлинга в Витебске | Ambadetail",
+    title,
     description:
       "Химчистка, полировка, PPF, тонировка по ГОСТ, керамика — Ambadetail Витебск.",
     images: ["/images/services/bugatti.webp"],
@@ -52,13 +57,13 @@ const itemListSchema = {
     {
       "@type": "ListItem",
       position: 1,
-      name: "Химчистка салона",
+      name: "Химчистка авто в Витебске",
       url: "https://ambadetail.by/uslugi/khimchistka-salona",
     },
     {
       "@type": "ListItem",
       position: 2,
-      name: "Оклейка авто плёнкой",
+      name: "Оклейка авто в Витебске",
       url: "https://ambadetail.by/uslugi/okleyka-auto-plenkoy",
     },
     {
@@ -70,13 +75,13 @@ const itemListSchema = {
     {
       "@type": "ListItem",
       position: 4,
-      name: "Тонировка авто",
+      name: "Тонировка авто в Витебске",
       url: "https://ambadetail.by/uslugi/tonirovka",
     },
     {
       "@type": "ListItem",
       position: 5,
-      name: "Защитные покрытия",
+      name: "Керамика для авто",
       url: "https://ambadetail.by/uslugi/zashhitnye-pokrytiya",
     },
     {
