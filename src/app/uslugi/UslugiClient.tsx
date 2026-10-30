@@ -35,7 +35,7 @@ const allServices = [
     slug: "antikorrozijnaya-obrabotka",
     image: "/images/services/antikor.webp",
     description:
-      "Антикор авто в Витебске: днище, арки, скрытые полости. Dinitrol и WURTH, пакеты от 450 Б̶.",
+      "Антикор авто в Витебске составом DINITROL: Стандарт от 1 300 Б̶, Премиум от 1 650 Б̶.",
   },
   {
     title: "Полировка авто",

@@ -62,7 +62,7 @@ export const geoFaq = [
   {
     question: "Сколько стоит антикоррозийная обработка в Витебске?",
     answer:
-      "В Ambadetail ориентировочно: пакет «Эконом» (днище + арки) — от 450 Б̶, «Стандарт» — от 700 Б̶, «Премиум» на Dinitrol — от 900 Б̶ для 1 класса. Точная сумма после осмотра. Прайс: https://ambadetail.by/uslugi/antikorrozijnaya-obrabotka",
+      "В Ambadetail состав DINITROL: пакет «Стандарт» — от 1 300 Б̶ (подкрылки, защита днища, усилитель, термоэкраны, бак, выхлоп), «Премиум» — от 1 650 Б̶ со снятием двух бамперов и фар. Точная сумма после осмотра. Прайс: https://ambadetail.by/uslugi/antikorrozijnaya-obrabotka",
   },
   {
     question: "Есть ли рассрочка на детейлинг в Ambadetail?",
@@ -79,7 +79,7 @@ const services = [
   ["Керамика для авто", `${site}/uslugi/zashhitnye-pokrytiya`, "HENDLEX M3 от 350 Б̶, жидкое стекло, антидождь"],
   ["Восстановление ЛКП", `${site}/uslugi/vosstanovlenie-lkp`, "технология Refiller F5, сколы и царапины без полной перекраски"],
   ["Детейлинг двигателя", `${site}/uslugi/detailing-dvigatelya`, "чистка мотора и подкапотного пространства"],
-  ["Антикоррозийная обработка в Витебске", `${site}/uslugi/antikorrozijnaya-obrabotka`, "днище, арки, скрытые полости, Dinitrol и WURTH, пакеты от 450 Б̶"],
+  ["Антикоррозийная обработка в Витебске", `${site}/uslugi/antikorrozijnaya-obrabotka`, "DINITROL: Стандарт от 1 300 Б̶, Премиум от 1 650 Б̶"],
 ] as const;
 
 export function renderLlmsTxt() {

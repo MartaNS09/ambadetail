@@ -536,7 +536,7 @@ export default function HomeClient() {
                   >
                     <strong>Антикоррозийная обработка в Витебске</strong>
                   </Link>
-                  — днище, арки, скрытые полости, Dinitrol и WURTH.
+                  — DINITROL, Стандарт от 1 300 Б̶, Премиум от 1 650 Б̶.
                 </li>
                 <li>
                   <Link

@@ -9,113 +9,52 @@ const ClassHeader = ({ num }: { num: number }) => (
   </th>
 );
 
-/** Ориентировочные средние цены рынка Витебска — заменить на точный прайс студии */
 export const PriceTable = () => (
   <div className="price-table-wrapper">
     <div className="table-responsive">
       <table className="price-table price-table--dark">
         <thead>
           <tr>
-            <th colSpan={2}>Перечень услуг</th>
-            <ClassHeader num={1} />
-            <ClassHeader num={2} />
-            <ClassHeader num={3} />
-            <ClassHeader num={4} />
-            <ClassHeader num={5} />
+            <th colSpan={2}>Пакет антикоррозийной обработки</th>
+            <th className="price">Цена</th>
           </tr>
         </thead>
         <tbody>
           <tr className="price-table__brand-row">
-            <td colSpan={7}>
-              <strong>АНТИКОРРОЗИЙНАЯ ОБРАБОТКА</strong>
+            <td colSpan={3}>
+              <strong>АНТИКОР DINITROL</strong>
               <br />
-              <small>
-                Ориентировочные цены. Точный расчёт — после осмотра кузова.
-              </small>
+              <small>Состав обработки — DINITROL. Точная сумма после осмотра.</small>
             </td>
           </tr>
           <tr>
             <td className="text-left">1</td>
             <td className="text-left">
-              Обработка днища
+              Пакет «Стандарт»
               <br />
-              <small>Мойка, сушка, битум-каучук / Dinitrol на днище</small>
+              <small>
+                Снятие подкрылков, защита днища, усилитель, термоэкраны, бак,
+                выхлопная система
+              </small>
             </td>
-            <td className="price">от 400</td>
-            <td className="price">от 450</td>
-            <td className="price">от 550</td>
-            <td className="price">от 600</td>
-            <td className="price">от 650</td>
+            <td className="price">от 1 300</td>
           </tr>
           <tr>
             <td className="text-left">2</td>
             <td className="text-left">
-              Обработка колёсных арок
+              Пакет «Премиум»
               <br />
-              <small>Со снятием подкрылков при необходимости</small>
+              <small>
+                Со снятием двух бамперов (переднего и заднего): подкрылки,
+                защита днища, усилитель, термоэкраны, бак, выхлопная система,
+                фары
+              </small>
             </td>
-            <td className="price">от 280</td>
-            <td className="price">от 300</td>
-            <td className="price">от 330</td>
-            <td className="price">от 360</td>
-            <td className="price">от 400</td>
-          </tr>
-          <tr>
-            <td className="text-left">3</td>
-            <td className="text-left">
-              ML — скрытые полости
-              <br />
-              <small>Пороги, лонжероны, двери, капот, багажник (Dinitrol ML / LT)</small>
-            </td>
-            <td className="price">от 180</td>
-            <td className="price">от 200</td>
-            <td className="price">от 230</td>
-            <td className="price">от 260</td>
-            <td className="price">от 300</td>
-          </tr>
-          <tr>
-            <td className="text-left">4</td>
-            <td className="text-left">
-              Пакет «Эконом»
-              <br />
-              <small>Днище + арки</small>
-            </td>
-            <td className="price">от 450</td>
-            <td className="price">от 520</td>
-            <td className="price">от 620</td>
-            <td className="price">от 700</td>
-            <td className="price">от 780</td>
-          </tr>
-          <tr>
-            <td className="text-left">5</td>
-            <td className="text-left">
-              Пакет «Стандарт»
-              <br />
-              <small>Днище + арки + скрытые полости</small>
-            </td>
-            <td className="price">от 700</td>
-            <td className="price">от 780</td>
-            <td className="price">от 880</td>
-            <td className="price">от 950</td>
-            <td className="price">от 1050</td>
-          </tr>
-          <tr>
-            <td className="text-left">6</td>
-            <td className="text-left">
-              Пакет «Премиум» (Dinitrol)
-              <br />
-              <small>Полный комплекс на премиальных составах + подготовка очагов</small>
-            </td>
-            <td className="price">от 900</td>
-            <td className="price">от 980</td>
-            <td className="price">от 1100</td>
-            <td className="price">от 1200</td>
-            <td className="price">от 1350</td>
+            <td className="price">от 1 650</td>
           </tr>
           <tr className="price-table__section">
-            <td colSpan={7}>
-              Зачистка ржавчины, пескоструй и грунт считаются отдельно после
-              осмотра. Дополнительную информацию уточняйте у администраторов.
+            <td colSpan={3}>
+              Дополнительную информацию уточняйте у администраторов.
               <div style={{ marginTop: "1rem" }}>
                 <Link href="/podarochnyy-sertifikat" className="btn btn--gift">
                   Подарочный сертификат

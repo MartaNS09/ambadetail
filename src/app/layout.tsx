@@ -236,7 +236,7 @@ const jsonLd = {
         priceSpecification: {
           "@type": "PriceSpecification",
           priceCurrency: "BYN",
-          minPrice: "450",
+          minPrice: "1300",
         },
       },
     ],
