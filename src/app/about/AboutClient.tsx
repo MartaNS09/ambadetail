@@ -432,9 +432,9 @@ export default function AboutClient() {
                 <MapPin size={24} className="about-contacts__icon" />
                 <h3 className="about-contacts__card-title">Адрес</h3>
                 <p className="about-contacts__card-text">
-                  210020, г. Витебск
+                  210004, г. Витебск
                   <br />
-                  ул. П. Бровки, 6А
+                  ул. Академика Павлова, 44А
                 </p>
               </div>
               <div className="about-contacts__card">

@@ -137,7 +137,7 @@ export default function Header() {
             <div className="header__contacts-left">
               <div className="header__address">
                 <MapPin size={14} />
-                <span>210020, г.Витебск, ул.П.Бровки 6 A</span>
+                <span>210004, г.Витебск, ул. Академика Павлова, 44А</span>
               </div>
               <a href="tel:+375292230322" className="header__phone-link">
                 <Phone size={14} />
@@ -397,7 +397,7 @@ export default function Header() {
             </a>
             <div className="header__mobile-address">
               <MapPin size={20} />
-              <span>210020, г.Витебск, ул.П.Бровки 6 A</span>
+              <span>210004, г.Витебск, ул. Академика Павлова, 44А</span>
             </div>
             <a
               href="mailto:info@ambadetail.by"

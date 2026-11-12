@@ -12,7 +12,7 @@ const pageImage = "https://ambadetail.by/images/services/antikor.webp";
 
 const title = "Антикоррозийная обработка в Витебске | от 1 300 Б̶ DINITROL";
 const description =
-  "Антикоррозийная обработка авто в Витебске составом DINITROL: Стандарт от 1 300 Б̶, Премиум со снятием бамперов от 1 650 Б̶. Ambadetail, ул. П. Бровки, 6А. +375 29 223 03 22";
+  "Антикоррозийная обработка авто в Витебске составом DINITROL: Стандарт от 1 300 Б̶, Премиум со снятием бамперов от 1 650 Б̶. Ambadetail, ул. Академика Павлова, 44А. +375 29 223 03 22";
 
 export const metadata: Metadata = {
   title: {

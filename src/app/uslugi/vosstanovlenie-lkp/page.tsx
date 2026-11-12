@@ -11,7 +11,7 @@ const pageImage = "https://ambadetail.by/images/services/bugatti.webp";
 
 const title = "Восстановление ЛКП в Витебске | Refiller F5, удаление сколов";
 const description =
-  "Восстановление ЛКП автомобиля в Витебске по технологии Refiller F5: сколы, царапины, потёртости без полной перекраски. Ambadetail, ул. П. Бровки, 6А. +375 29 223 03 22";
+  "Восстановление ЛКП автомобиля в Витебске по технологии Refiller F5: сколы, царапины, потёртости без полной перекраски. Ambadetail, ул. Академика Павлова, 44А. +375 29 223 03 22";
 
 export const metadata: Metadata = {
   title: {

@@ -15,12 +15,12 @@ export const metadata: Metadata = {
     template: "%s | Ambadetail",
   },
   description:
-    "Оклейка авто в Витебске от 660 Б̶, тонировка авто от 330 Б̶, химчистка авто от 708 Б̶. Ambadetail, ул. П. Бровки, 6А. Пн–Пт 10:00–19:00, Сб–Вс 10:00–17:00. +375 29 223 03 22.",
+    "Оклейка авто в Витебске от 660 Б̶, тонировка авто от 330 Б̶, химчистка авто от 708 Б̶. Ambadetail, ул. Академика Павлова, 44А. Пн–Пт 10:00–19:00, Сб–Вс 10:00–17:00. +375 29 223 03 22.",
   other: {
     "geo.region": "BY-VI",
     "geo.placename": "Витебск",
-    "geo.position": "55.173057;30.24579",
-    ICBM: "55.173057, 30.24579",
+    "geo.position": "55.1759;30.1831",
+    ICBM: "55.1759, 30.1831",
   },
   applicationName: "Ambadetail",
   appleWebApp: {
@@ -104,7 +104,7 @@ const jsonLd = {
   legalName: "ООО «СервисЛинк»",
   taxID: "392001662",
   description:
-    "Детейлинг студия Ambadetail в Витебске на ул. П. Бровки, 6А: оклейка авто от 660 Б̶, тонировка авто от 330 Б̶, химчистка авто от 708 Б̶, полировка, керамика, восстановление ЛКП и детейлинг двигателя. Рассрочка до 5 месяцев без переплат.",
+    "Детейлинг студия Ambadetail в Витебске на ул. Академика Павлова, 44А: оклейка авто от 660 Б̶, тонировка авто от 330 Б̶, химчистка авто от 708 Б̶, полировка, керамика, восстановление ЛКП и детейлинг двигателя. Рассрочка до 5 месяцев без переплат.",
   url: "https://ambadetail.by",
   telephone: "+375292230322",
   email: "info@ambadetail.by",
@@ -112,22 +112,23 @@ const jsonLd = {
   currenciesAccepted: "BYN",
   paymentAccepted:
     "наличные, банковская карта, рассрочка до 5 месяцев без переплат",
-  hasMap: "https://yandex.by/maps/org/ambassador_detailing/104758157236/",
+  hasMap:
+    "https://yandex.by/maps/?text=%D0%92%D0%B8%D1%82%D0%B5%D0%B1%D1%81%D0%BA%2C%20%D1%83%D0%BB.%20%D0%90%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D0%B8%D0%BA%D0%B0%20%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B0%2C%2044%D0%90",
   knowsLanguage: "ru",
   image: "https://ambadetail.by/images/og-image.jpg",
   logo: "https://ambadetail.by/icons/icon-512.png",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "ул. П. Бровки, 6А",
+    streetAddress: "ул. Академика Павлова, 44А",
     addressLocality: "Витебск",
     addressRegion: "Витебская область",
     addressCountry: "BY",
-    postalCode: "210020",
+    postalCode: "210004",
   },
   geo: {
     "@type": "GeoCoordinates",
-    latitude: 55.173057,
-    longitude: 30.24579,
+    latitude: 55.1759,
+    longitude: 30.1831,
   },
   areaServed: [
     { "@type": "City", name: "Витебск" },
@@ -250,7 +251,7 @@ const jsonLd = {
     },
   },
   sameAs: [
-    "https://yandex.by/maps/org/ambassador_detailing/104758157236/",
+    "https://yandex.by/maps/?text=%D0%92%D0%B8%D1%82%D0%B5%D0%B1%D1%81%D0%BA%2C%20%D1%83%D0%BB.%20%D0%90%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D0%B8%D0%BA%D0%B0%20%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B0%2C%2044%D0%90",
     "https://www.instagram.com/ambassador__detailing",
     "https://www.tiktok.com/@ambassador___detailing",
     "https://youtube.com/@ambadetail",

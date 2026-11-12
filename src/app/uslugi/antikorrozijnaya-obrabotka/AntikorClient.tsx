@@ -96,8 +96,8 @@ export default function AntikorClient() {
             <p className="service-content__intro-text">
               <strong>Антикоррозийная обработка в Витебске</strong> в Ambadetail
               — защита кузова от соли, реагентов и влаги составом DINITROL.
-              Стандарт от 1 300 Б̶, Премиум от 1 650 Б̶. Студия на ул. П.
-              Бровки, 6А.
+              Стандарт от 1 300 Б̶, Премиум от 1 650 Б̶. Студия на ул.
+              Академика Павлова, 44А.
             </p>
             <p className="service-content__intro-text">
               <Link href="/zapisatsya">Записаться на антикор</Link>
@@ -219,7 +219,7 @@ export default function AntikorClient() {
               </li>
               <li>
                 <strong>Удобная запись</strong> — онлайн или по телефону, адрес
-                ул. П. Бровки, 6А.
+                ул. Академика Павлова, 44А.
               </li>
             </ul>
           </div>
@@ -317,8 +317,8 @@ export default function AntikorClient() {
               осмотра.
             </p>
             <p>
-              Работаем Пн–Пт 10:00–19:00, Сб–Вс 10:00–17:00. Адрес: ул. П.
-              Бровки, 6А. Можно совместить с{" "}
+              Работаем Пн–Пт 10:00–19:00, Сб–Вс 10:00–17:00. Адрес: ул.
+              Академика Павлова, 44А. Можно совместить с{" "}
               <Link href="/uslugi/okleyka-auto-plenkoy">оклейкой PPF</Link> или{" "}
               <Link href="/uslugi/zashhitnye-pokrytiya">керамикой</Link> для
               комплексной защиты кузова.
@@ -329,7 +329,7 @@ export default function AntikorClient() {
               </h4>
               <p className="seo-conclusion-final">
                 <strong>
-                  Запишитесь на антикоррозийную обработку: ул. П. Бровки, 6А,
+                  Запишитесь на антикоррозийную обработку: ул. Академика Павлова, 44А,
                   +375 29 223 03 22.
                 </strong>
               </p>

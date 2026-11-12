@@ -172,7 +172,7 @@ export default function HomeClient() {
                 <div className="hero__info-block">
                   <div className="hero__info-item">
                     <span className="hero__info-icon">📍</span>
-                    <span>ул. П. Бровки, 6А</span>
+                    <span>ул. Академика Павлова, 44А</span>
                   </div>
                   <div className="hero__info-item">
                     <span className="hero__info-icon">⏰</span>
@@ -475,7 +475,7 @@ export default function HomeClient() {
                 оклейка антигравийной и цветной полиуретановой плёнкой,
                 тонировка стёкол, нанесение керамики и защитных покрытий.
                 Детейлинг студия в Витебске Ambadetail расположена по адресу ул.
-                П. Бровки, 6А.
+                Академика Павлова, 44А.
               </p>
             </div> */}
             <div className="info-card info-card--full">
@@ -560,7 +560,7 @@ export default function HomeClient() {
               <p className="info-card__text">
                 <strong>Детейлинг студия в Витебске</strong> Ambadetail
                 расположена по адресу
-                <strong>ул. П. Бровки, 6А</strong>. Мы работаем ежедневно и ждём
+                <strong>ул. Академика Павлова, 44А</strong>. Мы работаем ежедневно и ждём
                 вас на профессиональный уход за автомобилем.
               </p>
             </div>

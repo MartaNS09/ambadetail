@@ -76,7 +76,7 @@ export default function Footer() {
               </div>
               <div className="footer__contact-item">
                 <MapPin size={16} />
-                <span>210020, г.Витебск, ул.П.Бровки 6 A</span>
+                <span>210004, г.Витебск, ул. Академика Павлова, 44А</span>
               </div>
               <div className="footer__contact-item">
                 <Mail size={16} />
@@ -102,7 +102,7 @@ export default function Footer() {
               <h4 className="footer__title">Реквизиты компании</h4>
               <p>ООО «СервисЛинк»</p>
               <p>УНП 392001662</p>
-              <p>г. Витебск, ул. П. Бровки, 6А</p>
+              <p>г. Витебск, ул. Академика Павлова, 44А</p>
               <p>Директор: Усенко А.М.</p>
             </div>
           </div>

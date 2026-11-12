@@ -190,8 +190,8 @@ export default function ZashchitaClient() {
                 <strong>Гарантия до 3 лет</strong> на покрытия.
               </li>
               <li>
-                <strong>Удобное расположение</strong> – Витебск, ул. П. Бровки,
-                6А.
+                <strong>Удобное расположение</strong> – Витебск, ул. Академика
+                Павлова, 44А.
               </li>
             </ul>
           </div>

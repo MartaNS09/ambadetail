@@ -191,8 +191,8 @@ export default function PolirovkaClient() {
                 <strong>Гарантия до 12 месяцев</strong> на выполненные работы.
               </li>
               <li>
-                <strong>Удобное расположение в Витебске</strong> – ул. П.
-                Бровки, 6А.
+                <strong>Удобное расположение в Витебске</strong> – ул.
+                Академика Павлова, 44А.
               </li>
             </ul>
           </div>
@@ -274,7 +274,7 @@ export default function PolirovkaClient() {
               <p className="seo-conclusion-final">
                 <strong>
                   Запишитесь на диагностику ЛКП и полировку авто в Витебске:
-                  ул. П. Бровки, 6А, +375 29 223 03 22.
+                  ул. Академика Павлова, 44А, +375 29 223 03 22.
                 </strong>
               </p>
             </div>

@@ -228,8 +228,8 @@ export default function DetailingClient() {
                 <strong>Гарантия до 3 месяцев</strong> на выполненные работы.
               </li>
               <li>
-                <strong>Удобное расположение</strong> – Витебск, ул. П. Бровки,
-                6А.
+                <strong>Удобное расположение</strong> – Витебск, ул. Академика
+                Павлова, 44А.
               </li>
             </ul>
           </div>
@@ -333,7 +333,7 @@ export default function DetailingClient() {
             <p>
               Зимой особенно важно убирать соль и реагенты Витебских дорог.
               После чистки обрабатываем пластик и резину защитными составами.
-              Студия: ул. П. Бровки, 6А.
+              Студия: ул. Академика Павлова, 44А.
             </p>
             <div className="seo-conclusion">
               <h4 className="seo-conclusion-title">

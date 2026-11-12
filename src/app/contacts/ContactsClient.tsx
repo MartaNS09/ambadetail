@@ -122,7 +122,7 @@ export default function ContactsClient() {
     {
       icon: <MapPin size={24} />,
       title: "Адрес",
-      content: "210020, г. Витебск, ул. П. Бровки, 6А",
+      content: "210004, г. Витебск, ул. Академика Павлова, 44А",
       link: null,
     },
     {
@@ -396,7 +396,7 @@ export default function ContactsClient() {
               <h2 className="contacts-map__title">Как нас найти</h2>
               <p className="contacts-map__subtitle">
                 <span className="contacts-map__highlight">📍 Ориентир:</span>{" "}
-                ул. П. Бровки, 6А, Витебск
+                ул. Академика Павлова, 44А, Витебск
               </p>
               <p className="contacts-map__subtitle">
                 <span className="contacts-map__highlight">
@@ -408,21 +408,21 @@ export default function ContactsClient() {
 
             <div className="contacts-map__wrapper">
               <iframe
-                src="https://yandex.by/map-widget/v1/?ol=biz&oid=104758157236"
+                src="https://yandex.by/map-widget/v1/?ll=30.1831%2C55.1759&z=16&text=%D0%92%D0%B8%D1%82%D0%B5%D0%B1%D1%81%D0%BA%2C%20%D1%83%D0%BB.%20%D0%90%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D0%B8%D0%BA%D0%B0%20%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B0%2C%2044%D0%90"
                 width="100%"
                 height="420"
                 style={{ border: 0 }}
                 allowFullScreen
                 loading="lazy"
                 title="Карта проезда в детейлинг студию Ambadetail в Витебске"
-                aria-label="Карта с адресом: Витебск, улица П. Бровки, 6А"
+                aria-label="Карта с адресом: Витебск, улица Академика Павлова, 44А"
               />
             </div>
 
             {/* КНОПКИ ПОД КАРТОЙ */}
             <div className="contacts-map__actions">
               <a
-                href="https://yandex.by/maps/org/ambassador_detailing/104758157236/"
+                href="https://yandex.by/maps/?text=%D0%92%D0%B8%D1%82%D0%B5%D0%B1%D1%81%D0%BA%2C%20%D1%83%D0%BB.%20%D0%90%D0%BA%D0%B0%D0%B4%D0%B5%D0%BC%D0%B8%D0%BA%D0%B0%20%D0%9F%D0%B0%D0%B2%D0%BB%D0%BE%D0%B2%D0%B0%2C%2044%D0%90"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contacts-map__btn contacts-map__btn--outline"
@@ -432,7 +432,7 @@ export default function ContactsClient() {
                 Открыть карту в Яндекс
               </a>
               <a
-                href="https://yandex.by/maps/?rtext=~55.173057%2C30.24579&rtt=auto"
+                href="https://yandex.by/maps/?rtext=~55.1759%2C30.1831&rtt=auto"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="contacts-map__btn contacts-map__btn--primary"

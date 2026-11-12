@@ -45,11 +45,11 @@ export function serviceSchema({
       telephone: "+375292230322",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "ул. П. Бровки, 6А",
+        streetAddress: "ул. Академика Павлова, 44А",
         addressLocality: "Витебск",
         addressRegion: "Витебская область",
         addressCountry: "BY",
-        postalCode: "210020",
+        postalCode: "210004",
       },
     },
     areaServed: [

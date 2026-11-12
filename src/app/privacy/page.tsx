@@ -257,7 +257,7 @@ export default function PrivacyPage() {
                 <div>
                   <p className="privacy-contact-label">Адрес</p>
                   <p className="privacy-contact-value">
-                    210020, г. Витебск, ул. П. Бровки, 6А
+                    210004, г. Витебск, ул. Академика Павлова, 44А
                   </p>
                 </div>
               </div>
